@@ -42,6 +42,7 @@ dependencies:
   zego_uikit_signaling_plugin: ^2.7.14
   flutter_stripe:
   shared_preferences: ^2.0.0
+  otp_text_field_v2:
 
 dev_dependencies:
   flutter_test:
@@ -66,9 +67,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/imagesOnBording/
+    - assets/roleSelection/
+    - assets/loginOption/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

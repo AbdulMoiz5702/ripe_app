@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/views/on_boarding/on_borading_screen.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,17 +16,14 @@ final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? savedName = prefs.getString('name');
   String? savedId = prefs.getString('id');
   String? savedInviteId = prefs.getString('inviteId');
-
   // Conditionally decide where to navigate
   Widget initialRoute = savedName != null && savedId != null && savedInviteId != null
       ? CallScreen(callerName: savedName, userId: savedId, inviteId: savedInviteId)
       : MyHomePage(title: 'Flutter Demo Home Page');
-
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
   ZegoUIKit().initLog().then((value) {
     ZegoUIKitPrebuiltCallInvitationService().useSystemCallingUI(
@@ -38,7 +36,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   final GlobalKey<NavigatorState> navigatorKey;
   final Widget initialRoute;
-
   const MyApp({required this.navigatorKey, required this.initialRoute});
 
   @override
@@ -48,9 +45,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
       ),
-      home: initialRoute,
+      home: OnboardingScreen(),
     );
   }
 }
