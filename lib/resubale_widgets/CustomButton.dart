@@ -29,7 +29,8 @@ class CustomButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(title,style: TextStyle(color :Colors.white),),
+            Text(title,style: TextStyle(color :Colors.white,
+              fontFamily: 'Nunito Sans',),),
             CustomSized(width: 0.03,),
            onBoard == true ? Icon(Icons.arrow_forward,color: Colors.white,) : Container(height: 1,width: 1,),
           ],

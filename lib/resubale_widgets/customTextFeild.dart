@@ -35,7 +35,8 @@ class CustomTextField extends StatelessWidget {
       onFieldSubmitted: onFieldSubmittedValue,
       validator: onValidator,
       keyboardType: keyBoardType,
-      style: TextStyle(color: Colors.black),
+      style: TextStyle(color: Colors.black,
+        fontFamily: 'Nunito Sans',),
       decoration: InputDecoration(
         prefixIcon: iconData != null
             ? Icon(iconData, color: Colors.black26)

@@ -44,6 +44,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       title: 'Flutter Demo',
         theme: ThemeData(
+          fontFamily: 'Nunito Sans',
         // Define the default brightness and colors.
         brightness: Brightness.light,
         primaryColor: Colors.white,

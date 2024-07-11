@@ -12,8 +12,6 @@ import '../../../resubale_widgets/custom_leading.dart';
 import '../../../resubale_widgets/text_widgets.dart';
 import 'Step4.dart';
 
-
-
 class Step3 extends StatelessWidget {
   const Step3({super.key});
   @override
@@ -23,7 +21,7 @@ class Step3 extends StatelessWidget {
       resizeToAvoidBottomInset: true,
       backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
-        leading:CustomLeading(),
+        leading: CustomLeading(),
         backgroundColor: Colors.transparent,
         actions: [
           SignupStepsCount(title: 3.toString()),
@@ -39,8 +37,7 @@ class Step3 extends StatelessWidget {
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(30),
                 topLeft: Radius.circular(30),
-              )
-          ),
+              )),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: SingleChildScrollView(
@@ -53,31 +50,57 @@ class Step3 extends StatelessWidget {
                   ),
                   RichText(
                       text: const TextSpan(children: [
-                        TextSpan(
-                            text: 'Logo',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18)),
-                        TextSpan(
-                            text: 'ipsum',
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18))
-                      ])),
-                  CustomSized(height: 0.01,),
-                  largeText(title: 'Enter your Phone Number',color: Colors.black),
-                  CustomSized(height: 0.01,),
-                  smallText(title: 'Add to recovery phone to help keep your account',color: Colors.black26),
-                  CustomSized(height: 0.005,),
-                  smallText(title: 'secure',color: Colors.black26),
-                  CustomSized(height: 0.03,),
-                  CustomTextField(controller: controller, keyBoardType: TextInputType.emailAddress, obscureText: false, hint: 'Phone Number', onValidator: (value){}, onFieldSubmittedValue: (value){},iconData: Icons.phone,),
+                    TextSpan(
+                        text: 'Logo',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18)),
+                    TextSpan(
+                        text: 'ipsum',
+                        style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18))
+                  ])),
+                  CustomSized(
+                    height: 0.01,
+                  ),
+                  largeText(
+                      title: 'Enter your Phone Number', color: Colors.black),
+                  CustomSized(
+                    height: 0.01,
+                  ),
+                  smallText(
+                      title: 'Add to recovery phone to help keep your account',
+                      color: Colors.black26),
+                  CustomSized(
+                    height: 0.005,
+                  ),
+                  smallText(title: 'secure', color: Colors.black26),
+                  CustomSized(
+                    height: 0.03,
+                  ),
+                  CustomTextField(
+                    controller: controller,
+                    keyBoardType: TextInputType.emailAddress,
+                    obscureText: false,
+                    hint: 'Phone Number',
+                    onValidator: (value) {},
+                    onFieldSubmittedValue: (value) {},
+                    iconPath: 'assets/vectors/Phone.png',
+                  ),
                   CustomSized(height: 0.035),
-                  CustomButton(title: 'Continue', onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (context)=> Step4()));
-                  },borderRadius: 30,width: 1,height:0.07,),
+                  CustomButton(
+                    title: 'Continue',
+                    onTap: () {
+                      Navigator.push(context,
+                          CupertinoPageRoute(builder: (context) => Step4()));
+                    },
+                    borderRadius: 30,
+                    width: 1,
+                    height: 0.07,
+                  ),
                   CustomSized(height: 0.03),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +111,8 @@ class Step3 extends StatelessWidget {
                         width: MediaQuery.sizeOf(context).width * 0.27,
                         color: Colors.black26,
                       ),
-                      smallText(title: 'or register with',color: Colors.black26),
+                      smallText(
+                          title: 'or register with', color: Colors.black26),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 10),
                         height: 3,
@@ -107,18 +131,21 @@ class Step3 extends StatelessWidget {
                   ),
                   CustomSized(height: 0.045),
                   GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> SelectRole()));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (context) => SelectRole()));
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        normalText(title: 'Already a member ?  ',color: Colors.black),
-                        smallText(title: 'Login',color: Colors.blue),
+                        normalText(
+                            title: 'Already a member ?  ', color: Colors.black),
+                        smallText(title: 'Login', color: Colors.blue),
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
