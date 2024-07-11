@@ -35,8 +35,8 @@ class RoleSelectionConatiner extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: MediaQuery.sizeOf(context).height * 0.17,
-                    width: MediaQuery.sizeOf(context).width * 0.35 ,
+                    height: MediaQuery.sizeOf(context).height * 0.1,
+                    width: MediaQuery.sizeOf(context).width * 0.25 ,
                     decoration: BoxDecoration(
                       image: DecorationImage(image: AssetImage(imagePath),fit: BoxFit.cover,invertColors:isSelected== true ? true :false),
                     ),

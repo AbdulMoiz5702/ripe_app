@@ -24,7 +24,7 @@ class Step5 extends StatelessWidget {
     var controller = OtpFieldControllerV2();
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xff029FEB1F),
       appBar: AppBar(
         leading:CustomLeading(),
         backgroundColor: Colors.transparent,

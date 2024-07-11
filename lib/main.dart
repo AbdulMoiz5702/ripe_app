@@ -43,10 +43,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       navigatorKey: navigatorKey,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: OnboardingScreen(),
+        theme: ThemeData(
+          fontFamily: 'Nunito Sans',
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+        primaryColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.deepPurple,
+        primary: Colors.deepPurple,
+        secondary: Colors.deepPurpleAccent,
+    ),
+    scaffoldBackgroundColor: Colors.white, ),
+
+    home: OnboardingScreen(),
     );
   }
 }
