@@ -7,7 +7,8 @@ Widget largeText(
       FontWeight weight = FontWeight.bold}) {
   return Text(
     title,
-    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight, fontFamily: "Poppins"),
+    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight,
+      fontFamily: 'Nunito Sans',),
   );
 }
 
@@ -18,7 +19,8 @@ Widget normalText(
       FontWeight weight = FontWeight.w700}) {
   return Text(
     title,
-    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight, fontFamily: "Poppins",),
+    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight,
+        fontFamily: 'Nunito Sans',),
   );
 }
 
@@ -30,7 +32,8 @@ Widget smallText(
       FontWeight weight = FontWeight.w500}) {
   return Text(
     title,
-    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight, fontFamily: "Poppins"),
+    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight,
+      fontFamily: 'Nunito Sans',),
   );
 }
 
@@ -39,6 +42,7 @@ Widget listTileText(
     {title, Color color = Colors.white, textSize, weight = FontWeight.bold}) {
   return Text(
     title,
-    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight, fontFamily: "Poppins",letterSpacing:1),
+    style: TextStyle(color: color, fontSize: textSize, fontWeight: weight,
+        fontFamily: 'Nunito Sans',letterSpacing:1),
   );
 }
