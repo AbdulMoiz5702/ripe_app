@@ -31,7 +31,7 @@ class LoginOptionButton extends StatelessWidget {
             ),
           ),
           CustomSized(width: 0.02,),
-          normalText(title: title,color: Colors.black, textSize: 14.0),
+          normalText(title: title,color: Colors.black, textSize: 14),
         ],
       ),
     );

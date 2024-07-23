@@ -83,11 +83,8 @@ class Step5 extends StatelessWidget {
                       image: DecorationImage(image: AssetImage(mail),fit: BoxFit.cover),
                     ),
                   ),
-                  CustomSized(height: 0.03,),
-
                   OTPTextFieldV2(
                       controller: controller,
-                      cursorColor: Colors.lightBlueAccent,
                       length: 6,
                       autoFocus: true,
                       width: MediaQuery.of(context).size.width,
