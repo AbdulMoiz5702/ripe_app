@@ -123,7 +123,6 @@ class VerifyImagesInstructionScreen extends StatelessWidget {
                   Row(
                     children: [
                       Checkbox(
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
                         ),

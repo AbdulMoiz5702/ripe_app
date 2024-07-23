@@ -8,6 +8,8 @@ import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
+import '../route_details_details.dart';
+
 class ConfirmPickUp extends StatelessWidget {
   final TimeOfDay selectedTime;
   final String selectedDate;
@@ -49,13 +51,17 @@ class ConfirmPickUp extends StatelessWidget {
               ],
             ),
           ),
-          ListTile(
-            dense: true,
-            leading: Icon(Icons.location_on_outlined,color: checkBoxColor,),
-            title:smallText(title: 'The Centaurus Mall',color: primaryTextColor) ,
-            subtitle: smallText(title: 'F-8 - Islamabad, The Centaurus Mall'),
-            trailing: Icon(Icons.favorite_border,),
-          ),
+          Consumer<ScheduleRideProvider>(builder: (context,provider,_){
+            return ListTile(
+              dense: true,
+              leading: Icon(Icons.location_on_outlined,color: checkBoxColor,),
+              title:smallText(title: 'The Centaurus Mall',color: primaryTextColor) ,
+              subtitle: smallText(title: 'F-8 - Islamabad, The Centaurus Mall',textSize: 11.0),
+              trailing: IconButton(onPressed: (){
+                provider.openMarkAddressFavoriteBottomSheet(context: context, address: 'The Centaurus Mall', suBbAddress: 'F-8 - Islamabad, The Centaurus Mall');
+              }, icon: Icon(Icons.favorite_border,)),
+            );
+          }),
           Divider(),
           Consumer<ScheduleRideProvider>(
             builder: (context,provider,_){
@@ -64,12 +70,16 @@ class ConfirmPickUp extends StatelessWidget {
                padding: const EdgeInsets.only(left:10),
                child: NotificationListTile(title: 'Pick up from airport', value: provider.value, onChanged: (value){
                  provider.onChange(value);
+                 provider.openAirPortPickupBottomSheet(context);
+                 provider.makeValueFalse();
                }),
              );
             },
           ),
           CustomSized(height: 0.02,),
-          CustomButton(title: 'Confirm pickup', onTap: (){},borderRadius: 30,onBoard: false,width:0.8,),
+          CustomButton(title: 'Confirm pickup', onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> RouteDetailsDetailsScreen()));
+          },borderRadius: 30,onBoard: false,width:1,),
           CustomSized(height: 0.02,),
         ],
       ),

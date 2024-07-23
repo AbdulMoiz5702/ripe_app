@@ -14,6 +14,7 @@ class CustomLeadingTextField extends StatelessWidget {
     required this.onFieldSubmittedValue,
     this.iconData,
     this.iconPath,
+    this.iconDataColor = dividerColor,
   });
 
   final TextEditingController controller;
@@ -24,6 +25,7 @@ class CustomLeadingTextField extends StatelessWidget {
   final bool obscureText;
   final bool enable;
   final bool autoFocus;
+  final Color iconDataColor;
   final IconData? iconData;
   final String? iconPath;
 
@@ -45,7 +47,7 @@ class CustomLeadingTextField extends StatelessWidget {
           label: smallText(title: hint,textSize: 12.0,weight: FontWeight.w700),
           isDense: true,
           prefixIcon: iconData != null
-              ? Icon(iconData, color: dividerColor,size: 25,)
+              ? Icon(iconData, color: iconDataColor,size: 25,)
               : (iconPath != null
               ? Padding(
             padding: const EdgeInsets.all(8.0),

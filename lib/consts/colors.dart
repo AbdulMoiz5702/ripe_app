@@ -41,6 +41,7 @@ const Color secondaryWhiteColor = Color(0xfff9fafb);
 const Color checkColor = Color(0xffCBFAFE);
 const Color secondayBlueColor = Color(0xffd1eaff);
 const Color darkBlueColor = Color(0xff04207A);
+const Color redColor = Color(0xffFF3A1C);
 
 
 // bottom color
