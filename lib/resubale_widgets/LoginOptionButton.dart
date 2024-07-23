@@ -13,7 +13,7 @@ class LoginOptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      width: MediaQuery.sizeOf(context).width * 0.39,
+      width: MediaQuery.sizeOf(context).width * 0.4,
       height: 50,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black12),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
@@ -37,21 +39,19 @@ class RoleSelectionConatiner extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  CustomSized(
+                    height: 0.01,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Container(
-                      height: MediaQuery.sizeOf(context).height * 0.17,
-                      width: MediaQuery.sizeOf(context).width * 0.38,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(imagePath),
-                            // fit: BoxFit.cover,
-                            invertColors: isSelected == true ? true : false,
-
-
-                        ),
-                      ),
+                      height: MediaQuery.sizeOf(context).height * 0.12,
+                      width: MediaQuery.sizeOf(context).width * 0.28,
+                      child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : blackColor,),
                     ),
+                  ),
+                  CustomSized(
+                    height: 0.01,
                   ),
                   normalText(
                       title: title,

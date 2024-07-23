@@ -58,6 +58,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -116,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                 Row(
                   children: [
-                    CustomButton(
+                    _currentIndex < 3 ? CustomButton(
                       borderRadius: 30,
                       width: 0.3,
                       onTap: () {
@@ -130,7 +131,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         }
                       },
                       title: _currentIndex < 3 ? 'Next' : 'Register',
-                    ),
+                    ) : RegisterButton(title: 'Register', onTap: (){
+                      if (_currentIndex < 3) {
+                        _pageController.nextPage(
+                          duration: Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
+                      } else {
+                        Navigator.push(context, CupertinoPageRoute(builder: (conetxt)=> SelectRole()));
+                      }
+                    }) ,
                   ],
                 ),
               ],

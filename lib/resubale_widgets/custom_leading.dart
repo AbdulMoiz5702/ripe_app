@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ride_app/consts/images_path.dart';
+
+import '../consts/colors.dart';
 
 
 class CustomLeading extends StatelessWidget {
-  const CustomLeading({super.key});
+  final bool isHome ;
+  final IconData iconData ;
+  const CustomLeading({this.isHome = false,this.iconData = Icons.arrow_back});
 
   @override
   Widget build(BuildContext context) {
@@ -10,12 +16,34 @@ class CustomLeading extends StatelessWidget {
       onTap: (){ Navigator.pop(context); },
       child: Container(
         margin: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
+        decoration:  BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,
+          border: isHome == true ? Border.all(color: otpColor) : null,
         ),
-        child:const Center(child: Icon(Icons.arrow_back,color: Colors.black,),),
+        child: Center(child: Icon(iconData,color: Colors.black,),),
       ),
+    );
+  }
+}
+
+class NotificationButton extends StatelessWidget {
+  final VoidCallback onTap;
+  const NotificationButton({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(5),
+        margin: const EdgeInsets.all(10),
+        decoration:  BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.white, 
+            border :Border.all(color: otpColor)
+        ),
+        child:SvgPicture.asset(bellSimpleSvg,height: 30,width: 30,)),
     );
   }
 }
