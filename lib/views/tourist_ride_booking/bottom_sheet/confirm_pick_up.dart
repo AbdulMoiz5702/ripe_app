@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
@@ -46,7 +48,7 @@ class ConfirmPickUp extends StatelessWidget {
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-               const  Icon(Icons.calendar_month,color: checkBoxColor,),
+                 SvgPicture.asset(advanceCalender,color: checkBoxColor,),
                 largeText(title: '$selectedDate, $formattedTime',textSize: 13.0)
               ],
             ),

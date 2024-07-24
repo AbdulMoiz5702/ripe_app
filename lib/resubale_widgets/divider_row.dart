@@ -12,7 +12,7 @@ Widget dividerRow({required BuildContext context,String title= 'register'}){
     children: [
       Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
-        height: 3,
+        height: 1,
         width: MediaQuery.sizeOf(context).width * 0.28,
         color: dividerColor,
       ),
@@ -20,7 +20,7 @@ Widget dividerRow({required BuildContext context,String title= 'register'}){
           title:'or $title with',color: dividerColor),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
-        height: 3,
+        height: 1,
         width: MediaQuery.sizeOf(context).width * 0.28,
         color: dividerColor,
       )

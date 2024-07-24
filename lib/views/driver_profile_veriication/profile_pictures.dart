@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/become_driver_controller.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
@@ -37,8 +38,8 @@ class ProfilePictureScreen extends StatelessWidget {
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Container(
                 alignment: Alignment.center,
-                height: MediaQuery.sizeOf(context).height * 0.55,
-                width: MediaQuery.sizeOf(context).width * 0.55,
+                height: MediaQuery.sizeOf(context).height * 0.6,
+                width: MediaQuery.sizeOf(context).width * 0.6,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(color: secondaryWhiteColor),
@@ -49,8 +50,8 @@ class ProfilePictureScreen extends StatelessWidget {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    height: MediaQuery.sizeOf(context).height * 0.5,
-                    width: MediaQuery.sizeOf(context).width * 0.5,
+                    height: MediaQuery.sizeOf(context).height * 0.55,
+                    width: MediaQuery.sizeOf(context).width * 0.55,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: secondaryWhiteColor,
@@ -65,7 +66,7 @@ class ProfilePictureScreen extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          Icons.camera_enhance,
+                          Icons.camera_alt_rounded,
                           color: provider.profilePictureImage == null
                               ? dividerColor
                               : whiteColor,
@@ -112,8 +113,9 @@ class ProfilePictureScreen extends StatelessWidget {
             CustomSized(height: 0.02),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return LocationAccessButton(
+                isImagePath: true,
+                imagePath: gallery,
                 width: 1,
-                height: 0.07,
                 title: 'Upload from gallery',
                 onTap: () {
                   provider.pickImage(imageType: 'profilePictureImage',);
@@ -129,12 +131,11 @@ class ProfilePictureScreen extends StatelessWidget {
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return provider.profilePictureImage == null
                   ? LocationAccessButton(
+                      isImagePath: true,
                       width: 1,
-                      height: 0.07,
                       title: 'Camera',
                       onTap: () {
-                        provider.pickImage(
-                            imageType: 'profilePictureImage',
+                        provider.pickImage(imageType: 'profilePictureImage',
                             isFaceVerification: true);
                       },
                       iconData: Icons.photo_camera_outlined,
@@ -143,11 +144,10 @@ class ProfilePictureScreen extends StatelessWidget {
                       weight: FontWeight.w700,
                     ): CustomButton(
                   width: 1,
-                  height: 0.07,
                   borderRadius: 30,
                   title: 'Next',
                   onTap: () {
-                    Navigator.push(context, CupertinoPageRoute(builder: (context)=> FaceVerificationScreen()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> FaceVerificationScreen()));
                   });
             }),
           ],

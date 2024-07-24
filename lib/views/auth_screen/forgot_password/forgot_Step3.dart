@@ -60,7 +60,7 @@ class ForgotStep3 extends StatelessWidget {
                                   fontSize: 18))
                         ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(title: 'Reset password',),
                     CustomSized(

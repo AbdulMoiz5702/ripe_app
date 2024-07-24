@@ -60,7 +60,7 @@ class Step5 extends StatelessWidget {
                               fontSize: 18))
                     ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(title: 'Enter 6-digit code',),
                     CustomSized(
@@ -103,7 +103,7 @@ class Step5 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         smallText(
-                            title: '[ 1:00 ] ',
+                            title: '( 1:00 ) ',
                             color: primaryTextColor,
                         ),
                         smallText(

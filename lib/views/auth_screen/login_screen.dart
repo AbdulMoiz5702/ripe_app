@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                               fontSize: 18))
                     ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(
                         title: 'Hey there, Welcome Back', color: Colors.black),

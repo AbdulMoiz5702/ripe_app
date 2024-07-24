@@ -71,6 +71,7 @@ class Step7 extends StatelessWidget {
             ),
             CustomSized(height: 0.04),
             LocationAccessButton(
+              weight: FontWeight.w700,
               title: 'Allow access',
               onTap: () {
                 Navigator.pushReplacement(

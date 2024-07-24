@@ -54,10 +54,10 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       switch (index) {
                         case 0:
-                          Navigator.push(context, CupertinoPageRoute(builder: (context)=> ExploreCity()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ExploreCity()));
                           break;
                         case 1:
-                          Navigator.push(context, CupertinoPageRoute(builder: (context)=> FindDriversScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> FindDriversScreen()));
                           break;
                         default:
                           print('Unknown command');
@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                 height: 0.01,
               ),
               OutlineBorderButton(onTap: (){
-                Navigator.push(context, CupertinoPageRoute(builder: (context)=> LicenseDetailsScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> LicenseDetailsScreen()));
               },title: 'Become driver',),
               CustomSized(
                 height: 0.02,

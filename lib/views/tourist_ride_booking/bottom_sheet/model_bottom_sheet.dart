@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
@@ -46,7 +47,7 @@ class BottomSheetContent extends StatelessWidget {
                       },
                       child: Container(
                         child:Row(children: [
-                          Icon(Icons.add_box,color: checkBoxColor,),
+                          SvgPicture.asset(advanceCalender),
                           smallText(title: ' Now ',),
                           Icon(Icons.keyboard_arrow_down_rounded),
                         ],),
@@ -67,7 +68,7 @@ class BottomSheetContent extends StatelessWidget {
                           },
                           child: Container(child: Row(
                             children: [
-                              Icon(exploreScreenIcons[index],color: provider.index == index ? primaryTextColor : dividerColor,),
+                              SvgPicture.asset(exploreScreenIcons[index],color: provider.index == index ? primaryTextColor : dividerColor,),
                               CustomSized(width: 0.02,),
                               smallText(title: exploreScreen[index],color: provider.index == index ? primaryTextColor : dividerColor,),
                               CustomSized(width: 0.04,),

@@ -30,7 +30,7 @@ class SelectRole extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.6,
+              height: MediaQuery.sizeOf(context).height * 0.62,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -67,8 +67,10 @@ class SelectRole extends StatelessWidget {
                       height: 0.020,
                     ),
                     largeText(title: 'Choose Your Role',),
+                    CustomSized(
+                      height: 0.020,
+                    ),
                     Consumer<RoleSelectionProvider>(builder: (context,provider,_){
-                      print('consumer');
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -92,7 +94,7 @@ class SelectRole extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
                           smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),

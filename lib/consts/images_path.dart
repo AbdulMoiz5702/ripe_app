@@ -30,7 +30,7 @@ const String messageIcon = 'assets/vectors/message.png';
 const String favorite = 'assets/vectors/favorite.png';
 const String driverLicenceNumber = 'assets/vectors/driving_licence_number.png';
 const String carSimple = 'assets/vectors/car_simple.png';
-const String  hash = 'assets/vectors/hash.png';
+const String hash = 'assets/vectors/hash.png';
 
 
 
@@ -70,6 +70,13 @@ const String uberLogoSvg = 'assets/svg_pictures/uber_svg.svg';
 const String ylaSvg = 'assets/svg_pictures/lya_svg.svg';
 const String aiBot = 'assets/svg_pictures/ai_bot_svg.svg';
 const String normalRoute = 'assets/svg_pictures/normal_route_svg.svg';
+const String camera = 'assets/svg_pictures/camera_svg.svg';
+const String gallery = 'assets/svg_pictures/gallery_svg.svg';
+const String airplaneTakeoff = 'assets/svg_pictures/AirplaneTakeoff_svg.svg';
+const String parkSvg = 'assets/svg_pictures/Park_svg.svg';
+const String handBagSvg = 'assets/svg_pictures/Handbag_svg.svg';
+const String advanceCalender = 'assets/svg_pictures/advance_calender.svg';
+const String hamBurger = 'assets/svg_pictures/gallery_svg.svg';
 
 
 // car guide images

@@ -69,7 +69,7 @@ class Step4 extends StatelessWidget {
                               fontSize: 18))
                     ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(title: 'Set your password',),
                     CustomSized(
@@ -117,7 +117,8 @@ class Step4 extends StatelessWidget {
                     ),
                     CustomSized(height: 0.03),
                     CustomButton(
-                      title: 'Continue',
+                      onBoard: false,
+                      title: 'Confirm password',
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) => Step5()));
@@ -140,7 +141,7 @@ class Step4 extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
                           smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),

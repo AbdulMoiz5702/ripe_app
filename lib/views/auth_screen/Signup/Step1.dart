@@ -69,10 +69,10 @@ class Step1 extends StatelessWidget {
                               fontSize: 18))
                     ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(
-                        title: 'Hi 👋 What\'s your name ?',),
+                        title: 'Hi 👋 What\'s your name?',),
                     CustomSized(
                       height: 0.01,
                     ),
@@ -118,7 +118,7 @@ class Step1 extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
                           smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),

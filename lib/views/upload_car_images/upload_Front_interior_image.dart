@@ -48,7 +48,7 @@ class UploadFrontInteriorImage extends StatelessWidget {
                 ),
               );
             }),
-            CustomSized(),
+            CustomSized(height: 0.002,),
             Container(
               margin: EdgeInsets.all(15),
               padding: EdgeInsets.all(20),
@@ -84,12 +84,12 @@ class UploadFrontInteriorImage extends StatelessWidget {
                 ],
               ),
             ),
+            CustomSized(),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Column(
                 children: [
                   LocationAccessButton(
                     width: 1,
-                    height: 0.07,
                     title: provider.carFrontSeatsImagePath == null
                         ? 'Upload from gallery'
                         : 'Retake',
@@ -108,7 +108,6 @@ class UploadFrontInteriorImage extends StatelessWidget {
                   provider.carFrontSeatsImagePath == null
                       ? LocationAccessButton(
                     width: 1,
-                    height: 0.07,
                     title:'Camera',
                     onTap: () {
                       provider.pickImage(
@@ -123,13 +122,12 @@ class UploadFrontInteriorImage extends StatelessWidget {
                       : CustomButton(
                       onBoard: false,
                       width: 1,
-                      height: 0.07,
                       borderRadius: 30,
                       title: 'Confirm',
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => UploadCarBackInteriorImage()));
                       }),
                 ],

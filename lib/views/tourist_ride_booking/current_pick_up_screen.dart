@@ -15,7 +15,6 @@ class _CurrentPickUpScreenState extends State<CurrentPickUpScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Provider.of<ScheduleRideProvider>(context,listen: false).onInIt(context: context);
   }

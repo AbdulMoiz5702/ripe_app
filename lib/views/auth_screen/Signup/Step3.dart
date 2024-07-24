@@ -66,7 +66,7 @@ class Step3 extends StatelessWidget {
                               fontSize: 18))
                     ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(
                         title: 'Enter your Phone Number',),
@@ -115,7 +115,7 @@ class Step3 extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
                           smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),

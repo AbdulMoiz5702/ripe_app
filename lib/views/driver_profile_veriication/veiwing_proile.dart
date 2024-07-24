@@ -93,11 +93,10 @@ class VeiwingProile extends StatelessWidget {
                   CustomSized(height: 0.03),
                   CustomButton(
                       width: 1,
-                      height: 0.07,
                       borderRadius: 30,
                       title: 'Upload car images',
                       onTap: () {
-                        Navigator.push(context, CupertinoPageRoute(builder: (context)=> VerifyImagesInstructionScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> VerifyImagesInstructionScreen()));
                       }),
                   CustomSized(height: 0.002),
                   const  Row(

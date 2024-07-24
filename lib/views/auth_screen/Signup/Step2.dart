@@ -68,13 +68,13 @@ class Step2 extends StatelessWidget {
                               fontSize: 18))
                     ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(title: 'Enter your email', color: Colors.black),
                     CustomSized(height: 0.01,),
                     smallText(title: 'By sharing your email, you agree to our Terms of',),
                     CustomSized(height: 0.002,),
-                    smallText(title: 'Services an Privacy Policy .',),
+                    smallText(title: 'Services and Privacy Policy.',),
                     CustomSized(
                       height: 0.03,
                     ),
@@ -148,7 +148,7 @@ class Step2 extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
                           smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),

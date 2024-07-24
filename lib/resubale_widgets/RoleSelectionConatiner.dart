@@ -47,15 +47,15 @@ class RoleSelectionConatiner extends StatelessWidget {
                     child: Container(
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       width: MediaQuery.sizeOf(context).width * 0.28,
-                      child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : blackColor,),
+                      child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : primaryTextColor,),
                     ),
                   ),
                   CustomSized(
                     height: 0.01,
                   ),
-                  normalText(
+                  smallText(
                       title: title,
-                      color: isSelected == true ? Colors.blue : Colors.black),
+                      color: isSelected == true ?  checkBoxColor :  primaryTextColor),
                   CustomSized(
                     height: 0.01,
                   ),

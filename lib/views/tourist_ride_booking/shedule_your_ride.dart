@@ -18,7 +18,6 @@ class SheduleYourRideScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controller = Provider.of<ScheduleRideProvider>(context,listen: false);
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
@@ -118,7 +117,7 @@ class SheduleYourRideScreen extends StatelessWidget {
             CustomSized(height: 0.02,),
             Align(
                 alignment: Alignment.center,
-                child: CustomButton(title: 'Set current ate and time', onTap: (){
+                child: CustomButton(title: 'Set current date and time', onTap: (){
                   Navigator.push(context, CupertinoPageRoute(builder: (context)=> CurrentPickUpScreen()));
                 },borderRadius: 30,onBoard: false,width: 1,color: secondaryWhiteColor,titleColor: primaryTextColor,)),
           ],

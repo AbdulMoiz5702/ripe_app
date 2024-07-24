@@ -22,7 +22,7 @@ class VerifyImagesInstructionScreen extends StatelessWidget {
         title: largeText(title: 'Vehicle images'),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
             child: Column(
@@ -137,11 +137,12 @@ class VerifyImagesInstructionScreen extends StatelessWidget {
                   CustomSized(height: 0.004,),
                   CustomButton(title: 'Continue', onTap: (){
                     if( provider.value == true){
-                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> UploadFrontImageScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> UploadFrontImageScreen()));
                     }else{
 
                     }
-                  },borderRadius: 30,height: 0.07,titleColor: provider.value == true ? whiteColor : dividerColor,color: provider.value == true ? buttonColor : secondaryWhiteColor,width: 1,),
+                  },borderRadius: 30,titleColor: provider.value == true ? whiteColor : dividerColor,color: provider.value == true ? buttonColor : secondaryWhiteColor,width: 1,),
+                  CustomSized(width: 0.02,),
                 ],
               ),
             );

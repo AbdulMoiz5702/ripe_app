@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
@@ -32,7 +34,7 @@ class CustomButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            smallText(title: title,textSize: 15.0,color: titleColor),
+            smallText(title: title,textSize: 15.0,color: titleColor,weight: FontWeight.w700),
             CustomSized(width: 0.03,),
            onBoard == true ? Icon(Icons.arrow_forward,color: Colors.white,) : Container(height: 0,width: 0,),
           ],
@@ -68,7 +70,7 @@ class RegisterButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            smallText(title: title,textSize: 15.0,color: textButtonColor),
+            smallText(title: title,textSize: 15.0,color: textButtonColor,weight: FontWeight.w700),
             CustomSized(width: 0.03,),
             onBoard == true ? Icon(Icons.arrow_forward,color: Colors.white,) : Container(height: 1,width: 1,),
           ],
@@ -80,6 +82,8 @@ class RegisterButton extends StatelessWidget {
 
 class LocationAccessButton extends StatelessWidget {
   final String title ;
+  final String imagePath ;
+  final bool isImagePath;
   final VoidCallback onTap ;
   final double width ;
   final Color color ;
@@ -88,7 +92,7 @@ class LocationAccessButton extends StatelessWidget {
   final IconData iconData ;
   final Color titleColor ;
   final FontWeight weight ;
-  const LocationAccessButton({required this.title, required this.onTap,this.width = 0.7,this.color = buttonColor,this.height = 0.06,this.borderRadius = 10,this.iconData = Icons.place_outlined,this.titleColor =textButtonColor ,this.weight =FontWeight.w400});
+  const LocationAccessButton({required this.title, required this.onTap,this.width = 0.7,this.color = buttonColor,this.height = 0.06,this.borderRadius = 10,this.iconData = Icons.place_outlined,this.titleColor =textButtonColor ,this.weight =FontWeight.w400,this.imagePath = camera,this.isImagePath = false});
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +110,7 @@ class LocationAccessButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(iconData,color: titleColor,),
+            isImagePath == true ? SvgPicture.asset(imagePath) : Icon(iconData,color: titleColor,),
             CustomSized(width: 0.03,),
             smallText(title: title,textSize: 15.0,color: titleColor,weight: weight),
           ],

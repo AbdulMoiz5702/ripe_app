@@ -73,14 +73,16 @@ class _Step6State extends State<Step6> {
                                   fontSize: 18))
                         ])),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.02,
                     ),
                     largeText(title: 'Account created successfully.',),
                     CustomSized(
                       height: 0.01,
                     ),
                     smallText(
-                      title: 'Your account has been created successfully. You’re ready to use the app now.',),
+                      title: 'Your account has been created successfully. You’re',),
+                    smallText(
+                      title: 'ready to use the app now.',),
                     CustomSized(
                       height: 0.02,
                     ),

@@ -166,10 +166,10 @@ var exploreScreen = [
 ];
 
 var exploreScreenIcons = [
-  Icons.attractions_outlined,
-  Icons.shopping_bag_outlined,
-  Icons.flight_takeoff_outlined,
-  Icons.lunch_dining_outlined,
+  parkSvg,
+  airplaneTakeoff,
+  handBagSvg,
+  handBagSvg
 ];
 
 

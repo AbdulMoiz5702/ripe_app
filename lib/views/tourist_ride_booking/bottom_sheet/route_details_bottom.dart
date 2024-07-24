@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/alert_dialogs/selection_alert_dialg.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
@@ -51,8 +52,8 @@ class RouteDetailsBottom extends StatelessWidget {
                     Container(
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.add_box,
+                          SvgPicture.asset(
+                            advanceCalender,
                             color: dividerColor,
                           ),
                           smallText(
