@@ -1,14 +1,22 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/controllers/aler_dialog_providers.dart';
+import 'package:ride_app/controllers/auth_provider.dart';
+import 'package:ride_app/controllers/role_selection_provider.dart';
+import 'package:ride_app/controllers/shedule_ride_provider.dart';
+import 'package:ride_app/controllers/zego_cloud_provider.dart';
 import 'package:ride_app/views/on_boarding/on_borading_screen.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'call_screen.dart';
+import 'controllers/become_driver_controller.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
-
 
 
 // Assuming your existing imports
@@ -16,27 +24,28 @@ final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  String? savedName = prefs.getString('name');
-  String? savedId = prefs.getString('id');
-  String? savedInviteId = prefs.getString('inviteId');
-  // Conditionally decide where to navigate
-  Widget initialRoute = savedName != null && savedId != null && savedInviteId != null
-      ? CallScreen(callerName: savedName, userId: savedId, inviteId: savedInviteId)
-      : MyHomePage(title: 'Flutter Demo Home Page');
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
-  ZegoUIKit().initLog().then((value) {
-    ZegoUIKitPrebuiltCallInvitationService().useSystemCallingUI(
-      [ZegoUIKitSignalingPlugin()],
-    );
-    runApp(MyApp(navigatorKey: navigatorKey, initialRoute: initialRoute));
-  });
+  ZegoUIKit().initLog().then((value) {ZegoUIKitPrebuiltCallInvitationService().useSystemCallingUI([ZegoUIKitSignalingPlugin()],);});
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ScheduleRideProvider()),
+        ChangeNotifierProvider(create: (_) => RoleSelectionProvider()),
+        ChangeNotifierProvider(create: (_) => AlertDialogProviders()),
+        ChangeNotifierProvider(create: (_) => ZegoCloudProvider()),
+        ChangeNotifierProvider(create: (_) => BecomeDriverProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
+      ],
+      child: MyApp(navigatorKey: navigatorKey,),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   final GlobalKey<NavigatorState> navigatorKey;
-  final Widget initialRoute;
-  const MyApp({required this.navigatorKey, required this.initialRoute});
+  //final Widget initialRoute;
+  const MyApp({super.key, required this.navigatorKey, });
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +53,16 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       title: 'Flutter Demo',
         theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            iconTheme: IconThemeData(color: primaryTextColor),
+            elevation: 0,
+            backgroundColor:Colors.transparent,
+          ),
+          useMaterial3: false,
           fontFamily: 'Nunito Sans',
-        // Define the default brightness and colors.
-        brightness: Brightness.light,
-        primaryColor: Colors.white,
-        colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.deepPurple,
-        primary: Colors.deepPurple,
-        secondary: Colors.deepPurpleAccent,
-    ),
-    scaffoldBackgroundColor: Colors.white, ),
+          scaffoldBackgroundColor: Colors.transparent, ),
 
-    home: OnboardingScreen(),
+    home: const OnboardingScreen(),
     );
   }
 }
@@ -87,23 +94,23 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             TextFormField(
               controller: name,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter Name ',
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               controller: id,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter your id ',
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               controller: inviteId,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Other person id',
               ),
             ),
@@ -123,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
                 );
               },
-              child: Text('Proceed for the calling'),
+              child: const Text('Proceed for the calling'),
             ),
           ],
         ),

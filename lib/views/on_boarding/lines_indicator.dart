@@ -4,7 +4,7 @@ class LineIndicator extends StatelessWidget {
   final int itemCount;
   final int currentIndex;
 
-  LineIndicator({
+  const LineIndicator({super.key, 
     required this.itemCount,
     required this.currentIndex,
   });
@@ -15,7 +15,7 @@ class LineIndicator extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(itemCount, (index) {
         return Container(
-          margin: EdgeInsets.symmetric(horizontal: 4.0),
+          margin: const EdgeInsets.symmetric(horizontal: 4.0),
           height: 3,
           width: MediaQuery.sizeOf(context).width * 0.18,
           color: currentIndex == index ? Colors.black : Colors.grey,

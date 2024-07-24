@@ -8,6 +8,8 @@ import 'lines_indicator.dart';
 import 'onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -18,28 +20,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   List<Widget> _buildPages() {
     return [
-      OnboardingPage(
+      const OnboardingPage(
         imagePath:calender,
         title: 'Worem ipsum dolor si amnet ,',
         title2: 'consectutor adipiscing',
         description: 'No matter how devastated you may be by your own ',
         description2: 'weakness set your heart ablaze',
       ),
-      OnboardingPage(
+      const OnboardingPage(
         imagePath:message,
         title: 'Worem ipsum dolor si amnet ,',
         title2: 'consectutor adipiscing',
         description: 'No matter how devastated you may be by your own ',
         description2: 'weakness set your heart ablaze',
       ),
-      OnboardingPage(
+      const OnboardingPage(
         imagePath: bookMark,
         title: 'Worem ipsum dolor si amnet ,',
         title2: 'consectutor adipiscing',
         description: 'No matter how devastated you may be by your own ',
         description2: 'weakness set your heart ablaze',
       ),
-      OnboardingPage(
+      const OnboardingPage(
         imagePath:card,
         title: 'Worem ipsum dolor si amnet ,',
         title2: 'consectutor adipiscing',
@@ -58,6 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -105,32 +108,41 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 _currentIndex < 3
                     ? GestureDetector(
                   onTap: (){
-                    Navigator.push(context, CupertinoPageRoute(builder: (conetxt)=> SelectRole()));
+                    Navigator.push(context, CupertinoPageRoute(builder: (conetxt)=> const SelectRole()));
                   },
                         child: Container(
-                          margin: EdgeInsets.all(10),
+                          margin: const EdgeInsets.all(10),
                             child: normalText(title: 'Skip', color: Colors.black,weight: FontWeight.w400)))
-                    : Container(
+                    : const SizedBox(
                         height: 1,
                         width: 1,
                       ),
                 Row(
                   children: [
-                    CustomButton(
+                    _currentIndex < 3 ? CustomButton(
                       borderRadius: 30,
                       width: 0.3,
                       onTap: () {
                         if (_currentIndex < 3) {
                           _pageController.nextPage(
-                            duration: Duration(milliseconds: 300),
+                            duration: const Duration(milliseconds: 300),
                             curve: Curves.easeIn,
                           );
                         } else {
-                         Navigator.push(context, CupertinoPageRoute(builder: (conetxt)=> SelectRole()));
+                         Navigator.push(context, CupertinoPageRoute(builder: (conetxt)=> const SelectRole()));
                         }
                       },
                       title: _currentIndex < 3 ? 'Next' : 'Register',
-                    ),
+                    ) : RegisterButton(title: 'Register', onTap: (){
+                      if (_currentIndex < 3) {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
+                      } else {
+                        Navigator.push(context, CupertinoPageRoute(builder: (conetxt)=> const SelectRole()));
+                      }
+                    }) ,
                   ],
                 ),
               ],
