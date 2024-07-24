@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 // button Colors
 const Color buttonColor = Color(0xff1F2937);
 const Color favoriteButtonColor = Color(0xfff7f8f9);
+const Color redButtonColor = Color(0xffffefed);
 
 
 // text colors

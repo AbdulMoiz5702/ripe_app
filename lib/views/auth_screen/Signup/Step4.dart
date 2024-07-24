@@ -120,11 +120,10 @@ class Step4 extends StatelessWidget {
                       title: 'Continue',
                       onTap: () {
                         Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) => Step5()));
+                            MaterialPageRoute(builder: (context) => Step5()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                     CustomSized(height: 0.02),
                     dividerRow(context: context),
@@ -135,15 +134,14 @@ class Step4 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Already a member ?  ', color: Colors.black),
-                          smallText(title: 'Login', color: Colors.blue),
+                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

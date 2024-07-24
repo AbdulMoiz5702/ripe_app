@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ride_app/consts/images_path.dart';
 import '../../consts/colors.dart';
 import '../../controllers/become_driver_controller.dart';
 import '../../resubale_widgets/Bg_widget.dart';
@@ -129,14 +130,16 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                       hint: 'Car insurance number',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.commute_outlined,
+                      iconPath: hash,
                     ),
                     CustomSized(height: 0.023),
                     CustomLeadingTextField(
+                      isHintChange: true,
+                      leadingText: 'Date of issue',
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Date of issue',
+                      hint: 'dd/mm/yyyy',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,
@@ -145,10 +148,12 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                       height: 0.023,
                     ),
                     CustomLeadingTextField(
+                      isHintChange: true,
+                      leadingText: 'Date of expire',
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Date of expire',
+                      hint: 'dd/mm/yyyy',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,

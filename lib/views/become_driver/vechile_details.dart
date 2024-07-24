@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/views/become_driver/Car_insurance_details.dart';
 import '../../consts/colors.dart';
+import '../../consts/images_path.dart';
 import '../../controllers/become_driver_controller.dart';
 import '../../resubale_widgets/Bg_widget.dart';
 import '../../resubale_widgets/CustomButton.dart';
@@ -129,7 +130,7 @@ class VehicleDetails extends StatelessWidget {
                       hint: 'Car Number',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.commute_outlined,
+                      iconPath: carSimple,
                     ),
                     CustomSized(height: 0.023),
                     CustomLeadingTextField(
@@ -139,16 +140,18 @@ class VehicleDetails extends StatelessWidget {
                       hint: 'Car ownership form Number',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.calendar_today_outlined,
+                      iconPath: hash,
                     ),
                     CustomSized(
                       height: 0.023,
                     ),
                     CustomLeadingTextField(
+                      isHintChange: true,
+                      leadingText: 'Date of expire',
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Date of expire',
+                      hint: 'dd/mm/yyyy',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,
@@ -161,7 +164,6 @@ class VehicleDetails extends StatelessWidget {
                         provider.pickImage(imageType:'ownerShipFormImage');
                       },imagePath: provider.ownerShipFormImage.toString(),);
                     }),
-
                     CustomSized(height: 0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

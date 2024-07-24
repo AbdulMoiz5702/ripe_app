@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/role_selection_provider.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
@@ -19,7 +20,6 @@ class SelectRole extends StatelessWidget {
   const SelectRole({super.key});
   @override
   Widget build(BuildContext context) {
-    print('build');
     return BgWidget(
       child: Scaffold(
         appBar: AppBar(
@@ -66,7 +66,7 @@ class SelectRole extends StatelessWidget {
                     CustomSized(
                       height: 0.020,
                     ),
-                    largeText(title: 'Choose Your Role',color: Colors.black),
+                    largeText(title: 'Choose Your Role',),
                     Consumer<RoleSelectionProvider>(builder: (context,provider,_){
                       print('consumer');
                       return Row(
@@ -74,26 +74,26 @@ class SelectRole extends StatelessWidget {
                         children: [
                           RoleSelectionConatiner(title: 'Driver',onTap: (){
                             provider.selectDriver();
-                          },description: 'if you want to become the Driver tap on the driver button so you can fill the details',imagePath: driverSvg,isSelected: provider.driverSelection,),
+                          },description: 'If you’re looking to offer rides and share your journey with others.',imagePath: driverSvg,isSelected: provider.driverSelection,),
                           RoleSelectionConatiner(title: 'Passenger',onTap: (){
                             provider.selectPassenger();
-                          },description: 'if you want to become the Driver tap on the driver button so you can fill the details',imagePath: passengerSvg,isSelected: provider.passengerSelection,),
+                          },description: 'If you need a ride and want to find a fellow traveler.',imagePath: passengerSvg,isSelected: provider.passengerSelection,),
                         ],
                       );
                     }),
                     CustomButton(title: 'Next', onTap: (){
-                      Navigator.push(context, CupertinoPageRoute(builder: (context)=> Step1()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Step1()));
                     },borderRadius: 30,width: 1,),
                     CustomSized(height: 0.03),
                     GestureDetector(
                       onTap: (){
-                        Navigator.push(context, CupertinoPageRoute(builder: (context)=> LoginScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(title: 'Already a member ?  ',color: Colors.black),
-                          smallText(title: 'Login',color: Colors.blue),
+                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

@@ -65,8 +65,12 @@ class RoleSelectionConatiner extends StatelessWidget {
             CustomSized(
               height: 0.01,
             ),
-            smallText(
-                title: description, color: Colors.black38, textSize: 10.0),
+            Expanded(child: Text(description,style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w400,
+              color: primaryTextColor,
+              fontFamily:'Nunito Sans',
+            ),)),
             CustomSized(
               height: 0.02,
             ),

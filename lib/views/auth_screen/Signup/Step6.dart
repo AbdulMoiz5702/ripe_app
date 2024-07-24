@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/alert_dialogs/selection_alert_dialg.dart';
 import 'package:ride_app/views/auth_screen/Signup/Step7.dart';
 import '../../../consts/images_path.dart';
 import '../../../main.dart';
@@ -19,22 +20,13 @@ class Step6 extends StatefulWidget {
 
 class _Step6State extends State<Step6> {
 
-  void _showCustomAlertDialog(BuildContext context) {
-    Future.delayed(Duration(seconds: 1),(){
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return CustomAlertDialog();
-        },
-      );
-    });
-  }
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _showCustomAlertDialog(context);
+    AlertDialogClass().showCustomAlertDialog(context);
   }
 
   @override
@@ -102,20 +94,19 @@ class _Step6State extends State<Step6> {
                         fit:BoxFit.cover,
                       ),
                     ),
-                    CustomSized(height: 0.12,),
+                    CustomSized(height: 0.15,),
                     CustomButton(
                       onBoard: false,
                       title: 'Book a ride',
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => Step7(
                                 )));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                   ],
                 ),

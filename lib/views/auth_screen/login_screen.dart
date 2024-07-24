@@ -101,7 +101,7 @@ class LoginScreen extends StatelessWidget {
                       onTap: (){
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => ForgotStep1()));
                       },
                         child: smallText(title: 'Forgot password ?', color: lightPrimaryTextColor,textSize: 13.0))),
@@ -111,12 +111,11 @@ class LoginScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.pushReplacement(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => MainBottomScreen()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                       onBoard: false,
                     ),
                     CustomSized(height: 0.03),
@@ -151,15 +150,14 @@ class LoginScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Not a member ?  ', color: Colors.black),
-                          smallText(title: 'Register now', color: Colors.blue),
+                          smallText(title: 'Not a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Register now',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

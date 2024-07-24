@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
+import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
@@ -89,14 +91,16 @@ class Step2 extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Checkbox(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6)),
-                            activeColor: Colors.lightBlueAccent,
-                            value: true,
-                            onChanged: (value) {
-                              value != value;
-                            }),
+                        Consumer<AuthProvider>(builder: (context,provider,_){
+                          return Checkbox(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6)),
+                              activeColor: Colors.lightBlueAccent,
+                              value: provider.isSelected,
+                              onChanged: (value) {
+                                provider.changeValue(value);
+                              });
+                        }),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -124,11 +128,10 @@ class Step2 extends StatelessWidget {
                       title: 'Continue',
                       onTap: () {
                         Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) => Step3()));
+                            MaterialPageRoute(builder: (context) => Step3()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                     CustomSized(height: 0.02),
                     dividerRow(context: context),
@@ -139,15 +142,14 @@ class Step2 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Already a member ?  ', color: Colors.black),
-                          smallText(title: 'Login', color: Colors.blue),
+                          smallText(title: 'Already a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

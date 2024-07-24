@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/become_driver_controller.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
@@ -28,7 +29,7 @@ class LicenseDetailsScreen extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.88,
+            height: MediaQuery.sizeOf(context).height * 0.89,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -38,7 +39,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                 )
             ),
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(14.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -127,10 +128,10 @@ class LicenseDetailsScreen extends StatelessWidget {
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Full Name',
+                      hint: 'Driver\'s license number',
                       onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.recent_actors_outlined,
+                      iconPath:driverLicenceNumber,
                     ),
                     CustomSized(height: 0.02),
                     CustomTextField(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:ride_app/alert_dialogs/selection_alert_dialg.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
@@ -13,6 +15,7 @@ class RouteDetailsBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller = Provider.of<ScheduleRideProvider>(context,listen: false);
     return Container(
       padding: EdgeInsets.all(10),
       child: Column(
@@ -113,11 +116,16 @@ class RouteDetailsBottom extends StatelessWidget {
                     ],
                   ),
                 ),
-                largeText(
-                    title: 'Compare fare with our competitors',
-                    textSize: 13.0,
-                    weight: FontWeight.w700,
-                    color: checkBoxColor),
+                GestureDetector(
+                  onTap: (){
+                    AlertDialogClass().showFareComparisonAlertDialog(context);
+                  },
+                  child: largeText(
+                      title: 'Compare fare with our competitors',
+                      textSize: 13.0,
+                      weight: FontWeight.w700,
+                      color: checkBoxColor),
+                ),
                 CustomSized(
                   height: 0.02,
                 ),
@@ -128,16 +136,13 @@ class RouteDetailsBottom extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Tap to view route details',
+                            '  Tap to view route details',
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w700,
                               color: primaryTextColor,
                               fontFamily: 'Nunito Sans',
                             ),
-                          ),
-                          CustomSized(
-                            width: 0.02,
                           ),
                           IconButton(
                             onPressed: () {
@@ -248,65 +253,80 @@ class RouteDetailsBottom extends StatelessWidget {
                     ],
                   ),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Row(
-                      children: [
-                        Icon(
-                          Icons.credit_card_outlined,
-                          size: 20,
-                          color: checkBoxColor,
+                Consumer<ScheduleRideProvider>(builder: (context,provider,_){
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      GestureDetector(
+                        onTap: (){
+                          provider.openCreditCardBottomSheet(context: context);
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(
+                              Icons.credit_card_outlined,
+                              size: 20,
+                              color: checkBoxColor,
+                            ),
+                            CustomSized(
+                              width: 0.02,
+                            ),
+                            Text(
+                              'Credit card',
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w700,
+                                color: primaryTextColor,
+                                fontFamily: 'Nunito Sans',
+                              ),
+                            ),
+                            CustomSized(
+                              width: 0.02,
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              size: 20,
+                              color: blackColor,
+                            ),
+                          ],
                         ),
-                        CustomSized(
-                          width: 0.02,
-                        ),
-                        Text(
-                          'Credit card',
-                          style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w700,
-                            color: primaryTextColor,
-                            fontFamily: 'Nunito Sans',
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          provider.openAiSuggestedRouteBottomSheet(context);
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: MediaQuery.sizeOf(context).height * 0.06,
+                          width: MediaQuery.sizeOf(context).width * 0.5,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            border: Border.all(color: otpColor),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.asset(provider.iconsPath),
+                              smallText(
+                                  title: provider.title,
+                                  weight: FontWeight.w700,
+                                  color: primaryTextColor)
+                            ],
                           ),
                         ),
-                        CustomSized(
-                          width: 0.02,
-                        ),
-                        Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          size: 20,
-                          color: blackColor,
-                        ),
-                      ],
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: MediaQuery.sizeOf(context).height * 0.06,
-                      width: MediaQuery.sizeOf(context).width * 0.5,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: otpColor),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.smart_toy_outlined),
-                          smallText(
-                              title: ' AI suggested route',
-                              weight: FontWeight.w700,
-                              color: primaryTextColor)
-                        ],
-                      ),
-                    )
-                  ],
-                ),
+                      )
+                    ],
+                  );
+                }),
                 CustomSized(
                   height: 0.02,
                 ),
                 CustomButton(
                   title: 'Search for riders',
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pop(context);
+                    controller.openSearchForRiderBottom(context);
+                  },
                   onBoard: false,
                   borderRadius: 30,
                   width: 1,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
+import 'package:ride_app/resubale_widgets/cutom_leading%20text_feild.dart';
 import 'package:ride_app/views/auth_screen/login_screen.dart';
 
 import '../../../resubale_widgets/Bg_widget.dart';
@@ -84,7 +85,7 @@ class ForgotStep1 extends StatelessWidget {
                     CustomSized(
                       height: 0.02,
                     ),
-                    CustomTextField(
+                    CustomLeadingTextField(
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
@@ -103,12 +104,11 @@ class ForgotStep1 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => ForgotStep2()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                     CustomSized(
                       height: 0.02,
@@ -117,14 +117,14 @@ class ForgotStep1 extends StatelessWidget {
                       onTap: () {
                         Navigator.pushReplacement(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => LoginScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Go back to', color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: '   Login', color:lightPrimaryTextColor),
+                          smallText(title: 'Go back to',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: '   Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
@@ -103,12 +104,12 @@ class Step5 extends StatelessWidget {
                       children: [
                         smallText(
                             title: '[ 1:00 ] ',
-                            color: Colors.black,
-                            weight: FontWeight.w500),
+                            color: primaryTextColor,
+                        ),
                         smallText(
                             title: 'Resend code',
-                            color: Colors.blue,
-                            weight: FontWeight.w500),
+                            color: checkBoxColor,
+                        ),
                       ],
                     ),
                     CustomSized(
@@ -119,12 +120,11 @@ class Step5 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => Step6()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                   ],
                 ),

@@ -45,10 +45,11 @@ class Step7 extends StatelessWidget {
                 textSize: 18.0,
               ),
             ),
-            CustomSized(height: 0.004,),
+            CustomSized(height: 0.02,),
             Align(
                 alignment: Alignment.centerLeft,
                 child: smallText(title: 'Our app uses your location to:',color: primaryTextColor)),
+            CustomSized(height: 0.005,),
             AllowAccessLocationText(
               pointOne: 'Match You with Nearby Drivers: ',
               pointTwo: 'Knowing your',
@@ -74,12 +75,11 @@ class Step7 extends StatelessWidget {
               onTap: () {
                 Navigator.pushReplacement(
                     context,
-                    CupertinoPageRoute(
+                    MaterialPageRoute(
                         builder: (context) => MainBottomScreen()));
               },
               borderRadius: 30,
               width: 1,
-              height: 0.07,
             ),
             CustomSized(height: 0.04),
             GestureDetector(

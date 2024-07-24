@@ -8,6 +8,9 @@ import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
+import 'custom_alert_dialog.dart';
+import 'fare_comparison_alert_diloag.dart';
+
 
 
 class AlertDialogClass {
@@ -24,6 +27,32 @@ class AlertDialogClass {
         );
       },
     );
+  }
+
+  void showFareComparisonAlertDialog(BuildContext context){
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          contentPadding: EdgeInsets.all(5),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          content:FareComparisonAlertDialog(),
+        );
+      },
+    );
+  }
+
+  void showCustomAlertDialog(BuildContext context) {
+    Future.delayed(Duration(seconds: 1),(){
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomAlertDialog();
+        },
+      );
+    });
   }
 
 }

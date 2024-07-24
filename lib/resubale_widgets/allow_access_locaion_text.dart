@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
+import 'Custom_Sized.dart';
+
 
 class AllowAccessLocationText extends StatelessWidget {
   final String pointOne ;
@@ -34,9 +36,12 @@ class AllowAccessLocationText extends StatelessWidget {
                     Text(pointTwo,style: TextStyles.bulletPoint,),
                   ],
                 ),
+                CustomSized(height: 0.002,),
                 Text(pointThree,style: TextStyles.bulletPoint,),
+                CustomSized(height: 0.002,),
                 Text(pointFour,style: TextStyles.bulletPoint,),
-                pointFive == null ?Container(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyles.bulletPoint,),
+                CustomSized(height: 0.002,),
+                pointFive == null ? Container(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyles.bulletPoint,),
               ],
             )
           ],

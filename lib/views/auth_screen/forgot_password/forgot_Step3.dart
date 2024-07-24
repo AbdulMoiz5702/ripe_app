@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ride_app/consts/images_path.dart';
+import 'package:ride_app/resubale_widgets/cutom_leading%20text_feild.dart';
 import 'package:ride_app/views/auth_screen/login_screen.dart';
 
 import '../../../consts/colors.dart';
@@ -83,7 +84,7 @@ class ForgotStep3 extends StatelessWidget {
                     CustomSized(
                       height: 0.02,
                     ),
-                    CustomTextField(
+                    CustomLeadingTextField(
                       isPassword: true,
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
@@ -96,7 +97,7 @@ class ForgotStep3 extends StatelessWidget {
                     CustomSized(
                       height: 0.02,
                     ),
-                    CustomTextField(
+                    CustomLeadingTextField(
                       isPassword: true,
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
@@ -115,12 +116,11 @@ class ForgotStep3 extends StatelessWidget {
                       onTap: () {
                         Navigator.pushReplacement(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => LoginScreen()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                     CustomSized(
                       height: 0.02,
@@ -129,14 +129,14 @@ class ForgotStep3 extends StatelessWidget {
                       onTap: () {
                         Navigator.pushReplacement(
                             context,
-                            CupertinoPageRoute(
+                            MaterialPageRoute(
                                 builder: (context) => LoginScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Go back to', color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: '   Login', color:lightPrimaryTextColor),
+                          smallText(title: 'Go back to',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: '   Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

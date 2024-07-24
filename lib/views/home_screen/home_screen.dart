@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               CustomSized(
                 height: 0.06,
               ),
-              Image(image: AssetImage(brandLogo)),
+              SvgPicture.asset(brandLogoSvg),
               CustomSized(
                 height: 0.03,
               ),

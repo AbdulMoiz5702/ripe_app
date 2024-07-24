@@ -173,4 +173,21 @@ var exploreScreenIcons = [
 ];
 
 
+var creditCardSheetIcon = [
+  creditCardSvg,
+  payPalSvg,
+];
+
+var creditCardSheetText = [
+  'Credit card',
+  'Paypal',
+];
+
+var compatetorsIcons = [
+  uberLogoSvg,
+  brandLogoSvg,
+  ylaSvg
+];
+
+
 
