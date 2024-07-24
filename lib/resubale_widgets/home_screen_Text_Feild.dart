@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
-import 'package:ride_app/consts/images_path.dart';
 
 class HomeScreenTextField extends StatelessWidget {
-  HomeScreenTextField({
+  const HomeScreenTextField({super.key, 
     this.autoFocus = true,
     required this.controller,
     this.keyBoardType = TextInputType.text,
@@ -33,7 +32,7 @@ class HomeScreenTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 12,right: 2,bottom: 2,top: 2),
+      padding: const EdgeInsets.only(left: 12,right: 2,bottom: 2,top: 2),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
@@ -47,7 +46,7 @@ class HomeScreenTextField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmittedValue,
         validator: onValidator,
         keyboardType: keyBoardType,
-        style: TextStyle(color: Colors.black,
+        style: const TextStyle(color: Colors.black,
           fontFamily: 'Nunito Sans',),
         decoration: InputDecoration(
           icon: Image.asset(iconPath, height: 25, width: 25),

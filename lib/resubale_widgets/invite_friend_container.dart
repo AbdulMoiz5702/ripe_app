@@ -46,11 +46,11 @@ class HomeScreenInviteButton extends StatelessWidget {
                   ),
                   child:Image(image: AssetImage(imagePath),),
                 ),
-                CustomSized(height: 0.01,),
+                const CustomSized(height: 0.01,),
                 largeText(textSize: 18.0,title: text,color: whiteColor),
-                CustomSized(height: 0.009,),
+                const CustomSized(height: 0.009,),
                 smallText(title: smallOne,textSize: 11.0,color: whiteColor),
-                CustomSized(height: 0.009,),
+                const CustomSized(height: 0.009,),
                 smallText(title: smallSecond,textSize: 11.0,color: whiteColor)
               ],
             )

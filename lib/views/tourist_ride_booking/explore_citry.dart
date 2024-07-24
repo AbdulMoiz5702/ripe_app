@@ -19,10 +19,10 @@ class _ExploreCityState extends State<ExploreCity> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(Duration(milliseconds: 300), () {
+      Future.delayed(const Duration(milliseconds: 300), () {
         _draggableScrollableController.animateTo(
           0.5, // Desired initial child size
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
         );
       });
@@ -34,7 +34,7 @@ class _ExploreCityState extends State<ExploreCity> {
     return Scaffold(
       backgroundColor: Colors.white12,
       appBar: AppBar(
-        leading: CustomLeading(
+        leading: const CustomLeading(
           isHome: true,
         ),
         actions: [
@@ -43,7 +43,7 @@ class _ExploreCityState extends State<ExploreCity> {
       ),
       body: Stack(
         children: [
-          Center(
+          const Center(
             child: Text('Map and other content here'),
           ),
           DraggableScrollableSheet(
@@ -61,9 +61,9 @@ class _ExploreCityState extends State<ExploreCity> {
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20)),
                 ),
                 child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   controller: scrollController,
-                  child: BottomSheetContent(),
+                  child: const BottomSheetContent(),
                 ),
               );
             },

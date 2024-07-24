@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:flutter/material.dart';
 

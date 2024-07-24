@@ -4,6 +4,8 @@ import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
 class CustomAlertDialog extends StatelessWidget {
+  const CustomAlertDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -11,14 +13,14 @@ class CustomAlertDialog extends StatelessWidget {
       child: Dialog(
         backgroundColor: alertDialogBackGroundColor,
         insetAnimationCurve: Curves.linear,
-        insetAnimationDuration: Duration(seconds:2),
+        insetAnimationDuration: const Duration(seconds:2),
         insetPadding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.57,left: 8,right: 8) ,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Container(
           alignment: Alignment.center,
-          padding: EdgeInsets.all(9),
+          padding: const EdgeInsets.all(9),
           height: MediaQuery.sizeOf(context).height * 0.12,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -28,7 +30,7 @@ class CustomAlertDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.all(3),
+                    padding: const EdgeInsets.all(3),
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
@@ -41,9 +43,9 @@ class CustomAlertDialog extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       smallText(title: 'Your profile has been verified ',color: alertTextColor),
-                      CustomSized(height: 0.002,),
+                      const CustomSized(height: 0.002,),
                       smallText(title: 'successfully. You may now enjoy',color: alertTextColor),
-                      CustomSized(height: 0.002,),
+                      const CustomSized(height: 0.002,),
                       smallText(title: 'your ride.',color: alertTextColor),
                     ],
                   ),

@@ -7,6 +7,8 @@ import '../consts/colors.dart';
 import '../consts/images_path.dart';
 
 class RideDetailsScreen extends StatefulWidget {
+  const RideDetailsScreen({super.key});
+
   @override
   _RideDetailsScreenState createState() => _RideDetailsScreenState();
 }
@@ -22,13 +24,13 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomSized(
+            const CustomSized(
               height: 0.010,
             ),
             smallText(
               title: '  Vehicle details',
             ),
-            CustomSized(
+            const CustomSized(
               height: 0.010,
             ),
             Row(
@@ -49,13 +51,13 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                       shape: BoxShape.circle,
                       color: checkBoxColor,
                     ),
-                    child: Icon(Icons.diamond_outlined,color: whiteColor,),
+                    child: const Icon(Icons.diamond_outlined,color: whiteColor,),
                   ),
                 ),
                 largeText(title: 'Honda - Grey Corolla', textSize: 14.0),
                 Container(
-                  margin: EdgeInsets.only(right: 5),
-                  padding: EdgeInsets.all(15),
+                  margin: const EdgeInsets.only(right: 5),
+                  padding: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: favoriteButtonColor,
@@ -66,20 +68,20 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                 ),
               ],
             ),
-            CustomSized(
+            const CustomSized(
               height: 0.010,
             ),
-            Container(
+            SizedBox(
               height: 100,
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 controller: scrollController,
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemCount: vechile.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.all(2),
+                    margin: const EdgeInsets.all(2),
                     width: MediaQuery.of(context).size.width * 0.3, // Adjust the width as needed
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -92,7 +94,7 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                 },
               ),
             ),
-            CustomSized(
+            const CustomSized(
               height: 0.010,
             ),
             ScrollIndicator(
@@ -102,12 +104,12 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
               indicatorWidth: MediaQuery.of(context).size.width * 0.3,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: greyColor),
+                  color: lightgreyColor),
               indicatorDecoration: BoxDecoration(
                   color: otpColor,
                   borderRadius: BorderRadius.circular(10)),
             ),
-            CustomSized(
+            const CustomSized(
               height: 0.010,
             ),
           ],

@@ -21,7 +21,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     super.initState();
     // Show the tooltip after a short delay
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Future.delayed(Duration(seconds: 1), () {
+      Future.delayed(const Duration(seconds: 1), () {
         final dynamic tooltip = _toolTipKey.currentState;
         tooltip?.ensureTooltipVisible();
       });
@@ -57,7 +57,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   ),
                 );
               },
-              icon: Icon(Icons.settings, color: iconColor),
+              icon: const Icon(Icons.settings, color: iconColor),
             ),
           ),
         ],
@@ -73,7 +73,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
             ),
           ),
           largeText(title: 'No notifications yet', textSize: 17.0),
-          CustomSized(height: 0.02),
+          const CustomSized(height: 0.02),
           smallText(title: 'Qorem ipsum dolor sit amet, consectetur'),
           smallText(title: ' adipiscing elit. Nunc vulputate libero et velit'),
           smallText(title: ' interdum, ac aliquet odio mattis.'),

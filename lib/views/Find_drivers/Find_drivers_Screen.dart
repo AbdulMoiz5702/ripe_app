@@ -6,7 +6,6 @@ import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
 import '../../consts/images_path.dart';
-import '../../resubale_widgets/Custom_Sized.dart';
 import '../../resubale_widgets/driver_list_tile.dart';
 import '../../resubale_widgets/home_screen_Text_Feild.dart';
 import 'find_rider_detail_screen.dart';
@@ -19,7 +18,7 @@ class FindDriversScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
-        leading: CustomLeading(
+        leading: const CustomLeading(
           isHome: true,
         ),
         title: largeText(title: 'Find a driver', textSize: 20.0),
@@ -33,7 +32,9 @@ class FindDriversScreen extends StatelessWidget {
                 controller: controller,
                 hintColor: primaryTextColor,
                 hint: 'Search a driver',
-                onValidator: (value) {},
+                onValidator: (value) {
+                  return null;
+                },
                 onFieldSubmittedValue: (value) {},
                 iconPath: searchBlack),
           ),

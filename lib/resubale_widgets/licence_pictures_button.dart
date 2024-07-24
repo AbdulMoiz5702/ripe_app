@@ -9,7 +9,7 @@ class LicencePicturesButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
   final String  ? imagePath;
-  const LicencePicturesButton({required this.title,required this.onTap,this.imagePath});
+  const LicencePicturesButton({super.key, required this.title,required this.onTap,this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class LicencePicturesButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             smallText(title: title, textSize: 12.0,weight: FontWeight.w700),
-            CustomSized(height: 0.008,),
+            const CustomSized(height: 0.008,),
             Container(
               height: MediaQuery.sizeOf(context).height * 0.1,
               width: MediaQuery.sizeOf(context).width * 1,
@@ -38,15 +38,15 @@ class LicencePicturesButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(Icons.file_upload_outlined,color: dividerColor,size: 35,),
+                  const Icon(Icons.file_upload_outlined,color: dividerColor,size: 35,),
                   smallText(title: 'Upload file(jpg,png,pdf)', textSize: 11.0,),
                 ],
               ),
             ),
-            CustomSized(height: 0.002,),
+            const CustomSized(height: 0.002,),
             Row(
               children: [
-                Icon(Icons.error,size: 20,),
+                const Icon(Icons.error,size: 20,),
                 smallText(title: ' Max file size:2MB', textSize: 11.0,),
               ],
             ),

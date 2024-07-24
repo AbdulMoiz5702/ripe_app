@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
@@ -9,7 +8,7 @@ class NotificationListTile extends StatelessWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
 
-  NotificationListTile({
+  const NotificationListTile({super.key, 
     required this.title,
     required this.value,
     required this.onChanged,

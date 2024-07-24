@@ -10,11 +10,11 @@ class CustomFloatingButton extends StatelessWidget {
     return Container(
       height: 50,
       width: 50,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: checkBoxColor
       ),
-      child: Center(child: Image(image: AssetImage(bottomArrow)),),
+      child: const Center(child: Image(image: AssetImage(bottomArrow)),),
     );
   }
 }

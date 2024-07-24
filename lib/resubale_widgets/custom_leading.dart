@@ -8,7 +8,7 @@ import '../consts/colors.dart';
 class CustomLeading extends StatelessWidget {
   final bool isHome ;
   final IconData iconData ;
-  const CustomLeading({this.isHome = false,this.iconData = Icons.arrow_back});
+  const CustomLeading({super.key, this.isHome = false,this.iconData = Icons.arrow_back});
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +29,14 @@ class CustomLeading extends StatelessWidget {
 
 class NotificationButton extends StatelessWidget {
   final VoidCallback onTap;
-  const NotificationButton({required this.onTap});
+  const NotificationButton({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         margin: const EdgeInsets.all(10),
         decoration:  BoxDecoration(
           shape: BoxShape.circle,

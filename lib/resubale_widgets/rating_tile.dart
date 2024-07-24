@@ -11,7 +11,7 @@ class ReviewItem extends StatelessWidget {
   final double rating;
   final String reviewText;
 
-  ReviewItem({
+  const ReviewItem({super.key, 
     required this.avatarUrl,
     required this.name,
     required this.timestamp,
@@ -36,7 +36,7 @@ class ReviewItem extends StatelessWidget {
                       backgroundImage: AssetImage(avatarUrl),
                       radius: 25,
                     ),
-                    CustomSized(width: 0.02,),
+                    const CustomSized(width: 0.02,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -44,7 +44,7 @@ class ReviewItem extends StatelessWidget {
                           title: name,
                           textSize: 14.0,
                         ),
-                        CustomSized(height: 0.01,),
+                        const CustomSized(height: 0.01,),
                         smallText(
                           title: timestamp,
                           textSize: 11.0,
@@ -54,7 +54,7 @@ class ReviewItem extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 40),
+                  margin: const EdgeInsets.only(bottom: 40),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -73,7 +73,7 @@ class ReviewItem extends StatelessWidget {
                           // Do nothing, read-only
                         },
                       ),
-                      CustomSized(width: 0.02,),
+                      const CustomSized(width: 0.02,),
                       smallText(
                         title : rating.toString(),
                         color: primaryTextColor

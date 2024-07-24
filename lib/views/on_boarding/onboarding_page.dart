@@ -10,7 +10,7 @@ class OnboardingPage extends StatelessWidget {
   final String description;
   final String description2;
 
-  OnboardingPage({
+  const OnboardingPage({super.key, 
     required this.imagePath,
     required this.title,
     required this.title2,
@@ -26,7 +26,7 @@ class OnboardingPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             height: 330.0,
             width: 450.0,
             decoration: BoxDecoration(
@@ -34,11 +34,11 @@ class OnboardingPage extends StatelessWidget {
             ),
           ),
           largeText(title: title,textSize: 23.0),
-          CustomSized(height: 0.003,),
+          const CustomSized(height: 0.003,),
           largeText(title: title2,textSize: 23.0),
-          CustomSized(height: 0.01,),
+          const CustomSized(height: 0.01,),
           smallText(title: description, ),
-          CustomSized(height: 0.003,),
+          const CustomSized(height: 0.003,),
           smallText(title: description2,),
         ],
       ),

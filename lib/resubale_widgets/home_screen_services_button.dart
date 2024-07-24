@@ -22,7 +22,7 @@ class HomeScreenServicesButton extends StatelessWidget {
         alignment: Alignment.bottomLeft,
         height: MediaQuery.sizeOf(context).height * 0.12,
         width: MediaQuery.sizeOf(context).width * 0.4,
-        margin: EdgeInsets.only(right: 8),
+        margin: const EdgeInsets.only(right: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
           image: DecorationImage(

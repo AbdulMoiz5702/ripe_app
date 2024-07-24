@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
@@ -14,7 +13,7 @@ class CarUploadedDataUnderReview extends StatelessWidget {
   Widget build(BuildContext context) {
     return BgWidget(child:Scaffold(
       appBar: AppBar(
-        leading:CustomLeading(),
+        leading:const CustomLeading(),
         backgroundColor: Colors.transparent,
       ),
       backgroundColor: Colors.transparent,
@@ -49,21 +48,21 @@ class CarUploadedDataUnderReview extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18))
                       ])),
-                  CustomSized(height: 0.02),
+                  const CustomSized(height: 0.02),
                   largeText(title: 'Thanks for waiting! We’re'),
-                  CustomSized(height: 0.003),
+                  const CustomSized(height: 0.003),
                   largeText(title: ' checking your details.'),
-                  CustomSized(height: 0.02),
+                  const CustomSized(height: 0.02),
                   smallText(title: 'We’ve collected all your data for verification'),
-                  CustomSized(height: 0.003),
+                  const CustomSized(height: 0.003),
                   smallText(title: 'purposes. It’ll take a little time for us to verify your '),
-                  CustomSized(height: 0.003),
+                  const CustomSized(height: 0.003),
                   smallText(title: 'profile. Be patient with us.'),
-                  CustomSized(height: 0.03),
-                  Align(alignment:Alignment.center,child: Image(image: AssetImage(underReview),height: MediaQuery.sizeOf(context).height * 0.25,)),
-                  CustomSized(height: 0.03),
+                  const CustomSized(height: 0.03),
+                  Align(alignment:Alignment.center,child: Image(image: const AssetImage(underReview),height: MediaQuery.sizeOf(context).height * 0.25,)),
+                  const CustomSized(height: 0.03),
                   Container(
-                    padding: EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(15),
                     height: MediaQuery.sizeOf(context).height * 0.1,
                     width: MediaQuery.sizeOf(context).width * 1,
                     decoration: BoxDecoration(
@@ -86,7 +85,7 @@ class CarUploadedDataUnderReview extends StatelessWidget {
                       ],
                     ),
                   ),
-                  CustomSized(height: 0.03),
+                  const CustomSized(height: 0.03),
                 ],
               ),
             ),

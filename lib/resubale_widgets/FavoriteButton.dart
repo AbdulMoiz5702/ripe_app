@@ -9,7 +9,7 @@ class FavoriteButton extends StatelessWidget {
   final String title ;
   final String imagePath;
   final VoidCallback  onTap ;
-  const FavoriteButton({required this.title,required this.imagePath,required this.onTap});
+  const FavoriteButton({super.key, required this.title,required this.imagePath,required this.onTap});
 
   @override
   Widget build(BuildContext context) {

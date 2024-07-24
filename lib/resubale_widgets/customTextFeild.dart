@@ -3,7 +3,7 @@ import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({
+  const CustomTextField({super.key, 
     this.isPassword = false,
     this.autoFocus = false,
     required this.controller,
@@ -31,7 +31,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 45,
       child: TextFormField(
         enabled: enable,
@@ -41,13 +41,13 @@ class CustomTextField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmittedValue,
         validator: onValidator,
         keyboardType: keyBoardType,
-        style: TextStyle(color: Colors.black,
+        style: const TextStyle(color: Colors.black,
           fontFamily: 'Nunito Sans',),
         decoration: InputDecoration(
           suffixIcon: isPassword == true ? Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(eye, height: 20, width: 20),
-          ) : Container(height:0 ,width:0 ,),
+          ) : const SizedBox(height:0 ,width:0 ,),
           isDense: true,
           prefixIcon: iconData != null
               ? Icon(iconData, color: dividerColor,size: 25,)
@@ -59,7 +59,7 @@ class CustomTextField extends StatelessWidget {
               : null),
           contentPadding: const EdgeInsets.all(8),
           hintText: hint,
-          hintStyle: TextStyle(color: Colors.black26),
+          hintStyle: const TextStyle(color: Colors.black26),
           border: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.black26),
             borderRadius: BorderRadius.circular(30),

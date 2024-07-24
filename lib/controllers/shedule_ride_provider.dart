@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
@@ -217,20 +215,20 @@ class ScheduleRideProvider extends ChangeNotifier {
                 dialHandColor: checkBoxColor,
                 dialBackgroundColor:secondaryWhiteColor,
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(color: Colors.white),
+                  side: const BorderSide(color: Colors.white),
                   borderRadius: BorderRadius.circular(16),
                 ),
-                dayPeriodColor: MaterialStateColor.resolveWith(
+                dayPeriodColor: WidgetStateColor.resolveWith(
                       (states) => Colors.white, // Set to white
                 ),
-                dayPeriodTextColor: MaterialStateColor.resolveWith(
+                dayPeriodTextColor: WidgetStateColor.resolveWith(
                       (states) => Colors.black,
                 ),
-                dayPeriodShape: RoundedRectangleBorder(
+                dayPeriodShape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.zero, // Remove the border radius
                   side: BorderSide.none, // Remove the border
                 ),
-                hourMinuteColor: MaterialStateColor.resolveWith(
+                hourMinuteColor: WidgetStateColor.resolveWith(
                       (states) => Colors.white, // Change this to white
                 ),
                 hourMinuteShape: RoundedRectangleBorder(
@@ -242,7 +240,7 @@ class ScheduleRideProvider extends ChangeNotifier {
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                dayPeriodTextStyle: TextStyle(
+                dayPeriodTextStyle: const TextStyle(
                   color: Colors.blue,
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
@@ -250,8 +248,8 @@ class ScheduleRideProvider extends ChangeNotifier {
               ),
               textButtonTheme: TextButtonThemeData(
                 style: ButtonStyle(
-                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                  foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+                  backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
                 ),
               ),
             ),
@@ -273,7 +271,7 @@ class ScheduleRideProvider extends ChangeNotifier {
   bool isSelectedTimeValid(TimeOfDay selectedTime) {
     final now = DateTime.now();
     final selectedDateTime = DateTime(now.year, now.month, now.day, selectedTime.hour, selectedTime.minute);
-    final thresholdTime = now.add(Duration(minutes: 30));
+    final thresholdTime = now.add(const Duration(minutes: 30));
     return selectedDateTime.isAfter(thresholdTime);
   }
 

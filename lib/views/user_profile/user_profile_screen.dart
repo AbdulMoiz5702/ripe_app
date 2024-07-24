@@ -17,52 +17,52 @@ class UserProfileScreen extends StatelessWidget {
         title: largeText(title: 'Account and activity',textSize: 20.0),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         scrollDirection: Axis.vertical,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomSized(height: 0.002,),
+            const CustomSized(height: 0.002,),
             UserProfileButton(
                 title: 'Abdul Moiz',
                 avatarImagePath: avatar,
                 email: 'abdulmoizkhan5702@gamil.com',
                 tileOnTap: (){},
                 buttonOnTap: (){}),
-            Divider(color: dividerColor,),
-            CustomSized(height: 0.002,),
+            const Divider(color: dividerColor,),
+            const CustomSized(height: 0.002,),
             largeText(title: 'YOUR ACCOUNT',textSize: 12.0,color: secondaryTextColor),
             Column(
               children: List.generate(yourAccount.length, (index){
                 return UserProfileSettingTile(iconData: yourAccount[index], onTap: (){}, title: yourAccountText[index]);
               }),
             ),
-            Divider(color: dividerColor,),
-            CustomSized(height: 0.002,),
+            const Divider(color: dividerColor,),
+            const CustomSized(height: 0.002,),
             largeText(title: 'ACTIVITY',textSize: 12.0,color: secondaryTextColor),
             Column(
               children: List.generate(yourActivity.length, (index){
                 return UserProfileSettingTile(iconData: yourActivity[index], onTap:(){}, title: yourActivityText[index]);
               }),
             ),
-            Divider(color: dividerColor,),
-            CustomSized(height: 0.002,),
+            const Divider(color: dividerColor,),
+            const CustomSized(height: 0.002,),
             largeText(title: 'SUPPORT',textSize: 12.0,color: secondaryTextColor),
             Column(
               children: List.generate(yourSupport.length, (index){
                 return UserProfileSettingTile(iconData: yourSupport[index], onTap: (){}, title: yourSupportText[index]);
               }),
             ),
-            Divider(color: dividerColor,),
-            CustomSized(height: 0.002,),
+            const Divider(color: dividerColor,),
+            const CustomSized(height: 0.002,),
             largeText(title: 'PREFERENCES',textSize: 12.0,color: secondaryTextColor),
             Column(
               children: List.generate(yourPreference.length, (index){
                 return UserProfileSettingTile(iconData: yourPreference[index], onTap: (){}, title: yourPreferenceText[index]);
               }),
             ),
-            Divider(color: dividerColor,),
+            const Divider(color: dividerColor,),
           ],
         ),
       ),

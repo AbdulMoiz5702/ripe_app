@@ -7,7 +7,7 @@ import 'package:ride_app/resubale_widgets/text_widgets.dart';
 class LoginOptionButton extends StatelessWidget {
   final String imagePath ;
   final String title ;
-  const LoginOptionButton({required this.title,required this.imagePath});
+  const LoginOptionButton({super.key, required this.title,required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class LoginOptionButton extends StatelessWidget {
               image: DecorationImage(image: AssetImage(imagePath),fit: BoxFit.cover),
             ),
           ),
-          CustomSized(width: 0.02,),
+          const CustomSized(width: 0.02,),
           normalText(title: title,color: Colors.black, textSize: 14.0),
         ],
       ),

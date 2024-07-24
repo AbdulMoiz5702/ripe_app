@@ -31,7 +31,7 @@ class DriverListItem extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      margin: EdgeInsets.only(top: 5),
+      margin: const EdgeInsets.only(top: 5),
       child: ListTile(
         onTap: onTap,
         leading: CircleAvatar(
@@ -46,7 +46,7 @@ class DriverListItem extends StatelessWidget {
            Row(
              children: [
                largeText(title: name,textSize: 14.0),
-               CustomSized(width: 0.02,),
+               const CustomSized(width: 0.02,),
                 role == null ?  Container(
                  alignment: Alignment.center,
                  height: MediaQuery.sizeOf(context).height * 0.04,
@@ -56,7 +56,7 @@ class DriverListItem extends StatelessWidget {
                    borderRadius: BorderRadius.circular(30),
                  ),
                  child:largeText(title: 'Local Guide',textSize: 12.0,color: checkBoxColor),
-               ): Container(height: 0,width: 0,),
+               ): const SizedBox(height: 0,width: 0,),
              ],
            ),
             Container(
@@ -75,7 +75,7 @@ class DriverListItem extends StatelessWidget {
                   color: checkBoxColor,
                 ),
                 child: Icon(iconData,color: whiteColor,size: 25,),
-              ) : Container(width: 0,height: 0,),
+              ) : const SizedBox(width: 0,height: 0,),
             ),
 
           ],
@@ -88,7 +88,7 @@ class DriverListItem extends StatelessWidget {
               children: [
                 const  Icon(Icons.star, color: Colors.amber, size: 18.0),
                 smallText(textSize: 11.0,title:rating.toString(),color: primaryTextColor,),
-                smallText(textSize: 11.0,title:' ( ${reviews} )',color: secondaryTextColor,),
+                smallText(textSize: 11.0,title:' ( $reviews )',color: secondaryTextColor,),
               ],
             ),
             smallText(textSize: 11.0,title:carDetails,color: secondaryTextColor,),
@@ -125,7 +125,7 @@ class DriverDetailListItem extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return Container(
-      margin: EdgeInsets.only(top: 5),
+      margin: const EdgeInsets.only(top: 5),
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: containerBorderColor,
@@ -138,10 +138,10 @@ class DriverDetailListItem extends StatelessWidget {
             Row(
               children: [
                 largeText(title: '$name ',textSize: 14.0),
-                Icon(Icons.brightness_1,color: otpColor,size: 7,),
+                const Icon(Icons.brightness_1,color: otpColor,size: 7,),
                 const  Icon(Icons.star, color: Colors.amber, size: 18.0),
                 smallText(textSize: 11.0,title:rating.toString(),color: primaryTextColor,),
-                smallText(textSize: 11.0,title:'( ${reviews})',color: secondaryTextColor,),
+                smallText(textSize: 11.0,title:'( $reviews)',color: secondaryTextColor,),
               ],
             ),
             role == null ?  Container(
@@ -153,7 +153,7 @@ class DriverDetailListItem extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child:largeText(title: 'Local Guide',textSize: 12.0,color: checkBoxColor),
-                  ): Container(height: 0,width: 0,),
+                  ): const SizedBox(height: 0,width: 0,),
 
           ],
         ),
@@ -164,7 +164,7 @@ class DriverDetailListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               smallText(textSize: 11.0,title:'Total rides: $totalRides ',color: secondaryTextColor,),
-              Icon(Icons.brightness_1,color: otpColor,size: 7,),
+              const Icon(Icons.brightness_1,color: otpColor,size: 7,),
               smallText(textSize: 11.0,title:' Driving time: $totalDrivingTime months',color: secondaryTextColor,),
             ],
           ),

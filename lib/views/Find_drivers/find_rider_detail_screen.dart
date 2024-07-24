@@ -24,7 +24,7 @@ class FindRiderDetailScreen extends StatelessWidget {
   final IconData? carIcon;
 
   const FindRiderDetailScreen(
-      {required this.riderName,
+      {super.key, required this.riderName,
       required this.rating,
       required this.totalRides,
       required this.totalDrivingTime,
@@ -40,7 +40,7 @@ class FindRiderDetailScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
-        leading: CustomLeading(
+        leading: const CustomLeading(
           isHome: true,
         ),
         title: largeText(title: 'Find a driver', textSize: 20.0),
@@ -77,7 +77,7 @@ class FindRiderDetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                CustomSized(
+                const CustomSized(
                   height: 0.01,
                 ),
                 CustomButton(
@@ -92,7 +92,7 @@ class FindRiderDetailScreen extends StatelessWidget {
               ],
             ),
           ),
-          RideDetailsScreen(),
+          const RideDetailsScreen(),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -107,7 +107,7 @@ class FindRiderDetailScreen extends StatelessWidget {
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   cacheExtent: 0,
                   itemCount: 9,
                   itemBuilder: (context, index) {

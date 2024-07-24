@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 
 class CustomOtpField extends StatefulWidget {
+  const CustomOtpField({super.key});
+
   @override
   _CustomOtpFieldState createState() => _CustomOtpFieldState();
 }
 
 class _CustomOtpFieldState extends State<CustomOtpField> {
-  List<TextEditingController> _controllers = List.generate(6, (index) => TextEditingController());
+  final List<TextEditingController> _controllers = List.generate(6, (index) => TextEditingController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +32,15 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
                 contentPadding: EdgeInsets.zero,
                 counterText: '',
                 enabledBorder:  OutlineInputBorder(
-                  borderSide: BorderSide(color: otpColor,),
+                  borderSide: const BorderSide(color: otpColor,),
                   borderRadius: BorderRadius.circular(25.0), // Circular border
                 ),
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(color: otpColor,width: 2),
+                  borderSide: const BorderSide(color: otpColor,width: 2),
                   borderRadius: BorderRadius.circular(25.0), // Circular border
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black,width: 2),
+                  borderSide: const BorderSide(color: Colors.black,width: 2),
                   borderRadius: BorderRadius.circular(25.0),  // Circular border
                 ),
               ),

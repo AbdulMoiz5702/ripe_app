@@ -6,7 +6,7 @@ import '../consts/images_path.dart';
 
 class BgWidget extends StatelessWidget {
   final Widget child ;
-  const BgWidget({required this.child});
+  const BgWidget({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

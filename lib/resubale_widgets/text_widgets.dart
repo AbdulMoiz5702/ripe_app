@@ -10,7 +10,7 @@ Widget largeText(
   return Text(
     title,
     style: TextStyle(color: color, fontSize: textSize, fontWeight: weight,
-      fontFamily: 'Nunito Sans',),
+      fontFamily: 'Nunito Sans', ),
   );
 }
 

@@ -8,7 +8,7 @@ class CallScreen extends StatefulWidget {
   final String callerName ;
   final String userId;
   final String inviteId;
-  const CallScreen({required this.callerName,required this.userId,required this.inviteId});
+  const CallScreen({super.key, required this.callerName,required this.userId,required this.inviteId});
 
   @override
   State<CallScreen> createState() => _CallScreenState();
@@ -36,13 +36,13 @@ class _CallScreenState extends State<CallScreen> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Text('Your Name ${widget.callerName}',),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Text('Your Id ${widget.userId}',),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Text('Invite id ${widget.inviteId}',),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             ZegoSendCallInvitationButton(
               isVideoCall: true,
               resourceID: "ride_app",

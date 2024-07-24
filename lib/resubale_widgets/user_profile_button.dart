@@ -10,7 +10,7 @@ class UserProfileButton extends StatelessWidget {
   final String email;
   final VoidCallback tileOnTap;
   final VoidCallback buttonOnTap;
-  const UserProfileButton({required this.title,required this.avatarImagePath,required this.email,required this.tileOnTap,required this.buttonOnTap});
+  const UserProfileButton({super.key, required this.title,required this.avatarImagePath,required this.email,required this.tileOnTap,required this.buttonOnTap});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class UserProfileButton extends StatelessWidget {
             ),
             title: largeText(textSize: 18.0,title:title),
             subtitle: smallText(title: email),
-            trailing: Icon(Icons.arrow_forward_ios),
+            trailing: const Icon(Icons.arrow_forward_ios),
             onTap:tileOnTap,
           ),
           LocationAccessButton(title: 'Driver mode', onTap:buttonOnTap,iconData: Icons.next_plan_outlined,width: 0.8,borderRadius: 30,)
@@ -39,14 +39,14 @@ class UserProfileSettingTile extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
   final IconData iconData;
-  const UserProfileSettingTile({required this.iconData,required this.onTap,required this.title});
+  const UserProfileSettingTile({super.key, required this.iconData,required this.onTap,required this.title});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(iconData,color: primaryTextColor,),
       title: smallText(title: title),
-      trailing: Icon(Icons.arrow_forward_ios),
+      trailing: const Icon(Icons.arrow_forward_ios),
       onTap:onTap,
     );
   }

@@ -23,7 +23,7 @@ class AlertDialogClass {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
-          child: DialogContent(),
+          child: const DialogContent(),
         );
       },
     );
@@ -58,17 +58,19 @@ class AlertDialogClass {
 }
 
 class DialogContent extends StatelessWidget {
+  const DialogContent({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       width: MediaQuery.of(context).size.width * 1,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CustomSized(height: 0.02),
+          const CustomSized(height: 0.02),
           Align(
             alignment: Alignment.centerLeft,
             child: largeText(
@@ -105,7 +107,7 @@ class DialogContent extends StatelessWidget {
             onTap: () {},
             borderRadius: 30,
           ),
-          CustomSized(
+          const CustomSized(
             height: 0.01,
           ),
         ],
@@ -123,7 +125,7 @@ class AlertSelectionConatiner extends StatelessWidget {
   final String descriptionThird;
   final bool isSelected;
   const AlertSelectionConatiner(
-      {
+      {super.key, 
         required this.descriptionSecond,
         required this.descriptionThird,
         required this.title,
@@ -154,7 +156,7 @@ class AlertSelectionConatiner extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  CustomSized(
+                  const CustomSized(
                     height: 0.01,
                   ),
                   Container(
@@ -164,19 +166,19 @@ class AlertSelectionConatiner extends StatelessWidget {
                     ),
                     child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : blackColor,),
                   ),
-                  CustomSized(
+                  const CustomSized(
                     height: 0.01,
                   ),
                   smallText(
                       title: title,
                       color: isSelected == true ? checkBoxColor : blackColor),
-                  CustomSized(
+                  const CustomSized(
                     height: 0.01,
                   ),
                 ],
               ),
             ),
-            CustomSized(
+            const CustomSized(
               height: 0.01,
             ),
             smallText(title: description, textSize: 11.0),

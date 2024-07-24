@@ -15,7 +15,7 @@ class NotificationSettingsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
-        leading: CustomLeading(
+        leading: const CustomLeading(
           isHome: true,
         ),
         title: largeText(title: 'Notification references', textSize: 20.0),
@@ -25,20 +25,20 @@ class NotificationSettingsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomSized(height: 0.02,),
+            const CustomSized(height: 0.02,),
             smallText(title: 'RIDER MESSAGES',weight:FontWeight.w700 ),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
-            CustomSized(height: 0.02,),
+            const CustomSized(height: 0.02,),
             smallText(title: 'PAYMENT NOTIFICATIONS',weight:FontWeight.w700),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
             NotificationListTile(title: 'SMS',value: true,onChanged: (value){},),
-            CustomSized(height: 0.02,),
+            const CustomSized(height: 0.02,),
             smallText(title: 'SCHEDULED RIDES ',weight:FontWeight.w700),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
-            CustomSized(height: 0.02,),
+            const CustomSized(height: 0.02,),
             smallText(title: 'ONGOING RIDES',weight:FontWeight.w700),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),

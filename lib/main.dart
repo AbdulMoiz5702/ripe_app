@@ -45,7 +45,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final GlobalKey<NavigatorState> navigatorKey;
   //final Widget initialRoute;
-  const MyApp({required this.navigatorKey, });
+  const MyApp({super.key, required this.navigatorKey, });
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       navigatorKey: navigatorKey,
       title: 'Flutter Demo',
         theme: ThemeData(
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             iconTheme: IconThemeData(color: primaryTextColor),
             elevation: 0,
             backgroundColor:Colors.transparent,
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Nunito Sans',
           scaffoldBackgroundColor: Colors.transparent, ),
 
-    home: OnboardingScreen(),
+    home: const OnboardingScreen(),
     );
   }
 }
@@ -94,23 +94,23 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             TextFormField(
               controller: name,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter Name ',
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               controller: id,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Enter your id ',
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             TextFormField(
               controller: inviteId,
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: 'Other person id',
               ),
             ),
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   )),
                 );
               },
-              child: Text('Proceed for the calling'),
+              child: const Text('Proceed for the calling'),
             ),
           ],
         ),

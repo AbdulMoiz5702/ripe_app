@@ -9,7 +9,7 @@ class CustomButtonNav extends StatelessWidget {
   final int currentTab;
   final Function() onPressed;
 
-  CustomButtonNav({
+  const CustomButtonNav({super.key, 
     required this.index,
     required this.imagePath,
     required this.title,
