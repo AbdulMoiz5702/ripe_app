@@ -63,7 +63,7 @@ class _ExploreCityState extends State<ExploreCity> {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   controller: scrollController,
-                  child: const BottomSheetContent(),
+                  child:  BottomSheetContent(),
                 ),
               );
             },
