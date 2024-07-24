@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
@@ -7,16 +8,18 @@ import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
+import '../route_details_details.dart';
+
 class ConfirmPickUp extends StatelessWidget {
   final TimeOfDay selectedTime;
   final String selectedDate;
-  const ConfirmPickUp({super.key, required this.selectedTime,required this.selectedDate});
+  ConfirmPickUp({required this.selectedTime,required this.selectedDate});
   @override
   Widget build(BuildContext context) {
     print('object');
     String formattedTime = '${selectedTime.hourOfPeriod}:${selectedTime.minute.toString().padLeft(2, '0')} ${selectedTime.period == DayPeriod.am ? 'AM' : 'PM'}';
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.all(10),
       decoration: const BoxDecoration(
         color: whiteColor,
         borderRadius: BorderRadius.only(
@@ -37,7 +40,7 @@ class ConfirmPickUp extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
             ),
           ),
-          const CustomSized(height: 0.02,),
+          CustomSized(height: 0.02,),
           ListTile(
             leading: largeText(title: 'Pickup location',textSize: 20.0),
             trailing: Row(
@@ -48,14 +51,18 @@ class ConfirmPickUp extends StatelessWidget {
               ],
             ),
           ),
-          ListTile(
-            dense: true,
-            leading: const Icon(Icons.location_on_outlined,color: checkBoxColor,),
-            title:smallText(title: 'The Centaurus Mall',color: primaryTextColor) ,
-            subtitle: smallText(title: 'F-8 - Islamabad, The Centaurus Mall'),
-            trailing: const Icon(Icons.favorite_border,),
-          ),
-          const Divider(),
+          Consumer<ScheduleRideProvider>(builder: (context,provider,_){
+            return ListTile(
+              dense: true,
+              leading: Icon(Icons.location_on_outlined,color: checkBoxColor,),
+              title:smallText(title: 'The Centaurus Mall',color: primaryTextColor) ,
+              subtitle: smallText(title: 'F-8 - Islamabad, The Centaurus Mall',textSize: 11.0),
+              trailing: IconButton(onPressed: (){
+                provider.openMarkAddressFavoriteBottomSheet(context: context, address: 'The Centaurus Mall', suBbAddress: 'F-8 - Islamabad, The Centaurus Mall');
+              }, icon: Icon(Icons.favorite_border,)),
+            );
+          }),
+          Divider(),
           Consumer<ScheduleRideProvider>(
             builder: (context,provider,_){
               print('consumer');
@@ -63,13 +70,17 @@ class ConfirmPickUp extends StatelessWidget {
                padding: const EdgeInsets.only(left:10),
                child: NotificationListTile(title: 'Pick up from airport', value: provider.value, onChanged: (value){
                  provider.onChange(value);
+                 provider.openAirPortPickupBottomSheet(context);
+                 provider.makeValueFalse();
                }),
              );
             },
           ),
-          const CustomSized(height: 0.02,),
-          CustomButton(title: 'Confirm pickup', onTap: (){},borderRadius: 30,onBoard: false,width:0.8,),
-          const CustomSized(height: 0.02,),
+          CustomSized(height: 0.02,),
+          CustomButton(title: 'Confirm pickup', onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> RouteDetailsDetailsScreen()));
+          },borderRadius: 30,onBoard: false,width:1,),
+          CustomSized(height: 0.02,),
         ],
       ),
     );

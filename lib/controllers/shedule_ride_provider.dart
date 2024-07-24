@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ride_app/consts/colors.dart';
-
+import '../views/tourist_ride_booking/bottom_sheet/air_port_pick_up.dart';
 import '../views/tourist_ride_booking/bottom_sheet/confirm_pick_up.dart';
+import '../views/tourist_ride_booking/bottom_sheet/make_address_favorite.dart';
+import '../views/tourist_ride_booking/bottom_sheet/route_details_bottom.dart';
 
 
 
@@ -12,15 +14,80 @@ class ScheduleRideProvider extends ChangeNotifier {
   TimeOfDay selectedTime = TimeOfDay.now();
   bool value = false;
   int index = 0;
+  bool isExpanded = false ;
+  bool preRide = false ;
+
+  changePreRide (v){
+    preRide = v;
+    notifyListeners();
+  }
 
   onChange(v){
     value = v ;
     notifyListeners();
   }
 
+  changeValue(){
+    isExpanded =! isExpanded;
+    notifyListeners();
+  }
+
   selectedIndex(n){
     index = n ;
     notifyListeners();
+  }
+
+  makeValueFalse(){
+    value = false ;
+    notifyListeners();
+  }
+
+  openAirPortPickupBottomSheet(context){
+    return showModalBottomSheet(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+        context: context, builder: (context){
+      return AirPortPickUpBottomSheet();
+    });
+  }
+
+  void onRouteDetailsInit({required BuildContext context}){
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      openRouteDetailsBottomBottomSheet(context: context);
+    });
+  }
+
+
+  void openRouteDetailsBottomBottomSheet({required BuildContext context}){
+     showModalBottomSheet(
+         isScrollControlled: true,
+         backgroundColor: whiteColor,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        context: context, builder: (context){
+      return RouteDetailsBottom();
+    });
+  }
+
+  openMarkAddressFavoriteBottomSheet({required BuildContext context,required String address,required String suBbAddress}){
+    return showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        context: context, builder: (context){
+      return MakeAddressFavorite(address: address,subAddress: suBbAddress,);
+    });
   }
 
 

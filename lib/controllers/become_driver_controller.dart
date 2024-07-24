@@ -23,6 +23,8 @@ class BecomeDriverProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+
+
   Future<void> pickImage({required String imageType,bool isFaceVerification = false}) async {
     final picker = ImagePicker();
     final pickedFile = await picker.pickImage(source:isFaceVerification == true ? ImageSource.camera : ImageSource.gallery);

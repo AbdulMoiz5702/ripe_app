@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../consts/colors.dart';
+import '../../controllers/shedule_ride_provider.dart';
+import '../../resubale_widgets/custom_leading.dart';
+
+
+class RouteDetailsDetailsScreen extends StatefulWidget {
+  const RouteDetailsDetailsScreen({super.key});
+
+  @override
+  State<RouteDetailsDetailsScreen> createState() => _RouteDetailsDetailsScreenState();
+}
+
+class _RouteDetailsDetailsScreenState extends State<RouteDetailsDetailsScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Provider.of<ScheduleRideProvider>(context,listen: false).onRouteDetailsInit(context: context);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        scrolledUnderElevation: 0.0,
+        leading: CustomLeading(
+          isHome: true,
+        ),
+        actions: [
+          NotificationButton(onTap: () {},)
+        ],
+      ),
+      backgroundColor: whiteColor,
+      body: Column(
+        children: [
+
+        ],
+      ),
+    );
+  }
+}

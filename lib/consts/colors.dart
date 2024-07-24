@@ -34,18 +34,14 @@ const Color whiteColor = Colors.white;
 const Color lightWhiteColor = Colors.white24;
 const Color blackColor = Colors.black;
 const Color containerBorderColor = Color(0xffccecfb);
-const Color lightgreyColor = Color(0xffDBDEE2);
+const Color greyColor = Color(0xff9CA3AF);
 const Color iconColor = Color(0xff6B7280);
 const Color ratingColor = Color(0xffFFAA00);
 const Color secondaryWhiteColor = Color(0xfff9fafb);
 const Color checkColor = Color(0xffCBFAFE);
 const Color secondayBlueColor = Color(0xffd1eaff);
 const Color darkBlueColor = Color(0xff04207A);
-const Color orangeColor = Color(0xffFF3A1C);
-const Color progressrideCOlor = Color(0xffEBF7FD);
-const Color lightGreenColor = Color(0xffD4ECD8);
-const Color darkgreenColor = Color(0xff33800B);
-const Color lightdarkColor = Color(0xffDFE2E5);
+const Color redColor = Color(0xffFF3A1C);
 
 
 // bottom color
