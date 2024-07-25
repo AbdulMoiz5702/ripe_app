@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
+import 'Custom_Sized.dart';
+
 
 class AllowAccessLocationText extends StatelessWidget {
   final String pointOne ;
@@ -8,7 +10,7 @@ class AllowAccessLocationText extends StatelessWidget {
   final String pointThree ;
   final String pointFour ;
   final String  ? pointFive ;
-  const AllowAccessLocationText({super.key, required this.pointOne,required this.pointTwo,required this.pointThree,required this.pointFour,this.pointFive});
+  const AllowAccessLocationText({required this.pointOne,required this.pointTwo,required this.pointThree,required this.pointFour,this.pointFive});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class AllowAccessLocationText extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Icon(Icons.brightness_1, size: 8, color: Colors.black),
             ),
             Column(
@@ -34,9 +36,12 @@ class AllowAccessLocationText extends StatelessWidget {
                     Text(pointTwo,style: TextStyles.bulletPoint,),
                   ],
                 ),
+                CustomSized(height: 0.002,),
                 Text(pointThree,style: TextStyles.bulletPoint,),
+                CustomSized(height: 0.002,),
                 Text(pointFour,style: TextStyles.bulletPoint,),
-                pointFive == null ?const SizedBox(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyles.bulletPoint,),
+                CustomSized(height: 0.002,),
+                pointFive == null ? Container(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyles.bulletPoint,),
               ],
             )
           ],

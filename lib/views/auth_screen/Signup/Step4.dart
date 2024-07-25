@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
+import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
+import 'package:ride_app/views/auth_screen/Signup/Step3.dart';
 import 'package:ride_app/views/role_selection_screen/select_role.dart';
 
 import '../../../resubale_widgets/CustomButton.dart';
@@ -24,7 +26,7 @@ class Step4 extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
           actions: [
             SignupStepsCount(title: 4.toString()),
@@ -35,7 +37,7 @@ class Step4 extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.66,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -48,7 +50,7 @@ class Step4 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     RichText(
@@ -66,20 +68,20 @@ class Step4 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 18))
                     ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(title: 'Set your password',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.01,
                     ),
                     smallText(title: 'We are almost finished with you account',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.001,
                     ),
                     smallText(
                         title: 'registration process',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.03,
                     ),
                     CustomTextField(
@@ -88,9 +90,7 @@ class Step4 extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Password',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: lock,
                     ),
@@ -98,7 +98,7 @@ class Step4 extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const CustomSized(
+                        CustomSized(
                           height: 0.005,
                         ),
                         smallText(
@@ -106,7 +106,7 @@ class Step4 extends StatelessWidget {
                                 ' Password must contain at least 6 characters. Try to make it a',
                             color: secondaryTextColor,
                             textSize: 11.0),
-                        const CustomSized(
+                        CustomSized(
                           height: 0.001,
                         ),
                         smallText(
@@ -115,35 +115,34 @@ class Step4 extends StatelessWidget {
                             textSize: 11.0),
                       ],
                     ),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     CustomButton(
-                      title: 'Continue',
+                      onBoard: false,
+                      title: 'Confirm password',
                       onTap: () {
                         Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) => const Step5()));
+                            MaterialPageRoute(builder: (context) => Step5()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     dividerRow(context: context),
-                    const CustomSized(height: 0.03),
-                    const LoginOptionsRow(),
-                    const CustomSized(height: 0.043),
+                    CustomSized(height: 0.03),
+                    LoginOptionsRow(),
+                    CustomSized(height: 0.043),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const SelectRole()));
+                            MaterialPageRoute(
+                                builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Already a member ?  ', color: Colors.black),
-                          smallText(title: 'Login', color: Colors.blue),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

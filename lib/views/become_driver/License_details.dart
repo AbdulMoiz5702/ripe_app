@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/become_driver_controller.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
@@ -22,15 +23,15 @@ class LicenseDetailsScreen extends StatelessWidget {
     return BgWidget(
       child: Scaffold(
         appBar: AppBar(
-          leading:const CustomLeading(),
+          leading:CustomLeading(),
           backgroundColor: Colors.transparent,
         ),
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.88,
+            height: MediaQuery.sizeOf(context).height * 0.89,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -38,13 +39,13 @@ class LicenseDetailsScreen extends StatelessWidget {
                 )
             ),
             child: Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(14.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     RichText(
@@ -62,11 +63,11 @@ class LicenseDetailsScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0))
                         ])),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     largeText(title: 'Driver’s ID & License',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Row(
@@ -82,7 +83,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                           ),
                           child: largeText(title: '1',color: whiteColor,textSize: 14.0),
                         ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: const EdgeInsets.symmetric(horizontal: 8),),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
                           alignment: Alignment.center,
                           height: 30,
@@ -93,7 +94,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                           ),
                           child: largeText(title: '2',color: whiteColor,textSize: 14.0),
                         ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: const EdgeInsets.symmetric(horizontal: 8),),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
                           alignment: Alignment.center,
                           height: 30,
@@ -106,7 +107,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Padding(
@@ -120,33 +121,29 @@ class LicenseDetailsScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     CustomTextField(
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Full Name',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      hint: 'Driver\'s license number',
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.recent_actors_outlined,
+                      iconPath:driverLicenceNumber,
                     ),
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     CustomTextField(
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Date of expire',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Consumer<BecomeDriverProvider>(builder: (context,provider,_){
@@ -154,19 +151,19 @@ class LicenseDetailsScreen extends StatelessWidget {
                         provider.pickImage(imageType:'carLicencePlateImage');
                       },imagePath:provider.carLicencePlateImage,);
                     }),
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     Consumer<BecomeDriverProvider>(builder: (context,provider,_){
                       return LicencePicturesButton(title: 'Upload your driver’s license',onTap: (){
                         provider.pickImage(imageType:'drivingLicenceImage');
                       },imagePath: provider.drivingLicenceImage,);
                     }),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     CustomButton(title: 'Next', onTap:(){
-                      Navigator.push(context,CupertinoPageRoute(builder: (context)=> const VehicleDetails()));
+                      Navigator.push(context,CupertinoPageRoute(builder: (context)=> VehicleDetails()));
                     },width: 1,borderRadius: 30,),
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     Align(alignment:Alignment.center,child: largeText(title: 'Become a passenger instead',textSize: 15.0,color: dividerColor)),
                           
                   ],

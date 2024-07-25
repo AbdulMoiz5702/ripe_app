@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
+import 'package:ride_app/resubale_widgets/cutom_leading%20text_feild.dart';
 import 'package:ride_app/views/auth_screen/login_screen.dart';
 
 import '../../../resubale_widgets/Bg_widget.dart';
@@ -23,7 +24,7 @@ class ForgotStep1 extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
         ),
         body: Align(
@@ -31,7 +32,7 @@ class ForgotStep1 extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -59,44 +60,42 @@ class ForgotStep1 extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18))
                         ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(title: 'Forgot password',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.01,
                     ),
                     smallText(
                       title: 'A 6-digit code will be sent to your account in order to reset your accoun',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.02,
                     ),
                     Center(
                       child: Image(
                         alignment: Alignment.center,
-                        image: const AssetImage(lockPassword),
+                        image: AssetImage(lockPassword),
                         isAntiAlias: true,
                         height: MediaQuery.sizeOf(context).height * 0.29,
                         width: MediaQuery.sizeOf(context).width * 0.6,
                         fit:BoxFit.cover,
                       ),
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.02,
                     ),
-                    CustomTextField(
+                    CustomLeadingTextField(
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Email',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: email,
                       iconData: Icons.mail_outline_sharp,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.025,
                     ),
                     CustomButton(
@@ -105,28 +104,27 @@ class ForgotStep1 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const ForgotStep2()));
+                            MaterialPageRoute(
+                                builder: (context) => ForgotStep2()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.02,
                     ),
                     GestureDetector(
                       onTap: () {
                         Navigator.pushReplacement(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const LoginScreen()));
+                            MaterialPageRoute(
+                                builder: (context) => LoginScreen()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Go back to', color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: '   Login', color:lightPrimaryTextColor),
+                          smallText(title: 'Go back to',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: '   Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

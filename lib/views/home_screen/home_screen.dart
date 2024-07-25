@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
@@ -23,26 +24,26 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          physics: const BouncingScrollPhysics(),
+          physics: BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomSized(
+              CustomSized(
                 height: 0.06,
               ),
-              const Image(image: AssetImage(brandLogo)),
-              const CustomSized(
+              SvgPicture.asset(brandLogoSvg),
+              CustomSized(
                 height: 0.03,
               ),
               largeText(title: 'Welcome Peter 👋', textSize: 18.0),
-              const CustomSized(
+              CustomSized(
                 height: 0.01,
               ),
               largeText(
                   title: 'Book a ride 👋',
                   textSize: 12.0,
                   color: secondaryTextColor),
-              const CustomSized(
+              CustomSized(
                 height: 0.02,
               ),
               Row(
@@ -53,10 +54,10 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       switch (index) {
                         case 0:
-                          Navigator.push(context, CupertinoPageRoute(builder: (context)=> const ExploreCity()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ExploreCity()));
                           break;
                         case 1:
-                          Navigator.push(context, CupertinoPageRoute(builder: (context)=> const FindDriversScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> FindDriversScreen()));
                           break;
                         default:
                           print('Unknown command');
@@ -68,11 +69,11 @@ class HomeScreen extends StatelessWidget {
                   );
                 }),
               ),
-              const CustomSized(
+              CustomSized(
                 height: 0.01,
               ),
               Container(
-                padding: const EdgeInsets.all(14),
+                padding: EdgeInsets.all(14),
                 height: MediaQuery.sizeOf(context).height * 0.2,
                 width: MediaQuery.sizeOf(context).width * 1,
                 decoration: BoxDecoration(
@@ -92,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                                 title: 'Book a ride',
                                 textSize: 18.0,
                                 color: whiteColor),
-                            const CustomSized(
+                            CustomSized(
                               height: 0.006,
                             ),
                             smallText(
@@ -108,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                             border: Border.all(color: textfieldColor),
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.arrow_forward,
                             color: whiteColor,
                             size: 30,
@@ -116,37 +117,35 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const CustomSized(height: 0.03,),
+                    CustomSized(height: 0.03,),
                     HomeScreenTextField(
                         enable:false,
                         controller: controller,
                         hint: 'Enter your destination',
-                        onValidator: (value){
-                          return null;
-                        },
+                        onValidator: (value){},
                         onFieldSubmittedValue: (value){},
                         iconPath: search),
                   ],
                 ),
               ),
-              const CustomSized(
+              CustomSized(
                 height: 0.02,
               ),
               largeText(
                   title: 'Become a driver',
                   textSize: 12.0,
                   color: secondaryTextColor),
-              const CustomSized(
+              CustomSized(
                 height: 0.01,
               ),
               OutlineBorderButton(onTap: (){
-                Navigator.push(context, CupertinoPageRoute(builder: (context)=> const LicenseDetailsScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> LicenseDetailsScreen()));
               },title: 'Become driver',),
-              const CustomSized(
+              CustomSized(
                 height: 0.02,
               ),
               largeText(title: 'Invite friends', textSize: 12.0, color: secondaryTextColor),
-              const CustomSized(
+              CustomSized(
                 height: 0.02,
               ),
               InviteFriendColorButton(title: 'Share', onTap: (){})

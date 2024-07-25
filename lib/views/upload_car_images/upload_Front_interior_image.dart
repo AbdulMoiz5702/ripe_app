@@ -40,7 +40,7 @@ class UploadFrontInteriorImage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                       image: provider.carFrontSeatsImagePath == null
-                          ? const AssetImage(carFrontSeats)
+                          ? AssetImage(carFrontSeats)
                           : FileImage(
                           File(provider.carFrontSeatsImagePath.toString()))
                       as ImageProvider,
@@ -48,10 +48,10 @@ class UploadFrontInteriorImage extends StatelessWidget {
                 ),
               );
             }),
-            const CustomSized(),
+            CustomSized(height: 0.002,),
             Container(
-              margin: const EdgeInsets.all(15),
-              padding: const EdgeInsets.all(20),
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(20),
               height: MediaQuery.sizeOf(context).height * 0.11,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
@@ -84,12 +84,12 @@ class UploadFrontInteriorImage extends StatelessWidget {
                 ],
               ),
             ),
+            CustomSized(),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Column(
                 children: [
                   LocationAccessButton(
                     width: 1,
-                    height: 0.07,
                     title: provider.carFrontSeatsImagePath == null
                         ? 'Upload from gallery'
                         : 'Retake',
@@ -104,11 +104,10 @@ class UploadFrontInteriorImage extends StatelessWidget {
                     color: secondaryWhiteColor,
                     weight: FontWeight.w700,
                   ),
-                  const CustomSized(height: 0.02),
+                  CustomSized(height: 0.02),
                   provider.carFrontSeatsImagePath == null
                       ? LocationAccessButton(
                     width: 1,
-                    height: 0.07,
                     title:'Camera',
                     onTap: () {
                       provider.pickImage(
@@ -123,14 +122,13 @@ class UploadFrontInteriorImage extends StatelessWidget {
                       : CustomButton(
                       onBoard: false,
                       width: 1,
-                      height: 0.07,
                       borderRadius: 30,
                       title: 'Confirm',
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const UploadCarBackInteriorImage()));
+                            MaterialPageRoute(
+                                builder: (context) => UploadCarBackInteriorImage()));
                       }),
                 ],
               );

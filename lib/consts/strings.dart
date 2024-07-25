@@ -165,10 +165,27 @@ var exploreScreen = [
 ];
 
 var exploreScreenIcons = [
-  Icons.attractions_outlined,
-  Icons.shopping_bag_outlined,
-  Icons.flight_takeoff_outlined,
-  Icons.lunch_dining_outlined,
+  parkSvg,
+  airplaneTakeoff,
+  handBagSvg,
+  handBagSvg
+];
+
+
+var creditCardSheetIcon = [
+  creditCardSvg,
+  payPalSvg,
+];
+
+var creditCardSheetText = [
+  'Credit card',
+  'Paypal',
+];
+
+var compatetorsIcons = [
+  uberLogoSvg,
+  brandLogoSvg,
+  ylaSvg
 ];
 
 

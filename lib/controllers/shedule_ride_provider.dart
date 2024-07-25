@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
+import '../views/tourist_ride_booking/bottom_sheet/ai_suggested_route_bottom_sheet.dart';
 import '../views/tourist_ride_booking/bottom_sheet/air_port_pick_up.dart';
 import '../views/tourist_ride_booking/bottom_sheet/confirm_pick_up.dart';
+import '../views/tourist_ride_booking/bottom_sheet/credit_card_bottom.dart';
 import '../views/tourist_ride_booking/bottom_sheet/make_address_favorite.dart';
+import '../views/tourist_ride_booking/bottom_sheet/rearch_driver_cancel_conormation_sheet.dart';
 import '../views/tourist_ride_booking/bottom_sheet/route_details_bottom.dart';
+import '../views/tourist_ride_booking/bottom_sheet/search_for_rider_bottom.dart';
 
 
 
@@ -16,6 +21,25 @@ class ScheduleRideProvider extends ChangeNotifier {
   int index = 0;
   bool isExpanded = false ;
   bool preRide = false ;
+  int selectedValue = -1;
+  String iconsPath = aiBot ;
+  String title = ' AI suggested route';
+
+  changeTitle({required String value}){
+    title = value ;
+    notifyListeners();
+  }
+
+  onAiRouteSelected({required String newPath}){
+    iconsPath = newPath;
+    notifyListeners();
+
+  }
+
+  void handleRadioValueChange(value) {
+      selectedValue = value;
+      notifyListeners();
+  }
 
   changePreRide (v){
     preRide = v;
@@ -42,6 +66,49 @@ class ScheduleRideProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  openSearchForRiderBottom(context){
+    return showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        context: context, builder: (context){
+      return SearchForRiderBottom();
+    });
+  }
+
+
+
+  openSearchDriverCancelConformationSheet(context){
+    return showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        context: context, builder: (context){
+      return SearchDriverCancelConformationSheet();
+    });
+  }
+
+
+  openAiSuggestedRouteBottomSheet(context){
+    return showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        context: context, builder: (context){
+      return AiSuggestedRouteBottomSheet();
+    });
+  }
+
+
   openAirPortPickupBottomSheet(context){
     return showModalBottomSheet(
       shape: const RoundedRectangleBorder(
@@ -58,6 +125,21 @@ class ScheduleRideProvider extends ChangeNotifier {
   void onRouteDetailsInit({required BuildContext context}){
     WidgetsBinding.instance.addPostFrameCallback((_) {
       openRouteDetailsBottomBottomSheet(context: context);
+    });
+  }
+
+  void openCreditCardBottomSheet({required BuildContext context}){
+    showModalBottomSheet(
+        isScrollControlled: true,
+        backgroundColor: whiteColor,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        context: context, builder: (context){
+      return CreditCardBottomSheet();
     });
   }
 

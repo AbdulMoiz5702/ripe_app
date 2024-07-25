@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/views/driver_profile_veriication/veiwing_proile.dart';
 import '../../consts/colors.dart';
+import '../../consts/images_path.dart';
 import '../../controllers/become_driver_controller.dart';
 import '../../resubale_widgets/CustomButton.dart';
 import '../../resubale_widgets/Custom_Sized.dart';
@@ -23,7 +24,7 @@ class FaceVerificationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CustomSized(height: 0.02),
+            CustomSized(height: 0.02),
             largeText(title: 'Face verification'),
             smallText(title: 'Please take a well-lit selfie to verify your'),
             smallText(title: 'identity.')
@@ -42,8 +43,8 @@ class FaceVerificationScreen extends StatelessWidget {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: MediaQuery.sizeOf(context).height * 0.55,
-                  width:MediaQuery.sizeOf(context).width * 0.55,
+                  height: MediaQuery.sizeOf(context).height * 0.57,
+                  width:MediaQuery.sizeOf(context).width * 0.57,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: secondaryWhiteColor,
@@ -52,8 +53,8 @@ class FaceVerificationScreen extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Icon(Icons.camera_enhance,color: provider.facePictureImage == null ? dividerColor : whiteColor,),
-                      const CustomSized(height: 0.002,),
+                      Icon(Icons.camera_alt,color: provider.facePictureImage == null ? dividerColor : whiteColor,),
+                      CustomSized(height: 0.002,),
                       smallText(title: 'Upload you photo',textSize: 11.0 , color: provider.facePictureImage == null ? dividerColor : whiteColor,),
                     ],
                   ),
@@ -75,21 +76,23 @@ class FaceVerificationScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const CustomSized(height: 0.02),
+            CustomSized(height: 0.02),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
-              return LocationAccessButton(width:1 ,height:0.07,title: 'Retake', onTap: (){
+              return LocationAccessButton(
+                isImagePath: true,
+                imagePath: gallery,
+                width:1 ,title: 'Retake', onTap: (){
                 provider.pickImage(imageType: 'facePictureImage',isFaceVerification: true);
               },iconData: Icons.collections_outlined,titleColor: primaryTextColor,borderRadius: 30,color: secondaryWhiteColor,weight: FontWeight.w700,);
             }),
-            const CustomSized(height: 0.02),
+            CustomSized(height: 0.02),
          CustomButton(
            onBoard: false,
           width: 1,
-          height: 0.07,
           borderRadius: 30,
           title: 'Confirm',
           onTap: () {
-            Navigator.push(context, CupertinoPageRoute(builder: (context)=> const VeiwingProile()));
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> VeiwingProile()));
           }),
           ],
         ),

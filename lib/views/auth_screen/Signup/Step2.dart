@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
+import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
@@ -24,9 +26,9 @@ class Step2 extends StatelessWidget {
     return BgWidget(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
-        backgroundColor: const Color(0xff029feb1f),
+        backgroundColor: Color(0xff029FEB1F),
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
           actions: [
             SignupStepsCount(title: 2.toString()),
@@ -37,7 +39,7 @@ class Step2 extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.68,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -65,15 +67,15 @@ class Step2 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 18))
                     ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(title: 'Enter your email', color: Colors.black),
-                    const CustomSized(height: 0.01,),
+                    CustomSized(height: 0.01,),
                     smallText(title: 'By sharing your email, you agree to our Terms of',),
-                    const CustomSized(height: 0.002,),
-                    smallText(title: 'Services an Privacy Policy .',),
-                    const CustomSized(
+                    CustomSized(height: 0.002,),
+                    smallText(title: 'Services and Privacy Policy.',),
+                    CustomSized(
                       height: 0.03,
                     ),
                     CustomTextField(
@@ -81,9 +83,7 @@ class Step2 extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Email',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: email,
                       iconData: Icons.mail_outline_sharp,
@@ -91,26 +91,28 @@ class Step2 extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Checkbox(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6)),
-                            activeColor: Colors.lightBlueAccent,
-                            value: true,
-                            onChanged: (value) {
-                              value != value;
-                            }),
+                        Consumer<AuthProvider>(builder: (context,provider,_){
+                          return Checkbox(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6)),
+                              activeColor: Colors.lightBlueAccent,
+                              value: provider.isSelected,
+                              onChanged: (value) {
+                                provider.changeValue(value);
+                              });
+                        }),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const CustomSized(
+                            CustomSized(
                               height: 0.005,
                             ),
                             smallText(
                                 title: 'Sends me email notification for mentions',
                                 color: primaryTextColor,
                                 textSize: 14.0),
-                            const CustomSized(
+                            CustomSized(
                               height: 0.001,
                             ),
                             smallText(
@@ -121,35 +123,33 @@ class Step2 extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const CustomSized(height: 0.035),
+                    CustomSized(height: 0.035),
                     CustomButton(
                       title: 'Continue',
                       onTap: () {
                         Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) => const Step3()));
+                            MaterialPageRoute(builder: (context) => Step3()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     dividerRow(context: context),
-                    const CustomSized(height: 0.03),
-                    const LoginOptionsRow(),
-                    const CustomSized(height: 0.044),
+                    CustomSized(height: 0.03),
+                    LoginOptionsRow(),
+                    CustomSized(height: 0.044),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const SelectRole()));
+                            MaterialPageRoute(
+                                builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Already a member ?  ', color: Colors.black),
-                          smallText(title: 'Login', color: Colors.blue),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

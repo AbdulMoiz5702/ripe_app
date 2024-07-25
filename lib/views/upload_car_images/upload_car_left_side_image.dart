@@ -24,7 +24,7 @@ class UploadCarLeftSideImage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: whiteColor,
         automaticallyImplyLeading: true,
-        title: largeText(title: 'Back image'),
+        title: largeText(title: 'Left side image'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -39,7 +39,7 @@ class UploadCarLeftSideImage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                       image: provider.carLeftSideImagePath == null
-                          ? const AssetImage(carLeftSide)
+                          ? AssetImage(carLeftSide)
                           : FileImage(
                           File(provider.carLeftSideImagePath.toString()))
                       as ImageProvider,
@@ -47,10 +47,10 @@ class UploadCarLeftSideImage extends StatelessWidget {
                 ),
               );
             }),
-            const CustomSized(),
+            CustomSized(height: 0.002,),
             Container(
-              margin: const EdgeInsets.all(15),
-              padding: const EdgeInsets.all(20),
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(20),
               height: MediaQuery.sizeOf(context).height * 0.1,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
@@ -83,12 +83,14 @@ class UploadCarLeftSideImage extends StatelessWidget {
                 ],
               ),
             ),
+            CustomSized(),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Column(
                 children: [
                   LocationAccessButton(
+                    isImagePath: true,
+                    imagePath: gallery,
                     width: 1,
-                    height: 0.07,
                     title: provider.carLeftSideImagePath == null
                         ? 'Upload from gallery'
                         : 'Retake',
@@ -103,11 +105,11 @@ class UploadCarLeftSideImage extends StatelessWidget {
                     color: secondaryWhiteColor,
                     weight: FontWeight.w700,
                   ),
-                  const CustomSized(height: 0.02),
+                  CustomSized(height: 0.02),
                   provider.carLeftSideImagePath == null
                       ? LocationAccessButton(
+                    isImagePath: true,
                     width: 1,
-                    height: 0.07,
                     title:'Camera',
                     onTap: () {
                       provider.pickImage(
@@ -122,14 +124,13 @@ class UploadCarLeftSideImage extends StatelessWidget {
                       : CustomButton(
                       onBoard: false,
                       width: 1,
-                      height: 0.07,
                       borderRadius: 30,
                       title: 'Confirm',
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const UploadCarBackSideImage()));
+                            MaterialPageRoute(
+                                builder: (context) => UploadCarBackSideImage()));
                       }),
                 ],
               );

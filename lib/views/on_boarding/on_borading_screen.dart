@@ -22,31 +22,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return [
       const OnboardingPage(
         imagePath:calender,
-        title: 'Worem ipsum dolor si amnet ,',
+        title: 'Worem ipsum dolor si amnet,',
         title2: 'consectutor adipiscing',
-        description: 'No matter how devastated you may be by your own ',
-        description2: 'weakness set your heart ablaze',
+        description: 'Porem ipsum dolor sit amet, consectetur adipiscing',
+        description2: 'elit. Nunc vulputate libero et velit.',
       ),
       const OnboardingPage(
         imagePath:message,
-        title: 'Worem ipsum dolor si amnet ,',
+        title: 'Worem ipsum dolor si amnet,',
         title2: 'consectutor adipiscing',
-        description: 'No matter how devastated you may be by your own ',
-        description2: 'weakness set your heart ablaze',
+        description: 'Porem ipsum dolor sit amet, consectetur adipiscing',
+        description2: 'elit. Nunc vulputate libero et velit.',
       ),
       const OnboardingPage(
         imagePath: bookMark,
-        title: 'Worem ipsum dolor si amnet ,',
+        title: 'Worem ipsum dolor si amnet,',
         title2: 'consectutor adipiscing',
-        description: 'No matter how devastated you may be by your own ',
-        description2: 'weakness set your heart ablaze',
+        description: 'Porem ipsum dolor sit amet, consectetur adipiscing',
+        description2: 'elit. Nunc vulputate libero et velit.',
       ),
       const OnboardingPage(
         imagePath:card,
-        title: 'Worem ipsum dolor si amnet ,',
+        title: 'Worem ipsum dolor si amnet,',
         title2: 'consectutor adipiscing',
-        description: 'No matter how devastated you may be by your own ',
-        description2: 'weakness set your heart ablaze',
+        description: 'Porem ipsum dolor sit amet, consectetur adipiscing',
+        description2: 'elit. Nunc vulputate libero et velit.',
       ),
     ];
   }

@@ -11,16 +11,16 @@ Widget dividerRow({required BuildContext context,String title= 'register'}){
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Container(
-        margin: const EdgeInsets.symmetric(horizontal: 5),
-        height: 3,
+        margin: EdgeInsets.symmetric(horizontal: 5),
+        height: 1,
         width: MediaQuery.sizeOf(context).width * 0.28,
         color: dividerColor,
       ),
       smallText(
           title:'or $title with',color: dividerColor),
       Container(
-        margin: const EdgeInsets.symmetric(horizontal: 5),
-        height: 3,
+        margin: EdgeInsets.symmetric(horizontal: 5),
+        height: 1,
         width: MediaQuery.sizeOf(context).width * 0.28,
         color: dividerColor,
       )

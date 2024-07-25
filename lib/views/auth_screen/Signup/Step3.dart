@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
+import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
 import 'package:ride_app/views/role_selection_screen/select_role.dart';
@@ -23,7 +25,7 @@ class Step3 extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
           actions: [
             SignupStepsCount(title: 3.toString()),
@@ -34,7 +36,7 @@ class Step3 extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.66,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -47,7 +49,7 @@ class Step3 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(height: 0.020,),
+                    CustomSized(height: 0.020,),
                     RichText(
                         text: const TextSpan(children: [
                       TextSpan(
@@ -63,20 +65,20 @@ class Step3 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 18))
                     ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(
                         title: 'Enter your Phone Number',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.01,
                     ),
                     smallText(title: 'Add to recovery phone to help keep your account',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.001,
                     ),
                     smallText(title: 'secure',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.04,
                     ),
                     CustomTextField(
@@ -84,41 +86,37 @@ class Step3 extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Phone Number',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: phone,
                     ),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     CustomButton(
                       title: 'Continue',
                       onTap: () {
                         Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) => const Step4()));
+                            MaterialPageRoute(builder: (context) => Step4()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     dividerRow(context: context),
-                    const CustomSized(height: 0.04),
-                    const LoginOptionsRow(),
-                    const CustomSized(height: 0.045),
+                    CustomSized(height: 0.04),
+                    LoginOptionsRow(),
+                    CustomSized(height: 0.045),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const SelectRole()));
+                            MaterialPageRoute(
+                                builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Already a member ?  ', color: Colors.black),
-                          smallText(title: 'Login', color: Colors.blue),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

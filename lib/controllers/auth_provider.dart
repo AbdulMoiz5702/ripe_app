@@ -8,6 +8,11 @@ import 'package:ride_app/services/local_storage_strings.dart';
 class AuthProvider extends ChangeNotifier {
 
   var isLoading = false;
+  bool isSelected = false;
+  changeValue(value){
+    isSelected = value;
+    notifyListeners();
+  }
   final FlutterSecureStorage secureStorage = const FlutterSecureStorage();
   final LocalAuthentication authLocal = LocalAuthentication();
 

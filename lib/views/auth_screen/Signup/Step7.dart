@@ -5,6 +5,7 @@ import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
 import '../../../consts/images_path.dart';
+import '../../../main.dart';
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/allow_access_locaion_text.dart';
 import '../../bottom_screen/Main_bottom_Screen.dart';
@@ -29,14 +30,14 @@ class Step7 extends StatelessWidget {
             Center(
               child: Image(
                 alignment: Alignment.center,
-                image: const AssetImage(locationAccess),
+                image: AssetImage(locationAccess),
                 isAntiAlias: true,
                 height: MediaQuery.sizeOf(context).height * 0.3,
                 width: MediaQuery.sizeOf(context).width * 0.6,
                 fit: BoxFit.cover,
               ),
             ),
-            const CustomSized(),
+            CustomSized(),
             Align(
               alignment: Alignment.centerLeft,
               child: largeText(
@@ -44,43 +45,44 @@ class Step7 extends StatelessWidget {
                 textSize: 18.0,
               ),
             ),
-            const CustomSized(height: 0.004,),
+            CustomSized(height: 0.02,),
             Align(
                 alignment: Alignment.centerLeft,
                 child: smallText(title: 'Our app uses your location to:',color: primaryTextColor)),
-            const AllowAccessLocationText(
+            CustomSized(height: 0.005,),
+            AllowAccessLocationText(
               pointOne: 'Match You with Nearby Drivers: ',
               pointTwo: 'Knowing your',
               pointThree:'location helps us connect you with the closest',
               pointFour: 'available driver.',
             ),
-            const AllowAccessLocationText(
+            AllowAccessLocationText(
               pointOne: 'Provide Accurate ETAs: ',
               pointTwo: 'We calculate ',
               pointThree:'estimated arrival times based on real-time',
               pointFour: 'traffic and your current position.',
             ),
-            const AllowAccessLocationText(
+            AllowAccessLocationText(
               pointOne: 'Ensure Safety: ',
               pointTwo: 'In case of emergencies, we can',
               pointThree:'quickly locate you and assist you. Your privacy',
               pointFour: 'matters to us, and we only use your location for',
               pointFive: 'ride-related purposes.',
             ),
-            const CustomSized(height: 0.04),
+            CustomSized(height: 0.04),
             LocationAccessButton(
+              weight: FontWeight.w700,
               title: 'Allow access',
               onTap: () {
                 Navigator.pushReplacement(
                     context,
-                    CupertinoPageRoute(
-                        builder: (context) => const MainBottomScreen()));
+                    MaterialPageRoute(
+                        builder: (context) => MainBottomScreen()));
               },
               borderRadius: 30,
               width: 1,
-              height: 0.07,
             ),
-            const CustomSized(height: 0.04),
+            CustomSized(height: 0.04),
             GestureDetector(
               onTap: (){},
               child: largeText(
@@ -88,7 +90,7 @@ class Step7 extends StatelessWidget {
                   textSize: 15.0,
                   color: secondaryTextColor),
             ),
-            const CustomSized(height: 0.02),
+            CustomSized(height: 0.02),
           ],
         ),
       ),

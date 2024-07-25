@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/alert_dialogs/selection_alert_dialg.dart';
 import 'package:ride_app/views/auth_screen/Signup/Step7.dart';
 import '../../../consts/images_path.dart';
+import '../../../main.dart';
 import '../../../resubale_widgets/Bg_widget.dart';
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
@@ -18,22 +20,13 @@ class Step6 extends StatefulWidget {
 
 class _Step6State extends State<Step6> {
 
-  void _showCustomAlertDialog(BuildContext context) {
-    Future.delayed(const Duration(seconds: 1),(){
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return const CustomAlertDialog();
-        },
-      );
-    });
-  }
+
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _showCustomAlertDialog(context);
+    AlertDialogClass().showCustomAlertDialog(context);
   }
 
   @override
@@ -42,7 +35,7 @@ class _Step6State extends State<Step6> {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
         ),
         body: Align(
@@ -50,7 +43,7 @@ class _Step6State extends State<Step6> {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -79,42 +72,43 @@ class _Step6State extends State<Step6> {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18))
                         ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(title: 'Account created successfully.',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.01,
                     ),
                     smallText(
-                      title: 'Your account has been created successfully. You’re ready to use the app now.',),
-                    const CustomSized(
+                      title: 'Your account has been created successfully. You’re',),
+                    smallText(
+                      title: 'ready to use the app now.',),
+                    CustomSized(
                       height: 0.02,
                     ),
                     Center(
                       child: Image(
                         alignment: Alignment.center,
-                        image: const AssetImage(accountCreated),
+                        image: AssetImage(accountCreated),
                         isAntiAlias: true,
                         height: MediaQuery.sizeOf(context).height * 0.3,
                         width: MediaQuery.sizeOf(context).width * 0.6,
                         fit:BoxFit.cover,
                       ),
                     ),
-                    const CustomSized(height: 0.12,),
+                    CustomSized(height: 0.15,),
                     CustomButton(
                       onBoard: false,
                       title: 'Book a ride',
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const Step7(
+                            MaterialPageRoute(
+                                builder: (context) => Step7(
                                 )));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                   ],
                 ),

@@ -28,6 +28,9 @@ const String wagon = 'assets/vectors/wagon.png';
 const String avatar = 'assets/vectors/avatar.png';
 const String messageIcon = 'assets/vectors/message.png';
 const String favorite = 'assets/vectors/favorite.png';
+const String driverLicenceNumber = 'assets/vectors/driving_licence_number.png';
+const String carSimple = 'assets/vectors/car_simple.png';
+const String hash = 'assets/vectors/hash.png';
 
 
 
@@ -60,6 +63,21 @@ const String bellSimpleSvg = 'assets/svg_pictures/BellSimple.svg';
 const String houseSvg = 'assets/svg_pictures/House.svg';
 const String userSvg = 'assets/svg_pictures/User.svg';
 const String calenderSvg = 'assets/svg_pictures/Calendar.svg';
+const String creditCardSvg = 'assets/svg_pictures/credit_card.svg';
+const String payPalSvg = 'assets/svg_pictures/pay_pal.svg';
+const String brandLogoSvg = 'assets/svg_pictures/brand_logo_svg.svg';
+const String uberLogoSvg = 'assets/svg_pictures/uber_svg.svg';
+const String ylaSvg = 'assets/svg_pictures/lya_svg.svg';
+const String aiBot = 'assets/svg_pictures/ai_bot_svg.svg';
+const String normalRoute = 'assets/svg_pictures/normal_route_svg.svg';
+const String camera = 'assets/svg_pictures/camera_svg.svg';
+const String gallery = 'assets/svg_pictures/gallery_svg.svg';
+const String airplaneTakeoff = 'assets/svg_pictures/AirplaneTakeoff_svg.svg';
+const String parkSvg = 'assets/svg_pictures/Park_svg.svg';
+const String handBagSvg = 'assets/svg_pictures/Handbag_svg.svg';
+const String advanceCalender = 'assets/svg_pictures/advance_calender.svg';
+const String hamBurger = 'assets/svg_pictures/gallery_svg.svg';
+
 
 // car guide images
 

@@ -18,7 +18,7 @@ class VeiwingProile extends StatelessWidget {
   Widget build(BuildContext context) {
     return BgWidget(child:Scaffold(
       appBar: AppBar(
-        leading:const CustomLeading(),
+        leading:CustomLeading(),
         backgroundColor: Colors.transparent,
       ),
       backgroundColor: Colors.transparent,
@@ -53,21 +53,21 @@ class VeiwingProile extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18))
                       ])),
-                  const CustomSized(height: 0.02),
+                  CustomSized(height: 0.02),
                   largeText(title: 'Hang tight! We’re verifying'),
-                  const CustomSized(height: 0.003),
+                  CustomSized(height: 0.003),
                   largeText(title: 'your profile.'),
-                  const CustomSized(height: 0.02),
+                  CustomSized(height: 0.02),
                   smallText(title: 'Your account verification as a driver has been'),
-                  const CustomSized(height: 0.003),
+                  CustomSized(height: 0.003),
                   smallText(title: 'completed successfully. It will take a few minutes'),
-                  const CustomSized(height: 0.003),
+                  CustomSized(height: 0.003),
                   smallText(title: 'to verify your account and you’ll be notified soon. '),
-                  const CustomSized(height: 0.003),
+                  CustomSized(height: 0.003),
                   smallText(title: 'Meanwhile, you may set-up  your profile.'),
-                  Align(alignment:Alignment.center,child: Image(image: const AssetImage(check),height: MediaQuery.sizeOf(context).height * 0.25,)),
+                  Align(alignment:Alignment.center,child: Image(image: AssetImage(check),height: MediaQuery.sizeOf(context).height * 0.25,)),
                   Container(
-                    padding: const EdgeInsets.all(15),
+                    padding: EdgeInsets.all(15),
                     height: MediaQuery.sizeOf(context).height * 0.1,
                     width: MediaQuery.sizeOf(context).width * 1,
                     decoration: BoxDecoration(
@@ -90,16 +90,15 @@ class VeiwingProile extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const CustomSized(height: 0.03),
+                  CustomSized(height: 0.03),
                   CustomButton(
                       width: 1,
-                      height: 0.07,
                       borderRadius: 30,
                       title: 'Upload car images',
                       onTap: () {
-                        Navigator.push(context, CupertinoPageRoute(builder: (context)=> const VerifyImagesInstructionScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> VerifyImagesInstructionScreen()));
                       }),
-                  const CustomSized(height: 0.002),
+                  CustomSized(height: 0.002),
                   const  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

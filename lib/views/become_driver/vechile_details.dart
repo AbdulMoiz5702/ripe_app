@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/views/become_driver/Car_insurance_details.dart';
 import '../../consts/colors.dart';
+import '../../consts/images_path.dart';
 import '../../controllers/become_driver_controller.dart';
 import '../../resubale_widgets/Bg_widget.dart';
 import '../../resubale_widgets/CustomButton.dart';
@@ -21,7 +22,7 @@ class VehicleDetails extends StatelessWidget {
     return BgWidget(
       child: Scaffold(
         appBar: AppBar(
-          leading:const CustomLeading(),
+          leading:CustomLeading(),
           backgroundColor: Colors.transparent,
         ),
         body: Align(
@@ -29,7 +30,7 @@ class VehicleDetails extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -43,7 +44,7 @@ class VehicleDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     RichText(
@@ -61,11 +62,11 @@ class VehicleDetails extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0))
                         ])),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     largeText(title: 'Vehicle details',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Row(
@@ -79,9 +80,9 @@ class VehicleDetails extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: checkColor,
                           ),
-                          child: const Icon(Icons.check,color: checkBoxColor,),
+                          child: Icon(Icons.check,color: checkBoxColor,),
                         ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: const EdgeInsets.symmetric(horizontal: 8),),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
                           alignment: Alignment.center,
                           height: 30,
@@ -92,7 +93,7 @@ class VehicleDetails extends StatelessWidget {
                           ),
                           child: largeText(title: '2',color: whiteColor,textSize: 14.0),
                         ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: const EdgeInsets.symmetric(horizontal: 8),),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
                           alignment: Alignment.center,
                           height: 30,
@@ -105,7 +106,7 @@ class VehicleDetails extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Padding(
@@ -119,7 +120,7 @@ class VehicleDetails extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     CustomLeadingTextField(
@@ -127,39 +128,35 @@ class VehicleDetails extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Car Number',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.commute_outlined,
+                      iconPath: carSimple,
                     ),
-                    const CustomSized(height: 0.023),
+                    CustomSized(height: 0.023),
                     CustomLeadingTextField(
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Car ownership form Number',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.calendar_today_outlined,
+                      iconPath: hash,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.023,
                     ),
                     CustomLeadingTextField(
+                      isHintChange: true,
+                      leadingText: 'Date of expire',
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Date of expire',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      hint: 'dd/mm/yyyy',
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.023,
                     ),
                     Consumer<BecomeDriverProvider>(builder: (context,provider,_){
@@ -167,8 +164,7 @@ class VehicleDetails extends StatelessWidget {
                         provider.pickImage(imageType:'ownerShipFormImage');
                       },imagePath: provider.ownerShipFormImage.toString(),);
                     }),
-
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -179,7 +175,7 @@ class VehicleDetails extends StatelessWidget {
                           Navigator.pop(context);
                         },width: 0.27,borderRadius: 30,),
                         CustomButton(title: 'Next', onTap:(){
-                          Navigator.push(context,CupertinoPageRoute(builder: (context)=> const CarInsuranceDetailsScreen()));
+                          Navigator.push(context,CupertinoPageRoute(builder: (context)=> CarInsuranceDetailsScreen()));
                         },width: 0.55,borderRadius: 30,),
                       ],
                     ),

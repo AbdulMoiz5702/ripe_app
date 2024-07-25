@@ -11,6 +11,7 @@ import '../../controllers/become_driver_controller.dart';
 import '../../resubale_widgets/CustomButton.dart';
 import '../../resubale_widgets/Custom_Sized.dart';
 import '../../resubale_widgets/text_widgets.dart';
+import '../driver_profile_veriication/veiwing_proile.dart';
 
 class UploadFrontImageScreen extends StatelessWidget {
   const UploadFrontImageScreen({super.key});
@@ -37,7 +38,7 @@ class UploadFrontImageScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                       image: provider.carFrontImagePath == null
-                          ? const AssetImage(carFront)
+                          ? AssetImage(carFront)
                           : FileImage(
                                   File(provider.carFrontImagePath.toString()))
                               as ImageProvider,
@@ -45,10 +46,10 @@ class UploadFrontImageScreen extends StatelessWidget {
                 ),
               );
             }),
-            const CustomSized(),
+            CustomSized(height: 0.002,),
             Container(
-              margin: const EdgeInsets.all(15),
-              padding: const EdgeInsets.all(20),
+              margin: EdgeInsets.all(15),
+              padding: EdgeInsets.all(20),
               height: MediaQuery.sizeOf(context).height * 0.11,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
@@ -81,12 +82,14 @@ class UploadFrontImageScreen extends StatelessWidget {
                 ],
               ),
             ),
+            CustomSized(),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Column(
                 children: [
                   LocationAccessButton(
+                    isImagePath: true,
+                    imagePath: gallery,
                     width: 1,
-                    height: 0.07,
                     title: provider.carFrontImagePath == null
                         ? 'Upload from gallery'
                         : 'Retake',
@@ -101,11 +104,11 @@ class UploadFrontImageScreen extends StatelessWidget {
                     color: secondaryWhiteColor,
                     weight: FontWeight.w700,
                   ),
-                  const CustomSized(height: 0.02),
+                  CustomSized(height: 0.02),
                   provider.carFrontImagePath == null
                       ? LocationAccessButton(
+                    isImagePath: true,
                           width: 1,
-                          height: 0.07,
                           title:'Camera',
                           onTap: () {
                             provider.pickImage(
@@ -120,14 +123,13 @@ class UploadFrontImageScreen extends StatelessWidget {
                       : CustomButton(
                           onBoard: false,
                           width: 1,
-                          height: 0.07,
                           borderRadius: 30,
                           title: 'Confirm',
                           onTap: () {
                             Navigator.push(
                                 context,
-                                CupertinoPageRoute(
-                                    builder: (context) => const UploadCarRightSideImage()));
+                                MaterialPageRoute(
+                                    builder: (context) => UploadCarRightSideImage()));
                           }),
                 ],
               );

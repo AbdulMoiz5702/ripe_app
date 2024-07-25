@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
+import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 import 'package:ride_app/resubale_widgets/divider_row.dart';
 import 'package:ride_app/resubale_widgets/login_options_row.dart';
@@ -24,7 +26,7 @@ class Step1 extends StatelessWidget {
         resizeToAvoidBottomInset: true,
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
           actions: [
             SignupStepsCount(title: 1.toString()),
@@ -48,7 +50,7 @@ class Step1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     RichText(
@@ -66,20 +68,20 @@ class Step1 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 18))
                     ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(
-                        title: 'Hi 👋 What\'s your name ?',),
-                    const CustomSized(
+                        title: 'Hi 👋 What\'s your name?',),
+                    CustomSized(
                       height: 0.01,
                     ),
                     smallText(title: 'This name will be used to credit you for the things you',textSize:13.0 ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.001,
                     ),
                     smallText(title: 'share. What should we call you?',textSize:13.0 ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.04,
                     ),
                     CustomTextField(
@@ -87,41 +89,37 @@ class Step1 extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Full Name',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: user,
                     ),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     CustomButton(
                       title: 'Continue',
                       onTap: () {
                         Navigator.push(context,
-                            CupertinoPageRoute(builder: (context) => const Step2()));
+                            MaterialPageRoute(builder: (context) => Step2()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
-                    const CustomSized(height: 0.028),
+                    CustomSized(height: 0.028),
                     dividerRow(context: context),
-                    const CustomSized(height: 0.04),
-                    const LoginOptionsRow(),
-                    const CustomSized(height: 0.045),
+                    CustomSized(height: 0.04),
+                    LoginOptionsRow(),
+                    CustomSized(height: 0.045),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const SelectRole()));
+                            MaterialPageRoute(
+                                builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Already a member ?  ', color: Colors.black),
-                          smallText(title: 'Login', color: Colors.blue),
+                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

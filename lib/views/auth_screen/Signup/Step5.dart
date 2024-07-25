@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
@@ -18,7 +19,7 @@ class Step5 extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
           actions: [
             SignupStepsCount(title: 5.toString()),
@@ -29,7 +30,7 @@ class Step5 extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -58,43 +59,43 @@ class Step5 extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 18))
                     ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(title: 'Enter 6-digit code',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.01,
                     ),
                     smallText(
                         title: 'Verification code has sent to your account at',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.005,
                     ),
                     smallText(
                         title: 'mr**********@gmail.com.Kindly enter 6-digit code',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.005,
                     ),
                     smallText(
                         title: 'to verify your account',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.02,
                     ),
                     Center(
                       child: Image(
                         alignment: Alignment.center,
-                          image: const AssetImage(mail),
+                          image: AssetImage(mail),
                           isAntiAlias: true,
                           height: MediaQuery.sizeOf(context).height * 0.3,
                           width: MediaQuery.sizeOf(context).width * 0.6,
                           fit:BoxFit.cover,
                       ),
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.02,
                     ),
-                    const CustomOtpField(),
-                    const CustomSized(
+                    CustomOtpField(),
+                    CustomSized(
                       height: 0.01,
                     ),
                     Row(
@@ -102,16 +103,16 @@ class Step5 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         smallText(
-                            title: '[ 1:00 ] ',
-                            color: Colors.black,
-                            weight: FontWeight.w500),
+                            title: '( 1:00 ) ',
+                            color: primaryTextColor,
+                        ),
                         smallText(
                             title: 'Resend code',
-                            color: Colors.blue,
-                            weight: FontWeight.w500),
+                            color: checkBoxColor,
+                        ),
                       ],
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.02,
                     ),
                     CustomButton(
@@ -119,12 +120,11 @@ class Step5 extends StatelessWidget {
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const Step6()));
+                            MaterialPageRoute(
+                                builder: (context) => Step6()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                     ),
                   ],
                 ),

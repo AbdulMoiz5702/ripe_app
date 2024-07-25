@@ -5,6 +5,7 @@ import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
+import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 import 'package:ride_app/resubale_widgets/login_options_row.dart';
 import 'package:ride_app/views/bottom_screen/Main_bottom_Screen.dart';
@@ -26,7 +27,7 @@ class LoginScreen extends StatelessWidget {
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          leading: const CustomLeading(),
+          leading: CustomLeading(),
           backgroundColor: Colors.transparent,
         ),
         body: Align(
@@ -34,7 +35,7 @@ class LoginScreen extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.78,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -47,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     RichText(
@@ -65,12 +66,12 @@ class LoginScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               fontSize: 18))
                     ])),
-                    const CustomSized(
-                      height: 0.01,
+                    CustomSized(
+                      height: 0.02,
                     ),
                     largeText(
                         title: 'Hey there, Welcome Back', color: Colors.black),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.04,
                     ),
                     CustomTextField(
@@ -78,13 +79,11 @@ class LoginScreen extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Email / Phone number',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: email,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.03,
                     ),
                     CustomTextField(
@@ -92,37 +91,34 @@ class LoginScreen extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Password',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconPath: lock,
                       isPassword: true,
                     ),
-                    const CustomSized(height: 0.003),
+                    CustomSized(height: 0.003),
                     Align(alignment: Alignment.centerRight, child: GestureDetector(
                       onTap: (){
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const ForgotStep1()));
+                            MaterialPageRoute(
+                                builder: (context) => ForgotStep1()));
                       },
                         child: smallText(title: 'Forgot password ?', color: lightPrimaryTextColor,textSize: 13.0))),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     CustomButton(
                       title: 'Login',
                       onTap: () {
                         Navigator.pushReplacement(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const MainBottomScreen()));
+                            MaterialPageRoute(
+                                builder: (context) => MainBottomScreen()));
                       },
                       borderRadius: 30,
                       width: 1,
-                      height: 0.07,
                       onBoard: false,
                     ),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     Consumer<AuthProvider>(builder: (context,provider,_){
                       return GestureDetector(
                       onTap: (){
@@ -134,10 +130,10 @@ class LoginScreen extends StatelessWidget {
                           normalText(
                               title: 'Login with fingerprint',
                               color: Colors.blue),
-                          const CustomSized(
+                          CustomSized(
                             width: 0.01,
                           ),
-                          const Icon(
+                          Icon(
                             Icons.fingerprint,
                             color: Colors.blue,
                           ),
@@ -145,24 +141,23 @@ class LoginScreen extends StatelessWidget {
                       ),
                       );
                     }),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.03),
                     dividerRow(context: context,title: 'login',),
-                    const CustomSized(height: 0.035),
-                    const LoginOptionsRow(),
-                    const CustomSized(height: 0.03),
+                    CustomSized(height: 0.035),
+                    LoginOptionsRow(),
+                    CustomSized(height: 0.03),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
-                            CupertinoPageRoute(
-                                builder: (context) => const SelectRole()));
+                            MaterialPageRoute(
+                                builder: (context) => SelectRole()));
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          normalText(
-                              title: 'Not a member ?  ', color: Colors.black),
-                          smallText(title: 'Register now', color: Colors.blue),
+                          smallText(title: 'Not a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Register now',color: checkBoxColor,textSize: 13.0),
                         ],
                       ),
                     ),

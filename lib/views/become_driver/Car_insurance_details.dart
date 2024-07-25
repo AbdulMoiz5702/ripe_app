@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ride_app/consts/images_path.dart';
 import '../../consts/colors.dart';
 import '../../controllers/become_driver_controller.dart';
 import '../../resubale_widgets/Bg_widget.dart';
@@ -21,7 +22,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
     return BgWidget(
       child: Scaffold(
         appBar: AppBar(
-          leading:const CustomLeading(),
+          leading:CustomLeading(),
           backgroundColor: Colors.transparent,
         ),
         body: Align(
@@ -29,7 +30,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
           child: Container(
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
@@ -43,7 +44,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     RichText(
@@ -61,11 +62,11 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0))
                         ])),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     largeText(title: 'Car insurance details',),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Row(
@@ -79,9 +80,9 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: checkColor,
                           ),
-                          child: const Icon(Icons.check,color: checkBoxColor,),
+                          child: Icon(Icons.check,color: checkBoxColor,),
                         ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: const EdgeInsets.symmetric(horizontal: 8),),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
                           alignment: Alignment.center,
                           height: 30,
@@ -90,9 +91,9 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                               shape: BoxShape.circle,
                               color: checkColor
                           ),
-                          child: const Icon(Icons.check,color: checkBoxColor,),
+                          child: Icon(Icons.check,color: checkBoxColor,),
                         ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: const EdgeInsets.symmetric(horizontal: 8),),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
                           alignment: Alignment.center,
                           height: 30,
@@ -105,7 +106,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     Padding(
@@ -119,7 +120,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.020,
                     ),
                     CustomLeadingTextField(
@@ -127,39 +128,37 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Car insurance number',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
-                      iconData: Icons.commute_outlined,
+                      iconPath: hash,
                     ),
-                    const CustomSized(height: 0.023),
+                    CustomSized(height: 0.023),
                     CustomLeadingTextField(
+                      isHintChange: true,
+                      leadingText: 'Date of issue',
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Date of issue',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      hint: 'dd/mm/yyyy',
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.023,
                     ),
                     CustomLeadingTextField(
+                      isHintChange: true,
+                      leadingText: 'Date of expire',
                       controller: controller,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
-                      hint: 'Date of expire',
-                      onValidator: (value) {
-                        return null;
-                      },
+                      hint: 'dd/mm/yyyy',
+                      onValidator: (value) {},
                       onFieldSubmittedValue: (value) {},
                       iconData: Icons.calendar_today_outlined,
                     ),
-                    const CustomSized(
+                    CustomSized(
                       height: 0.023,
                     ),
                     Consumer<BecomeDriverProvider>(builder: (context,provider,_){
@@ -167,7 +166,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                         provider.pickImage(imageType:'insuranceShipFormImage');
                       },imagePath: provider.insuranceShipFormImage.toString(),);
                     }),
-                    const CustomSized(height: 0.02),
+                    CustomSized(height: 0.02),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -180,7 +179,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                         CustomButton(
                           onBoard: false,
                           title: 'Submit', onTap:(){
-                          Navigator.push(context,CupertinoPageRoute(builder: (context)=> const ProfilePictureScreen()));
+                          Navigator.push(context,CupertinoPageRoute(builder: (context)=> ProfilePictureScreen()));
                         },width: 0.55,borderRadius: 30,),
                       ],
                     ),

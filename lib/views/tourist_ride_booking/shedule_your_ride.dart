@@ -18,7 +18,6 @@ class SheduleYourRideScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controller = Provider.of<ScheduleRideProvider>(context,listen: false);
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
@@ -38,7 +37,7 @@ class SheduleYourRideScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontSize: 18))
             ])),
-        actions: const [
+        actions: [
           CustomLeading(isHome: true,iconData: Icons.close_outlined,)
         ],
       ),
@@ -47,17 +46,17 @@ class SheduleYourRideScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CustomSized(height: 0.02,),
+            CustomSized(height: 0.02,),
             largeText(title:'Scheduled your ride'),
-            const CustomSized(height: 0.01,),
+            CustomSized(height: 0.01,),
             smallText(title:'Which time you want to be picked up?'),
-            const CustomSized(height: 0.02,),
+            CustomSized(height: 0.02,),
             Consumer<ScheduleRideProvider>(
               builder: (context,provider,_){
                 return Align(
                   alignment: Alignment.center,
                   child: Container(
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     height: MediaQuery.sizeOf(context).height * 0.2,
                     width: MediaQuery.sizeOf(context).width * 0.9,
                     decoration: BoxDecoration(
@@ -72,7 +71,7 @@ class SheduleYourRideScreen extends StatelessWidget {
                             provider.selectDate(context);
                           },
                             child: largeText(title: DateFormat('d MMM, E').format(provider.selectedDate),textSize: 32.0,weight: FontWeight.w800)),
-                        const Divider(color: dividerColor,),
+                        Divider(color: dividerColor,),
                         GestureDetector(
                             onTap: (){
                               provider.selectTime(context);
@@ -84,12 +83,12 @@ class SheduleYourRideScreen extends StatelessWidget {
                 );
               },
             ),
-            const CustomSized(height: 0.3,),
+            CustomSized(height: 0.3,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Icon(Icons.notifications_active_outlined,color: checkBoxColor,size: 30,),
-                const CustomSized(width: 0.02,),
+                Icon(Icons.notifications_active_outlined,color: checkBoxColor,size: 30,),
+                CustomSized(width: 0.02,),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -100,7 +99,7 @@ class SheduleYourRideScreen extends StatelessWidget {
                 )
               ],
             ),
-            const CustomSized(height: 0.02,),
+            CustomSized(height: 0.02,),
             Consumer<ScheduleRideProvider>(
               builder: (context,provider,_){
                 return Align(
@@ -115,11 +114,11 @@ class SheduleYourRideScreen extends StatelessWidget {
                     },borderRadius: 30,onBoard: false,width: 1,));
               },
             ),
-            const CustomSized(height: 0.02,),
+            CustomSized(height: 0.02,),
             Align(
                 alignment: Alignment.center,
-                child: CustomButton(title: 'Set current ate and time', onTap: (){
-                  Navigator.push(context, CupertinoPageRoute(builder: (context)=> const CurrentPickUpScreen()));
+                child: CustomButton(title: 'Set current date and time', onTap: (){
+                  Navigator.push(context, CupertinoPageRoute(builder: (context)=> CurrentPickUpScreen()));
                 },borderRadius: 30,onBoard: false,width: 1,color: secondaryWhiteColor,titleColor: primaryTextColor,)),
           ],
         ),

@@ -11,7 +11,7 @@ class RoleSelectionConatiner extends StatelessWidget {
   final String description;
   final bool isSelected;
   const RoleSelectionConatiner(
-      {super.key, required this.title,
+      {required this.title,
       required this.onTap,
       required this.imagePath,
       required this.description,
@@ -39,35 +39,39 @@ class RoleSelectionConatiner extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  const CustomSized(
+                  CustomSized(
                     height: 0.01,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),
-                    child: SizedBox(
+                    child: Container(
                       height: MediaQuery.sizeOf(context).height * 0.12,
                       width: MediaQuery.sizeOf(context).width * 0.28,
-                      child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : blackColor,),
+                      child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : primaryTextColor,),
                     ),
                   ),
-                  const CustomSized(
+                  CustomSized(
                     height: 0.01,
                   ),
-                  normalText(
+                  smallText(
                       title: title,
-                      color: isSelected == true ? Colors.blue : Colors.black),
-                  const CustomSized(
+                      color: isSelected == true ?  checkBoxColor :  primaryTextColor),
+                  CustomSized(
                     height: 0.01,
                   ),
                 ],
               ),
             ),
-            const CustomSized(
+            CustomSized(
               height: 0.01,
             ),
-            smallText(
-                title: description, color: Colors.black38, textSize: 10.0),
-            const CustomSized(
+            Expanded(child: Text(description,style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w400,
+              color: primaryTextColor,
+              fontFamily:'Nunito Sans',
+            ),)),
+            CustomSized(
               height: 0.02,
             ),
           ],
