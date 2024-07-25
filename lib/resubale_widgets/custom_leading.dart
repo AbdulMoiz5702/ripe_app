@@ -21,7 +21,7 @@ class CustomLeading extends StatelessWidget {
           color: Colors.white,
           border: isHome == true ? Border.all(color: otpColor) : null,
         ),
-        child: Center(child: Icon(iconData,color: Colors.black,),),
+        child: Center(child: SvgPicture.asset('assets/svg_pictures/ArrowLeft.svg'),),
       ),
     );
   }
