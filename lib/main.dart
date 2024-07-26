@@ -9,6 +9,7 @@ import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/controllers/role_selection_provider.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/controllers/zego_cloud_provider.dart';
+import 'package:ride_app/firebase_options.dart';
 import 'package:ride_app/views/on_boarding/on_borading_screen.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
@@ -23,7 +24,9 @@ final navigatorKey = GlobalKey<NavigatorState>();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   ZegoUIKitPrebuiltCallInvitationService().setNavigatorKey(navigatorKey);
   ZegoUIKit().initLog().then((value) {ZegoUIKitPrebuiltCallInvitationService().useSystemCallingUI([ZegoUIKitSignalingPlugin()],);});
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);

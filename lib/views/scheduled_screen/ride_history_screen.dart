@@ -4,6 +4,7 @@ import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
+import 'package:ride_app/views/chatting_screens/user_rider_chat.dart';
 import 'package:ride_app/views/scheduled_screen/components/location_tile.dart';
 
 class RideHistoryScreen extends StatefulWidget {
@@ -403,36 +404,41 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
 
                 Spacer(),
                 CircleAvatar(
-                  child: SvgPicture.asset('assets/svg_pictures/call icon.svg'),
+                  child: SvgPicture.asset('assets/svg_pictures/call_icon.svg'),
 
                   backgroundColor: primaryTextColor,
                   maxRadius: 24.0,
                 ),
 
-                Stack(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 12.0, right: 20.0),
-                      child: CircleAvatar(
-                        child: SvgPicture.asset('assets/svg_pictures/message icon.svg'),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => UserRiderChatScreen()));
+                  },
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 12.0, right: 20.0),
+                        child: CircleAvatar(
+                          child: SvgPicture.asset('assets/svg_pictures/message icon.svg'),
 
-                        backgroundColor: primaryTextColor,
-                        maxRadius: 24.0,
-                      ),
-                    ),
-                    Positioned(
-                      right: 24.0,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: redColor,
-                          border: Border.all(color: whiteColor),
-                          borderRadius: BorderRadius.circular(100)
+                          backgroundColor: primaryTextColor,
+                          maxRadius: 24.0,
                         ),
-                        width: 11,
-                        height: 11,
                       ),
-                    )
-                  ],
+                      Positioned(
+                        right: 24.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: redColor,
+                            border: Border.all(color: whiteColor),
+                            borderRadius: BorderRadius.circular(100)
+                          ),
+                          width: 11,
+                          height: 11,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

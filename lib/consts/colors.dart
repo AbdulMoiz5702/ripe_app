@@ -51,14 +51,6 @@ const Color progressrideCOlor = Color(0xffEBF7FD);
 const Color lightGreenColor = Color(0xffD4ECD8);
 const Color darkgreenColor = Color(0xff33800B);
 const Color lightdarkColor = Color(0xffDFE2E5);
-
-
-const Color lightgreyColor = Color(0xffDBDEE2);
-const Color orangeColor = Color(0xffFF3A1C);
-const Color progressrideCOlor = Color(0xffEBF7FD);
-const Color lightGreenColor = Color(0xffD4ECD8);
-const Color darkgreenColor = Color(0xff33800B);
-const Color lightdarkColor = Color(0xffDFE2E5);
 const Color backgroundpaperColor = Color(0xffF9FAFB);
 const Color lightbackgroundpaperColor = Color(0xffCCECFB);
 
