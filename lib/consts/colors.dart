@@ -60,6 +60,9 @@ const Color  authDividerColor = Color(0xffdbdee2);
 // seconday colors
 const Color lightgreyColor = Color(0xffDBDEE2);
 const Color lightdarkColor = Color(0xffDFE2E5);
+const Color backgroundpaperColor = Color(0xffF9FAFB);
+const Color lightbackgroundpaperColor = Color(0xffCCECFB);
+
 
 // light divider color
 const lightDividerColor = Color(0xff414652);

@@ -197,6 +197,8 @@ class SecondaryCustomButton extends StatelessWidget {
   final Color titleColor;
   final bool isBorder;
   final Color borderColor;
+  final FontWeight weight;
+  final double textsize;
   const SecondaryCustomButton(
       {required this.title,
       required this.onTap,
@@ -207,7 +209,10 @@ class SecondaryCustomButton extends StatelessWidget {
       this.onBoard = true,
       this.titleColor = textButtonColor,
       this.isBorder = false,
-      this.borderColor = whiteColor});
+      this.borderColor = whiteColor,
+        this.weight =  FontWeight.w700,
+        this.textsize = 15.0,
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -228,9 +233,9 @@ class SecondaryCustomButton extends StatelessWidget {
           children: [
             smallText(
                 title: title,
-                textSize: 15.0,
+                textSize: textsize,
                 color: titleColor,
-                weight: FontWeight.w700),
+                weight:weight),
             CustomSized(
               width: 0.03,
             ),
@@ -264,6 +269,8 @@ class SecondaryAccessButton extends StatelessWidget {
   final FontWeight weight;
   final bool isBorder;
   final Color borderColor;
+  final double textsize;
+  final   double widthbetweentextandicon ;
   const SecondaryAccessButton(
       {required this.title,
       required this.onTap,
@@ -277,7 +284,10 @@ class SecondaryAccessButton extends StatelessWidget {
       this.imagePath = camera,
       this.isImagePath = false,
       this.isBorder = false,
-      this.borderColor = whiteColor});
+      this.borderColor = whiteColor,
+        this.textsize = 15.0,
+        this.widthbetweentextandicon =  0.03,
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -306,11 +316,11 @@ class SecondaryAccessButton extends StatelessWidget {
                     color: titleColor,
                   ),
             CustomSized(
-              width: 0.03,
+              width: widthbetweentextandicon,
             ),
             smallText(
                 title: title,
-                textSize: 15.0,
+                textSize: textsize,
                 color: titleColor,
                 weight: weight),
           ],
