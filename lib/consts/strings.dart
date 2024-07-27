@@ -194,5 +194,11 @@ var selectTheme = [
   'Dark theme',
 ];
 
+var paymentCards = [
+  visaCardSVG,
+  masterCardSVG,
+  amexCardSVG,
+];
+
 
 

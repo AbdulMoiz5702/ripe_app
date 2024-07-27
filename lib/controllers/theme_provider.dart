@@ -6,20 +6,19 @@ class ThemeProvider with ChangeNotifier {
   ThemeMode themeMode = ThemeMode.system;
 
 
-
   void toggleTheme(v) {
     switch (value){
       case 0 :
+        value = v;
       themeMode = ThemeMode.system;
-      value = v;
         break;
       case 1 :
-        themeMode = ThemeMode.dark;
         value = v;
+        themeMode = ThemeMode.dark;
         break;
       case 2:
-        themeMode = ThemeMode.light;
         value = v;
+        themeMode = ThemeMode.light;
         break;
     }
     notifyListeners();
