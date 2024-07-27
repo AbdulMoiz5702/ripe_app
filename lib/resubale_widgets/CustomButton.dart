@@ -146,7 +146,6 @@ class LocationAccessButton extends StatelessWidget {
   final IconData iconData;
   final Color titleColor;
   final Color tileColor;
-  final Color iamgepathColor;
   final FontWeight weight;
 
   const LocationAccessButton(
@@ -156,10 +155,9 @@ class LocationAccessButton extends StatelessWidget {
       required this.onTap,
       this.width = 0.7,
       this.color = buttonColor,
-        this.iamgepathColor = whiteColor,
       this.height = 0.06,
       this.borderRadius = 10,
-        this.tileColor = primaryTextColor,
+        this.tileColor = textButtonColor,
       this.iconData = Icons.place_outlined,
       this.titleColor = textButtonColor,
       this.weight = FontWeight.w400,
@@ -183,7 +181,7 @@ class LocationAccessButton extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             isImagePath == true
-                ? SvgPicture.asset(imagePath, color: iamgepathColor, )
+                ? SvgPicture.asset(imagePath, )
                 : Icon(
                     iconData,
                     color: tileColor,
