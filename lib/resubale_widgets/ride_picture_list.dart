@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
@@ -18,7 +19,9 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Card(
+      color: theme.colorScheme.inversePrimary,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -29,7 +32,7 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
             ),
             smallText(
               title: '  Vehicle details',
-            ),
+              color: theme.colorScheme.onSecondaryContainer),
             const CustomSized(
               height: 0.010,
             ),
@@ -47,24 +50,24 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                     height: 30,
                     width: 30,
                     alignment: Alignment.center,
-                    decoration: const BoxDecoration(
+                    decoration:  BoxDecoration(
                       shape: BoxShape.circle,
-                      color: checkBoxColor,
+                      color: theme.colorScheme.secondary,
                     ),
-                    child: const Icon(Icons.diamond_outlined,color: whiteColor,),
+                    child:  SvgPicture.asset(diamondSVG,color: theme.colorScheme.inversePrimary,),
                   ),
                 ),
-                largeText(title: 'Honda - Grey Corolla', textSize: 14.0),
+                largeText(title: 'Honda - Grey Corolla', textSize: 14.0,color: theme.primaryColor),
                 Container(
                   margin: const EdgeInsets.only(right: 5),
                   padding: const EdgeInsets.all(15),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: favoriteButtonColor,
+                      color: theme.colorScheme.surfaceContainerHighest,
                       borderRadius: BorderRadius.circular(
                         10,
                       )),
-                  child: largeText(title: 'RIR-19-467', textSize: 14.0),
+                  child: largeText(title: 'RIR-19-467', textSize: 14.0,color:theme.primaryColor),
                 ),
               ],
             ),
@@ -106,7 +109,7 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                   borderRadius: BorderRadius.circular(10),
                   color: lightgreyColor),
               indicatorDecoration: BoxDecoration(
-                  color: otpColor,
+                  color: theme.dividerColor,
                   borderRadius: BorderRadius.circular(10)),
             ),
             const CustomSized(

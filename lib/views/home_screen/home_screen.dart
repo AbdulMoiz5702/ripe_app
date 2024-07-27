@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -35,14 +36,14 @@ class HomeScreen extends StatelessWidget {
               CustomSized(
                 height: 0.03,
               ),
-              largeText(title: 'Welcome Peter 👋', textSize: 18.0),
+              largeText(title: 'Welcome Peter 👋', textSize: 18.0,color: theme.primaryColor),
               CustomSized(
                 height: 0.01,
               ),
               largeText(
                   title: 'Book a ride 👋',
                   textSize: 12.0,
-                  color: secondaryTextColor),
+                  color: theme.colorScheme.onSecondaryContainer),
               CustomSized(
                 height: 0.02,
               ),
@@ -78,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width * 1,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: checkBoxColor,
+                  color: theme.colorScheme.secondary,
                 ),
                 child: Column(
                   children: [
@@ -92,13 +93,13 @@ class HomeScreen extends StatelessWidget {
                             largeText(
                                 title: 'Book a ride',
                                 textSize: 18.0,
-                                color: whiteColor),
+                                color: theme.colorScheme.secondaryContainer),
                             CustomSized(
                               height: 0.006,
                             ),
                             smallText(
                                 title: "Enjoy your own personal ride",
-                                color: whiteColor),
+                                color: theme.colorScheme.secondaryContainer),
                           ],
                         ),
                         Container(
@@ -107,11 +108,11 @@ class HomeScreen extends StatelessWidget {
                           width: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            border: Border.all(color: textfieldColor),
+                            border: Border.all(color: theme.colorScheme.surfaceContainer),
                           ),
                           child: Icon(
                             Icons.arrow_forward,
-                            color: whiteColor,
+                            color: theme.colorScheme.secondaryContainer,
                             size: 30,
                           ),
                         ),
@@ -119,6 +120,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                     CustomSized(height: 0.03,),
                     HomeScreenTextField(
+                        hintColor: theme.colorScheme.secondaryContainer,
+                        color: theme.colorScheme.surfaceContainer,
                         enable:false,
                         controller: controller,
                         hint: 'Enter your destination',
@@ -134,7 +137,7 @@ class HomeScreen extends StatelessWidget {
               largeText(
                   title: 'Become a driver',
                   textSize: 12.0,
-                  color: secondaryTextColor),
+                  color: theme.colorScheme.onSecondaryContainer),
               CustomSized(
                 height: 0.01,
               ),
@@ -144,7 +147,7 @@ class HomeScreen extends StatelessWidget {
               CustomSized(
                 height: 0.02,
               ),
-              largeText(title: 'Invite friends', textSize: 12.0, color: secondaryTextColor),
+              largeText(title: 'Invite friends', textSize: 12.0, color: theme.colorScheme.onSecondaryContainer),
               CustomSized(
                 height: 0.02,
               ),

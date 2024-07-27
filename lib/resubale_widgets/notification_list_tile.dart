@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
@@ -16,20 +17,22 @@ class NotificationListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           smallText(
             title: title,
-            color: primaryTextColor
+            color: theme.primaryColor
           ),
           Transform.scale(
             scale: 0.6, // Adjust this value to change the size of the switch
             child: CupertinoSwitch(
+              trackColor: theme.colorScheme.surfaceContainerHighest,
               value: value,
               onChanged: onChanged,
-              activeColor: checkBoxColor,
+              activeColor: theme.colorScheme.secondary,
             ),
           ),
         ],

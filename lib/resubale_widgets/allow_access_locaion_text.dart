@@ -14,6 +14,7 @@ class AllowAccessLocationText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -25,23 +26,48 @@ class AllowAccessLocationText extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.brightness_1, size: 8, color: Colors.black),
+              child: Icon(Icons.brightness_1, size: 8, color: theme.primaryColor),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Text(pointOne,style: TextStyles.bulletPointBold,),
-                    Text(pointTwo,style: TextStyles.bulletPoint,),
+                    Text(pointOne,style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: theme.primaryColor,
+                      fontFamily:'Nunito Sans',
+                    ),),
+                    Text(pointTwo,style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: theme.primaryColor,
+                      fontFamily:'Nunito Sans',
+                    ),),
                   ],
                 ),
                 CustomSized(height: 0.002,),
-                Text(pointThree,style: TextStyles.bulletPoint,),
+                Text(pointThree,style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: theme.primaryColor,
+                  fontFamily:'Nunito Sans',
+                ),),
                 CustomSized(height: 0.002,),
-                Text(pointFour,style: TextStyles.bulletPoint,),
+                Text(pointFour,style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: theme.primaryColor,
+                  fontFamily:'Nunito Sans',
+                ),),
                 CustomSized(height: 0.002,),
-                pointFive == null ? Container(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyles.bulletPoint,),
+                pointFive == null ? Container(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w400,
+                  color: theme.primaryColor,
+                  fontFamily:'Nunito Sans',
+                ),),
               ],
             )
           ],

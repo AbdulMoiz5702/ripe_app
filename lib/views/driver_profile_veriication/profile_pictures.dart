@@ -17,6 +17,7 @@ class ProfilePictureScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -25,12 +26,12 @@ class ProfilePictureScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomSized(height: 0.02),
-            largeText(title: 'Add profile picture'),
-            smallText(title: 'This image will be displayed on your profile')
+            largeText(title: 'Add profile picture',color:theme.colorScheme.primary),
+            smallText(title: 'This image will be displayed on your profile',color: theme.colorScheme.onSecondaryContainer)
           ],
         ),
       ),
-      backgroundColor: whiteColor,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -42,7 +43,7 @@ class ProfilePictureScreen extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width * 0.6,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: secondaryWhiteColor),
+                  border: Border.all(color: theme.colorScheme.surfaceContainerHighest),
                 ),
                 child: GestureDetector(
                   onTap: () {
@@ -54,7 +55,7 @@ class ProfilePictureScreen extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width * 0.55,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: secondaryWhiteColor,
+                      color: theme.colorScheme.surfaceContainerHighest,
                       image: provider.profilePictureImage == null
                           ? null
                           : DecorationImage(
@@ -87,12 +88,13 @@ class ProfilePictureScreen extends StatelessWidget {
                 ),
               );
             }),
-            const Row(
+             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   Icons.error,
                   size: 20,
+                  color:theme.colorScheme.onSecondaryContainer,
                 ),
                 CustomSized(
                   width: 0.02,
@@ -103,7 +105,7 @@ class ProfilePictureScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w400,
-                      color: secondaryTextColor,
+                      color: theme.colorScheme.onSecondaryContainer,
                       fontFamily: 'Nunito Sans',
                     ),
                   ),
@@ -112,7 +114,7 @@ class ProfilePictureScreen extends StatelessWidget {
             ),
             CustomSized(height: 0.02),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
-              return LocationAccessButton(
+              return SecondaryAccessButton(
                 isImagePath: true,
                 imagePath: gallery,
                 width: 1,
@@ -121,16 +123,17 @@ class ProfilePictureScreen extends StatelessWidget {
                   provider.pickImage(imageType: 'profilePictureImage',);
                 },
                 iconData: Icons.collections_outlined,
-                titleColor: primaryTextColor,
+                titleColor: theme.primaryColor,
+                color: theme.colorScheme.surfaceContainerHighest,
                 borderRadius: 30,
-                color: secondaryWhiteColor,
                 weight: FontWeight.w700,
               );
             }),
             CustomSized(height: 0.02),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return provider.profilePictureImage == null
-                  ? LocationAccessButton(
+                  ? SecondaryAccessButton(
+                      color: theme.primaryColor,
                       isImagePath: true,
                       width: 1,
                       title: 'Camera',
@@ -139,7 +142,7 @@ class ProfilePictureScreen extends StatelessWidget {
                             isFaceVerification: true);
                       },
                       iconData: Icons.photo_camera_outlined,
-                      titleColor: whiteColor,
+                      titleColor: theme.colorScheme.inversePrimary,
                       borderRadius: 30,
                       weight: FontWeight.w700,
                     ): CustomButton(

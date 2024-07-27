@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/resubale_widgets/band_name.dart';
+import 'package:ride_app/resubale_widgets/go_to_login.dart';
 
 import '../../../consts/colors.dart';
 import '../../../consts/images_path.dart';
@@ -17,8 +19,10 @@ class ForgotStep2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           leading: CustomLeading(),
@@ -30,7 +34,7 @@ class ForgotStep2 extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.8,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -42,41 +46,26 @@ class ForgotStep2 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
-                    RichText(
-                        text: const TextSpan(children: [
-                          TextSpan(
-                              text: 'Logo',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18)),
-                          TextSpan(
-                              text: 'ipsum',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18))
-                        ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.02,
                     ),
-                    largeText(title: 'Enter 6-digit code',),
+                    largeText(title: 'Enter 6-digit code',color: theme.primaryColor),
                     CustomSized(
                       height: 0.01,
                     ),
                     smallText(
-                      title: 'Verification code has sent to your account at',),
+                      title: 'Verification code has sent to your account at',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.005,
                     ),
                     smallText(
-                      title: 'mr**********@gmail.com.Kindly enter 6-digit code',),
+                      title: 'mr**********@gmail.com.Kindly enter 6-digit code',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.005,
                     ),
                     smallText(
-                      title: 'to verify your account',),
+                      title: 'to verify your account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.02,
                     ),
@@ -103,7 +92,7 @@ class ForgotStep2 extends StatelessWidget {
                       children: [
                         smallText(
                             title: 'Resend code',
-                            color: Colors.blue,
+                            color: theme.colorScheme.secondary,
                             weight: FontWeight.w500),
                       ],
                     ),
@@ -125,21 +114,7 @@ class ForgotStep2 extends StatelessWidget {
                     CustomSized(
                       height: 0.02,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginScreen()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          smallText(title: 'Go back to',color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: '   Login',color: checkBoxColor,textSize: 13.0),
-                        ],
-                      ),
-                    ),
+                    WentToLogin(theme: theme),
                   ],
                 ),
               ),

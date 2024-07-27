@@ -11,12 +11,13 @@ class LoginOptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       alignment: Alignment.center,
       width: MediaQuery.sizeOf(context).width * 0.4,
       height: 50,
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black12),
+        border: Border.all(color: theme.colorScheme.surface),
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(
@@ -31,7 +32,7 @@ class LoginOptionButton extends StatelessWidget {
             ),
           ),
           const CustomSized(width: 0.02,),
-          normalText(title: title,color: Colors.black, textSize: 14.0),
+          normalText(title: title,color: theme.primaryColor, textSize: 15.0, ),
         ],
       ),
     );

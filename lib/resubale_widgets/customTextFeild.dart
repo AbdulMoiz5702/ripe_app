@@ -31,6 +31,7 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return SizedBox(
       height: 45,
       child: TextFormField(
@@ -46,34 +47,34 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           suffixIcon: isPassword == true ? Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image.asset(eye, height: 20, width: 20),
+            child: Image.asset(eye, height: 20, width: 20,color: theme.colorScheme.onSecondaryContainer,),
           ) : const SizedBox(height:0 ,width:0 ,),
           isDense: true,
           prefixIcon: iconData != null
-              ? Icon(iconData, color: dividerColor,size: 25,)
+              ? Icon(iconData, color: theme.colorScheme.onSecondaryContainer,size: 25,)
               : (iconPath != null
               ? Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Image.asset(iconPath!, height: 20, width: 20),
+            child: Image.asset(iconPath!, height: 20, width: 20,color: theme.colorScheme.onSecondaryContainer,),
           )
               : null),
           contentPadding: const EdgeInsets.all(8),
           hintText: hint,
-          hintStyle: const TextStyle(color: Colors.black26),
+          hintStyle:  TextStyle(color: theme.colorScheme.surfaceBright),
           border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black26),
+            borderSide:  BorderSide(color:  theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black26),
+            borderSide:  BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
           errorBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black26),
+            borderSide:  BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black26),
+            borderSide:  BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ride_app/resubale_widgets/band_name.dart';
 import 'package:ride_app/views/become_driver/Car_insurance_details.dart';
 import '../../consts/colors.dart';
 import '../../consts/images_path.dart';
@@ -19,8 +20,10 @@ class VehicleDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
           leading:CustomLeading(),
           backgroundColor: Colors.transparent,
@@ -31,7 +34,7 @@ class VehicleDetails extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -47,25 +50,11 @@ class VehicleDetails extends StatelessWidget {
                     CustomSized(
                       height: 0.020,
                     ),
-                    RichText(
-                        text: const TextSpan(children: [
-                          TextSpan(
-                              text: 'Logo',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.0)),
-                          TextSpan(
-                              text: 'ipsum',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.0))
-                        ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.020,
                     ),
-                    largeText(title: 'Vehicle details',),
+                    largeText(title: 'Vehicle details',color: theme.primaryColor),
                     CustomSized(
                       height: 0.020,
                     ),
@@ -76,11 +65,22 @@ class VehicleDetails extends StatelessWidget {
                           alignment: Alignment.center,
                           height: 30,
                           width: 30,
-                          decoration: const BoxDecoration(
+                          decoration:  BoxDecoration(
                               shape: BoxShape.circle,
-                              color: checkColor,
+                              color: theme.colorScheme.surfaceContainerLow,
                           ),
-                          child: Icon(Icons.check,color: checkBoxColor,),
+                          child: Icon(Icons.check,color: theme.colorScheme.secondary,),
+                        ),
+                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
+                        Container(
+                          alignment: Alignment.center,
+                          height: 30,
+                          width: 30,
+                          decoration:  BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: theme.colorScheme.secondary
+                          ),
+                          child: largeText(title: '2',color: theme.scaffoldBackgroundColor,textSize: 14.0),
                         ),
                         Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
@@ -89,20 +89,9 @@ class VehicleDetails extends StatelessWidget {
                           width: 30,
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: checkBoxColor
+                              color: countContainerBackGround
                           ),
-                          child: largeText(title: '2',color: whiteColor,textSize: 14.0),
-                        ),
-                        Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
-                        Container(
-                          alignment: Alignment.center,
-                          height: 30,
-                          width: 30,
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: dividerColor
-                          ),
-                          child: largeText(title: '3',color: whiteColor,textSize: 14.0),
+                          child: largeText(title: '3',color: theme.colorScheme.onSecondaryContainer,textSize: 14.0),
                         ),
                       ],
                     ),
@@ -114,9 +103,9 @@ class VehicleDetails extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          largeText(title: 'Licence details',textSize: 14.0),
-                          largeText(title: 'Vehicle details',textSize: 14.0),
-                          largeText(title: 'Car insurance',color: dividerColor,textSize: 14.0),
+                          largeText(title: 'Licence details',textSize: 14.0,color:theme.colorScheme.primary ),
+                          largeText(title: 'Vehicle details',textSize: 14.0,color: theme.colorScheme.primary),
+                          largeText(title: 'Car insurance',color: theme.colorScheme.surfaceBright,textSize: 14.0),
                         ],
                       ),
                     ),
@@ -168,9 +157,9 @@ class VehicleDetails extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomButton(
-                          titleColor: primaryTextColor,
-                          color: secondaryWhiteColor,
+                        SecondaryCustomButton(
+                          titleColor: theme.colorScheme.primary,
+                          color: theme.colorScheme.surfaceContainerHighest,
                           title: 'Back',onBoard: false, onTap:(){
                           Navigator.pop(context);
                         },width: 0.27,borderRadius: 30,),

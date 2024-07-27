@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
+import 'package:ride_app/resubale_widgets/band_name.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
 import 'package:ride_app/views/auth_screen/Signup/Step6.dart';
 import '../../../resubale_widgets/CustomButton.dart';
@@ -15,8 +15,10 @@ class Step5 extends StatelessWidget {
   const Step5({super.key});
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           leading: CustomLeading(),
@@ -31,7 +33,7 @@ class Step5 extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -43,41 +45,26 @@ class Step5 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-      
-                    RichText(
-                        text: const TextSpan(children: [
-                      TextSpan(
-                          text: 'Logo',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18)),
-                      TextSpan(
-                          text: 'ipsum',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18))
-                    ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.02,
                     ),
-                    largeText(title: 'Enter 6-digit code',),
+                    largeText(title: 'Enter 6-digit code',color:theme.primaryColor),
                     CustomSized(
                       height: 0.01,
                     ),
                     smallText(
-                        title: 'Verification code has sent to your account at',),
+                        title: 'Verification code has sent to your account at',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.005,
                     ),
                     smallText(
-                        title: 'mr**********@gmail.com.Kindly enter 6-digit code',),
+                        title: 'mr**********@gmail.com.Kindly enter 6-digit code',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.005,
                     ),
                     smallText(
-                        title: 'to verify your account',),
+                        title: 'to verify your account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.02,
                     ),
@@ -104,11 +91,11 @@ class Step5 extends StatelessWidget {
                       children: [
                         smallText(
                             title: '( 1:00 ) ',
-                            color: primaryTextColor,
+                            color: theme.primaryColor,
                         ),
                         smallText(
                             title: 'Resend code',
-                            color: checkBoxColor,
+                            color: theme.colorScheme.secondary,
                         ),
                       ],
                     ),

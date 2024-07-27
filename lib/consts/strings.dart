@@ -33,8 +33,8 @@ var inviteSmallSecond = [
 ];
 
 var inviteImages = [
-  park,
-  findDriver,
+  parkSvg,
+  steeringWheelsSVG,
 ];
 
 var names = [
@@ -83,13 +83,13 @@ var role = [
 
 var icons = [
   null,
-  Icons.flash_on_outlined,
+  lightningSVG,
   null,
-  Icons.diamond_outlined,
+  diamondSVG,
   null,
-  Icons.diamond_outlined,
+  diamondSVG,
   null,
-  Icons.flash_on_outlined,
+  lightningSVG,
 ];
 
 var images = [
@@ -111,9 +111,9 @@ var vechile = [
 ];
 
 var yourAccount = [
-  Icons.credit_card_outlined,
-  Icons.favorite_border,
-  Icons.lock_outline,
+  creditCardSvg,
+  favoriteSVG,
+  passwordSVG,
 ];
 
 var yourAccountText = [
@@ -123,8 +123,8 @@ var yourAccountText = [
 ];
 
 var yourActivity= [
-  Icons.access_time_rounded,
-  Icons.favorite_border,
+  rideHistorySVG,
+  favoriteSVG,
 ];
 
 var yourActivityText = [
@@ -133,8 +133,8 @@ var yourActivityText = [
 ];
 
 var yourSupport= [
-  Icons.help_outline_outlined,
-  Icons.star_border_rounded,
+  helpSVG,
+  startSVG,
 ];
 
 var yourSupportText = [
@@ -150,10 +150,10 @@ var yourPreferenceText = [
 ];
 
 var yourPreference= [
-  Icons.fingerprint_outlined,
-  Icons.language_outlined,
-  Icons.place_outlined,
-  Icons.dark_mode_outlined,
+  bioMetricSVG,
+  languagesSVG,
+  currentLocationSVG,
+  themeSVG,
 ];
 
 
@@ -186,6 +186,12 @@ var compatetorsIcons = [
   uberLogoSvg,
   brandLogoSvg,
   ylaSvg
+];
+
+var selectTheme = [
+  'Device theme (Default)',
+  'Light theme',
+  'Dark theme',
 ];
 
 

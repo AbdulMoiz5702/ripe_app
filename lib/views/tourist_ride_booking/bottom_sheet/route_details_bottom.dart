@@ -5,6 +5,7 @@ import 'package:ride_app/alert_dialogs/selection_alert_dialg.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
+import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
 
 import '../../../consts/colors.dart';
@@ -16,24 +17,22 @@ class RouteDetailsBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     var controller = Provider.of<ScheduleRideProvider>(context,listen: false);
     return Container(
+      decoration: BoxDecoration(
+        color: theme.scaffoldBackgroundColor,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 5,
-              width: MediaQuery.sizeOf(context).width * 0.3,
-              decoration: BoxDecoration(
-                color: dividerColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-            ),
-          ),
+          BottomSheetsLeadings(),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -48,20 +47,21 @@ class RouteDetailsBottom extends StatelessWidget {
                     largeText(
                       title: 'Route details',
                       textSize: 20.0,
+                      color: theme.primaryColor,
                     ),
                     Container(
                       child: Row(
                         children: [
                           SvgPicture.asset(
                             advanceCalender,
-                            color: dividerColor,
+                            color: theme.colorScheme.onSecondaryContainer,
                           ),
                           smallText(
                             title: ' Now ',
                           ),
                           Icon(
                             Icons.keyboard_arrow_down_rounded,
-                            color: dividerColor,
+                            color: theme.colorScheme.onSecondaryContainer,
                           ),
                         ],
                       ),
@@ -77,21 +77,21 @@ class RouteDetailsBottom extends StatelessWidget {
                     largeText(
                         textSize: 12.0,
                         title: 'Ride fair',
-                        color: secondaryTextColor),
+                        color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.002,
                     ),
                     largeText(
                         textSize: 50.0,
                         title: '\$142',
-                        color: primaryTextColor,
+                        color: theme.primaryColor,
                         weight: FontWeight.w800),
                   ],
                 ),
                 CustomSized(
                   height: 0.02,
                 ),
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -99,6 +99,7 @@ class RouteDetailsBottom extends StatelessWidget {
                       Icon(
                         Icons.error,
                         size: 20,
+                        color: theme.colorScheme.onSecondaryContainer,
                       ),
                       CustomSized(
                         width: 0.02,
@@ -109,7 +110,7 @@ class RouteDetailsBottom extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 11.0,
                             fontWeight: FontWeight.w400,
-                            color: secondaryTextColor,
+                            color: theme.colorScheme.onSecondaryContainer,
                             fontFamily: 'Nunito Sans',
                           ),
                         ),
@@ -125,7 +126,7 @@ class RouteDetailsBottom extends StatelessWidget {
                       title: 'Compare fare with our competitors',
                       textSize: 13.0,
                       weight: FontWeight.w700,
-                      color: checkBoxColor),
+                      color: theme.colorScheme.secondary),
                 ),
                 CustomSized(
                   height: 0.02,
@@ -141,7 +142,7 @@ class RouteDetailsBottom extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w700,
-                              color: primaryTextColor,
+                              color: theme.primaryColor,
                               fontFamily: 'Nunito Sans',
                             ),
                           ),
@@ -154,7 +155,7 @@ class RouteDetailsBottom extends StatelessWidget {
                                   ? Icons.keyboard_arrow_up_outlined
                                   : Icons.keyboard_arrow_down_rounded,
                               size: 20,
-                              color: blackColor,
+                              color: theme.primaryColor,
                             ),
                           ),
                         ],
@@ -191,9 +192,9 @@ class RouteDetailsBottom extends StatelessWidget {
                                                     : Icons
                                                         .brightness_1_outlined,
                                             color: index == 0
-                                                ? redColor
+                                                ? lightRedCancelButtonTextColor
                                                 : index == 1
-                                                    ? redColor
+                                                    ? lightRedCancelButtonTextColor
                                                     : checkBoxColor,
                                           ),
                                           Container(
@@ -201,9 +202,9 @@ class RouteDetailsBottom extends StatelessWidget {
                                             child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                  largeText(title: 'The Centaurus Mall', textSize: 14.0),
+                                                  largeText(title: 'The Centaurus Mall', textSize: 14.0,color: theme.primaryColor),
                                                   CustomSized(height: 0.005,),
-                                                  smallText(title: 'F-8 - Islamabad, The Centaurus Mall', textSize: 11.0),
+                                                  smallText(title: 'F-8 - Islamabad, The Centaurus Mall', textSize: 11.0,color: theme.colorScheme.onSecondaryContainer),
                                                 ]),
                                           ),
                                         ],
@@ -226,9 +227,9 @@ class RouteDetailsBottom extends StatelessWidget {
                 }),
                 Divider(
                   thickness: 2,
-                  color: dividerColor,
+                  color: theme.dividerColor,
                 ),
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -246,7 +247,7 @@ class RouteDetailsBottom extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 11.0,
                             fontWeight: FontWeight.w400,
-                            color: secondaryTextColor,
+                            color: theme.colorScheme.onSecondaryContainer,
                             fontFamily: 'Nunito Sans',
                           ),
                         ),
@@ -262,12 +263,12 @@ class RouteDetailsBottom extends StatelessWidget {
                         onTap: (){
                           provider.openCreditCardBottomSheet(context: context);
                         },
-                        child: const Row(
+                        child:  Row(
                           children: [
                             Icon(
                               Icons.credit_card_outlined,
                               size: 20,
-                              color: checkBoxColor,
+                              color: theme.colorScheme.secondary,
                             ),
                             CustomSized(
                               width: 0.02,
@@ -277,7 +278,7 @@ class RouteDetailsBottom extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w700,
-                                color: primaryTextColor,
+                                color: theme.primaryColor,
                                 fontFamily: 'Nunito Sans',
                               ),
                             ),
@@ -287,7 +288,7 @@ class RouteDetailsBottom extends StatelessWidget {
                             Icon(
                               Icons.keyboard_arrow_down_rounded,
                               size: 20,
-                              color: blackColor,
+                              color: theme.primaryColor,
                             ),
                           ],
                         ),
@@ -302,16 +303,16 @@ class RouteDetailsBottom extends StatelessWidget {
                           width: MediaQuery.sizeOf(context).width * 0.5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            border: Border.all(color: otpColor),
+                            border: Border.all(color: theme.colorScheme.onSecondaryContainer),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              SvgPicture.asset(provider.iconsPath),
+                              SvgPicture.asset(provider.iconsPath,color: theme.primaryColor,),
                               smallText(
                                   title: provider.title,
                                   weight: FontWeight.w700,
-                                  color: primaryTextColor)
+                                  color: theme.primaryColor)
                             ],
                           ),
                         ),

@@ -15,10 +15,11 @@ class AiSuggestedRouteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: whiteColor,
+        color: theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(20),
           topLeft: Radius.circular(20),
@@ -29,13 +30,13 @@ class AiSuggestedRouteBottomSheet extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           CustomSized(height: 0.02),
-          largeText(title: 'AI route change confirmation', textSize: 18.0),
+          largeText(title: 'AI route change confirmation', textSize: 18.0,color: theme.primaryColor),
           CustomSized(height: 0.02),
-          smallText(title: 'We’ve changed route for you with the help of AI.',color: primaryTextColor),
+          smallText(title: 'We’ve changed route for you with the help of AI.',color: theme.primaryColor),
           CustomSized(height: 0.004),
-          smallText(title: 'Do you want to go with that route in order to save',color: primaryTextColor),
+          smallText(title: 'Do you want to go with that route in order to save',color: theme.primaryColor),
           CustomSized(height: 0.004),
-          smallText(title: 'fare?',color: primaryTextColor),
+          smallText(title: 'fare?',color: theme.primaryColor),
           CustomSized(height: 0.02),
           Consumer<ScheduleRideProvider>(builder: (context,provider,_){
             return Column(
@@ -46,11 +47,11 @@ class AiSuggestedRouteBottomSheet extends StatelessWidget {
                   provider.changeTitle(value: ' AI suggested route');
                 },onBoard: false,borderRadius: 30,width: 1,),
                 CustomSized(height: 0.02),
-                CustomButton(title: 'Use original route', onTap: (){
+                SecondaryCustomButton(title: 'Use original route', onTap: (){
                   provider.onAiRouteSelected(newPath: normalRoute);
                   provider.changeTitle(value: ' Use original route');
                   Navigator.pop(context);
-                },onBoard: false,borderRadius: 30,width: 1,color: secondaryWhiteColor,titleColor: primaryTextColor,),
+                },onBoard: false,borderRadius: 30,width: 1,color: theme.colorScheme.surfaceContainerHighest,titleColor: theme.primaryColor,),
               ],
             );
           })

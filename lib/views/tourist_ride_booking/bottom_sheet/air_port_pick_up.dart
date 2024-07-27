@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ride_app/controllers/shedule_ride_provider.dart';
+import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-
-import '../../../consts/colors.dart';
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
 
@@ -11,11 +12,12 @@ class AirPortPickUpBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return  Container(
       height: MediaQuery.sizeOf(context).height * 0.38,
       padding: EdgeInsets.all(10),
-      decoration: const BoxDecoration(
-        color: whiteColor,
+      decoration:  BoxDecoration(
+        color: theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -26,52 +28,45 @@ class AirPortPickUpBottomSheet extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 5,
-              width: MediaQuery.sizeOf(context).width * 0.3,
-              decoration: BoxDecoration(
-                color: dividerColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-            ),
-          ),
+          BottomSheetsLeadings(),
           Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSized(height: 0.02,),
-                largeText(title: 'Additional charges'),
+                largeText(title: 'Additional charges',color: theme.primaryColor),
                 CustomSized(height: 0.01,),
-                largeText(title: 'Are you ready to pay extra \$10?',textSize: 17.0 ),
+                largeText(title: 'Are you ready to pay extra \$10?',textSize: 17.0 ,color: theme.primaryColor),
                 CustomSized(height: 0.01,),
-                smallText(title: 'Picking up from the airport will cost you extra'),
+                smallText(title: 'Picking up from the airport will cost you extra',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.005,),
                 Row(
                   children: [
-                    smallText(title: 'charges of '),
-                    smallText(title: '\$10 ',color: primaryTextColor,weight:FontWeight.w700),
-                    smallText(title: 'like driver entry and exit fees'),
+                    smallText(title: 'charges of ',color: theme.colorScheme.onSecondaryContainer),
+                    smallText(title: '\$10 ',color: theme.primaryColor,weight:FontWeight.w700),
+                    smallText(title: 'like driver entry and exit fees',color:theme.colorScheme.onSecondaryContainer ),
                   ],
                 ),
                 CustomSized(height: 0.005,),
-                smallText(title: 'within airport taxi stand. If you select no, driver'),
+                smallText(title: 'within airport taxi stand. If you select no, driver',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.005,),
-                smallText(title: 'won’t be able to pick you within airport'),
+                smallText(title: 'won’t be able to pick you within airport',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.005,),
-                smallText(title: 'boundaries.'),
+                smallText(title: 'boundaries.',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.02,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CustomButton(title: 'No, I can\'t', onTap: (){
+                    SecondaryCustomButton(title: 'No, I can\'t', onTap: (){
                       Navigator.pop(context);
-                    },borderRadius: 30,onBoard: false,width:0.4,color: secondaryWhiteColor,titleColor: primaryTextColor,),
-                    CustomButton(title: 'Yes, I\'ll pay', onTap: (){
-                      Navigator.pop(context);
-                    },borderRadius: 30,onBoard: false,width:0.4,),
+                    },borderRadius: 30,onBoard: false,width:0.4,color: theme.colorScheme.surfaceContainerHighest,titleColor: theme.colorScheme.primary,),
+                    Consumer<ScheduleRideProvider>(builder: (context,provider,_){
+                      return CustomButton(title: 'Yes, I\'ll pay', onTap: (){
+                        provider.onChange(true);
+                        Navigator.pop(context);
+                      },borderRadius: 30,onBoard: false,width:0.4,);
+                    }),
                   ],
                 ),
                 CustomSized(height: 0.02,),

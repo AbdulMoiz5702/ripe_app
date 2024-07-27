@@ -7,12 +7,13 @@ class CustomFloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       height: 50,
       width: 50,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         shape: BoxShape.circle,
-        color: checkBoxColor
+        color: theme.colorScheme.secondary,
       ),
       child: const Center(child: Image(image: AssetImage(bottomArrow)),),
     );

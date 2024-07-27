@@ -16,6 +16,7 @@ class FaceVerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
@@ -25,13 +26,13 @@ class FaceVerificationScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomSized(height: 0.02),
-            largeText(title: 'Face verification'),
-            smallText(title: 'Please take a well-lit selfie to verify your'),
-            smallText(title: 'identity.')
+            largeText(title: 'Face verification',color:theme.colorScheme.primary),
+            smallText(title: 'Please take a well-lit selfie to verify your',color: theme.colorScheme.onSecondaryContainer),
+            smallText(title: 'identity.',color: theme.colorScheme.onSecondaryContainer)
           ],
         ),
       ),
-      backgroundColor: whiteColor,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body:Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -47,7 +48,7 @@ class FaceVerificationScreen extends StatelessWidget {
                   width:MediaQuery.sizeOf(context).width * 0.57,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: secondaryWhiteColor,
+                    color: theme.colorScheme.surfaceContainerHighest,
                     image: provider.facePictureImage == null ?  null : DecorationImage(image: FileImage(File(provider.facePictureImage.toString())),fit: BoxFit.cover),
                   ),
                   child: Column(
@@ -61,16 +62,16 @@ class FaceVerificationScreen extends StatelessWidget {
                 ),
               );
             }),
-            const  Row(
+              Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.error,size: 20,),
+                Icon(Icons.error,size: 20,color:theme.colorScheme.onSecondaryContainer),
                 CustomSized(width: 0.02,),
                 Expanded(
                   child: Text('Keep your face clearly visible in the circle and picture should not be blurry',style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.w400,
-                    color: secondaryTextColor,
+                    color: theme.colorScheme.onSecondaryContainer,
                     fontFamily:'Nunito Sans',
                   ),),
                 ),
@@ -78,12 +79,14 @@ class FaceVerificationScreen extends StatelessWidget {
             ),
             CustomSized(height: 0.02),
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
-              return LocationAccessButton(
+              return SecondaryAccessButton(
+                titleColor: theme.primaryColor,
+                color: theme.colorScheme.surfaceContainerHighest,
                 isImagePath: true,
                 imagePath: gallery,
                 width:1 ,title: 'Retake', onTap: (){
                 provider.pickImage(imageType: 'facePictureImage',isFaceVerification: true);
-              },iconData: Icons.collections_outlined,titleColor: primaryTextColor,borderRadius: 30,color: secondaryWhiteColor,weight: FontWeight.w700,);
+              },iconData: Icons.collections_outlined,borderRadius: 30,weight: FontWeight.w700,);
             }),
             CustomSized(height: 0.02),
          CustomButton(

@@ -59,25 +59,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: Stack(
         children: [
           Positioned(
             top: 80,
             left: 130,
             child: RichText(
-                text: const TextSpan(children: [
+                text:  TextSpan(children: [
               TextSpan(
                   text: 'Logo',
                   style: TextStyle(
-                      color: Colors.black,
+                      color: theme.colorScheme.primary,
                       fontWeight: FontWeight.bold,
                       fontSize: 22)),
               TextSpan(
                   text: 'ipsum',
                   style: TextStyle(
-                      color: Colors.blue,
+                      color: theme.colorScheme.secondary,
                       fontWeight: FontWeight.bold,
                       fontSize: 22))
             ])),
@@ -112,7 +113,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   },
                         child: Container(
                           margin: const EdgeInsets.all(10),
-                            child: normalText(title: 'Skip', color: Colors.black,weight: FontWeight.w400)))
+                            child: normalText(title: 'Skip', color: theme.primaryColor,weight: FontWeight.w400)))
                     : const SizedBox(
                         height: 1,
                         width: 1,

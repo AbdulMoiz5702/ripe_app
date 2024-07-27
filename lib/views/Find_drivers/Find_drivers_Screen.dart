@@ -15,22 +15,23 @@ class FindDriversScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
         leading: const CustomLeading(
           isHome: true,
         ),
-        title: largeText(title: 'Find a driver', textSize: 20.0),
+        title: largeText(title: 'Find a driver', textSize: 20.0,color:theme.primaryColor ),
       ),
       body: Column(
         children: [
           Padding(
             padding: const EdgeInsets.all(14.0),
             child: HomeScreenTextField(
-                color: textfieldColorSecond,
+                color: theme.colorScheme.surfaceContainerHighest,
                 controller: controller,
-                hintColor: primaryTextColor,
+                hintColor: theme.primaryColor,
                 hint: 'Search a driver',
                 onValidator: (value) {
                   return null;
@@ -66,7 +67,7 @@ class FindDriversScreen extends StatelessWidget {
                       avatarUrl: avatar,
                       role: role[index],
                       carType: images[index],
-                      iconData: icons[index],
+                      imagePath: icons[index],
                     );
                   })),
         ],

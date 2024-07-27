@@ -14,6 +14,8 @@ class HomeScreenTextField extends StatelessWidget {
     required this.iconPath,
     this.color = textfieldColor,
     this.hintColor = whiteColor,
+    this.textColor = whiteColor,
+    this.removeLeadingIcon = false,
   });
 
   final TextEditingController controller;
@@ -27,6 +29,9 @@ class HomeScreenTextField extends StatelessWidget {
   final String iconPath;
   final Color color;
   final Color hintColor;
+  final Color textColor;
+  final bool  removeLeadingIcon;
+
 
 
   @override
@@ -46,10 +51,10 @@ class HomeScreenTextField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmittedValue,
         validator: onValidator,
         keyboardType: keyBoardType,
-        style: const TextStyle(color: Colors.black,
+          style:  TextStyle(color: textColor,
           fontFamily: 'Nunito Sans',),
-        decoration: InputDecoration(
-          icon: Image.asset(iconPath, height: 25, width: 25),
+          decoration: InputDecoration(
+          icon: removeLeadingIcon == true? Container(width: 0,height: 0,) : Image.asset(iconPath, height: 25, width: 25,color: hintColor,),
           contentPadding: const EdgeInsets.all(8),
           hintText: hint,
           hintStyle: TextStyle(color: hintColor,fontSize: 14.0),

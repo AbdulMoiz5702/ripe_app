@@ -13,6 +13,7 @@ class FavoriteButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -21,14 +22,14 @@ class FavoriteButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: favoriteButtonColor,
+          color: theme.colorScheme.inversePrimary,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(image: AssetImage(imagePath)),
-            largeText(textSize: 14.0,title: ' $title'),
+            Image(image: AssetImage(imagePath),color: theme.colorScheme.primary,),
+            largeText(textSize: 14.0,title: ' $title',color: theme.colorScheme.primary),
           ],
         ),
       ),

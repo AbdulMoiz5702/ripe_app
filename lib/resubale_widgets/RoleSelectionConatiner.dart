@@ -19,6 +19,7 @@ class RoleSelectionConatiner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(10),
@@ -65,10 +66,10 @@ class RoleSelectionConatiner extends StatelessWidget {
             CustomSized(
               height: 0.01,
             ),
-            Expanded(child: Text(description,style: const TextStyle(
+            Expanded(child: Text(description,style:  TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w400,
-              color: primaryTextColor,
+              color: theme.colorScheme.primary,
               fontFamily:'Nunito Sans',
             ),)),
             CustomSized(

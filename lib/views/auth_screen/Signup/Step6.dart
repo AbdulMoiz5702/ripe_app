@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ride_app/alert_dialogs/selection_alert_dialg.dart';
+import 'package:ride_app/resubale_widgets/band_name.dart';
 import 'package:ride_app/views/auth_screen/Signup/Step7.dart';
 import '../../../consts/images_path.dart';
-import '../../../main.dart';
 import '../../../resubale_widgets/Bg_widget.dart';
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
-import '../../../alert_dialogs/custom_alert_dialog.dart';
 import '../../../resubale_widgets/custom_leading.dart';
 import '../../../resubale_widgets/text_widgets.dart';
 
@@ -31,8 +30,10 @@ class _Step6State extends State<Step6> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           leading: CustomLeading(),
@@ -44,7 +45,7 @@ class _Step6State extends State<Step6> {
             height: MediaQuery.sizeOf(context).height * 0.75,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -56,33 +57,18 @@ class _Step6State extends State<Step6> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
-                    RichText(
-                        text: const TextSpan(children: [
-                          TextSpan(
-                              text: 'Logo',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18)),
-                          TextSpan(
-                              text: 'ipsum',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18))
-                        ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.02,
                     ),
-                    largeText(title: 'Account created successfully.',),
+                    largeText(title: 'Account created successfully.',color:theme.primaryColor),
                     CustomSized(
                       height: 0.01,
                     ),
                     smallText(
-                      title: 'Your account has been created successfully. You’re',),
+                      title: 'Your account has been created successfully. You’re',color: theme.colorScheme.onSecondaryContainer),
                     smallText(
-                      title: 'ready to use the app now.',),
+                      title: 'ready to use the app now.',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.02,
                     ),
@@ -96,7 +82,7 @@ class _Step6State extends State<Step6> {
                         fit:BoxFit.cover,
                       ),
                     ),
-                    CustomSized(height: 0.15,),
+                    CustomSized(height: 0.1,),
                     CustomButton(
                       onBoard: false,
                       title: 'Book a ride',

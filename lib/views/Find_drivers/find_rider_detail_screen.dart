@@ -21,7 +21,7 @@ class FindRiderDetailScreen extends StatelessWidget {
   final String totalDrivingTime;
   final String carAvatarUrl;
   final String carDetails;
-  final IconData? carIcon;
+  final String ? carIcon;
 
   const FindRiderDetailScreen(
       {super.key, required this.riderName,
@@ -37,13 +37,14 @@ class FindRiderDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
         leading: const CustomLeading(
           isHome: true,
         ),
-        title: largeText(title: 'Find a driver', textSize: 20.0),
+        title: largeText(title: 'Find a driver', textSize: 20.0,color: theme.primaryColor),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -100,6 +101,7 @@ class FindRiderDetailScreen extends StatelessWidget {
               child: smallText(
                 title: 'Reviews',
                 textSize: 14.0,
+                color: theme.colorScheme.onSecondaryContainer
               ),
             ),
           ),

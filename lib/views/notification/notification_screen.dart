@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
+import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/views/notification/notification_settings_screen.dart';
 import '../../resubale_widgets/text_widgets.dart';
 
@@ -30,22 +31,23 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: largeText(title: 'Notifications', textSize: 20.0),
+        leading: CustomLeading(),
+        title: largeText(title: 'Notifications', textSize: 20.0,color: theme.primaryColor),
         actions: [
           Tooltip(
             decoration: BoxDecoration(
-              color: buttonColor,
+              color: theme.colorScheme.inversePrimary,
               borderRadius: BorderRadius.circular(8)
             ),
             key: _toolTipKey,
             message: 'Customize your notifications',
-            textStyle:  const TextStyle(
+            textStyle:   TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w400,
-              color: whiteColor,
+              color: theme.primaryColor,
               fontFamily:'Nunito Sans',
             ),
             child: IconButton(
@@ -62,7 +64,6 @@ class _NotificationScreenState extends State<NotificationScreen> {
           ),
         ],
       ),
-      backgroundColor: secondaryBackGround,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -72,11 +73,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
               height: MediaQuery.sizeOf(context).height * 0.4,
             ),
           ),
-          largeText(title: 'No notifications yet', textSize: 17.0),
+          largeText(title: 'No notifications yet', textSize: 17.0,color: theme.primaryColor),
           const CustomSized(height: 0.02),
-          smallText(title: 'Qorem ipsum dolor sit amet, consectetur'),
-          smallText(title: ' adipiscing elit. Nunc vulputate libero et velit'),
-          smallText(title: ' interdum, ac aliquet odio mattis.'),
+          smallText(title: 'Qorem ipsum dolor sit amet, consectetur',color: theme.colorScheme.onSecondaryContainer),
+          smallText(title: ' adipiscing elit. Nunc vulputate libero et velit',color: theme.colorScheme.onSecondaryContainer),
+          smallText(title: ' interdum, ac aliquet odio mattis.',color: theme.colorScheme.onSecondaryContainer),
         ],
       ),
     );

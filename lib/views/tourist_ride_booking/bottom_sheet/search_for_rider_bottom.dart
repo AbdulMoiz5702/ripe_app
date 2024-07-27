@@ -15,8 +15,16 @@ class SearchForRiderBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     var controller = Provider.of<ScheduleRideProvider>(context,listen: false);
     return Container(
+      decoration: BoxDecoration(
+        color: theme.scaffoldBackgroundColor,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,6 +54,7 @@ class SearchForRiderBottom extends StatelessWidget {
                   child: largeText(
                     title: 'Searching for riders',
                     textSize: 20.0,
+                    color: theme.primaryColor
                   ),
                 ),
                 CustomSized(
@@ -57,14 +66,14 @@ class SearchForRiderBottom extends StatelessWidget {
                     largeText(
                         textSize: 12.0,
                         title: 'Ride fair',
-                        color: secondaryTextColor),
+                        color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.002,
                     ),
                     largeText(
                         textSize: 50.0,
                         title: '\$142',
-                        color: primaryTextColor,
+                        color: theme.primaryColor,
                         weight: FontWeight.w800),
                   ],
                 ),
@@ -79,7 +88,7 @@ class SearchForRiderBottom extends StatelessWidget {
                       title: 'Compare fare with our competitors',
                       textSize: 13.0,
                       weight: FontWeight.w700,
-                      color: checkBoxColor),
+                      color: theme.colorScheme.secondary),
                 ),
                 CustomSized(
                   height: 0.02,
@@ -94,13 +103,13 @@ class SearchForRiderBottom extends StatelessWidget {
                 }),
                 Divider(
                   thickness: 2,
-                  color: dividerColor,
+                  color: theme.dividerColor,
                 ),
                 CustomSized(
                   height: 0.02,
                 ),
-                CustomButton(
-                  titleColor: redColor,
+                SecondaryCustomButton(
+                  titleColor: theme.colorScheme.secondaryFixed,
                   title: 'Cancel search for ride',
                   onTap: () {
                     controller.openSearchDriverCancelConformationSheet(context);
@@ -108,7 +117,7 @@ class SearchForRiderBottom extends StatelessWidget {
                   onBoard: false,
                   borderRadius: 30,
                   width: 1,
-                  color: redButtonColor,
+                  color: theme.colorScheme.secondaryFixedDim,
                 ),
               ],
             ),

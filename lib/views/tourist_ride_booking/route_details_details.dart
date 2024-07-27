@@ -24,9 +24,9 @@ class _RouteDetailsDetailsScreenState extends State<RouteDetailsDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        scrolledUnderElevation: 0.0,
         leading: CustomLeading(
           isHome: true,
         ),
@@ -34,7 +34,7 @@ class _RouteDetailsDetailsScreenState extends State<RouteDetailsDetailsScreen> {
           NotificationButton(onTap: () {},)
         ],
       ),
-      backgroundColor: whiteColor,
+      backgroundColor: theme.primaryColor,
       body: Column(
         children: [
 

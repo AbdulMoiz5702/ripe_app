@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-
 import '../../../consts/images_path.dart';
-import '../../../main.dart';
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/allow_access_locaion_text.dart';
 import '../../bottom_screen/Main_bottom_Screen.dart';
@@ -15,8 +12,9 @@ class Step7 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: secondaryBackGround,
+      backgroundColor: theme.scaffoldBackgroundColor,
       body: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -26,6 +24,7 @@ class Step7 extends StatelessWidget {
             largeText(
               title: 'Allow Location access',
               textSize: 20.0,
+              color: theme.primaryColor,
             ),
             Center(
               child: Image(
@@ -37,18 +36,19 @@ class Step7 extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            CustomSized(),
+            CustomSized(height: 0.015,),
             Align(
               alignment: Alignment.centerLeft,
               child: largeText(
                 title: 'Why Location Access?',
                 textSize: 18.0,
+                color: theme.primaryColor
               ),
             ),
-            CustomSized(height: 0.02,),
+            CustomSized(height: 0.015,),
             Align(
                 alignment: Alignment.centerLeft,
-                child: smallText(title: 'Our app uses your location to:',color: primaryTextColor)),
+                child: smallText(title: 'Our app uses your location to:',color: theme.primaryColor)),
             CustomSized(height: 0.005,),
             AllowAccessLocationText(
               pointOne: 'Match You with Nearby Drivers: ',
@@ -69,9 +69,10 @@ class Step7 extends StatelessWidget {
               pointFour: 'matters to us, and we only use your location for',
               pointFive: 'ride-related purposes.',
             ),
-            CustomSized(height: 0.04),
+            CustomSized(height: 0.03),
             LocationAccessButton(
-              weight: FontWeight.w700,
+              isImagePath: true,
+              imagePath: mapPinSVG,
               title: 'Allow access',
               onTap: () {
                 Navigator.pushReplacement(
@@ -82,13 +83,13 @@ class Step7 extends StatelessWidget {
               borderRadius: 30,
               width: 1,
             ),
-            CustomSized(height: 0.04),
+            CustomSized(height: 0.03),
             GestureDetector(
               onTap: (){},
               child: largeText(
                   title: 'Skip for now',
                   textSize: 15.0,
-                  color: secondaryTextColor),
+                  color: theme.primaryColor),
             ),
             CustomSized(height: 0.02),
           ],

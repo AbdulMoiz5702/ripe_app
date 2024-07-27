@@ -1,81 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
-import 'package:ride_app/main.dart';
 import 'package:ride_app/resubale_widgets/bottom_nav_button.dart';
 import 'package:ride_app/views/scheduled_screen/scheduled_screen.dart';
 import 'package:ride_app/views/user_profile/user_profile_screen.dart';
+import '../../controllers/bottom_screen_provider.dart';
 import '../../resubale_widgets/custom_floating_button.dart';
 import '../home_screen/home_screen.dart';
 import '../notification/notification_screen.dart';
+import 'package:provider/provider.dart';
 
-class MainBottomScreen extends StatefulWidget {
+class MainBottomScreen extends StatelessWidget {
   const MainBottomScreen({super.key});
-
-  @override
-  _MainBottomScreenState createState() => _MainBottomScreenState();
-}
-
-class _MainBottomScreenState extends State<MainBottomScreen> {
-  int currentTab = 0;
-
-  final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = const HomeScreen();
-
   @override
   Widget build(BuildContext context) {
+    final PageStorageBucket bucket = PageStorageBucket();
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: whiteColor,
-      body: PageStorage(bucket: bucket, child: currentScreen),
+      backgroundColor: theme.scaffoldBackgroundColor,
+      body: Consumer<BottomScreenProvider>(
+        builder: (context, provider, child) {
+          return PageStorage(bucket: bucket, child: provider.currentScreen);
+        },
+      ),
       floatingActionButton: const CustomFloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
+        elevation: 5,
+        shadowColor: theme.colorScheme.secondaryContainer,
+        color: theme.colorScheme.secondaryContainer,
         height: 75,
         shape: const CircularNotchedRectangle(),
-        notchMargin: 15,
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
+        notchMargin: 17,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Consumer<BottomScreenProvider>(builder: (context,provider,_){
+            return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 CustomButtonNav(
                   index: 0,
                   imagePath: houseSvg,
                   title: 'Home',
-                  currentTab: currentTab,
+                  currentTab: provider.currentTab,
                   onPressed: () {
-                    setState(() {
-                      currentScreen = const HomeScreen();
-                      currentTab = 0;
-                    });
+                        provider.updateScreen(0, const HomeScreen());
                   },
                 ),
                 CustomButtonNav(
                   index: 1,
                   imagePath: calenderSvg,
                   title: 'Schedule',
-                  currentTab: currentTab,
+                  currentTab: provider.currentTab,
                   onPressed: () {
-                    setState(() {
-                      currentScreen = const ScheduledScreen(title: 'hio');
-                      currentTab = 1;
-                    });
+                    provider.updateScreen(1, const ScheduledScreen());
                   },
                 ),
                 Container(
-                  margin: const EdgeInsets.only(top: 30,left: 8,right: 8),
+                  margin: const EdgeInsets.only(top: 30, left: 8, right: 8),
                   child: CustomButtonNav(
                     index: 2,
                     imagePath: null, // No icon for Book Ride
                     title: 'Book Ride',
-                    currentTab: currentTab,
+                    currentTab: provider.currentTab,
                     onPressed: () {
-                      setState(() {
-                        currentScreen = const HomeScreen();
-                        currentTab = 2;
-                      });
+                      provider.updateScreen(2, const HomeScreen());
                     },
                   ),
                 ),
@@ -83,31 +71,26 @@ class _MainBottomScreenState extends State<MainBottomScreen> {
                   index: 3,
                   imagePath: bellSimpleSvg,
                   title: 'Notifications',
-                  currentTab: currentTab,
+                  currentTab: provider.currentTab,
                   onPressed: () {
-                    setState(() {
-                      currentScreen = const NotificationScreen();
-                      currentTab = 3;
-                    });
+                    provider.updateScreen(3, const NotificationScreen());
                   },
                 ),
                 CustomButtonNav(
                   index: 4,
                   imagePath: userSvg,
                   title: 'Profile',
-                  currentTab: currentTab,
+                  currentTab: provider.currentTab,
                   onPressed: () {
-                    setState(() {
-                      currentScreen = const UserProfileScreen();
-                      currentTab = 4;
-                    });
+                    provider.updateScreen(4, const UserProfileScreen());
                   },
                 ),
               ],
-            ),
-          ),
+            );
+          })
         ),
       ),
     );
   }
 }
+

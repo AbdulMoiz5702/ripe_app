@@ -6,6 +6,7 @@ import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/become_driver_controller.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
+import 'package:ride_app/resubale_widgets/band_name.dart';
 import 'package:ride_app/views/become_driver/vechile_details.dart';
 
 import '../../resubale_widgets/Custom_Sized.dart';
@@ -20,8 +21,10 @@ class LicenseDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
           leading:CustomLeading(),
           backgroundColor: Colors.transparent,
@@ -29,10 +32,10 @@ class LicenseDetailsScreen extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.89,
+            height: MediaQuery.sizeOf(context).height * 0.9,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -48,25 +51,11 @@ class LicenseDetailsScreen extends StatelessWidget {
                     CustomSized(
                       height: 0.020,
                     ),
-                    RichText(
-                        text: const TextSpan(children: [
-                          TextSpan(
-                              text: 'Logo',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.0)),
-                          TextSpan(
-                              text: 'ipsum',
-                              style: TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.0))
-                        ])),
+                    BrandName(theme: theme),
                     CustomSized(
-                      height: 0.020,
+                      height: 0.01,
                     ),
-                    largeText(title: 'Driver’s ID & License',),
+                    largeText(title: 'Driver’s ID & License',color: theme.primaryColor),
                     CustomSized(
                       height: 0.020,
                     ),
@@ -77,11 +66,11 @@ class LicenseDetailsScreen extends StatelessWidget {
                           alignment: Alignment.center,
                           height: 30,
                           width: 30,
-                          decoration: const BoxDecoration(
+                          decoration:  BoxDecoration(
                             shape: BoxShape.circle,
-                            color: checkBoxColor
+                            color: theme.colorScheme.secondary,
                           ),
-                          child: largeText(title: '1',color: whiteColor,textSize: 14.0),
+                          child: largeText(title: '1',color: theme.scaffoldBackgroundColor,textSize: 14.0),
                         ),
                         Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
@@ -90,9 +79,9 @@ class LicenseDetailsScreen extends StatelessWidget {
                           width: 30,
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: dividerColor,
+                              color: countContainerBackGround,
                           ),
-                          child: largeText(title: '2',color: whiteColor,textSize: 14.0),
+                          child: largeText(title: '2',color: theme.colorScheme.onSecondaryContainer,textSize: 14.0),
                         ),
                         Container(height:1 ,width: MediaQuery.sizeOf(context).width * 0.2,color: dividerColor,margin: EdgeInsets.symmetric(horizontal: 8),),
                         Container(
@@ -101,9 +90,9 @@ class LicenseDetailsScreen extends StatelessWidget {
                           width: 30,
                           decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              color: dividerColor
+                              color: countContainerBackGround
                           ),
-                          child: largeText(title: '3',color: whiteColor,textSize: 14.0),
+                          child: largeText(title: '3',color: theme.colorScheme.onSecondaryContainer,textSize: 14.0),
                         ),
                       ],
                     ),
@@ -115,9 +104,9 @@ class LicenseDetailsScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          largeText(title: 'Licence details',textSize: 14.0),
-                          largeText(title: 'Vehicle details',color: dividerColor,textSize: 14.0),
-                          largeText(title: 'Car insurance',color: dividerColor,textSize: 14.0),
+                          largeText(title: 'Licence details',textSize: 14.0,color: theme.colorScheme.primary),
+                          largeText(title: 'Vehicle details',color: theme.colorScheme.surfaceBright,textSize: 14.0),
+                          largeText(title: 'Car insurance',color: theme.colorScheme.surfaceBright,textSize: 14.0),
                         ],
                       ),
                     ),
