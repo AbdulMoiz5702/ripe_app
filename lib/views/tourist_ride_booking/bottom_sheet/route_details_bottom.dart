@@ -192,10 +192,10 @@ class RouteDetailsBottom extends StatelessWidget {
                                                     : Icons
                                                         .brightness_1_outlined,
                                             color: index == 0
-                                                ? lightRedCancelButtonTextColor
+                                                ? theme.colorScheme.secondaryFixed
                                                 : index == 1
-                                                    ? lightRedCancelButtonTextColor
-                                                    : checkBoxColor,
+                                                    ? theme.colorScheme.secondaryFixed
+                                                    : theme.colorScheme.secondary,
                                           ),
                                           Container(
                                             margin: EdgeInsets.only(left: 10),

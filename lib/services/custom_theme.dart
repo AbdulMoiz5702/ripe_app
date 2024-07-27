@@ -54,7 +54,12 @@ ThemeData lightTheme() {
       // shedule screen in progress  button color
       outline: lightDarkGreenColor,
        // shedule screen in progress  button Text color
-      outlineVariant: lightGreenColor
+      outlineVariant: lightGreenColor,
+      // login alert dialog icon color,
+      surfaceVariant: alertDialogIconColor,
+      // login alert dialog background color,
+      scrim: alertDialogBackGroundColor,
+
 
     ),
     // divider color
@@ -132,6 +137,10 @@ ThemeData darkTheme() {
       outline: darkDarkGreenColor,
         // shedule screen in progress  button Text color
         outlineVariant: darkLightGreenColor,
+      // login alert dialog icon color,
+      surfaceVariant: darkLoginAlertDialogIconColor,
+      // login alert dialog background color,
+      scrim: darkLoginAlertDialogColor,
 
     ),
     // divider color

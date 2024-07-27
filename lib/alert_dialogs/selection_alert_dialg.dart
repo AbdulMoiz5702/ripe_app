@@ -16,10 +16,12 @@ import 'fare_comparison_alert_diloag.dart';
 class AlertDialogClass {
 
   void showCustomDialog(BuildContext context) {
+    var theme = Theme.of(context);
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return Dialog(
+          backgroundColor: theme.scaffoldBackgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           ),
@@ -30,10 +32,12 @@ class AlertDialogClass {
   }
 
   void showFareComparisonAlertDialog(BuildContext context){
+    var theme = Theme.of(context);
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          backgroundColor:theme.scaffoldBackgroundColor ,
           contentPadding: EdgeInsets.all(5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
@@ -63,7 +67,9 @@ class DialogContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
+      color: theme.scaffoldBackgroundColor,
       margin: const EdgeInsets.all(10),
       width: MediaQuery.of(context).size.width * 1,
       child: Column(
@@ -75,6 +81,7 @@ class DialogContent extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: largeText(
               title: 'Which one are you?',
+              color: theme.primaryColor,
             ),
           ),
           Consumer<AlertDialogProviders>(builder: (context,provider,_){
@@ -136,6 +143,7 @@ class AlertSelectionConatiner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return InkWell(
       onTap: onTap,
       borderRadius: BorderRadius.circular(10),
@@ -150,9 +158,9 @@ class AlertSelectionConatiner extends StatelessWidget {
             Container(
               width: MediaQuery.sizeOf(context).width * 0.33,
               decoration: BoxDecoration(
-                color: isSelected == true ? Colors.black : Colors.white,
+                color: isSelected == true ? theme.primaryColor: theme.colorScheme.inversePrimary,
                 borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.black12),
+                border: Border.all(color: theme.colorScheme.surface),
               ),
               child: Column(
                 children: [
@@ -164,14 +172,14 @@ class AlertSelectionConatiner extends StatelessWidget {
                     width: MediaQuery.sizeOf(context).width * 0.3,
                     decoration: const BoxDecoration(
                     ),
-                    child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : blackColor,),
+                    child: SvgPicture.asset(imagePath,color: isSelected == true ? theme.colorScheme.secondary : theme.primaryColor,),
                   ),
                   const CustomSized(
                     height: 0.01,
                   ),
                   smallText(
                       title: title,
-                      color: isSelected == true ? checkBoxColor : blackColor),
+                      color: isSelected == true ? theme.colorScheme.secondary  : theme.primaryColor),
                   const CustomSized(
                     height: 0.01,
                   ),
@@ -181,9 +189,9 @@ class AlertSelectionConatiner extends StatelessWidget {
             const CustomSized(
               height: 0.01,
             ),
-            smallText(title: description, textSize: 11.0),
-            smallText(title: descriptionSecond, textSize: 11.0),
-            smallText(title: descriptionThird,textSize: 11.0),
+            smallText(title: description, textSize: 11.0,color: theme.colorScheme.onSecondaryContainer),
+            smallText(title: descriptionSecond, textSize: 11.0,color: theme.colorScheme.onSecondaryContainer),
+            smallText(title: descriptionThird,textSize: 11.0,color: theme.colorScheme.onSecondaryContainer),
           ],
         ),
       ),

@@ -14,7 +14,9 @@ class FareComparisonAlertDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
+      color: theme.scaffoldBackgroundColor,
       margin: EdgeInsets.all(10),
       width: MediaQuery.of(context).size.width * 1,
       child: Column(
@@ -25,18 +27,19 @@ class FareComparisonAlertDialog extends StatelessWidget {
           largeText(
             title: 'Fare comparison with',
             textSize: 18.0,
+            color: theme.primaryColor
           ),
           CustomSized(height: 0.002),
           largeText(
             title: 'competitors',
-            textSize: 18.0,
+            textSize: 18.0, color: theme.primaryColor
           ),
           CustomSized(height: 0.02),
-          smallText(title: 'Check how discounted fares we provide to',color: primaryTextColor),
+          smallText(title: 'Check how discounted fares we provide to',color: theme.primaryColor),
           CustomSized(height: 0.004),
-          smallText(title: 'our users in comparison to other apps in',color: primaryTextColor),
+          smallText(title: 'our users in comparison to other apps in',color: theme.primaryColor),
           CustomSized(height: 0.004),
-          smallText(title: 'the market for same distance and vehicles',color: primaryTextColor),
+          smallText(title: 'the market for same distance and vehicles',color: theme.primaryColor),
           CustomSized(height: 0.02),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,18 +48,19 @@ class FareComparisonAlertDialog extends StatelessWidget {
                 children: [
                   SvgPicture.asset(compatetorsIcons[index]),
                   CustomSized(height: 0.005),
-                  largeText(title:'\$100',textSize: 17.0,color:  index ==1 ? primaryTextColor : secondaryTextColor),
+                  largeText(title:'\$100',textSize: 17.0,color:  index ==1 ? theme.primaryColor : theme.colorScheme.onSecondaryContainer),
                 ],
               );
             }),
           ),
           CustomSized(height: 0.02),
-          const Row(
+           Row(
              mainAxisAlignment: MainAxisAlignment.center,
              children: [
                Icon(
                  Icons.error,
                  size: 20,
+                 color: theme.colorScheme.onSecondaryContainer,
                ),
                CustomSized(
                  width: 0.02,
@@ -67,7 +71,7 @@ class FareComparisonAlertDialog extends StatelessWidget {
                    style: TextStyle(
                      fontSize: 10.0,
                      fontWeight: FontWeight.w400,
-                     color: secondaryTextColor,
+                     color: theme.colorScheme.onSecondaryContainer,
                      fontFamily: 'Nunito Sans',
                    ),
                  ),
