@@ -404,7 +404,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
 
                 Spacer(),
                 CircleAvatar(
-                  child: SvgPicture.asset('assets/svg_pictures/call_icon.svg'),
+                  child: SvgPicture.asset('assets/svg_pictures/call.svg', color: whiteColor,),
 
                   backgroundColor: primaryTextColor,
                   maxRadius: 24.0,
@@ -419,7 +419,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 12.0, right: 20.0),
                         child: CircleAvatar(
-                          child: SvgPicture.asset('assets/svg_pictures/message icon.svg'),
+                          child: SvgPicture.asset('assets/svg_pictures/message.svg', color: whiteColor,),
 
                           backgroundColor: primaryTextColor,
                           maxRadius: 24.0,

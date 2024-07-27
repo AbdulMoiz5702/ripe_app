@@ -8,14 +8,15 @@ import '../consts/colors.dart';
 class CustomLeading extends StatelessWidget {
   final bool isHome ;
   final IconData iconData ;
-  const CustomLeading({super.key, this.isHome = false,this.iconData = Icons.arrow_back});
+  final double doublevalue ;
+  const CustomLeading({super.key, this.isHome = false,this.iconData = Icons.arrow_back, this.doublevalue = 10});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){ Navigator.pop(context); },
       child: Container(
-        margin: const EdgeInsets.all(10),
+        margin:  EdgeInsets.all(doublevalue),
         decoration:  BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,
