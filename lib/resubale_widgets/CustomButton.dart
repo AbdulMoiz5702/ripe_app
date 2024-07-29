@@ -199,6 +199,8 @@ class SecondaryCustomButton extends StatelessWidget {
   final Color borderColor;
   final FontWeight weight;
   final double textsize;
+
+  final   double widthbetweentextandicon ;
   const SecondaryCustomButton(
       {required this.title,
       required this.onTap,
@@ -212,7 +214,9 @@ class SecondaryCustomButton extends StatelessWidget {
       this.borderColor = whiteColor,
         this.weight =  FontWeight.w700,
         this.textsize = 15.0,
+        this.widthbetweentextandicon = 0.03,
       });
+
 
   @override
   Widget build(BuildContext context) {
@@ -237,7 +241,7 @@ class SecondaryCustomButton extends StatelessWidget {
                 color: titleColor,
                 weight:weight),
             CustomSized(
-              width: 0.03,
+              width: widthbetweentextandicon,
             ),
             onBoard == true
                 ? Icon(

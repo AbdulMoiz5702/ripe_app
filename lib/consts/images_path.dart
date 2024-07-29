@@ -95,6 +95,20 @@ const String visaCardSVG = 'assets/svg_pictures/visa_svg.svg';
 const String masterCardSVG = 'assets/svg_pictures/masterCard_svg.svg';
 const String amexCardSVG = 'assets/svg_pictures/amex_svg.svg';
 
+//profile screen SVG's
+const String profileSVG = 'assets/svg_pictures/profileicon.svg';
+const String callSVG = 'assets/svg_pictures/call.svg';
+const String mailSVG = 'assets/svg_pictures/emailicon.svg';
+const String calenderSVG = 'assets/svg_pictures/Calendar.svg';
+
+
+//payment and wallet screen SVG's
+const String paypalSVG = 'assets/svg_pictures/paypal.svg';
+const String cardSVG = 'assets/svg_pictures/CreditCard.svg';
+const String applepaySVG = 'assets/svg_pictures/ApplePay.svg';
+const String googlePaySVG = 'assets/svg_pictures/googlepay.svg';
+
+
 
 
 // car guide images

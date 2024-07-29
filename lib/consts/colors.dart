@@ -40,6 +40,8 @@ const Color  textfieldColorSecond = Color(0xffeff0f2);
 const Color dividerColor = Color(0xff9CA3AF);
 
 const Color checkBoxColor = Color(0xff029FEB);
+const Color alertDialogIconColor = Color(0xff5DB217);
+const Color alertDialogBackGroundColor = Color(0xffecfbcf);
 const Color otpColor = Colors.black12;
 const Color whiteColor = Colors.white;
 const Color lightWhiteColor = Colors.white24;
@@ -68,9 +70,8 @@ const lightDividerColor = Color(0xff414652);
 // bottom_sheets_leading_colors
 const Color lightBottomSheetLeadingColor = Color(0xffe5e7eb);
 
-// login alert dialogs
-const Color alertDialogIconColor = Color(0xff5DB217);
-const Color alertDialogBackGroundColor = Color(0xffecfbcf);
+
+
 
 
 
@@ -132,16 +133,13 @@ const Color darkProgressRideColor = Color(0xff102337);
 const Color darkDarkGreenColor = Color(0xff1c3a32);
 const Color darkLightGreenColor = Color(0xffb2e76e);
 
-// login alert dialog colors
-const darkLoginAlertDialogColor = Color(0xff175504);
-const darkLoginAlertDialogIconColor = Color(0xffb2e76e);
+
+const Color profileScreenopacityColor = Color(0xff757678);
 
 // login error alert dialog backgroud color
 const darkAlertDialogErrorBackGroundColor = Color(0xff7a051a);
 const darkAlertDialogErrorIconColor = Color(0xffff9e76);
 const darkAlertDialogErrorTextColor = Color(0xffffe5d1);
-
-
 
 
 
