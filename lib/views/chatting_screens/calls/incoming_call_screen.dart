@@ -11,6 +11,7 @@ class IncomingCallScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
@@ -35,20 +36,20 @@ class IncomingCallScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  LocationAccessButton(
+                  SecondaryAccessButton(
                     weight: FontWeight.w700,
                     widthbetweentextandicon: 0.02,
                     textsize: 15.0,
                     width: 0.4,
                     borderRadius: 26,
                     title: 'Decline',
-                    color: redColor,
+                    color: theme.colorScheme.secondaryFixed,
                     onTap: () {},
                     imagePath: 'assets/svg_pictures/declinecallicon.svg',
 
                     isImagePath: true,
                   ),
-                  LocationAccessButton(
+                  SecondaryAccessButton(
                     weight: FontWeight.w700,
                     widthbetweentextandicon: 0.02,
                     textsize: 15.0,

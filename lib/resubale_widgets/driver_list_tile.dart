@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
@@ -11,7 +12,7 @@ class DriverListItem extends StatelessWidget {
   final String avatarUrl;
   final String ? role;
   final String carType;
-  final IconData ? iconData;
+  final String ? imagePath;
   final VoidCallback  onTap;
 
   const DriverListItem({
@@ -23,19 +24,19 @@ class DriverListItem extends StatelessWidget {
     required this.avatarUrl,
     required this.role,
     required this.carType,
-    this.iconData,
+    this.imagePath,
     required this.onTap
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
+    var theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.only(top: 5),
       child: ListTile(
         onTap: onTap,
         leading: CircleAvatar(
-          backgroundColor: containerBorderColor,
+          backgroundColor: theme.colorScheme.surfaceContainerHighest,
           radius: 30,
           backgroundImage: AssetImage(avatarUrl),
         ),
@@ -45,17 +46,17 @@ class DriverListItem extends StatelessWidget {
           children: [
            Row(
              children: [
-               largeText(title: name,textSize: 14.0),
+               largeText(title: name,textSize: 14.0,color: theme.primaryColor),
                const CustomSized(width: 0.02,),
                 role == null ?  Container(
                  alignment: Alignment.center,
                  height: MediaQuery.sizeOf(context).height * 0.04,
                  width: MediaQuery.sizeOf(context).width * 0.23,
                  decoration: BoxDecoration(
-                   color: containerBorderColor,
+                   color: theme.colorScheme.onSecondary,
                    borderRadius: BorderRadius.circular(30),
                  ),
-                 child:largeText(title: 'Local Guide',textSize: 12.0,color: checkBoxColor),
+                 child:largeText(title: 'Local Guide',textSize: 12.0,color: theme.colorScheme.secondary),
                ): const SizedBox(height: 0,width: 0,),
              ],
            ),
@@ -66,15 +67,15 @@ class DriverListItem extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage(carType)),
               ),
-              child: iconData != null ?Container(
+              child: imagePath != null ?Container(
                 height: 30,
                 width: 30,
                 alignment: Alignment.center,
-                decoration: const BoxDecoration(
+                decoration:  BoxDecoration(
                   shape: BoxShape.circle,
-                  color: checkBoxColor,
+                  color: theme.colorScheme.secondary,
                 ),
-                child: Icon(iconData,color: whiteColor,size: 25,),
+                child: SvgPicture.asset(imagePath.toString(),color: theme.colorScheme.inversePrimary,),
               ) : const SizedBox(width: 0,height: 0,),
             ),
 
@@ -87,11 +88,11 @@ class DriverListItem extends StatelessWidget {
             Row(
               children: [
                 const  Icon(Icons.star, color: Colors.amber, size: 18.0),
-                smallText(textSize: 11.0,title:rating.toString(),color: primaryTextColor,),
-                smallText(textSize: 11.0,title:' ( $reviews )',color: secondaryTextColor,),
+                smallText(textSize: 11.0,title:rating.toString(),color: theme.primaryColor,),
+                smallText(textSize: 11.0,title:' ( $reviews )',color: theme.colorScheme.onSecondaryContainer,),
               ],
             ),
-            smallText(textSize: 11.0,title:carDetails,color: secondaryTextColor,),
+            smallText(textSize: 11.0,title:carDetails,color: theme.colorScheme.onSecondaryContainer,),
           ],
         ),
       ),
@@ -123,7 +124,7 @@ class DriverDetailListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    var theme = Theme.of(context);
     return Container(
       margin: const EdgeInsets.only(top: 5),
       child: ListTile(
@@ -137,11 +138,11 @@ class DriverDetailListItem extends StatelessWidget {
           children: [
             Row(
               children: [
-                largeText(title: '$name ',textSize: 14.0),
-                const Icon(Icons.brightness_1,color: otpColor,size: 7,),
+                largeText(title: '$name ',textSize: 14.0,color: theme.primaryColor),
+                 Icon(Icons.brightness_1,color: theme.dividerColor,size: 7,),
                 const  Icon(Icons.star, color: Colors.amber, size: 18.0),
-                smallText(textSize: 11.0,title:rating.toString(),color: primaryTextColor,),
-                smallText(textSize: 11.0,title:'( $reviews)',color: secondaryTextColor,),
+                smallText(textSize: 11.0,title:rating.toString(),color: theme.primaryColor,),
+                smallText(textSize: 11.0,title:'( $reviews)',color: theme.secondaryHeaderColor,),
               ],
             ),
             role == null ?  Container(
@@ -149,10 +150,10 @@ class DriverDetailListItem extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.04,
                     width: MediaQuery.sizeOf(context).width * 0.22,
                     decoration: BoxDecoration(
-                      color: containerBorderColor,
+                      color: theme.colorScheme.onSecondary,
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child:largeText(title: 'Local Guide',textSize: 12.0,color: checkBoxColor),
+                    child:largeText(title: 'Local Guide',textSize: 12.0,color: theme.colorScheme.secondary),
                   ): const SizedBox(height: 0,width: 0,),
 
           ],
@@ -163,9 +164,9 @@ class DriverDetailListItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              smallText(textSize: 11.0,title:'Total rides: $totalRides ',color: secondaryTextColor,),
-              const Icon(Icons.brightness_1,color: otpColor,size: 7,),
-              smallText(textSize: 11.0,title:' Driving time: $totalDrivingTime months',color: secondaryTextColor,),
+              smallText(textSize: 11.0,title:'Total rides: $totalRides ',color: theme.colorScheme.onSecondaryContainer,),
+               Icon(Icons.brightness_1,color: theme.dividerColor,size: 7,),
+              smallText(textSize: 11.0,title:' Driving time: $totalDrivingTime months',color:  theme.colorScheme.onSecondaryContainer,),
             ],
           ),
         ),

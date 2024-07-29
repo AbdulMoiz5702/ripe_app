@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 import 'package:ride_app/views/scheduled_screen/ride_history_screen.dart';
 
@@ -25,13 +27,14 @@ class RideDetailsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return InkWell(
       onTap: (){
         Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => RideHistoryScreen()));
       },
       child: Container(
         decoration: BoxDecoration(
-          color: showContainerColor ? color : null,
+          color: showContainerColor == true ? color : null,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -39,12 +42,12 @@ class RideDetailsWidget extends StatelessWidget {
           children: [
             if (month.isNotEmpty)
               Padding(
-                padding: const EdgeInsets.only(top: 12.0, left: 20),
+                padding:  EdgeInsets.only(top: 12.0, left: 20),
                 child: largeText(
                   title: month.toUpperCase(),
                   textSize: 12.0,
                   weight: FontWeight.w500,
-                  color: secondaryTextColor,
+                  color: theme.colorScheme.onSecondaryContainer,
                 ),
               ),
             Padding(
@@ -57,7 +60,7 @@ class RideDetailsWidget extends StatelessWidget {
                       children: [
                         largeText(
                             title: name,
-                            color: primaryTextColor,
+                            color: theme.primaryColor,
                             textSize: 17.0
                         ),
                         if (showInProgress)
@@ -66,15 +69,15 @@ class RideDetailsWidget extends StatelessWidget {
                             child: Container(
                               padding: const EdgeInsets.all(8.0),
                               decoration: BoxDecoration(
-                                  color: lightGreenColor,
+                                  color: theme.colorScheme.outline,
                                   borderRadius: BorderRadius.circular(8)
                               ),
                               child: Center(
-                                child: normalText(
+                                child: smallText(
                                   title: 'In Progress',
                                   textSize: 12.0,
                                   weight: FontWeight.w700,
-                                  color: darkgreenColor,
+                                  color: theme.colorScheme.outlineVariant,
                                 ),
                               ),
                             ),
@@ -84,7 +87,7 @@ class RideDetailsWidget extends StatelessWidget {
                   ),
                   largeText(
                     title: '\$${price}',
-                    color: checkBoxColor,
+                    color: theme.colorScheme.secondary,
                     textSize: 17.0,
                   ),
                 ],
@@ -96,18 +99,15 @@ class RideDetailsWidget extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(right: 4.0),
-                    child: Icon(
-                      Icons.polyline_sharp,
-                      color: checkBoxColor,
-                      size: 11.5,
+                    child:SvgPicture.asset(
+                      normalRoute,
+                      color: theme.colorScheme.secondary,
                     ),
                   ),
-                  normalText(
+                  smallText(
                       title: '$price miles',
-                      color: secondaryTextColor,
+                      color: theme.colorScheme.onSecondaryContainer,
                     textSize: 11.0,
-                    weight: FontWeight.w400,
-
                   ),
                 ],
               ),
@@ -118,16 +118,15 @@ class RideDetailsWidget extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.circle_outlined,
-                    color: checkBoxColor,
+                    color: theme.colorScheme.secondary,
                   ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 16.0),
-                      child: normalText(
+                      child: smallText(
                         title: 'Askari 11, Rawalpindi, Punjab 46000, Pakistan',
-                        color: secondaryTextColor,
+                        color: theme.colorScheme.onSecondaryContainer,
                         textSize: 11.0,
-                        weight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -140,7 +139,7 @@ class RideDetailsWidget extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.01,
                 width: MediaQuery.of(context).size.width * 0.003,
                 decoration: BoxDecoration(
-                  color: lightgreyColor,
+                  color: theme.dividerColor,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -151,16 +150,15 @@ class RideDetailsWidget extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.circle_outlined,
-                    color: orangeColor,
+                    color: theme.colorScheme.secondaryFixed,
                   ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 16.0),
-                      child: normalText(
+                      child: smallText(
                         title: 'Liaquat Bagh, Rawalpindi, Punjab 46000, Pakistan',
-                        color: secondaryTextColor,
+                        color: theme.colorScheme.onSecondaryContainer,
                         textSize: 11.0,
-                        weight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -173,7 +171,7 @@ class RideDetailsWidget extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.01,
                 width: MediaQuery.of(context).size.width * 0.003,
                 decoration: BoxDecoration(
-                  color: lightgreyColor,
+                  color: theme.dividerColor,
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
@@ -184,16 +182,15 @@ class RideDetailsWidget extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.circle,
-                    color: orangeColor,
+                    color: theme.colorScheme.secondaryFixed,
                   ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.only(left: 16.0),
-                      child: normalText(
+                      child: smallText(
                         title: 'H2VV+96R, 7 Main Peshawar Rd, Saddar, Rawalpindi, Punjab 46000, Pakistan',
-                        color: secondaryTextColor,
+                        color: theme.colorScheme.onSecondaryContainer,
                         textSize: 11.0,
-                        weight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -207,9 +204,9 @@ class RideDetailsWidget extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               child: Row(
                 children: List.generate(70, (index) {
-                  return const Text(
+                  return  Text(
                     '_',
-                    style: TextStyle(color: dividerColor),
+                    style: TextStyle(color: theme.dividerColor),
                   );
                 }),
               ),
@@ -219,9 +216,9 @@ class RideDetailsWidget extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               child: Row(
                 children: List.generate(40, (index) {
-                  return const Text(
+                  return  Text(
                     '_ ',
-                    style: TextStyle(color: dividerColor),
+                    style: TextStyle(color: theme.dividerColor),
                   );
                 }),
               ),

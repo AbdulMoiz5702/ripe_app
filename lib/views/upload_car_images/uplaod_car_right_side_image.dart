@@ -17,12 +17,11 @@ class UploadCarRightSideImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: whiteColor,
       appBar: AppBar(
-        backgroundColor: whiteColor,
         automaticallyImplyLeading: true,
-        title: largeText(title: 'Right side image'),
+        title: largeText(title: 'Right side image',color:theme.colorScheme.primary),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -52,17 +51,17 @@ class UploadCarRightSideImage extends StatelessWidget {
               height: MediaQuery.sizeOf(context).height * 0.1,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
-                color: secondayBlueColor,
+                color: theme.cardColor,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Row(
+              child:  Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
                     Icons.error,
                     size: 25,
-                    color: darkBlueColor,
+                    color:  theme.canvasColor,
                   ),
                   CustomSized(
                     width: 0.02,
@@ -73,7 +72,7 @@ class UploadCarRightSideImage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: darkBlueColor,
+                        color:  theme.canvasColor,
                         fontFamily: 'Nunito Sans',
                       ),
                     ),
@@ -85,7 +84,9 @@ class UploadCarRightSideImage extends StatelessWidget {
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Column(
                 children: [
-                  LocationAccessButton(
+                  SecondaryAccessButton(
+                    titleColor: theme.primaryColor,
+                    color: theme.colorScheme.surfaceContainerHighest,
                     isImagePath: true,
                     imagePath: gallery,
                     width: 1,
@@ -98,14 +99,14 @@ class UploadCarRightSideImage extends StatelessWidget {
                       );
                     },
                     iconData: Icons.collections_outlined,
-                    titleColor: primaryTextColor,
                     borderRadius: 30,
-                    color: secondaryWhiteColor,
                     weight: FontWeight.w700,
                   ),
                   CustomSized(height: 0.02),
                   provider.carRightSideImagePath == null
-                      ? LocationAccessButton(
+                      ? SecondaryAccessButton(
+                    color: theme.primaryColor,
+                    titleColor: theme.colorScheme.inversePrimary,
                     isImagePath: true,
                     width: 1,
                     title:'Camera',
@@ -116,7 +117,6 @@ class UploadCarRightSideImage extends StatelessWidget {
                     },
                     iconData: Icons.camera_alt,
                     borderRadius: 30,
-                    color: buttonColor,
                     weight: FontWeight.w700,
                   )
                       : CustomButton(

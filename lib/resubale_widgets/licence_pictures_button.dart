@@ -13,6 +13,7 @@ class LicencePicturesButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -24,13 +25,13 @@ class LicencePicturesButton extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            smallText(title: title, textSize: 12.0,weight: FontWeight.w700),
+            smallText(title: title, textSize: 12.0,weight: FontWeight.w700,color:theme.colorScheme.onSecondaryContainer ),
             const CustomSized(height: 0.008,),
             Container(
-              height: MediaQuery.sizeOf(context).height * 0.1,
+              height: MediaQuery.sizeOf(context).height * 0.095,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
-                color: secondaryWhiteColor,
+                color: theme.colorScheme.surfaceContainerHighest,
                 borderRadius: BorderRadius.circular(10),
                 image: imagePath != null ?  DecorationImage(image: FileImage(File(imagePath.toString())),fit: BoxFit.contain): null
               ),
@@ -39,14 +40,16 @@ class LicencePicturesButton extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Icon(Icons.file_upload_outlined,color: dividerColor,size: 35,),
-                  smallText(title: 'Upload file(jpg,png,pdf)', textSize: 11.0,),
+                  smallText(title: 'Upload file(jpg,png,pdf)', textSize: 11.0,color:theme.colorScheme.surfaceBright),
                 ],
               ),
             ),
-            const CustomSized(height: 0.002,),
+            const CustomSized(height: 0.003,),
             Row(
               children: [
+                const CustomSized(width: 0.02,height: 0,),
                 const Icon(Icons.error,size: 20,),
+                const CustomSized(width: 0.002,height: 0,),
                 smallText(title: ' Max file size:2MB', textSize: 11.0,),
               ],
             ),

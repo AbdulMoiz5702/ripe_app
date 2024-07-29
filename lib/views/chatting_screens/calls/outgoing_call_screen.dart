@@ -11,6 +11,7 @@ class UserCallScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
@@ -30,16 +31,15 @@ class UserCallScreen extends StatelessWidget {
             ),
             largeText(title: 'Samantha Gill', textSize: 14.0),
             Spacer(),
-            LocationAccessButton(
+            SecondaryAccessButton(
               weight: FontWeight.w700,
               widthbetweentextandicon: 0.02,
               textsize: 15.0,
               width: 0.9,
               borderRadius: 26,
               title: 'End Call',
-              color: redColor,
+              color: theme.colorScheme.secondaryFixed,
               onTap: () {
-
                 Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => IncomingCallScreen()));
               },
               imagePath: 'assets/svg_pictures/endcallicon.svg',

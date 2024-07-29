@@ -11,6 +11,7 @@ class LineIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(itemCount, (index) {
@@ -18,7 +19,7 @@ class LineIndicator extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 4.0),
           height: 3,
           width: MediaQuery.sizeOf(context).width * 0.18,
-          color: currentIndex == index ? Colors.black : Colors.grey,
+          color: currentIndex == index ? theme.primaryColor : Colors.grey,
         );
       }),
     );

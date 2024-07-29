@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
-import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 import 'package:ride_app/resubale_widgets/login_options_row.dart';
 import 'package:ride_app/views/bottom_screen/Main_bottom_Screen.dart';
@@ -13,6 +11,7 @@ import 'package:ride_app/views/role_selection_screen/select_role.dart';
 
 import '../../resubale_widgets/CustomButton.dart';
 import '../../resubale_widgets/Custom_Sized.dart';
+import '../../resubale_widgets/band_name.dart';
 import '../../resubale_widgets/custom_leading.dart';
 import '../../resubale_widgets/divider_row.dart';
 import '../../resubale_widgets/text_widgets.dart';
@@ -23,8 +22,10 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = TextEditingController();
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           leading: CustomLeading(),
@@ -36,7 +37,7 @@ class LoginScreen extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.78,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -51,26 +52,12 @@ class LoginScreen extends StatelessWidget {
                     CustomSized(
                       height: 0.020,
                     ),
-                    RichText(
-                        text: const TextSpan(children: [
-                      TextSpan(
-                          text: 'Logo',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18)),
-                      TextSpan(
-                          text: 'ipsum',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18))
-                    ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.02,
                     ),
                     largeText(
-                        title: 'Hey there, Welcome Back', color: Colors.black),
+                        title: 'Hey there, Welcome Back', color: theme.primaryColor),
                     CustomSized(
                       height: 0.04,
                     ),
@@ -104,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => ForgotStep1()));
                       },
-                        child: smallText(title: 'Forgot password ?', color: lightPrimaryTextColor,textSize: 13.0))),
+                        child: smallText(title: 'Forgot password ?', color: theme.colorScheme.secondary,textSize: 13.0))),
                     CustomSized(height: 0.03),
                     CustomButton(
                       title: 'Login',
@@ -129,13 +116,13 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           normalText(
                               title: 'Login with fingerprint',
-                              color: Colors.blue),
+                              color: theme.colorScheme.secondary),
                           CustomSized(
                             width: 0.01,
                           ),
                           Icon(
                             Icons.fingerprint,
-                            color: Colors.blue,
+                            color: theme.colorScheme.secondary,
                           ),
                         ],
                       ),
@@ -156,8 +143,8 @@ class LoginScreen extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          smallText(title: 'Not a member ?  ',color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: 'Register now',color: checkBoxColor,textSize: 13.0),
+                          smallText(title: 'Not a member ?  ',color: theme.primaryColor,weight:FontWeight.w700 ),
+                          smallText(title: 'Register now',color: theme.colorScheme.secondary,textSize: 13.0),
                         ],
                       ),
                     ),

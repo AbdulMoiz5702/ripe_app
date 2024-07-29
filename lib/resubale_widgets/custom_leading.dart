@@ -8,21 +8,21 @@ import '../consts/colors.dart';
 class CustomLeading extends StatelessWidget {
   final bool isHome ;
   final IconData iconData ;
-  final double doublevalue ;
-  const CustomLeading({super.key, this.isHome = false,this.iconData = Icons.arrow_back, this.doublevalue = 10});
+  const CustomLeading({super.key, this.isHome = false,this.iconData = Icons.arrow_back});
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: (){ Navigator.pop(context); },
       child: Container(
-        margin:  EdgeInsets.all(doublevalue),
+        margin: const EdgeInsets.all(10),
         decoration:  BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.white,
-          border: isHome == true ? Border.all(color: otpColor) : null,
+          color: theme.scaffoldBackgroundColor,
+          border: isHome == true ? Border.all(color: theme.colorScheme.onSecondaryContainer) : null,
         ),
-        child: Center(child: SvgPicture.asset('assets/svg_pictures/ArrowLeft.svg'),),
+        child: Center(child: Icon(iconData,color: theme.primaryColor,),),
       ),
     );
   }
@@ -34,6 +34,7 @@ class NotificationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -41,10 +42,10 @@ class NotificationButton extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         decoration:  BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.white, 
-            border :Border.all(color: otpColor)
+          color: theme.scaffoldBackgroundColor,
+            border :Border.all(color: theme.scaffoldBackgroundColor)
         ),
-        child:SvgPicture.asset(bellSimpleSvg,height: 30,width: 30,)),
+        child:SvgPicture.asset(bellSimpleSvg,height: 30,width: 30,color:  theme.primaryColor,)),
     );
   }
 }

@@ -13,6 +13,7 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Form(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -28,19 +29,20 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
               maxLength: 1,
+              style: TextStyle(color: theme.colorScheme.onSecondaryContainer),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
                 counterText: '',
                 enabledBorder:  OutlineInputBorder(
-                  borderSide: const BorderSide(color: otpColor,),
+                  borderSide:  BorderSide(color:  theme.colorScheme.surfaceBright,),
                   borderRadius: BorderRadius.circular(25.0), // Circular border
                 ),
                 border: OutlineInputBorder(
-                  borderSide: const BorderSide(color: otpColor,width: 2),
+                  borderSide:  BorderSide(color: theme.colorScheme.surfaceBright,width: 2),
                   borderRadius: BorderRadius.circular(25.0), // Circular border
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.black,width: 2),
+                  borderSide:  BorderSide(color:theme.colorScheme.surfaceBright,width: 2),
                   borderRadius: BorderRadius.circular(25.0),  // Circular border
                 ),
               ),

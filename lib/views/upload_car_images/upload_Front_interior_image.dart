@@ -20,12 +20,11 @@ class UploadFrontInteriorImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: whiteColor,
       appBar: AppBar(
-        backgroundColor: whiteColor,
         automaticallyImplyLeading: true,
-        title: largeText(title: 'Front interior image'),
+        title: largeText(title: 'Front interior image',color:theme.colorScheme.primary),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -55,17 +54,17 @@ class UploadFrontInteriorImage extends StatelessWidget {
               height: MediaQuery.sizeOf(context).height * 0.11,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
-                color: secondayBlueColor,
+                color:  theme.cardColor,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Row(
+              child:  Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(
                     Icons.error,
                     size: 25,
-                    color: darkBlueColor,
+                    color: theme.canvasColor,
                   ),
                   CustomSized(
                     width: 0.02,
@@ -76,7 +75,7 @@ class UploadFrontInteriorImage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: darkBlueColor,
+                        color: theme.canvasColor,
                         fontFamily: 'Nunito Sans',
                       ),
                     ),
@@ -88,7 +87,9 @@ class UploadFrontInteriorImage extends StatelessWidget {
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
               return Column(
                 children: [
-                  LocationAccessButton(
+                  SecondaryAccessButton(
+                    titleColor: theme.primaryColor,
+                    color: theme.colorScheme.surfaceContainerHighest,
                     width: 1,
                     title: provider.carFrontSeatsImagePath == null
                         ? 'Upload from gallery'
@@ -99,14 +100,14 @@ class UploadFrontInteriorImage extends StatelessWidget {
                       );
                     },
                     iconData: Icons.collections_outlined,
-                    titleColor: primaryTextColor,
                     borderRadius: 30,
-                    color: secondaryWhiteColor,
                     weight: FontWeight.w700,
                   ),
                   CustomSized(height: 0.02),
                   provider.carFrontSeatsImagePath == null
-                      ? LocationAccessButton(
+                      ? SecondaryAccessButton(
+                    color: theme.primaryColor,
+                    titleColor: theme.colorScheme.inversePrimary,
                     width: 1,
                     title:'Camera',
                     onTap: () {
@@ -116,7 +117,6 @@ class UploadFrontInteriorImage extends StatelessWidget {
                     },
                     iconData: Icons.camera_alt,
                     borderRadius: 30,
-                    color: buttonColor,
                     weight: FontWeight.w700,
                   )
                       : CustomButton(

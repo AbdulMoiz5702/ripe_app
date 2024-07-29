@@ -64,7 +64,7 @@ class OngoingCallAgainScreen extends StatelessWidget {
                   ),
                 ),
               ),
-                  LocationAccessButton(
+                  SecondaryAccessButton(
                     weight: FontWeight.w700,
                     widthbetweentextandicon: 0.02,
                     textsize: 15.0,

@@ -29,6 +29,7 @@ class UserRiderChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       backgroundColor: backgroundpaperColor,
       appBar: AppBar(
@@ -41,7 +42,6 @@ class UserRiderChatScreen extends StatelessWidget {
         title: Row(
           children: [
             CustomLeading(
-              doublevalue: 0,
             ),
             CustomSized(width: 0.03),
             CircleAvatar(
@@ -108,7 +108,7 @@ class UserRiderChatScreen extends StatelessWidget {
                           CustomSized(width: 0.02),
                           normalText(
                             title: 'Report Chat',
-                            color: redColor,
+                            color: theme.colorScheme.secondaryFixed,
                             weight: FontWeight.w400,
                             textSize: 14.0,
                           ),
@@ -268,7 +268,7 @@ class UserRiderChatScreen extends StatelessWidget {
                   color: secondaryTextColor),
 
               actions: <Widget>[
-                CustomButton(
+                SecondaryCustomButton(
                   title: 'Cancel',
                   onBoard: false,
                   onTap: () {},
@@ -279,7 +279,7 @@ class UserRiderChatScreen extends StatelessWidget {
                   weight: FontWeight.w700,
                   color: lightgreyColorinchattingfield,
                 ),
-                CustomButton(
+                SecondaryCustomButton(
                   title: 'Report Chat',
                   onBoard: false,
                   borderRadius: 25.0,

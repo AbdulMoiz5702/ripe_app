@@ -19,6 +19,7 @@ class CustomButtonNav extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return GestureDetector(
       onTap: onPressed,
       child: Container(
@@ -26,11 +27,11 @@ class CustomButtonNav extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (imagePath != null)
-              SvgPicture.asset(imagePath.toString(),color: currentTab == index ? checkBoxColor : secondaryTextColor,),
+              SvgPicture.asset(imagePath.toString(),color: currentTab == index ? theme.colorScheme.secondary :  theme.colorScheme.onSecondaryContainer,),
             Text(
               title,
               style: TextStyle(
-                color: currentTab == index ? checkBoxColor : secondaryTextColor,
+                color: currentTab == index ? theme.colorScheme.secondary : theme.colorScheme.onSecondaryContainer,
                 fontSize: 9.0,
               ),
             ),

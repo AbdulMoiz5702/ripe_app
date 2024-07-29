@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
+import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 
 import '../../../consts/colors.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
 import '../../../resubale_widgets/cutom_leading text_feild.dart';
+import '../../../resubale_widgets/home_screen_Text_Feild.dart';
 import '../../../resubale_widgets/text_widgets.dart';
 
 class MakeAddressFavorite extends StatelessWidget {
@@ -14,10 +18,11 @@ class MakeAddressFavorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.all(10),
-      decoration: const BoxDecoration(
-        color: whiteColor,
+      decoration:  BoxDecoration(
+        color: theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -28,14 +33,7 @@ class MakeAddressFavorite extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            height: 5,
-            width: MediaQuery.sizeOf(context).width * 0.3,
-            decoration: BoxDecoration(
-              color: dividerColor,
-              borderRadius: BorderRadius.circular(5),
-            ),
-          ),
+          BottomSheetsLeadings(),
           CustomSized(height: 0.02,),
           Padding(
             padding: const EdgeInsets.all(10),
@@ -43,38 +41,39 @@ class MakeAddressFavorite extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSized(height: 0.02,),
-                largeText(title: 'Saved addresses'),
+                largeText(title: 'Saved addresses',color: theme.primaryColor),
                 CustomSized(height: 0.01,),
-                smallText(title: 'This address will be displayed in search list when '),
+                smallText(title: 'This address will be displayed in search list when ',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.01,),
-                smallText(title: 'you’ll search with saved name.'),
+                smallText(title: 'you’ll search with saved name.',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.03,),
-                CustomLeadingTextField(
+                HomeScreenTextField(
+                  textColor: theme.primaryColor,
+                  removeLeadingIcon: true,
                   controller: controller,
-                  keyBoardType: TextInputType.emailAddress,
-                  obscureText: false,
                   hint: 'Saved address name',
                   onValidator: (value) {},
-                  onFieldSubmittedValue: (value) {},
-                  iconDataColor: whiteColor,
-                  iconData: Icons.add,
+                  onFieldSubmittedValue: (newValue) {},
+                  iconPath: searchBlack,
+                  color: theme.colorScheme.surfaceContainerHighest,
+                  hintColor: theme.primaryColor,
                 ),
                 CustomSized(height: 0.02,),
                 ListTile(
                   dense: true,
-                  leading: Icon(Icons.location_on_outlined,color: checkBoxColor,),
-                  title:smallText(title:address,color: primaryTextColor) ,
+                  leading: SvgPicture.asset(currentLocationSVG,color: theme.colorScheme.secondary,),
+                  title:smallText(title:address,color: theme.primaryColor) ,
                   subtitle: smallText(title:subAddress,textSize: 11.0),
-                  trailing: Icon(Icons.favorite,color: checkBoxColor,),
+                  trailing: Icon(Icons.favorite,color: theme.colorScheme.secondary,),
                 ),
                 CustomSized(height: 0.02,),
-                LocationAccessButton(width:1,title: 'Save address',iconData: Icons.favorite_border,onTap: (){
+                LocationAccessButton(width:1,title: 'Save address',iconData: Icons.favorite_border,color: theme.colorScheme.inversePrimary,titleColor:theme.primaryColor,onTap: (){
                   Navigator.pop(context);
                 },borderRadius: 30,),
                 CustomSized(height: 0.02,),
-                CustomButton(width:1,title: 'Don\'t save', onTap: (){
+                SecondaryCustomButton(width:1,title: 'Don\'t save', onTap: (){
                   Navigator.pop(context);
-                },borderRadius: 30,color: secondaryWhiteColor,titleColor: primaryTextColor,onBoard: false,),
+                },borderRadius: 30,color: theme.colorScheme.inversePrimary,titleColor: theme.primaryColor,onBoard: false,isBorder: true,borderColor:theme.colorScheme.onSecondaryContainer,),
                 CustomSized(height: 0.002,),
               ],
             ),

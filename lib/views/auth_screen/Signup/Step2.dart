@@ -7,12 +7,14 @@ import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
 import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
+import 'package:ride_app/resubale_widgets/go_to_login.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
 import 'package:ride_app/views/auth_screen/Signup/Step3.dart';
 import 'package:ride_app/views/role_selection_screen/select_role.dart';
 
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
+import '../../../resubale_widgets/band_name.dart';
 import '../../../resubale_widgets/custom_leading.dart';
 import '../../../resubale_widgets/divider_row.dart';
 import '../../../resubale_widgets/login_options_row.dart';
@@ -23,6 +25,7 @@ class Step2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = TextEditingController();
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
         resizeToAvoidBottomInset: true,
@@ -40,7 +43,7 @@ class Step2 extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.68,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color:theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -52,29 +55,15 @@ class Step2 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    RichText(
-                        text: const TextSpan(children: [
-                      TextSpan(
-                          text: 'Logo',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18)),
-                      TextSpan(
-                          text: 'ipsum',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18))
-                    ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.02,
                     ),
-                    largeText(title: 'Enter your email', color: Colors.black),
+                    largeText(title: 'Enter your email', color:theme.primaryColor),
                     CustomSized(height: 0.01,),
-                    smallText(title: 'By sharing your email, you agree to our Terms of',),
+                    smallText(title: 'By sharing your email, you agree to our Terms of',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(height: 0.002,),
-                    smallText(title: 'Services and Privacy Policy.',),
+                    smallText(title: 'Services and Privacy Policy.',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.03,
                     ),
@@ -110,14 +99,14 @@ class Step2 extends StatelessWidget {
                             ),
                             smallText(
                                 title: 'Sends me email notification for mentions',
-                                color: primaryTextColor,
+                                color: theme.primaryColor,
                                 textSize: 14.0),
                             CustomSized(
                               height: 0.001,
                             ),
                             smallText(
                                 title: 'and direct messages',
-                                color: primaryTextColor,
+                                color: theme.primaryColor,
                                 textSize: 14.0),
                           ],
                         ),
@@ -138,21 +127,7 @@ class Step2 extends StatelessWidget {
                     CustomSized(height: 0.03),
                     LoginOptionsRow(),
                     CustomSized(height: 0.044),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SelectRole()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
-                        ],
-                      ),
-                    ),
+                    GoToLogin(theme: theme),
                   ],
                 ),
               ),

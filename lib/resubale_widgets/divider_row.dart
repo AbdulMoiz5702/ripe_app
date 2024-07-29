@@ -7,6 +7,7 @@ import '../consts/colors.dart';
 
 
 Widget dividerRow({required BuildContext context,String title= 'register'}){
+  var theme = Theme.of(context);
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -14,15 +15,15 @@ Widget dividerRow({required BuildContext context,String title= 'register'}){
         margin: EdgeInsets.symmetric(horizontal: 5),
         height: 1,
         width: MediaQuery.sizeOf(context).width * 0.28,
-        color: dividerColor,
+        color: theme.colorScheme.surface,
       ),
       smallText(
-          title:'or $title with',color: dividerColor),
+          title:'or $title with',color: theme.colorScheme.surface),
       Container(
         margin: EdgeInsets.symmetric(horizontal: 5),
         height: 1,
         width: MediaQuery.sizeOf(context).width * 0.28,
-        color: dividerColor,
+        color: theme.colorScheme.surface,
       )
     ],
   );

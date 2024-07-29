@@ -21,6 +21,7 @@ class ReviewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -43,11 +44,13 @@ class ReviewItem extends StatelessWidget {
                         largeText(
                           title: name,
                           textSize: 14.0,
+                          color: theme.primaryColor
                         ),
                         const CustomSized(height: 0.01,),
                         smallText(
                           title: timestamp,
                           textSize: 11.0,
+                          color: theme.colorScheme.onSecondaryContainer
                         ),
                       ],
                     ),
@@ -76,14 +79,19 @@ class ReviewItem extends StatelessWidget {
                       const CustomSized(width: 0.02,),
                       smallText(
                         title : rating.toString(),
-                        color: primaryTextColor
+                        color: theme.primaryColor
                       ),
                     ],
                   ),
                 )
               ],
             ),
-            Text( reviewText,style: TextStyles.bulletPoint,),
+            Text( reviewText,style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: theme.primaryColor,
+              fontFamily:'Nunito Sans',
+            ),),
           ],
         ),
       ),

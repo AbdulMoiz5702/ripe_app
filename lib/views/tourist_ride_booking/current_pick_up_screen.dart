@@ -21,9 +21,9 @@ class _CurrentPickUpScreenState extends State<CurrentPickUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('build');
-    return const Scaffold(
-      backgroundColor: whiteColor,
+    var theme = Theme.of(context);
+    return  Scaffold(
+      backgroundColor:theme.primaryColor ,
     );
   }
 }

@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/controllers/aler_dialog_providers.dart';
 import 'package:ride_app/controllers/auth_provider.dart';
 import 'package:ride_app/controllers/role_selection_provider.dart';
@@ -16,12 +15,11 @@ import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'call_screen.dart';
 import 'controllers/become_driver_controller.dart';
+import 'controllers/bottom_screen_provider.dart';
+import 'controllers/theme_provider.dart';
+import 'services/custom_theme.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
-
-
-// Assuming your existing imports
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -39,6 +37,8 @@ void main() async {
         ChangeNotifierProvider(create: (_) => ZegoCloudProvider()),
         ChangeNotifierProvider(create: (_) => BecomeDriverProvider()),
         ChangeNotifierProvider(create: (_) => AuthProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => BottomScreenProvider()),
       ],
       child: MyApp(navigatorKey: navigatorKey,),
     ),
@@ -52,22 +52,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      navigatorKey: navigatorKey,
-      title: 'Flutter Demo',
-        theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-            iconTheme: IconThemeData(color: primaryTextColor),
-            elevation: 0,
-            backgroundColor:Colors.transparent,
-          ),
-          useMaterial3: false,
-          fontFamily: 'Nunito Sans',
-          scaffoldBackgroundColor: Colors.transparent, ),
-
-    home: const OnboardingScreen(),
-    );
-  }
+    return Consumer<ThemeProvider>(builder: (context,provider,_){
+      return MaterialApp(
+          navigatorKey: navigatorKey,
+          title: 'Flutter Demo',
+          theme: lightTheme(), // Apply light theme
+          darkTheme: darkTheme(), // Apply dark theme
+          themeMode: provider.themeMode, // Use theme mode from provider
+          home: const OnboardingScreen(),
+          );
+      });
+    }
 }
 
 class MyHomePage extends StatefulWidget {

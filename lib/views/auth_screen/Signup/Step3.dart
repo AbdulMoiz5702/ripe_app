@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
-import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
+import 'package:ride_app/resubale_widgets/band_name.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
+import 'package:ride_app/resubale_widgets/go_to_login.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
-import 'package:ride_app/views/role_selection_screen/select_role.dart';
 
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
@@ -21,8 +21,10 @@ class Step3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = TextEditingController();
+    var theme = Theme.of(context);
     return BgWidget(
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
           leading: CustomLeading(),
@@ -37,7 +39,7 @@ class Step3 extends StatelessWidget {
             height: MediaQuery.sizeOf(context).height * 0.66,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -50,34 +52,20 @@ class Step3 extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomSized(height: 0.020,),
-                    RichText(
-                        text: const TextSpan(children: [
-                      TextSpan(
-                          text: 'Logo',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18)),
-                      TextSpan(
-                          text: 'ipsum',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18))
-                    ])),
+                    BrandName(theme: theme),
                     CustomSized(
                       height: 0.02,
                     ),
                     largeText(
-                        title: 'Enter your Phone Number',),
+                        title: 'Enter your Phone Number', color:theme.primaryColor),
                     CustomSized(
                       height: 0.01,
                     ),
-                    smallText(title: 'Add to recovery phone to help keep your account',),
+                    smallText(title: 'Add to recovery phone to help keep your account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.001,
                     ),
-                    smallText(title: 'secure',),
+                    smallText(title: 'secure',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.04,
                     ),
@@ -105,21 +93,7 @@ class Step3 extends StatelessWidget {
                     CustomSized(height: 0.04),
                     LoginOptionsRow(),
                     CustomSized(height: 0.045),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SelectRole()));
-                      },
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          smallText(title: 'Already a member?  ',color: primaryTextColor,weight:FontWeight.w700 ),
-                          smallText(title: 'Login',color: checkBoxColor,textSize: 13.0),
-                        ],
-                      ),
-                    ),
+                    GoToLogin(theme: theme),
                   ],
                 ),
               ),

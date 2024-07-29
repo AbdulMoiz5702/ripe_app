@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
@@ -12,10 +11,11 @@ class CreditCardBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: whiteColor,
+        color: theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.only(
           topRight: Radius.circular(20),
           topLeft: Radius.circular(20),
@@ -25,16 +25,17 @@ class CreditCardBottomSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          largeText(title: 'Select a payment method', textSize: 18.0),
+          largeText(title: 'Select a payment method', textSize: 18.0,color: theme.primaryColor),
           CustomSized(height: 0.02,),
           Consumer<ScheduleRideProvider>(builder: (context,provider,_){
             return Column(
               children: List.generate(creditCardSheetIcon.length, (index){
                 return ListTile(
                   dense: true,
-                  leading: SvgPicture.asset(creditCardSheetIcon[index]),
-                  title: smallText(title:creditCardSheetText[index]),
+                  leading: SvgPicture.asset(creditCardSheetIcon[index],color: theme.colorScheme.secondary,),
+                  title: smallText(title:creditCardSheetText[index],color: theme.colorScheme.onSecondaryContainer,),
                   trailing: Radio<int>(
+                    activeColor: theme.colorScheme.secondary,
                     splashRadius: 30,
                     value:index,
                     groupValue: provider.selectedValue,
@@ -47,12 +48,13 @@ class CreditCardBottomSheet extends StatelessWidget {
             );
           }),
           CustomSized(height: 0.02,),
-           const  Row(
+             Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 Icons.error,
                 size: 20,
+                color: theme.colorScheme.onSecondaryContainer,
               ),
               CustomSized(
                 width: 0.02,
@@ -63,7 +65,7 @@ class CreditCardBottomSheet extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 10.5,
                     fontWeight: FontWeight.w400,
-                    color: secondaryTextColor,
+                    color: theme.colorScheme.onSecondaryContainer,
                     fontFamily: 'Nunito Sans',
                   ),
                 ),
@@ -73,7 +75,7 @@ class CreditCardBottomSheet extends StatelessWidget {
           CustomSized(height: 0.01,),
           Align(
             alignment: Alignment.centerRight,
-              child: GestureDetector(child: largeText(title: 'Add new account  ',textSize: 14.0,color: checkBoxColor))),
+              child: GestureDetector(child: largeText(title: 'Add new account  ',textSize: 14.0,color: theme.colorScheme.secondary))),
         ],
       ),
     );

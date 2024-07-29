@@ -13,6 +13,7 @@ class ongoingCall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
       backgroundColor: whiteColor,
       appBar: AppBar(
@@ -48,14 +49,14 @@ class ongoingCall extends StatelessWidget {
                     backgroundColor: backgroundpaperColor,
                       maxRadius: 22.0,
                       child: SvgPicture.asset('assets/svg_pictures/speakerhigh.svg')),
-                  LocationAccessButton(
+                  SecondaryAccessButton(
                     weight: FontWeight.w700,
                     widthbetweentextandicon: 0.02,
                     textsize: 15.0,
                     width: 0.6,
                     borderRadius: 26,
                     title: 'End call',
-                    color: redColor,
+                    color: theme.colorScheme.secondaryFixed,
                     onTap: () {
                       Navigator.push(context, MaterialPageRoute(builder: (ctx)=> OngoingCallAgainScreen()));
                     },

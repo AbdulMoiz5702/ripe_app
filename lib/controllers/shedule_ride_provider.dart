@@ -129,9 +129,10 @@ class ScheduleRideProvider extends ChangeNotifier {
   }
 
   void openCreditCardBottomSheet({required BuildContext context}){
+    var theme = Theme.of(context);
     showModalBottomSheet(
         isScrollControlled: true,
-        backgroundColor: whiteColor,
+        backgroundColor: theme.scaffoldBackgroundColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
@@ -145,9 +146,10 @@ class ScheduleRideProvider extends ChangeNotifier {
 
 
   void openRouteDetailsBottomBottomSheet({required BuildContext context}){
+    var theme = Theme.of(context);
      showModalBottomSheet(
          isScrollControlled: true,
-         backgroundColor: whiteColor,
+         backgroundColor:theme.scaffoldBackgroundColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
@@ -174,6 +176,7 @@ class ScheduleRideProvider extends ChangeNotifier {
 
 
   Future<void> selectDate(BuildContext context) async {
+    var theme = Theme.of(context);
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: selectedDate,
@@ -182,13 +185,24 @@ class ScheduleRideProvider extends ChangeNotifier {
       builder: (BuildContext context, Widget? child) {
         return Theme(
           data: ThemeData.light().copyWith(
-            colorScheme: const ColorScheme.light(
-              primary: checkBoxColor, // Header background color
-              onPrimary: whiteColor, // Header text color
-              surface: whiteColor, // Background color of calendar picker
-              onSurface: primaryTextColor, // Text color
+            datePickerTheme: DatePickerThemeData(
+              dividerColor: theme.dividerColor,
+              confirmButtonStyle: ButtonStyle(
+                foregroundColor: WidgetStateProperty.all<Color>(theme.scaffoldBackgroundColor),
+                backgroundColor: WidgetStateProperty.all<Color>(theme.primaryColor),
+              ),
+              cancelButtonStyle: ButtonStyle(
+                foregroundColor: WidgetStateProperty.all<Color>(theme.primaryColor),
+                backgroundColor: WidgetStateProperty.all<Color>(theme.scaffoldBackgroundColor),
+              ),
             ),
-            dialogBackgroundColor: whiteColor,
+            colorScheme:  ColorScheme.light(
+              primary: theme.colorScheme.secondary, // Header background color
+              onPrimary: theme.scaffoldBackgroundColor, // Header text color
+              surface: theme.scaffoldBackgroundColor, // Background color of calendar picker
+              onSurface: theme.primaryColor, // Text color
+            ),
+            dialogBackgroundColor: theme.scaffoldBackgroundColor,
           ),
           child: child!,
         );
@@ -201,6 +215,7 @@ class ScheduleRideProvider extends ChangeNotifier {
   }
 
   Future<void> selectTime(BuildContext context) async {
+    var theme = Theme.of(context);
     final TimeOfDay? picked = await showTimePicker(
       context: context,
       initialTime: selectedTime,
@@ -210,46 +225,52 @@ class ScheduleRideProvider extends ChangeNotifier {
           child: Theme(
             data: ThemeData.light().copyWith(
               timePickerTheme: TimePickerThemeData(
-                backgroundColor: Colors.white,
-                hourMinuteTextColor: Colors.black,
-                dialHandColor: checkBoxColor,
-                dialBackgroundColor:secondaryWhiteColor,
+                entryModeIconColor: theme.colorScheme.secondary,
+                helpTextStyle: TextStyle(color: theme.primaryColor),
+                dayPeriodBorderSide: BorderSide(color: theme.scaffoldBackgroundColor),
+                  confirmButtonStyle: ButtonStyle(
+                    foregroundColor: WidgetStateProperty.all<Color>(theme.scaffoldBackgroundColor),
+                    backgroundColor: WidgetStateProperty.all<Color>(theme.primaryColor),
+                  ),
+                cancelButtonStyle: ButtonStyle(
+                  foregroundColor: WidgetStateProperty.all<Color>(theme.primaryColor),
+                  backgroundColor: WidgetStateProperty.all<Color>(theme.scaffoldBackgroundColor),
+                ),
+                dialTextColor: theme.primaryColor,
+                backgroundColor: theme.scaffoldBackgroundColor,
+                hourMinuteTextColor: theme.primaryColor,
+                dialHandColor: theme.colorScheme.secondary,
+                dialBackgroundColor:theme.colorScheme.surfaceContainerHighest,
                 shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: Colors.white),
+                  side:  BorderSide(color: theme.scaffoldBackgroundColor),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 dayPeriodColor: WidgetStateColor.resolveWith(
-                      (states) => Colors.white, // Set to white
+                      (states) => theme.scaffoldBackgroundColor, // Set to white
                 ),
                 dayPeriodTextColor: WidgetStateColor.resolveWith(
-                      (states) => Colors.black,
+                      (states) => theme.primaryColor,
                 ),
                 dayPeriodShape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.zero, // Remove the border radius
                   side: BorderSide.none, // Remove the border
                 ),
                 hourMinuteColor: WidgetStateColor.resolveWith(
-                      (states) => Colors.white, // Change this to white
+                      (states) => theme.scaffoldBackgroundColor, // Change this to white
                 ),
                 hourMinuteShape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
                 inputDecorationTheme: InputDecorationTheme(
-                  fillColor: Colors.white,
+                  fillColor: theme.scaffoldBackgroundColor,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
                 ),
-                dayPeriodTextStyle: const TextStyle(
-                  color: Colors.blue,
+                dayPeriodTextStyle:  TextStyle(
+                  color: theme.colorScheme.secondary,
                   fontSize: 14,
                   fontWeight: FontWeight.bold,
-                ),
-              ),
-              textButtonTheme: TextButtonThemeData(
-                style: ButtonStyle(
-                  foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
-                  backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
                 ),
               ),
             ),

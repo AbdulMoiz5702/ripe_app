@@ -1,17 +1,17 @@
 
 
 // on boarding
-const String calender = 'assets/imagesOnBording/calender.jpg';
-const String message = 'assets/imagesOnBording/chat.jpg';
-const String bookMark = 'assets/imagesOnBording/bookmark.jpg';
-const String card = 'assets/imagesOnBording/card.jpg';
+const String calender = 'assets/imagesOnBording/calender.png';
+const String message = 'assets/imagesOnBording/chat.png';
+const String bookMark = 'assets/imagesOnBording/bookmark.png';
+const String card = 'assets/imagesOnBording/card.png';
 const String notificationBell = 'assets/imagesOnBording/notification_bell.png';
 
 
 // login Option
 const String google = 'assets/loginOption/gogole.png';
 const String facebook = 'assets/loginOption/facebook.png';
-const String mail = 'assets/loginOption/inbox.jpg';
+const String mail = 'assets/loginOption/inbox.png';
 
 // vectors
 const String eye = 'assets/vectors/EyeClosed.png';
@@ -77,6 +77,35 @@ const String parkSvg = 'assets/svg_pictures/Park_svg.svg';
 const String handBagSvg = 'assets/svg_pictures/Handbag_svg.svg';
 const String advanceCalender = 'assets/svg_pictures/advance_calender.svg';
 const String hamBurger = 'assets/svg_pictures/gallery_svg.svg';
+const String mapPinSVG = 'assets/svg_pictures/map_pin_svg.svg';
+const String steeringWheelsSVG = 'assets/svg_pictures/steering_wheel_svg.svg';
+const String languagesSVG = 'assets/svg_pictures/languages_svg.svg';
+const String bioMetricSVG = 'assets/svg_pictures/bio_metric_svg.svg';
+const String currentLocationSVG = 'assets/svg_pictures/current_location_svg.svg';
+const String themeSVG = 'assets/svg_pictures/theme_svg.svg';
+const String helpSVG = 'assets/svg_pictures/help_svg.svg';
+const String startSVG = 'assets/svg_pictures/start_svg.svg';
+const String favoriteSVG = 'assets/svg_pictures/favorite_svg.svg';
+const String rideHistorySVG = 'assets/svg_pictures/rid_history.svg';
+const String passwordSVG = 'assets/svg_pictures/password_svg.svg';
+const String bellRingSVG = 'assets/svg_pictures/bell_svg.svg';
+const String diamondSVG = 'assets/svg_pictures/diamond_svg.svg';
+const String lightningSVG = 'assets/svg_pictures/lightning_svg.svg';
+
+//profile screen SVG's
+const String profileSVG = 'assets/svg_pictures/profileicon.svg';
+const String callSVG = 'assets/svg_pictures/call.svg';
+const String mailSVG = 'assets/svg_pictures/emailicon.svg';
+const String calenderSVG = 'assets/svg_pictures/Calendar.svg';
+
+
+//payment and wallet screen SVG's
+const String paypalSVG = 'assets/svg_pictures/paypal.svg';
+const String cardSVG = 'assets/svg_pictures/CreditCard.svg';
+const String applepaySVG = 'assets/svg_pictures/ApplePay.svg';
+const String googlePaySVG = 'assets/svg_pictures/googlepay.svg';
+
+
 
 
 // car guide images

@@ -31,11 +31,12 @@ class _ExploreCityState extends State<ExploreCity> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: Colors.white12,
+      backgroundColor: theme.colorScheme.primary,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
         leading: const CustomLeading(
-          isHome: true,
         ),
         actions: [
           NotificationButton(onTap: () {},)
@@ -56,8 +57,8 @@ class _ExploreCityState extends State<ExploreCity> {
             shouldCloseOnMinExtent:false,
             builder: (BuildContext context, ScrollController scrollController) {
               return Container(
-                decoration: const BoxDecoration(
-                  color: whiteColor,
+                decoration:  BoxDecoration(
+                  color: theme.scaffoldBackgroundColor,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight:Radius.circular(20)),
                 ),
                 child: SingleChildScrollView(

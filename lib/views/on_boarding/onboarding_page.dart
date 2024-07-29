@@ -20,6 +20,7 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -33,13 +34,13 @@ class OnboardingPage extends StatelessWidget {
               image: DecorationImage(image: AssetImage(imagePath),fit: BoxFit.cover),
             ),
           ),
-          largeText(title: title,textSize: 23.0),
+          largeText(title: title,textSize: 23.0,color:theme.colorScheme.primary),
           const CustomSized(height: 0.003,),
-          largeText(title: title2,textSize: 23.0),
+          largeText(title: title2,textSize: 23.0,color:theme.colorScheme.primary),
           const CustomSized(height: 0.01,),
-          smallText(title: description, ),
+          smallText(title: description,color:theme.colorScheme.onSecondaryContainer ),
           const CustomSized(height: 0.003,),
-          smallText(title: description2,),
+          smallText(title: description2,color:theme.colorScheme.onSecondaryContainer),
         ],
       ),
     );

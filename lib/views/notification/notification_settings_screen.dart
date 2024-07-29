@@ -12,13 +12,13 @@ class NotificationSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: whiteColor,
       appBar: AppBar(
         leading: const CustomLeading(
           isHome: true,
         ),
-        title: largeText(title: 'Notification references', textSize: 20.0),
+        title: largeText(title: 'Notification references', textSize: 20.0,color: theme.primaryColor),
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
@@ -26,20 +26,20 @@ class NotificationSettingsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const CustomSized(height: 0.02,),
-            smallText(title: 'RIDER MESSAGES',weight:FontWeight.w700 ),
+            smallText(title: 'RIDER MESSAGES',weight:FontWeight.w700,color: theme.colorScheme.onSecondaryContainer ),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
             const CustomSized(height: 0.02,),
-            smallText(title: 'PAYMENT NOTIFICATIONS',weight:FontWeight.w700),
+            smallText(title: 'PAYMENT NOTIFICATIONS',weight:FontWeight.w700,color:theme.colorScheme.onSecondaryContainer),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
             NotificationListTile(title: 'SMS',value: true,onChanged: (value){},),
             const CustomSized(height: 0.02,),
-            smallText(title: 'SCHEDULED RIDES ',weight:FontWeight.w700),
+            smallText(title: 'SCHEDULED RIDES ',weight:FontWeight.w700,color:theme.colorScheme.onSecondaryContainer),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
             const CustomSized(height: 0.02,),
-            smallText(title: 'ONGOING RIDES',weight:FontWeight.w700),
+            smallText(title: 'ONGOING RIDES',weight:FontWeight.w700,color:theme.colorScheme.onSecondaryContainer),
             NotificationListTile(title: 'Push Notification',value: true,onChanged: (value){},),
             NotificationListTile(title: 'Emails',value: true,onChanged: (value){},),
 
