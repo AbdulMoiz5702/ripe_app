@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 
 import '../../../alert_dialogs/selection_alert_dialg.dart';
 import '../../../consts/colors.dart';
@@ -30,17 +31,7 @@ class SearchForRiderBottom extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              height: 5,
-              width: MediaQuery.sizeOf(context).width * 0.3,
-              decoration: BoxDecoration(
-                color: dividerColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-            ),
-          ),
+          BottomSheetsLeadings(),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(

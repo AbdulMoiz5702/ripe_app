@@ -8,10 +8,11 @@ class CustomAlertDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Dialog(
-        backgroundColor: alertDialogBackGroundColor,
+        backgroundColor: theme.colorScheme.scrim,
         insetAnimationCurve: Curves.linear,
         insetAnimationDuration: const Duration(seconds:2),
         insetPadding: EdgeInsets.only(top: MediaQuery.sizeOf(context).height * 0.57,left: 8,right: 8) ,
@@ -32,21 +33,21 @@ class CustomAlertDialog extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(3),
                     alignment: Alignment.center,
-                    decoration: const BoxDecoration(
+                    decoration:  BoxDecoration(
                       shape: BoxShape.circle,
-                      color: alertDialogIconColor,
+                      color: theme.colorScheme.surfaceVariant,
                     ),
-                      child: const Icon(Icons.check, color: whiteColor, size: 20)),
+                      child:  Icon(Icons.check, color: theme.colorScheme.inversePrimary, size: 20)),
                   const CustomSized(width: 0.06,),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      smallText(title: 'Your profile has been verified ',color: alertTextColor),
+                      smallText(title: 'Your profile has been verified ',color: theme.colorScheme.surfaceVariant),
                       const CustomSized(height: 0.002,),
-                      smallText(title: 'successfully. You may now enjoy',color: alertTextColor),
+                      smallText(title: 'successfully. You may now enjoy',color: theme.colorScheme.surfaceVariant),
                       const CustomSized(height: 0.002,),
-                      smallText(title: 'your ride.',color: alertTextColor),
+                      smallText(title: 'your ride.',color: theme.colorScheme.surfaceVariant),
                     ],
                   ),
                 ],

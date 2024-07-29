@@ -91,6 +91,9 @@ const String passwordSVG = 'assets/svg_pictures/password_svg.svg';
 const String bellRingSVG = 'assets/svg_pictures/bell_svg.svg';
 const String diamondSVG = 'assets/svg_pictures/diamond_svg.svg';
 const String lightningSVG = 'assets/svg_pictures/lightning_svg.svg';
+const String visaCardSVG = 'assets/svg_pictures/visa_svg.svg';
+const String masterCardSVG = 'assets/svg_pictures/masterCard_svg.svg';
+const String amexCardSVG = 'assets/svg_pictures/amex_svg.svg';
 
 //profile screen SVG's
 const String profileSVG = 'assets/svg_pictures/profileicon.svg';

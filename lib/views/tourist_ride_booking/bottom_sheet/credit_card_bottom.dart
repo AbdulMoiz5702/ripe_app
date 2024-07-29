@@ -5,6 +5,7 @@ import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
+import '../../user_profile/your_account/add_credit_card.dart';
 
 class CreditCardBottomSheet extends StatelessWidget {
   const CreditCardBottomSheet({super.key});
@@ -75,7 +76,11 @@ class CreditCardBottomSheet extends StatelessWidget {
           CustomSized(height: 0.01,),
           Align(
             alignment: Alignment.centerRight,
-              child: GestureDetector(child: largeText(title: 'Add new account  ',textSize: 14.0,color: theme.colorScheme.secondary))),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AddCreditCardScreen()));
+                },
+                  child: largeText(title: 'Add new account  ',textSize: 14.0,color: theme.colorScheme.secondary))),
         ],
       ),
     );

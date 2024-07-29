@@ -70,6 +70,9 @@ const lightDividerColor = Color(0xff414652);
 // bottom_sheets_leading_colors
 const Color lightBottomSheetLeadingColor = Color(0xffe5e7eb);
 
+
+
+
 ////////////////////////// Dark Colors //////////////////////////////////
 
 // count container backgroung color
@@ -126,9 +129,6 @@ const Color darkLocalGuideConatinerColor = Color(0xff0f2e46);
 const Color darkProgressRideColor = Color(0xff102337);
 const Color darkDarkGreenColor = Color(0xff1c3a32);
 const Color darkLightGreenColor = Color(0xffb2e76e);
-
-//profile Screen image background Color
-const Color profileScreenopacityColor = Color(0xff757678);
 
 
 

@@ -13,8 +13,16 @@ class SearchDriverCancelConformationSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     var controller = Provider.of<ScheduleRideProvider>(context,listen: false);
     return Container(
+      decoration: BoxDecoration(
+        color: theme.scaffoldBackgroundColor,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
       padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,6 +50,7 @@ class SearchDriverCancelConformationSheet extends StatelessWidget {
                 largeText(
                   title: 'Do you want to cancel the request?',
                   textSize: 20.0,
+                  color: theme.primaryColor
                 ),
                 CustomSized(
                   height: 0.02,
@@ -58,8 +67,8 @@ class SearchDriverCancelConformationSheet extends StatelessWidget {
                 CustomSized(
                   height: 0.02,
                 ),
-                CustomButton(
-                  titleColor: primaryTextColor,
+                SecondaryCustomButton(
+                  titleColor: theme.primaryColor,
                   title: 'Cancel request',
                   onTap: () {
                     controller.openRouteDetailsBottomBottomSheet(context: context);
@@ -67,7 +76,7 @@ class SearchDriverCancelConformationSheet extends StatelessWidget {
                   onBoard: false,
                   borderRadius: 30,
                   width: 1,
-                  color: secondaryWhiteColor,
+                  color: theme.colorScheme.surfaceContainerHighest,
                 ),
               ],
             ),
