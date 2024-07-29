@@ -20,6 +20,7 @@ class LocationTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,10 +29,6 @@ class LocationTile extends StatelessWidget {
             Container(
               width: 20,
               height: 20,
-              // decoration: BoxDecoration(
-              //   color:
-              //   // shape: BoxShape.circle,
-              // ),
               child: Icon(location.iconData, color: location.color, size: 20.0,),
             ),
             if (!isLast)
@@ -53,7 +50,7 @@ class LocationTile extends StatelessWidget {
                 title: location.name,
                 weight: FontWeight.w700,
                 textSize: 14.0,
-                color: primaryTextColor
+                color: theme.primaryColor
             ),
 
             CustomSized(height: 0.005,),
@@ -61,7 +58,7 @@ class LocationTile extends StatelessWidget {
                 title: location.address,
                 weight: FontWeight.w400,
                 textSize: 11.0,
-                color: secondaryTextColor
+                color: theme.colorScheme.onSecondaryContainer
             ),
             CustomSized(height: 0.001,),
           ],

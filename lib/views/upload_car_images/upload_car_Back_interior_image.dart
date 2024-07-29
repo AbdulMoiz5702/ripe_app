@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/images_path.dart';
+import 'package:ride_app/views/upload_car_images/verification_successul.dart';
 
 
 import '../../consts/colors.dart';
@@ -131,7 +132,7 @@ class UploadCarBackInteriorImage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => CarUploadedDataUnderReview()));
+                                builder: (context) => VerificationSuccessful()));
                       }),
                 ],
               );

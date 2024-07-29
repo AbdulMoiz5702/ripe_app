@@ -42,7 +42,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
       Location('Giga Mall', 'DHA Phase II - Islamabad, Giga Mall', theme.colorScheme.secondaryFixed, Icons.circle),
     ];
     return Scaffold(
-      backgroundColor: whiteColor,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: const CustomLeading(
@@ -53,6 +53,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
           title: 'Ride Details',
           textSize: 20.0,
           weight: FontWeight.w700,
+          color: theme.primaryColor,
         ),
       ),
       body: Column(
@@ -93,7 +94,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     const SizedBox(width: 10),
                     Tooltip(
                       decoration: BoxDecoration(
-                        color: primaryTextColor,
+                        color: theme.primaryColor,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       key: _toolTipKey1,
@@ -105,7 +106,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       textStyle:  TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: theme.primaryColor,
+                        color: theme.colorScheme.inversePrimary,
                         fontFamily: 'Nunito Sans',
                       ),
                       child: const SizedBox(
@@ -130,7 +131,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     const SizedBox(width: 5),
                     Tooltip(
                       decoration: BoxDecoration(
-                        color: primaryTextColor,
+                        color: theme.primaryColor,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       key: _toolTipKey2,
@@ -142,7 +143,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       textStyle:  TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: theme.primaryColor,
+                        color: theme.colorScheme.inversePrimary,
                         fontFamily: 'Nunito Sans',
                       ),
                       child: const SizedBox(
@@ -166,7 +167,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       title: '4 May, 2024',
                       weight: FontWeight.w700,
                       textSize: 17.0,
-                      color: primaryTextColor,
+                      color: theme.primaryColor,
                     ),
                     CustomSized(
                       height: 0.006,
@@ -174,7 +175,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     smallText(
                       title: 'Date',
                       weight: FontWeight.w400,
-                      color: secondaryTextColor,
+                      color: theme.colorScheme.onSecondaryContainer,
                       textSize: 14.0,
                     ),
                   ],
@@ -185,7 +186,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       title: '5:20PM',
                       weight: FontWeight.w700,
                       textSize: 17.0,
-                      color: primaryTextColor,
+                      color: theme.primaryColor,
                     ),
                     CustomSized(
                       height: 0.006,
@@ -193,7 +194,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     smallText(
                       title: 'Time',
                       weight: FontWeight.w400,
-                      color: secondaryTextColor,
+                      color: theme.colorScheme.onSecondaryContainer,
                       textSize: 14.0,
                     ),
                   ],
@@ -204,7 +205,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       title: '\$87',
                       weight: FontWeight.w700,
                       textSize: 17.0,
-                      color: lightPrimaryTextColor,
+                      color: theme.colorScheme.secondary,
                     ),
                     CustomSized(
                       height: 0.006,
@@ -212,7 +213,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     smallText(
                       title: 'Total Fare',
                       weight: FontWeight.w400,
-                      color: secondaryTextColor,
+                      color: theme.colorScheme.onSecondaryContainer,
                       textSize: 14.0,
                     ),
                   ],
@@ -226,7 +227,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
               height: MediaQuery.of(context).size.height * 0.06,
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: lightdarkColor,
+                  color: theme.colorScheme.surface,
                 ),
                 borderRadius: BorderRadius.circular(38.0),
               ),
@@ -235,12 +236,13 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                 children: [
                   SvgPicture.asset(
                     'assets/svg_pictures/edit_icon.svg',
+                    color:   theme.primaryColor,
                   ),
                   CustomSized(width: 0.02),
                   normalText(
                     title: 'Edit data & time',
                     textSize: 14.0,
-                    color: primaryTextColor,
+                    color: theme.primaryColor,
                   ),
                 ],
               ),
@@ -250,12 +252,12 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
           Divider(
             height: 0,
             thickness: MediaQuery.of(context).size.height * 0.0014,
-            color: lightdarkColor,
+            color: theme.dividerColor,
           ),
           Container(
             // height: MediaQuery.of(context).size.height * 0.1,
             decoration: BoxDecoration(
-              color: backgroundpaperColor
+              color: theme.colorScheme.surfaceContainerHighest,
             ),
             child: Row(
               children: [
@@ -265,23 +267,19 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      normalText(title: 'Ride Distance', color: secondaryTextColor, textSize: 14.0, weight: FontWeight.w400 ),
+                      normalText(title: 'Ride Distance', color: theme.colorScheme.onSecondaryContainer, textSize: 14.0, weight: FontWeight.w400 ),
                       Padding(
                         padding: const EdgeInsets.only(top: 4.0),
                         child: Row(
                           children: [
                             CircleAvatar(
-
-
-                              child: SvgPicture.asset('assets/svg_pictures/distance.svg'),
-
-                              backgroundColor: whiteColor,
+                              child: SvgPicture.asset('assets/svg_pictures/distance.svg',color: theme.colorScheme.secondary,),
+                             backgroundColor: theme.colorScheme.inversePrimary,
                             ),
-
 
                             Padding(
                               padding: const EdgeInsets.only(left: 12.0),
-                              child: normalText(title: '14miles', color: primaryTextColor, textSize: 17.0, weight: FontWeight.w700 ),
+                              child: normalText(title: '14miles', color: theme.primaryColor, textSize: 17.0, weight: FontWeight.w700 ),
                             ),
 
                           ],
@@ -298,23 +296,19 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      normalText(title: 'Ride Time', color: secondaryTextColor, textSize: 14.0, weight: FontWeight.w400 ),
+                      normalText(title: 'Ride Time', color: theme.colorScheme.onSecondaryContainer, textSize: 14.0, weight: FontWeight.w400 ),
                       Padding(
                         padding: const EdgeInsets.only(top: 4.0),
                         child: Row(
                           children: [
                             CircleAvatar(
-
-
-                              child: SvgPicture.asset('assets/svg_pictures/clock.svg'),
-
-                              backgroundColor: whiteColor,
+                              child: SvgPicture.asset('assets/svg_pictures/clock.svg',color: theme.colorScheme.secondary,),
+                              backgroundColor: theme.colorScheme.inversePrimary,
                             ),
-
 
                             Padding(
                               padding: const EdgeInsets.only(left: 12.0),
-                              child: normalText(title: '28min 34sec', color: primaryTextColor, textSize: 17.0, weight: FontWeight.w700 ),
+                              child: normalText(title: '28min 34sec', color: theme.primaryColor, textSize: 17.0, weight: FontWeight.w700 ),
                             ),
 
                           ],
@@ -333,7 +327,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
 
           Padding(
             padding: const EdgeInsets.only(top: 12.0, left: 20.0, bottom: 6.0),
-            child: normalText(title: 'Route Details', weight: FontWeight.w400, textSize: 14.0, color: secondaryTextColor),
+            child: normalText(title: 'Route Details', weight: FontWeight.w400, textSize: 14.0, color: theme.colorScheme.onSecondaryContainer),
           ),
 
 
@@ -355,7 +349,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
           Divider(
             height: 0,
             thickness: MediaQuery.of(context).size.height * 0.0014,
-            color: lightdarkColor,
+            color:  theme.dividerColor,
           ),
           Padding(
             padding: const EdgeInsets.only(top: 12.0, left: 20.0, bottom: 6.0),
@@ -392,7 +386,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                         child: Row(
                           children: [
 
-                            SvgPicture.asset('assets/svg_pictures/Star.svg'),
+                            SvgPicture.asset('assets/svg_pictures/Star.svg',),
                             normalText(title: ' 4.8', weight: FontWeight.w400, textSize: 11.0, color: theme.primaryColor),
                             normalText(title: ' (23)', weight: FontWeight.w400, textSize: 11.0, color: theme.colorScheme.onSecondaryContainer),
                           ],
@@ -405,9 +399,8 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
 
                 Spacer(),
                 CircleAvatar(
-                  child: SvgPicture.asset('assets/svg_pictures/call.svg', color: theme.primaryColor,),
-
-                  backgroundColor: theme.scaffoldBackgroundColor,
+                  child: SvgPicture.asset('assets/svg_pictures/call.svg', color: theme.colorScheme.inversePrimary,),
+                  backgroundColor: theme.colorScheme.primary,
                   maxRadius: 24.0,
                 ),
 
@@ -420,9 +413,9 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 12.0, right: 20.0),
                         child: CircleAvatar(
-                          child: SvgPicture.asset('assets/svg_pictures/message.svg', color: theme.primaryColor,),
+                          child: SvgPicture.asset('assets/svg_pictures/message.svg', color: theme.colorScheme.inversePrimary,),
 
-                          backgroundColor: primaryTextColor,
+                          backgroundColor: theme.colorScheme.primary,
                           maxRadius: 24.0,
                         ),
                       ),
@@ -431,7 +424,7 @@ class _RideHistoryScreenState extends State<RideHistoryScreen> {
                         child: Container(
                           decoration: BoxDecoration(
                             color: theme.colorScheme.secondaryFixed,
-                            border: Border.all(color: whiteColor),
+                            border: Border.all(color: theme.primaryColor),
                             borderRadius: BorderRadius.circular(100)
                           ),
                           width: 11,

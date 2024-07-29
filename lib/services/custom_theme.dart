@@ -59,8 +59,12 @@ ThemeData lightTheme() {
       surfaceVariant: alertDialogIconColor,
       // login alert dialog background color,
       scrim: alertDialogBackGroundColor,
-
-
+        // login error alert dialog backgroud color
+      onError:darkAlertDialogErrorBackGroundColor,
+      // login error alert dialog iconError color
+      onErrorContainer: darkAlertDialogErrorIconColor,
+      // login error alert dialog text color
+      onTertiary: darkAlertDialogErrorTextColor,
     ),
     // divider color
     dividerColor: lightDividerColor,
@@ -141,6 +145,12 @@ ThemeData darkTheme() {
       surfaceVariant: darkLoginAlertDialogIconColor,
       // login alert dialog background color,
       scrim: darkLoginAlertDialogColor,
+      // login error alert dialog backgroud color
+      onError:darkAlertDialogErrorBackGroundColor,
+      // login error alert dialog iconError color
+      onErrorContainer: darkAlertDialogErrorIconColor,
+      // login error alert dialog text color
+      onTertiary: darkAlertDialogErrorTextColor,
 
     ),
     // divider color

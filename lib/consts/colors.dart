@@ -136,6 +136,11 @@ const Color darkLightGreenColor = Color(0xffb2e76e);
 const darkLoginAlertDialogColor = Color(0xff175504);
 const darkLoginAlertDialogIconColor = Color(0xffb2e76e);
 
+// login error alert dialog backgroud color
+const darkAlertDialogErrorBackGroundColor = Color(0xff7a051a);
+const darkAlertDialogErrorIconColor = Color(0xffff9e76);
+const darkAlertDialogErrorTextColor = Color(0xffffe5d1);
+
 
 
 
