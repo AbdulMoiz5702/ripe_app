@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:ride_app/consts/colors.dart';
@@ -41,31 +42,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Center(
               child: Stack(
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.469,
-                    height: MediaQuery.of(context).size.height * 0.21,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(500),
-                      border: Border.all(
-                        color:
-                            theme.colorScheme.onPrimaryFixed.withOpacity(0.67),
-                        width: 10,
-                      ),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(500),
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            'assets/images/chatgirlimage.png',
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                            height: double.infinity,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 2.0),
+                    child: DottedBorder(
+
+                      padding: EdgeInsets.zero,
+                      borderType: BorderType.RRect,
+                      radius: Radius.circular(500),
+                      dashPattern: [6, 2],
+                      color: theme.colorScheme.onSecondaryContainer.withOpacity(0.4),
+                      strokeWidth: 1.5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.469,
+                        height: MediaQuery.of(context).size.height * 0.21,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(500),
+
+                          border: Border.all(
+                            color: theme.colorScheme.onPrimaryFixed.withOpacity(0.67),
+                            width: 10,
                           ),
-                          Container(
-                              color: theme.colorScheme.onPrimaryFixed
-                                  .withOpacity(0.75)),
-                        ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(500),
+                          child: Stack(
+                            children: [
+                              Image.asset(
+                                'assets/images/chatgirlimage.png',
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                                height: double.infinity,
+                              ),
+                              Container(
+                                  color: theme.colorScheme.onPrimaryFixed
+                                      .withOpacity(0.75)),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -73,7 +86,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 70,
                     top: 70,
                     child:
-                        SvgPicture.asset('assets/svg_pictures/camericon.svg'),
+                        SvgPicture.asset('assets/svg_pictures/camericon.svg', ),
                   ),
                   Positioned(
                     left: 50,

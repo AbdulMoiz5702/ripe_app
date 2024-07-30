@@ -209,3 +209,9 @@ var paymentoptionsText = [
   'Apple Pay',
   'Google Pay'
 ];
+
+var paymentCards = [
+  visaCardSVG,
+  masterCardSVG,
+  amexCardSVG,
+];

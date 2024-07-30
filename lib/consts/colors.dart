@@ -131,6 +131,7 @@ const Color darkDarkGreenColor = Color(0xff1c3a32);
 const Color darkLightGreenColor = Color(0xffb2e76e);
 
 
+const Color profileScreenopacityColor = Color(0xff757678);
 
 
 
