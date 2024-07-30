@@ -7,6 +7,7 @@ import 'package:ride_app/resubale_widgets/user_profile_button.dart';
 import 'package:ride_app/views/user_profile/preferences/select_theme.dart';
 import 'package:ride_app/views/user_profile/setting_screens/paymentandwalletScreen.dart';
 import 'package:ride_app/views/user_profile/setting_screens/profile_Screen.dart';
+import 'package:ride_app/views/user_profile/your_account/change_password.dart';
 import '../../resubale_widgets/text_widgets.dart';
 
 class UserProfileScreen extends StatelessWidget {
@@ -63,10 +64,12 @@ class UserProfileScreen extends StatelessWidget {
                       switch(index) {
                         case 0:
                           Navigator.push(context, MaterialPageRoute(builder: (ctx) => Paymentandwalletscreen()));
+                          break;
                         case 1:
-                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => Paymentandwalletscreen()));
+                          break;
                         case 2:
-                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => Paymentandwalletscreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => ChangePassword()));
+                          break;
                       }
 
                     },

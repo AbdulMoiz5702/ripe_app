@@ -94,6 +94,8 @@ const String lightningSVG = 'assets/svg_pictures/lightning_svg.svg';
 const String visaCardSVG = 'assets/svg_pictures/visa_svg.svg';
 const String masterCardSVG = 'assets/svg_pictures/masterCard_svg.svg';
 const String amexCardSVG = 'assets/svg_pictures/amex_svg.svg';
+const String openEyeSVG = 'assets/svg_pictures/Eye_open_svg.svg';
+const String closedEyeSVG = 'assets/svg_pictures/Eye_closed_svg.svg';
 
 //profile screen SVG's
 const String profileSVG = 'assets/svg_pictures/profileicon.svg';
