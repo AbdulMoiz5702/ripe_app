@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ThemeProvider with ChangeNotifier {
 
-  int value = 0 ;
+  int
+  value = 0 ;
   ThemeMode themeMode = ThemeMode.system;
 
 

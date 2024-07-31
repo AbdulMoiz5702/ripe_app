@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
@@ -9,6 +8,7 @@ import 'package:ride_app/views/user_profile/setting_screens/paymentandwalletScre
 import 'package:ride_app/views/user_profile/setting_screens/profile_Screen.dart';
 import 'package:ride_app/views/user_profile/your_account/change_password.dart';
 import '../../resubale_widgets/text_widgets.dart';
+import '../rider_side_screens/rider_bottom_navigation/Rider_bottom_screen.dart';
 
 class UserProfileScreen extends StatelessWidget {
   const UserProfileScreen({super.key});
@@ -42,7 +42,11 @@ class UserProfileScreen extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (ctx) => ProfileScreen()));
                 },
-                buttonOnTap: () {}),
+                buttonOnTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (ctx) => RiderBottomScreen()));
+
+                }),
             const CustomSized(
               height: 0.002,
             ),

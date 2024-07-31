@@ -201,5 +201,15 @@ var paymentCards = [
   amexCardSVG,
 ];
 
+var monthlyEarning = [
+  {'Month': 'Feb 2024', 'earning': '2,000'},
+  {'Month': 'Feb 2024', 'earning': '2,000'},
+  {'Month': 'Mar 2024', 'earning': '2,500'},
+  {'Month': 'Apr 2024', 'earning': '3,000'},
+  {'Month': 'Feb 2024', 'earning': '2,000'},
+  {'Month': 'Mar 2024', 'earning': '2,500'},
+  {'Month': 'Apr 2024', 'earning': '3,000'},
+];
+
 
 
