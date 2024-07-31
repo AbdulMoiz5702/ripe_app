@@ -18,6 +18,8 @@ import 'call_screen.dart';
 import 'controllers/become_driver_controller.dart';
 import 'controllers/bottom_screen_provider.dart';
 import 'controllers/custom_leading_feild_provider.dart';
+import 'controllers/notiication_provider.dart';
+import 'controllers/rider_ride_request_provider.dart';
 import 'controllers/theme_provider.dart';
 import 'services/custom_theme.dart';
 
@@ -43,6 +45,8 @@ void main() async {
         ChangeNotifierProvider(create: (_) => BottomScreenProvider()),
         ChangeNotifierProvider(create: (_) => ChatProvider()),
         ChangeNotifierProvider(create: (_) => CustomLeadingFieldProvider()),
+        ChangeNotifierProvider(create: (_) => RiderRideRequestProvider()),
+        ChangeNotifierProvider(create: (_) => NotificationProvider())
       ],
       child: MyApp(navigatorKey: navigatorKey,),
     ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
@@ -8,10 +9,12 @@ import 'package:ride_app/views/user_profile/setting_screens/paymentandwalletScre
 import 'package:ride_app/views/user_profile/setting_screens/profile_Screen.dart';
 import 'package:ride_app/views/user_profile/your_account/change_password.dart';
 import '../../resubale_widgets/text_widgets.dart';
+import '../bottom_screen/Main_bottom_Screen.dart';
 import '../rider_side_screens/rider_bottom_navigation/Rider_bottom_screen.dart';
 
 class UserProfileScreen extends StatelessWidget {
-  const UserProfileScreen({super.key});
+  final bool isUserScreen;
+  const UserProfileScreen({this.isUserScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +38,7 @@ class UserProfileScreen extends StatelessWidget {
               height: 0.002,
             ),
             UserProfileButton(
+                isUserScreen: isUserScreen,
                 title: 'Abdul Moiz',
                 avatarImagePath: avatar,
                 email: 'abdulmoizkhan5702@gamil.com',
@@ -43,8 +47,14 @@ class UserProfileScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (ctx) => ProfileScreen()));
                 },
                 buttonOnTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (ctx) => RiderBottomScreen()));
+                  if(isUserScreen == true){
+                    Navigator.pushReplacement(context,
+                        CupertinoPageRoute(builder: (ctx) => MainBottomScreen()));
+                  }else{
+                    Navigator.pushReplacement(context,
+                        CupertinoPageRoute(builder: (ctx) => RiderBottomScreen()));
+                  }
+
 
                 }),
             const CustomSized(
@@ -90,7 +100,14 @@ class UserProfileScreen extends StatelessWidget {
                 title: 'ACTIVITY',
                 textSize: 12.0,
                 color: theme.colorScheme.onSecondaryContainer),
-            Column(
+            isUserScreen == true ? Column(
+              children: List.generate(1, (index) {
+                return UserProfileSettingTileSVg(
+                    imagePath: yourActivity[index],
+                    onTap: () {},
+                    title: yourActivityText[index]);
+              }),
+            ): Column(
               children: List.generate(yourActivity.length, (index) {
                 return UserProfileSettingTileSVg(
                     imagePath: yourActivity[index],
