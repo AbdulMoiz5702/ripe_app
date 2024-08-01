@@ -17,7 +17,9 @@ const Color lightGreenColor = Color(0xff33800B);
 
 // text colors
 const Color primaryTextColor = Color(0xff1F2937);
+
 const Color secondaryTextColor = Color(0xff6B7280);
+
 const Color textButtonColor = Color(0xffFFFFFF);
 const Color lightPrimaryTextColor= Color(0xff029FEB);
 const Color alertTextColor= Color(0xff3f7429);
@@ -69,6 +71,9 @@ const lightDividerColor = Color(0xff414652);
 
 // bottom_sheets_leading_colors
 const Color lightBottomSheetLeadingColor = Color(0xffe5e7eb);
+
+
+
 
 
 
@@ -132,6 +137,21 @@ const Color darkLightGreenColor = Color(0xffb2e76e);
 
 
 const Color profileScreenopacityColor = Color(0xff757678);
+
+// login error alert dialog backgroud color
+const darkAlertDialogErrorBackGroundColor = Color(0xff7a051a);
+const darkAlertDialogErrorIconColor = Color(0xffff9e76);
+const darkAlertDialogErrorTextColor = Color(0xffffe5d1);
+
+
+
+//color for payment and wallet screen -> paypal background color of circle avatar
+const paymentgatewayavatcpolorwhitetheme = Color(0xffF3F4F6);
+const paymentgatewayavatcpolorblacktheme = Color(0xff374151);
+
+//payment and wallet screen remove button color
+const paymentandwalletremovebuttoncolorwhitetheme = Color(0xffB70E12);
+const paymentandwalletremovebuttoncolorblacktheme = Color(0xffFF9E76);
 
 
 

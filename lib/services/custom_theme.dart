@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import '../consts/colors.dart';
 
@@ -17,11 +18,11 @@ ThemeData lightTheme() {
       inversePrimary: whiteColor ,
       // secodary color
       secondary: checkBoxColor,
-        // ind driver local guide caontainer color
-        onSecondary:  containerBorderColor,
+      // ind driver local guide caontainer color
+      onSecondary:  containerBorderColor,
       //  buttonText
       secondaryContainer: whiteColor,
-       // secodary text colors,
+      // secodary text colors,
       onSecondaryContainer: secondaryTextColor,
       // auth screens divider colors
       surface: authDarkDividerColor,
@@ -45,15 +46,15 @@ ThemeData lightTheme() {
       surfaceContainerLow: checkColor,
       //  bottom_screen select where to / like attraction air port buttons etc
       tertiaryContainer:primaryTextColor,
-        // cancel red button  color
+      // cancel red button  color
       secondaryFixedDim: lightRedButtonColor,
       // cancel red button text color
       secondaryFixed: lightRedCancelButtonTextColor,
-        // shedule screen in progress container color
+      // shedule screen in progress container color
       shadow: lightProgressRideColor,
       // shedule screen in progress  button color
       outline: lightDarkGreenColor,
-       // shedule screen in progress  button Text color
+      // shedule screen in progress  button Text color
 
 
       outlineVariant: lightGreenColor,
@@ -65,12 +66,33 @@ ThemeData lightTheme() {
       primaryFixed: iconColor,
 
       //outline color in textformfield of profile screen
-      onSurfaceVariant: greyColor,
+      onSurfaceVariant: darkSecondaryTextColors,
 
       //button color in profile screen
       primaryFixedDim: buttonColor,
+      // login error alert dialog backgroud color
+      onError:darkAlertDialogErrorBackGroundColor,
+      // login error alert dialog iconError color
+      onErrorContainer: darkAlertDialogErrorIconColor,
+      // login error alert dialog text color
+      onTertiary: darkAlertDialogErrorTextColor,
+
+      //circle avatar border color
+      inverseSurface: textFieldHintColor,
+
+      //color for payment and wallet screen -> paypal background color of circle avatar
+      error: paymentgatewayavatcpolorwhitetheme,
 
 
+      //light grey color for border of custom leading
+      errorContainer: iconColor,
+
+
+//payment and wallet screen remove button color
+      surfaceVariant: paymentandwalletremovebuttoncolorwhitetheme,
+
+
+        background:  iconColor,
 
 
 
@@ -83,7 +105,7 @@ ThemeData lightTheme() {
     // picture guide icon color // car pictures screen
     canvasColor: darkBlueColor,
     // picture guide card color // car pictures screen
-     cardColor: secondayBlueColor,
+    cardColor: secondayBlueColor,
     //  App bar
     appBarTheme: AppBarTheme(
       elevation: 0,
@@ -101,78 +123,97 @@ ThemeData lightTheme() {
 
 ThemeData darkTheme() {
   return ThemeData(
-    useMaterial3: false,
-    // main color
-    primaryColor: whiteColor,
-    colorScheme:const  ColorScheme.dark(
-      // Logoipsum Color / prmimary color
-      primary: whiteColor,
-      // tourist and find driver button color // seconday color
-      primaryContainer: secondaryBackGround,
-      // primary inverse
-      inversePrimary: primaryTextColor,
-      // secondary color
-      secondary: darkThemeBrandNameColor,
+      useMaterial3: false,
+      // main color
+      primaryColor: whiteColor,
+      colorScheme:const  ColorScheme.dark(
+        // Logoipsum Color / prmimary color
+        primary: whiteColor,
+        // tourist and find driver button color // seconday color
+        primaryContainer: secondaryBackGround,
+        // primary inverse
+        inversePrimary: primaryTextColor,
+        // secondary color
+        secondary: darkThemeBrandNameColor,
         // ind driver local guide caontainer color
         onSecondary:  darkLocalGuideConatinerColor,
-      // buttonText
-      secondaryContainer: primaryTextColor,
-      // secodary text colors,
-      onSecondaryContainer: darkSecondaryTextColors,
-      // auth screens divider colors
-      surface: authDarkDividerColor,
-      // custom text filed border
-      onSurface: darkTextFieldBorderColor,
-      // custom text filed hint color,
-      surfaceBright: darkTextFieldHintColor,
-      // home_screen_text_field fill color,
-      surfaceContainer: darkTextFieldColor,
-      // become a driver_Container_border_color
-      surfaceDim:primaryTextColor,
-      // become a driver_button_border_color
-      surfaceContainerHigh:whiteColor,
-      //become a driver_button_text_color
-      surfaceTint: primaryTextColor,
-      //  invite_friend_button_border_color
-      surfaceContainerLowest: primaryTextColor,
-      // upload documnets container color ,
-      surfaceContainerHighest: darkUploadDocumentsContainerColor,
-      // vechile details check color
-      surfaceContainerLow: darkCheckContainerColor,
-      //  bottom_screen select where to / like attraction air port buttons etc
-      tertiaryContainer:darkThemeBrandNameColor,
+        // buttonText
+        secondaryContainer: primaryTextColor,
+        // secodary text colors,
+        onSecondaryContainer: darkSecondaryTextColors,
+        // auth screens divider colors
+        surface: authDarkDividerColor,
+        // custom text filed border
+        onSurface: darkTextFieldBorderColor,
+        // custom text filed hint color,
+        surfaceBright: whiteColor,
+        // home_screen_text_field fill color,
+        surfaceContainer: darkTextFieldColor,
+        // become a driver_Container_border_color
+        surfaceDim:primaryTextColor,
+        // become a driver_button_border_color
+        surfaceContainerHigh:whiteColor,
+        //become a driver_button_text_color
+        surfaceTint: primaryTextColor,
+        //  invite_friend_button_border_color
+        surfaceContainerLowest: primaryTextColor,
+        // upload documnets container color ,
+        surfaceContainerHighest: darkUploadDocumentsContainerColor,
+        // vechile details check color
+        surfaceContainerLow: darkCheckContainerColor,
+        //  bottom_screen select where to / like attraction air port buttons etc
+        tertiaryContainer:darkThemeBrandNameColor,
         // cancel red button  color
         secondaryFixedDim: darkRedCancelButtonColor,
         // cancel red button text color
         secondaryFixed: darkRedCancelButtonTextColor,
-      // shedule screen in progress container color
-      shadow: darkProgressRideColor,
-      // shedule screen in progress container card color
-      outline: darkDarkGreenColor,
+        // shedule screen in progress container color
+        shadow: darkProgressRideColor,
+        // shedule screen in progress container card color
+        outline: darkDarkGreenColor,
         // shedule screen in progress  button Text color
         outlineVariant: darkLightGreenColor,
+        //profile Screen image background Color. main image in profile screen
+        onPrimaryFixed:  primaryTextColor,
+        //outline color in profile screen
+        primaryFixed: iconColor,
+        //button color in profile screen
+        primaryFixedDim: buttonColor,
+        // login error alert dialog backgroud color
+        onError:darkAlertDialogErrorBackGroundColor,
+        // login error alert dialog iconError color
+        onErrorContainer: darkAlertDialogErrorIconColor,
+        // login error alert dialog text color
+        onTertiary: darkAlertDialogErrorTextColor,
 
-      //profile Screen image background Color. main image in profile screen
-      onPrimaryFixed:  primaryTextColor,
 
-      //outline color in profile screen
-      primaryFixed: iconColor,
+        //circle avatar border color
+        inverseSurface: primaryTextColor,
 
 
-      //button color in profile screen
-      primaryFixedDim: buttonColor,
+        //color for payment and wallet screen -> paypal background color of circle avatar
+        error: paymentgatewayavatcpolorblacktheme,
+        //light grey color for border of custom leading
+        errorContainer: whiteColor,
+
+//payment and wallet screen remove button color
+        surfaceVariant: paymentandwalletremovebuttoncolorblacktheme,
+
+        background: textFieldHintColor,
 
 
-    ),
-    // divider color
-    dividerColor: darkDividerColor,
-    // picture guide icon color // car pictures screen
+
+
+      ),
+      // divider color
+      dividerColor: darkDividerColor,
+      // picture guide icon color // car pictures screen
       cardColor: darkPictureGuideIconColor,
-    // picture guide card color // car pictures screen
+      // picture guide card color // car pictures screen
       canvasColor: darkPictureGuideContainerColor,
-    // BackGround_color
-    scaffoldBackgroundColor: darkBackGroundColor,
-     // App Bar
+      // BackGround_color
+      scaffoldBackgroundColor: darkBackGroundColor,
+      // App Bar
       appBarTheme: AppBarTheme(
         elevation: 0,
         iconTheme: IconThemeData(

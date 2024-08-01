@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/controllers/aler_dialog_providers.dart';
 import 'package:ride_app/controllers/auth_provider.dart';
+import 'package:ride_app/controllers/chat_provider.dart';
 import 'package:ride_app/controllers/role_selection_provider.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/controllers/zego_cloud_provider.dart';
@@ -39,6 +40,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
         ChangeNotifierProvider(create: (_) => BottomScreenProvider()),
+        ChangeNotifierProvider(create: (_) => ChatProvider()),
       ],
       child: MyApp(navigatorKey: navigatorKey,),
     ),

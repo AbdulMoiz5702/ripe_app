@@ -10,15 +10,15 @@ class ThemeProvider with ChangeNotifier {
     switch (value){
       case 0 :
         value = v;
-      themeMode = ThemeMode.system;
+        notifyListeners();
         break;
       case 1 :
         value = v;
-        themeMode = ThemeMode.dark;
+        notifyListeners();
         break;
       case 2:
         value = v;
-        themeMode = ThemeMode.light;
+        notifyListeners();
         break;
     }
     notifyListeners();

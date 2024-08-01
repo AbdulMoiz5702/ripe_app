@@ -109,6 +109,9 @@ const String applepaySVG = 'assets/svg_pictures/ApplePay.svg';
 const String googlePaySVG = 'assets/svg_pictures/googlepay.svg';
 
 
+const String shieldCheck = 'assets/svg_pictures/shieldCheck.svg';
+
+
 
 
 // car guide images

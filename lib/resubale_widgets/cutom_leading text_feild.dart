@@ -52,7 +52,12 @@ class CustomLeadingTextField extends StatelessWidget {
         validator: onValidator,
         keyboardType: keyBoardType,
         style: TextStyle(color: theme.colorScheme.onSecondaryContainer,
-          fontFamily: 'Nunito Sans',),
+          fontFamily: 'Nunito Sans',
+          fontWeight: FontWeight.w400,
+          fontSize: 14.0
+
+
+        ),
         decoration: InputDecoration(suffixIcon: isPassword == true ? Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(eye, height: 20, width: 20,color: theme.colorScheme.onSecondaryContainer,),
@@ -69,21 +74,22 @@ class CustomLeadingTextField extends StatelessWidget {
               : null),
           contentPadding: const EdgeInsets.all(8),
           hintText: hint,
+
           hintStyle: TextStyle(color: theme.colorScheme.surfaceBright),
           border: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright),
+            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright.withOpacity(0.2)),
             borderRadius: BorderRadius.circular(30),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright),
+            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright.withOpacity(0.2)),
             borderRadius: BorderRadius.circular(30),
           ),
           errorBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright),
+            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright.withOpacity(0.2)),
             borderRadius: BorderRadius.circular(30),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright),
+            borderSide:  BorderSide(color: theme.colorScheme.surfaceBright.withOpacity(0.2)),
             borderRadius: BorderRadius.circular(30),
           ),
         ),

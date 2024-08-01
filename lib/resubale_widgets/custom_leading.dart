@@ -20,13 +20,37 @@ class CustomLeading extends StatelessWidget {
         decoration:  BoxDecoration(
           shape: BoxShape.circle,
           color: theme.scaffoldBackgroundColor,
-          border: isHome == true ? Border.all(color: theme.colorScheme.onSecondaryContainer) : null,
+          border: isHome == true ? Border.all(color: theme.colorScheme.errorContainer.withOpacity(0.2)) : null,
         ),
-        child: Center(child: Icon(iconData,color: theme.primaryColor,),),
+        child: Center(child: Icon(iconData,color: theme.colorScheme.background),),
       ),
     );
   }
 }
+
+
+// class CustomLeading extends StatelessWidget {
+//   final bool isHome ;
+//   final IconData iconData ;
+//   const CustomLeading({super.key, this.isHome = false,this.iconData = Icons.arrow_back});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     var theme = Theme.of(context);
+//     return GestureDetector(
+//       onTap: (){ Navigator.pop(context); },
+//       child: Container(
+//         margin: const EdgeInsets.all(10),
+//         decoration:  BoxDecoration(
+//           shape: BoxShape.circle,
+//           color: theme.scaffoldBackgroundColor,
+//           border: isHome == true ? Border.all(color: theme.colorScheme.onSecondaryContainer) : null,
+//         ),
+//         child: Center(child: Icon(iconData,color: theme.primaryColor,),),
+//       ),
+//     );
+//   }
+// }
 
 class NotificationButton extends StatelessWidget {
   final VoidCallback onTap;

@@ -1,48 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/new_colors.dart';
-import 'package:ride_app/resubale_widgets/CustomButton.dart';
+import 'package:ride_app/controllers/chat_provider.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
-import 'package:ride_app/resubale_widgets/circle_avatar_widget.dart';
 import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 import 'package:ride_app/views/chatting_screens/calls/outgoing_call_screen.dart';
 import 'package:ride_app/views/chatting_screens/components/sender_bubble.dart';
+import '../../alert_dialogs/selection_alert_dialg.dart';
 
 // Main Chat Screen
 class UserRiderChatScreen extends StatelessWidget {
   const UserRiderChatScreen({super.key});
 
-  // Function to pick image from gallery
-  Future<void> _pickImageFromGallery() async {
-    final ImagePicker _picker = ImagePicker();
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
-
-    if (image != null) {
-      // Handle the selected image
-      print('Image path: ${image.path}');
-    }
-  }
 
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Scaffold(
-      backgroundColor: backgroundpaperColor,
+      backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: whiteColor,
-        automaticallyImplyLeading: false,
-        // scrolledUnderElevation: 10.0,
+        leading: CustomLeading(),
         elevation: 1.8,
-        // shadowColor: primaryTextColor,
-
         title: Row(
           children: [
-            CustomLeading(
-            ),
             CustomSized(width: 0.03),
             CircleAvatar(
               backgroundColor: lightbackgroundpaperColor,
@@ -55,27 +39,23 @@ class UserRiderChatScreen extends StatelessWidget {
               title: 'Peter Dian',
               weight: FontWeight.w700,
               textSize: 14.0,
-              color: primaryTextColor,
+              color: theme.primaryColor,
             ),
           ],
         ),
         actions: [
           Row(
             children: [
-              InkWell(
-
-                  onTap: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => UserCallScreen()));
-                  },
+              InkWell(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => UserCallScreen()));},
                   child
-                  : SvgPicture.asset('assets/svg_pictures/call.svg')),
+                  : SvgPicture.asset('assets/svg_pictures/call.svg',color: theme.primaryColor,)),
               CustomSized(width: 0.05),
               PopupMenuButton<int>(
+                color: theme.scaffoldBackgroundColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8.0)
                 ),
-                icon: SvgPicture.asset('assets/svg_pictures/menu.svg'),
-                onSelected: (item) => onSelected(context, item),
+                icon: SvgPicture.asset('assets/svg_pictures/menu.svg',color: theme.primaryColor,),
                 itemBuilder: (context) => [
                   PopupMenuItem<int>(
                     value: 0,
@@ -84,13 +64,11 @@ class UserRiderChatScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           SvgPicture.asset(
-                              'assets/svg_pictures/bookmark_icon.svg'),
+                              'assets/svg_pictures/bookmark_icon.svg',color: theme.primaryColor,),
                           CustomSized(width: 0.02),
-                          normalText(
+                          smallText(
                             title: 'Saved as favorite',
-                            color: primaryTextColor,
-                            weight: FontWeight.w400,
-                            textSize: 14.0,
+                            color: theme.primaryColor,
                           ),
                         ],
                       ),
@@ -100,11 +78,11 @@ class UserRiderChatScreen extends StatelessWidget {
                     value: 1,
                     child: InkWell(
                       onTap: () {
-                        onSelected(context, 1);
+                        AlertDialogClass().showChatRepostAlertDialog(context);
                       },
                       child: Row(
                         children: [
-                          SvgPicture.asset('assets/svg_pictures/flag.svg'),
+                          SvgPicture.asset('assets/svg_pictures/flag.svg',color: theme.colorScheme.secondaryFixed,),
                           CustomSized(width: 0.02),
                           normalText(
                             title: 'Report Chat',
@@ -128,6 +106,7 @@ class UserRiderChatScreen extends StatelessWidget {
         children: [
           Expanded(
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: [
                 ChatBubble(
                   message: "Where are you exactly?",
@@ -156,11 +135,12 @@ class UserRiderChatScreen extends StatelessWidget {
                       shadowColor: Colors.black45,
                       color: transparentColor,
                       child: Container(
+                        clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
-                          border: Border.all(width: 8.0, color: whiteColor),
+                          border: Border.all(width: 8.0, color: theme.colorScheme.inversePrimary),
                         ),
-                        child: Image.asset('assets/images/chatbackimage.jpg'),
+                        child: Image.asset('assets/images/chatbackimage.jpg',isAntiAlias: true,),
                       ),
                     ),
                   ),
@@ -179,18 +159,17 @@ class UserRiderChatScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 2.0, left: 20.0, right: 12.0),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.78,
-                  height: MediaQuery.of(context).size.height * 0.07,
-                  child: TextFormField(
-                    cursorColor: primaryTextColor,
+                Expanded(child: Consumer<ChatProvider>(builder: (context,provider,_){
+                  return TextFormField(
+                    cursorColor: theme.primaryColor,
                     decoration: InputDecoration(
+                      isDense: true,
                       border: InputBorder.none,
                       hintText: 'Type your message',
                       hintStyle: TextStyle(
-                        color: primaryTextColor,
+                        color: theme.primaryColor,
                         fontSize: 14.0,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Nunito Sans',
@@ -198,32 +177,38 @@ class UserRiderChatScreen extends StatelessWidget {
                       suffixIcon: InkWell(
                         hoverColor: lightgreyColor,
                         onTap: () {
-                          _pickImageFromGallery();
+                          provider.pickImageFromGallery();
                         },
                         child: SvgPicture.asset(
                           'assets/svg_pictures/galleryicon.svg',
+                          color: theme.primaryColor,
                         ),
                       ),
-                      fillColor: lightgreyColorinchattingfield,
+                      fillColor: theme.colorScheme.surfaceContainerHighest,
                       filled: true,
                       // focusColor: dividerColor,
                       enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(30.0),
                           borderSide: BorderSide(color: transparentColor)),
                       focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(12.0),
+                          borderRadius: BorderRadius.circular(30.0),
                           borderSide: BorderSide(color: transparentColor)),
                     ),
+                  );
+                })),
+                CustomSized(
+                  width: 0.03,
+                ),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: theme.primaryColor,
+                  child: SvgPicture.asset(
+                    'assets/svg_pictures/PaperPlaneRight.svg',
+                    color: theme.colorScheme.inversePrimary,
                   ),
                 ),
                 CustomSized(
-                  width: 0.01,
-                ),
-                CircleAvatar(
-                  backgroundColor: primaryTextColor,
-                  child: SvgPicture.asset(
-                    'assets/svg_pictures/PaperPlaneRight.svg',
-                  ),
+                  width: 0.03,
                 ),
               ],
             ),
@@ -235,68 +220,6 @@ class UserRiderChatScreen extends StatelessWidget {
       ),
     );
   }
-  void onSelected(BuildContext context, int item) {
-    switch (item) {
-      case 0:
-      // Handle menu item 1 action
-        print('Menu Item 1 selected');
-        break;
-      case 1:
-      // Handle menu item 2 action
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
 
-            return AlertDialog(
-              titlePadding:  EdgeInsets.only(left: 20, top: 20.0, right: 20.0),
-              contentPadding: EdgeInsets.only(left: 20, top: 4.0, right: 20.0, bottom: 6.0),
-              actionsPadding:  EdgeInsets.only(left: 0, top: 4.0, right: 20.0, bottom: 15.0),
-              backgroundColor: backgroundpaperColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12.0)
-              ),
-
-              title: largeText(
-                title: 'Report Chat',
-                textSize: 18.0,
-                weight: FontWeight.w700,
-              ),
-              content: normalText(
-                  title: 'Are you sure you want to report this chat?',
-                  textSize: 14.0,
-                  weight: FontWeight.w400,
-                  color: secondaryTextColor),
-
-              actions: <Widget>[
-                SecondaryCustomButton(
-                  title: 'Cancel',
-                  onBoard: false,
-                  onTap: () {},
-                  titleColor: primaryTextColor,
-                  width: 0.2,
-                  borderRadius: 25.0,
-                  textsize: 15,
-                  weight: FontWeight.w700,
-                  color: lightgreyColorinchattingfield,
-                ),
-                SecondaryCustomButton(
-                  title: 'Report Chat',
-                  onBoard: false,
-                  borderRadius: 25.0,
-                  titleColor: whiteColor,
-                  onTap: () {},
-                  width: 0.3,
-                  textsize: 15,
-                  weight: FontWeight.w700,
-                  color: primaryTextColor,
-                ),
-              ],
-
-            );
-          },
-        );
-        break;
-    }
-  }
 
 }

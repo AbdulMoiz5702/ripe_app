@@ -52,6 +52,7 @@ class ChatBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Align(
       alignment: isSender ? Alignment.centerRight : Alignment.centerLeft,
       child: Padding(
@@ -62,7 +63,7 @@ class ChatBubble extends StatelessWidget {
 
               width: MediaQuery.of(context).size.width*0.2,
               decoration: BoxDecoration(
-                  color: lightgreyColorinchattingdayfield,
+                  color: theme.colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(8)
               ),
               child: Center(
@@ -71,7 +72,7 @@ class ChatBubble extends StatelessWidget {
                   child: normalText(
                     title: month,
                     textSize: 12.0,
-                    color: primaryTextColor
+                    color: theme.primaryColor
                   ),
                 ),
               ),
@@ -83,7 +84,6 @@ class ChatBubble extends StatelessWidget {
               children: [
                 Material(
                   elevation: 7.0,
-                  shadowColor: isSender ? Colors.black45 :Colors.black45,
                   color: transparentColor,
                   borderRadius: BorderRadius.circular(8),
                   child: Row(
@@ -96,7 +96,7 @@ class ChatBubble extends StatelessWidget {
                             size: Size(6, 8),
                             painter: BubbleTrianglePainter(
                               isSender: isSender,
-                              color: whiteColor,
+                              color:  theme.colorScheme.inversePrimary,
                             ),
                           ),
                         ),
@@ -104,7 +104,7 @@ class ChatBubble extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: isSender ? lightPrimaryTextColor : whiteColor,
+                          color: isSender ? theme.colorScheme.secondary : theme.colorScheme.inversePrimary,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -113,7 +113,7 @@ class ChatBubble extends StatelessWidget {
                           children: [
                             normalText(
                              title:  message,
-                                color: isSender ? Colors.white : Colors.black,
+                                color: isSender ? theme.colorScheme.inversePrimary : theme.primaryColor,
                               weight: FontWeight.w400,
                               textSize: 14.0
 
@@ -137,7 +137,7 @@ class ChatBubble extends StatelessWidget {
                             size: Size(6, 8),
                             painter: BubbleTrianglePainter(
                               isSender: isSender,
-                              color: lightPrimaryTextColor,
+                              color: theme.colorScheme.secondary,
                             ),
                           ),
                         ),

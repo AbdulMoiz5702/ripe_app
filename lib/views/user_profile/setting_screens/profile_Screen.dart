@@ -59,7 +59,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           borderRadius: BorderRadius.circular(500),
 
                           border: Border.all(
-                            color: theme.colorScheme.onPrimaryFixed.withOpacity(0.67),
+                            color: theme.colorScheme.inverseSurface,
                             width: 10,
                           ),
                         ),
@@ -73,9 +73,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 width: double.infinity,
                                 height: double.infinity,
                               ),
-                              Container(
-                                  color: theme.colorScheme.onPrimaryFixed
-                                      .withOpacity(0.75)),
+                              // Container(
+                              //     color: theme.colorScheme.onPrimaryFixed
+                              //         .withOpacity(0.75)),
                             ],
                           ),
                         ),
@@ -86,14 +86,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     left: 70,
                     top: 70,
                     child:
-                        SvgPicture.asset('assets/svg_pictures/camericon.svg', ),
+                        SvgPicture.asset('assets/svg_pictures/camericon.svg', color: theme.colorScheme.inversePrimary,),
                   ),
                   Positioned(
                     left: 50,
                     top: 103,
                     child: normalText(
                       textSize: 11.0,
-                      color: theme.primaryColor,
+                      color: theme.colorScheme.inversePrimary,
                       title: 'Update Photo',
                     ),
                   ),
@@ -130,7 +130,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Row(
                         children: <Widget>[
                           Radio<int>(
-                            activeColor: theme.colorScheme.primaryFixed,
+
+                            activeColor: theme.colorScheme.secondary,
                             value: 0,
                             groupValue: _radioValue,
                             onChanged: _handleRadioValueChange,
@@ -142,7 +143,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Row(
                         children: [
                           Radio<int>(
-                            activeColor: theme.colorScheme.primaryFixed,
+                            activeColor: theme.colorScheme.secondary,
                             value: 1,
                             groupValue: _radioValue,
                             onChanged: _handleRadioValueChange,
@@ -153,7 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Row(
                         children: [
                           Radio<int>(
-                            activeColor: theme.colorScheme.primaryFixed,
+                            activeColor: theme.colorScheme.secondary,
                             value: 2,
                             groupValue: _radioValue,
                             onChanged: _handleRadioValueChange,
@@ -218,10 +219,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               onTap: () {
                 Navigator.pop(context);
               },
-              color: theme.colorScheme.primaryFixedDim,
+              titleColor: theme.colorScheme.inversePrimary,
               width: 0.9,
               borderRadius: 24,
-              titleColor: theme.colorScheme.inversePrimary
+              color: theme.primaryColor,
+              // weight: ,
             ),
           ],
         ),

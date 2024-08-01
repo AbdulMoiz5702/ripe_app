@@ -43,7 +43,19 @@ class ThemeChangeScreen extends StatelessWidget {
                      activeColor: theme.colorScheme.secondary,
                      title: smallText(title: selectTheme[index]),
                       value: provider.value, groupValue: index, onChanged: (value){
-                      provider.toggleTheme(index);
+                      switch(index){
+                        case 0:
+                          provider.themeMode  = ThemeMode.system;
+                          provider.toggleTheme(0);
+                          break;
+                        case 1:
+                          provider.themeMode  = ThemeMode.light;
+                          provider.toggleTheme(1);
+                        case 2:
+                          provider.themeMode  = ThemeMode.dark;
+                          provider.toggleTheme(2);
+
+                      }
                 });
               }),
             );

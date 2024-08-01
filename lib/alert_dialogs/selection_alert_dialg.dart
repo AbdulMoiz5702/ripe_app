@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/consts/colors.dart';
+import 'package:ride_app/alert_dialogs/repost_chat_alert_dilaog.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/aler_dialog_providers.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
@@ -57,6 +57,13 @@ class AlertDialogClass {
         },
       );
     });
+  }
+
+  void showChatRepostAlertDialog(context){
+    showDialog(context: context, builder: (context){
+      return RepostChatAlertDialog();
+    });
+
   }
 
 }
@@ -198,3 +205,5 @@ class AlertSelectionConatiner extends StatelessWidget {
     );
   }
 }
+
+

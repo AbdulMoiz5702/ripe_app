@@ -5,7 +5,8 @@ import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, 
+  const CustomTextField({
+    super.key,
     this.isPassword = false,
     this.autoFocus = false,
     required this.controller,
@@ -29,7 +30,7 @@ class CustomTextField extends StatelessWidget {
   final bool autoFocus;
   final IconData? iconData;
   final String? iconPath;
-  final bool isPassword ;
+  final bool isPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -44,39 +45,60 @@ class CustomTextField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmittedValue,
         validator: onValidator,
         keyboardType: keyBoardType,
-        style: const TextStyle(color: Colors.black,
-          fontFamily: 'Nunito Sans',),
+        style: const TextStyle(
+          color: Colors.black,
+          fontFamily: 'Nunito Sans',
+        ),
         decoration: InputDecoration(
-          suffixIcon: isPassword == true ? Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(eye, height: 20, width: 20,color: theme.colorScheme.onSecondaryContainer,),
-          ) : const SizedBox(height:0 ,width:0 ,),
+          suffixIcon: isPassword == true
+              ? Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    eye,
+                    height: 20,
+                    width: 20,
+                    color: theme.colorScheme.onSecondaryContainer,
+                  ),
+                )
+              : const SizedBox(
+                  height: 0,
+                  width: 0,
+                ),
           isDense: true,
           prefixIcon: iconData != null
-              ? Icon(iconData, color: theme.colorScheme.onSecondaryContainer,size: 25,)
+              ? Icon(
+                  iconData,
+                  color: theme.colorScheme.onSecondaryContainer,
+                  size: 25,
+                )
               : (iconPath != null
-              ? Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(iconPath!, height: 20, width: 20,color: theme.colorScheme.onSecondaryContainer,),
-          )
-              : null),
+                  ? Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset(
+                        iconPath!,
+                        height: 20,
+                        width: 20,
+                        color: theme.colorScheme.onSecondaryContainer,
+                      ),
+                    )
+                  : null),
           contentPadding: const EdgeInsets.all(8),
           hintText: hint,
-          hintStyle:  TextStyle(color: theme.colorScheme.surfaceBright),
+          hintStyle: TextStyle(color: theme.colorScheme.surfaceBright),
           border: OutlineInputBorder(
-            borderSide:  BorderSide(color:  theme.colorScheme.onSurface),
+            borderSide: BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.onSurface),
+            borderSide: BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
           errorBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.onSurface),
+            borderSide: BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide:  BorderSide(color: theme.colorScheme.onSurface),
+            borderSide: BorderSide(color: theme.colorScheme.onSurface),
             borderRadius: BorderRadius.circular(30),
           ),
         ),
@@ -85,9 +107,9 @@ class CustomTextField extends StatelessWidget {
   }
 }
 
-
 class OutlineCustomTextField extends StatelessWidget {
-  const OutlineCustomTextField({super.key,
+  const OutlineCustomTextField({
+    super.key,
     this.autoFocus = false,
     required this.controller,
     required this.keyBoardType,
@@ -95,11 +117,10 @@ class OutlineCustomTextField extends StatelessWidget {
     required this.svgs,
     required this.label,
     required this.hint,
-     this.heightSVG = 20.0,
-     this.weightSVG = 20.0,
+    this.heightSVG = 20.0,
+    this.weightSVG = 20.0,
     required this.onValidator,
     required this.onFieldSubmittedValue,
-
     this.iconData,
     this.iconPath,
   });
@@ -132,13 +153,22 @@ class OutlineCustomTextField extends StatelessWidget {
           onFieldSubmitted: onFieldSubmittedValue,
           validator: onValidator,
           keyboardType: keyBoardType,
-          style:  TextStyle(color: theme.primaryColor,
-            fontFamily: 'Nunito Sans',),
+          style: TextStyle(
+            color: theme.primaryColor,
+            fontFamily: 'Nunito Sans',
+            fontWeight: FontWeight.w400
+          ),
+
           decoration: InputDecoration(
             prefixIcon: Padding(
               padding: const EdgeInsets.all(12.0),
-              child: SvgPicture.asset(svgs, height: heightSVG, width: weightSVG,color: theme.colorScheme.primaryFixed,),
-            ) ,
+              child: SvgPicture.asset(
+                svgs,
+                height: heightSVG,
+                width: weightSVG,
+                color: theme.colorScheme.primaryFixed,
+              ),
+            ),
             isDense: true,
             // prefixIcon: iconData != null
             //     ? Icon(iconData, color: theme.colorScheme.onSecondaryContainer,size: 25,)
@@ -152,25 +182,35 @@ class OutlineCustomTextField extends StatelessWidget {
               title: label,
               textSize: 12.0,
               color: theme.colorScheme.primaryFixed,
+              weight: FontWeight.w700
             ),
             //iconColor
             contentPadding: const EdgeInsets.all(8),
             // hintText: hint,
             // hintStyle:  TextStyle(color: theme.colorScheme.surfaceBright),
             border: OutlineInputBorder(
-              borderSide:  BorderSide(color:  theme.colorScheme.onSurfaceVariant.withOpacity(0.2)),
+              borderSide: BorderSide(
+                  color: theme.colorScheme.onSurfaceVariant,
+
+              ),
               borderRadius: BorderRadius.circular(30),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide:  BorderSide(color: theme.colorScheme.onSurfaceVariant.withOpacity(0.2)),
+              borderSide: BorderSide(
+                  color:theme.colorScheme.onSurfaceVariant,
+
+              ),
               borderRadius: BorderRadius.circular(30),
             ),
             errorBorder: OutlineInputBorder(
-              borderSide:  BorderSide(color: theme.colorScheme.onSurfaceVariant.withOpacity(0.2)),
+              borderSide: BorderSide(
+                  color: theme.colorScheme.onSurfaceVariant,
+              ),
               borderRadius: BorderRadius.circular(30),
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide:  BorderSide(color: theme.colorScheme.onSurfaceVariant.withOpacity(0.2)),
+              borderSide: BorderSide(
+                  color: theme.colorScheme.onSurfaceVariant,),
               borderRadius: BorderRadius.circular(30),
             ),
           ),

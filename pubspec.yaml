@@ -51,6 +51,7 @@ dependencies:
   local_auth: ^2.1.3
   image_picker:
   dotted_border: ^2.1.0
+  credit_card_type_detector: ^3.0.0
 
 dev_dependencies:
   flutter_test:
