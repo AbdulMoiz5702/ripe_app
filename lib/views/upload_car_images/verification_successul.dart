@@ -56,7 +56,7 @@ class VerificationSuccessful extends StatelessWidget {
                       Align(
                           alignment: Alignment.center,
                           child: Image(
-                            image: const AssetImage(underReview),
+                            image: const AssetImage(verificationSuccessful),
                             height: MediaQuery.sizeOf(context).height * 0.25,
                           )),
                       const CustomSized(height: 0.03),
@@ -65,7 +65,7 @@ class VerificationSuccessful extends StatelessWidget {
                         height: MediaQuery.sizeOf(context).height * 0.1,
                         width: MediaQuery.sizeOf(context).width * 1,
                         decoration: BoxDecoration(
-                          color: theme.colorScheme.scrim,
+                          color: theme.cardColor,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child:  Row(
@@ -74,7 +74,7 @@ class VerificationSuccessful extends StatelessWidget {
                             Icon(
                               Icons.check_circle,
                               size: 25,
-                              color: theme.colorScheme.surfaceVariant,
+                              color: theme.canvasColor,
                             ),
                             CustomSized(
                               width: 0.02,
@@ -85,7 +85,7 @@ class VerificationSuccessful extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: theme.colorScheme.surfaceVariant,
+                                  color: theme.canvasColor,
                                   fontFamily: 'Nunito Sans',
                                 ),
                               ),

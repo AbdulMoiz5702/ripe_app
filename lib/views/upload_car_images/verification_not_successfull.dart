@@ -54,17 +54,17 @@ class VerificationNotSuccessful extends StatelessWidget {
                       Align(
                           alignment: Alignment.center,
                           child: Image(
-                            image: const AssetImage(underReview),
+                            image: const AssetImage(verificationUnSuccessful),
                             height: MediaQuery.sizeOf(context).height * 0.25,
                           )),
                       const CustomSized(height: 0.03),
                       Container(
                         alignment: Alignment.center,
-                        padding: const EdgeInsets.all(15),
-                        height: MediaQuery.sizeOf(context).height * 0.11,
+                        padding: const EdgeInsets.all(25),
+                        height: MediaQuery.sizeOf(context).height * 0.122,
                         width: MediaQuery.sizeOf(context).width * 1,
                         decoration: BoxDecoration(
-                          color: theme.cardColor,
+                          color: theme.colorScheme.onError,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child:  Row(
@@ -74,7 +74,7 @@ class VerificationNotSuccessful extends StatelessWidget {
                             Icon(
                               Icons.error,
                               size: 25,
-                              color: theme.canvasColor,
+                              color: theme.colorScheme.onErrorContainer,
                             ),
                             CustomSized(
                               width: 0.02,
@@ -85,7 +85,7 @@ class VerificationNotSuccessful extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: theme.canvasColor,
+                                  color: theme.colorScheme.onTertiary,
                                   fontFamily: 'Nunito Sans',
                                 ),
                               ),

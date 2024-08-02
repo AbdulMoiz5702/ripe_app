@@ -67,6 +67,11 @@ const Color lightbackgroundpaperColor = Color(0xffCCECFB);
 // light divider color
 const lightDividerColor = Color(0xff414652);
 
+// login error alert dialog backgroud color
+const lightAlertDialogErrorBackGroundColor = Color(0xffFFE5D1);
+const lightAlertDialogErrorIconColor = Color(0xffFF3A1C);
+const lightAlertDialogErrorTextColor = Color(0xff7A051A);
+
 // bottom_sheets_leading_colors
 const Color lightBottomSheetLeadingColor = Color(0xffe5e7eb);
 

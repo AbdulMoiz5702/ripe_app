@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
-
-import '../consts/colors.dart';
 import '../resubale_widgets/CustomButton.dart';
 import '../resubale_widgets/Custom_Sized.dart';
 import '../resubale_widgets/text_widgets.dart';

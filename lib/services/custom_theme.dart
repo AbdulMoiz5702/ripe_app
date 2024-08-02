@@ -71,11 +71,11 @@ ThemeData lightTheme() {
       //button color in profile screen
       primaryFixedDim: buttonColor,
       // login error alert dialog backgroud color
-      onError:darkAlertDialogErrorBackGroundColor,
+      onError:lightAlertDialogErrorBackGroundColor,
       // login error alert dialog iconError color
-      onErrorContainer: darkAlertDialogErrorIconColor,
+      onErrorContainer: lightAlertDialogErrorIconColor,
       // login error alert dialog text color
-      onTertiary: darkAlertDialogErrorTextColor,
+      onTertiary: lightAlertDialogErrorTextColor,
 
 
 

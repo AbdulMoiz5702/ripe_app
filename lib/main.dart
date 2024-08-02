@@ -11,6 +11,7 @@ import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/controllers/zego_cloud_provider.dart';
 import 'package:ride_app/firebase_options.dart';
 import 'package:ride_app/views/on_boarding/on_borading_screen.dart';
+import 'package:ride_app/views/quiz_screen/quiz_home_screen.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,9 +20,12 @@ import 'controllers/become_driver_controller.dart';
 import 'controllers/bottom_screen_provider.dart';
 import 'controllers/custom_leading_feild_provider.dart';
 import 'controllers/notiication_provider.dart';
+import 'controllers/quiz_controller.dart';
 import 'controllers/rider_ride_request_provider.dart';
 import 'controllers/theme_provider.dart';
 import 'services/custom_theme.dart';
+
+
 
 final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
@@ -44,7 +48,8 @@ void main() async {
         ChangeNotifierProvider(create: (_) => ChatProvider()),
         ChangeNotifierProvider(create: (_) => CustomLeadingFieldProvider()),
         ChangeNotifierProvider(create: (_) => RiderRideRequestProvider()),
-        ChangeNotifierProvider(create: (_) => NotificationProvider())
+        ChangeNotifierProvider(create: (_) => NotificationProvider()),
+        ChangeNotifierProvider(create: (_) => QuizController()),
       ],
       child: MyApp(navigatorKey: navigatorKey,),
     ),
@@ -65,7 +70,7 @@ class MyApp extends StatelessWidget {
           theme: lightTheme(), // Apply light theme
           darkTheme: darkTheme(), // Apply dark theme
           themeMode: provider.themeMode, // Use theme mode from provider
-          home: const OnboardingScreen(),
+          home:  OnboardingScreen(),
           );
       });
     }

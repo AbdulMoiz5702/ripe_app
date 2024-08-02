@@ -5,6 +5,8 @@ import 'package:ride_app/controllers/rider_ride_request_provider.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
+import '../../../alert_dialogs/selection_alert_dialg.dart';
+
 class MainRequestScreen extends StatelessWidget {
   const MainRequestScreen({super.key});
 
@@ -32,6 +34,7 @@ class MainRequestScreen extends StatelessWidget {
                         value: provider.isOnline,
                         onChanged: (value) {
                           provider.changeValue(value);
+                          AlertDialogClass().showRiderStatusConfirmationDialog(context);
                         }),
                   );
                 }),

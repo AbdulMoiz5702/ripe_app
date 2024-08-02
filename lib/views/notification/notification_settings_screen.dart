@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
-
 import '../../controllers/notiication_provider.dart';
 import '../../resubale_widgets/custom_leading.dart';
 import '../../resubale_widgets/notification_list_tile.dart';
@@ -30,6 +28,7 @@ class NotificationSettingsScreen extends StatelessWidget {
             const CustomSized(height: 0.02,),
             smallText(title: 'RIDER MESSAGES',weight:FontWeight.w700,color: theme.colorScheme.onSecondaryContainer ),
             Consumer<NotificationProvider>(builder: (context,provider,_){
+              print('RIDER MESSAGES 1');
               return Column(
                 children: [
                   NotificationListTile(title: 'Push Notification',value: provider.riderPush,onChanged: (value){
@@ -44,6 +43,7 @@ class NotificationSettingsScreen extends StatelessWidget {
             const CustomSized(height: 0.02,),
             smallText(title: 'PAYMENT NOTIFICATIONS',weight:FontWeight.w700,color:theme.colorScheme.onSecondaryContainer),
             Consumer<NotificationProvider>(builder: (context,provider,_){
+              print('PAYMENT NOTIFICATIONS 2');
               return Column(
                 children: [
                   NotificationListTile(title: 'Push Notification',value: provider.paymentPush,onChanged: (value){

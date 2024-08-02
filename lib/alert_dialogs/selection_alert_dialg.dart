@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/alert_dialogs/repost_chat_alert_dilaog.dart';
+import 'package:ride_app/alert_dialogs/rider_Status_confirmation.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/controllers/aler_dialog_providers.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-
 import 'custom_alert_dialog.dart';
 import 'fare_comparison_alert_diloag.dart';
 
@@ -65,6 +65,25 @@ class AlertDialogClass {
     });
 
   }
+
+  void showRiderStatusConfirmationDialog(context){
+    var theme = Theme.of(context);
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor:theme.scaffoldBackgroundColor ,
+          contentPadding: EdgeInsets.all(0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          content:RiderStatusConfirmation(),
+        );
+      },
+    );
+  }
+
+
 
 }
 

@@ -33,7 +33,7 @@ class NotificationProvider extends ChangeNotifier {
     // SCHEDULED RIDES Notification
     schedulePush = prefs.getBool(LocalStorageStrings.schedulePush) ?? true;
     scheduleEmail = prefs.getBool(LocalStorageStrings.scheduleEmail) ?? true;
-    // ONGOING RIDES Notification
+    // SCHEDULED RIDES Notification
     onGoingPush = prefs.getBool(LocalStorageStrings.onGoingPush) ?? true;
     onGoingEmails = prefs.getBool(LocalStorageStrings.onGoingEmails) ?? true;
     notifyListeners();

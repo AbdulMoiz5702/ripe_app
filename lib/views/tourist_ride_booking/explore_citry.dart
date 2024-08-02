@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
-
 import '../../resubale_widgets/custom_leading.dart';
 import 'bottom_sheet/model_bottom_sheet.dart';
 
@@ -20,8 +18,7 @@ class _ExploreCityState extends State<ExploreCity> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Future.delayed(const Duration(milliseconds: 300), () {
-        _draggableScrollableController.animateTo(
-          0.5, // Desired initial child size
+        _draggableScrollableController.animateTo(0.5, // Desired initial child size
           duration: const Duration(milliseconds: 500),
           curve: Curves.easeInOut,
         );
