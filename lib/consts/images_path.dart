@@ -8,6 +8,9 @@ const String card = 'assets/imagesOnBording/card.png';
 const String notificationBell = 'assets/imagesOnBording/notification_bell.png';
 const String verificationSuccessful = 'assets/imagesOnBording/verified_successfully.png';
 const String verificationUnSuccessful = 'assets/imagesOnBording/verification_unsuccessful.png';
+const String stopWatch= 'assets/imagesOnBording/stop_watch.png';
+const String rocket = 'assets/imagesOnBording/rocket.png';
+const String coffee = 'assets/imagesOnBording/coffee_cup.png';
 
 // login Option
 const String google = 'assets/loginOption/gogole.png';

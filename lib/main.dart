@@ -10,8 +10,7 @@ import 'package:ride_app/controllers/role_selection_provider.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/controllers/zego_cloud_provider.dart';
 import 'package:ride_app/firebase_options.dart';
-import 'package:ride_app/views/on_boarding/on_borading_screen.dart';
-import 'package:ride_app/views/quiz_screen/quiz_home_screen.dart';
+import 'package:ride_app/views/account_resterications/timer_remaining_to_account_restore.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -70,7 +69,7 @@ class MyApp extends StatelessWidget {
           theme: lightTheme(), // Apply light theme
           darkTheme: darkTheme(), // Apply dark theme
           themeMode: provider.themeMode, // Use theme mode from provider
-          home:  OnboardingScreen(),
+          home:  TimerRemainingToAccountRestore(),
           );
       });
     }

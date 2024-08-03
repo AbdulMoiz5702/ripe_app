@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
@@ -15,12 +16,11 @@ class _ChartState extends State<Chart> {
 
   @override
   Widget build(BuildContext context) {
-    var   theme = Theme.of(context);
     return Container(
       clipBehavior: Clip.antiAliasWithSaveLayer,
       alignment: Alignment.centerRight,
       decoration: BoxDecoration(
-        color: theme.colorScheme.secondary,
+        color:checkBoxColor,
         borderRadius: BorderRadius.circular(15),
       ),
       height: MediaQuery.sizeOf(context).height * 0.37,
@@ -31,15 +31,15 @@ class _ChartState extends State<Chart> {
           Positioned(
             left: MediaQuery.sizeOf(context).width * 0.05,
               top: MediaQuery.sizeOf(context).height * 0.06,
-              child: largeText(title: '\$682.5',color: theme.primaryColor,textSize: 32.0,weight: FontWeight.w800)),
+              child: largeText(title: '\$682.5',color: whiteColor,textSize: 32.0,weight: FontWeight.w800)),
           Positioned(
             left: MediaQuery.sizeOf(context).width * 0.05,
             top: MediaQuery.sizeOf(context).height * 0.02,
             child: Row(
               children: [
-                largeText(title: 'CURRENT BALANCE',color: theme.primaryColor,textSize: 12.0),
+                largeText(title: 'CURRENT BALANCE',color: whiteColor,textSize: 12.0),
                 CustomSized(width: 0.02,height: 0,),
-                SvgPicture.asset(openEyeSVG,color: theme.primaryColor,),
+                SvgPicture.asset(openEyeSVG,color: whiteColor,),
               ],
             ),
           ),
@@ -53,7 +53,6 @@ class _ChartState extends State<Chart> {
 
 
   LineChartData mainData(context) {
-    var theme = Theme.of(context);
     return LineChartData(
       gridData:const  FlGridData(
         show: false,
@@ -76,7 +75,7 @@ class _ChartState extends State<Chart> {
             interval: 1,
             getTitlesWidget: (double value, TitleMeta meta) {
               TextStyle style = TextStyle(
-                color: theme.primaryColor,
+                color: whiteColor,
                 fontWeight: FontWeight.w400,
                 fontSize: 11,
               );
@@ -129,7 +128,7 @@ class _ChartState extends State<Chart> {
       maxY: 9,
       lineBarsData: [
         LineChartBarData(
-          color: theme.primaryColor,
+          color: whiteColor,
           spots: [
             FlSpot(0, 3),
             FlSpot(2.6, 2),
@@ -141,7 +140,7 @@ class _ChartState extends State<Chart> {
           ],
           isCurved: true,
           gradient: LinearGradient(
-            colors: [theme.primaryColor,theme.primaryColor],
+            colors: [whiteColor,whiteColor],
           ),
           barWidth: 3,
           isStrokeCapRound: true,
@@ -151,10 +150,10 @@ class _ChartState extends State<Chart> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                theme.primaryColor.withOpacity(0.8),
-                theme.primaryColor.withOpacity(0.4),
-                theme.primaryColor.withOpacity(0.2),
-                theme.primaryColor.withOpacity(0.0),
+                whiteColor.withOpacity(0.8),
+                whiteColor.withOpacity(0.4),
+                whiteColor.withOpacity(0.2),
+                whiteColor.withOpacity(0.0),
               ],
             ),
           ),
