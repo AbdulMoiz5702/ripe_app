@@ -55,19 +55,13 @@ ThemeData lightTheme() {
       // shedule screen in progress  button color
       outline: lightDarkGreenColor,
       // shedule screen in progress  button Text color
-
-
       outlineVariant: lightGreenColor,
-
       //profile Screen image background Color. main image in profile screen
       onPrimaryFixed:  profileScreenopacityColor,
-
       //outline color in text of profile screen
       primaryFixed: iconColor,
-
       //outline color in textformfield of profile screen
       onSurfaceVariant: greyColor,
-
       //button color in profile screen
       primaryFixedDim: buttonColor,
       // login error alert dialog backgroud color
@@ -76,6 +70,11 @@ ThemeData lightTheme() {
       onErrorContainer: lightAlertDialogErrorIconColor,
       // login error alert dialog text color
       onTertiary: lightAlertDialogErrorTextColor,
+      // chip  color
+      onTertiaryContainer: lightSelectedChipColor,
+      // chip text color
+      onTertiaryFixed: lightSelectedChipTextColor
+
 
 
 
@@ -170,8 +169,10 @@ ThemeData darkTheme() {
         onErrorContainer: darkAlertDialogErrorIconColor,
         // login error alert dialog text color
         onTertiary: darkAlertDialogErrorTextColor,
-
-
+          // chip  color
+          onTertiaryContainer: darkSelectedChipColor,
+          // chip text color
+          onTertiaryFixed: darkSelectedChipTextColor
       ),
       // divider color
       dividerColor: darkDividerColor,

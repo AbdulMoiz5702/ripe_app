@@ -10,11 +10,13 @@ import 'package:ride_app/controllers/role_selection_provider.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/controllers/zego_cloud_provider.dart';
 import 'package:ride_app/firebase_options.dart';
-import 'package:ride_app/views/account_resterications/timer_remaining_to_account_restore.dart';
+import 'package:ride_app/views/on_boarding/on_borading_screen.dart';
+import 'package:ride_app/views/rider_side_screens/ride_process_rider/rider_comming_screen.dart';
 import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'call_screen.dart';
+import 'controllers/Rider_ride_process_provider.dart';
 import 'controllers/become_driver_controller.dart';
 import 'controllers/bottom_screen_provider.dart';
 import 'controllers/custom_leading_feild_provider.dart';
@@ -49,6 +51,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => RiderRideRequestProvider()),
         ChangeNotifierProvider(create: (_) => NotificationProvider()),
         ChangeNotifierProvider(create: (_) => QuizController()),
+        ChangeNotifierProvider(create: (_) => RiderRideProcessProvider()),
       ],
       child: MyApp(navigatorKey: navigatorKey,),
     ),
@@ -65,11 +68,11 @@ class MyApp extends StatelessWidget {
     return Consumer<ThemeProvider>(builder: (context,provider,_){
       return MaterialApp(
           navigatorKey: navigatorKey,
-          title: 'Flutter Demo',
+          title: 'Logoipusm',
           theme: lightTheme(), // Apply light theme
           darkTheme: darkTheme(), // Apply dark theme
           themeMode: provider.themeMode, // Use theme mode from provider
-          home:  TimerRemainingToAccountRestore(),
+          home:  RiderCommingScreen(),
           );
       });
     }

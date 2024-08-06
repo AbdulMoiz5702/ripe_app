@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/band_name.dart';
 import '../../../consts/images_path.dart';
 import '../../../resubale_widgets/Bg_widget.dart';
@@ -24,7 +25,7 @@ class AccountGoodToGo extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.7,
+            height: MediaQuery.sizeOf(context).height * 0.72,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -97,6 +98,7 @@ class AccountGoodToGo extends StatelessWidget {
                         fit:BoxFit.cover,
                       ),
                     ),
+                    CustomButton(title: 'Hit the road', onTap: (){},width: 1,borderRadius: 30,)
                   ],
                 ),
               ),

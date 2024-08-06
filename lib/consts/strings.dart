@@ -269,5 +269,14 @@ List<QuizQuestion> quizQuestions = [
 ];
 
 
+var repostIssue = [
+  'Lost item in the ride',
+  'Driver didn\'t drop me at my location',
+  'Payment not received ',
+  'Passenger was rude',
+  'Any other issue',
+];
+
+
 
 

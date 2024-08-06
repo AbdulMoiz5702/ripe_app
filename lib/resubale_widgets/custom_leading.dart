@@ -49,3 +49,31 @@ class NotificationButton extends StatelessWidget {
     );
   }
 }
+
+class CustomLeadingSecond extends StatelessWidget {
+  final bool isHome ;
+  final bool isSecondary ;
+  final IconData iconData ;
+  final double  padding ;
+  const CustomLeadingSecond({super.key, this.isHome = false,this.iconData = Icons.arrow_back,this.isSecondary = false,this.padding = 5});
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+    return GestureDetector(
+      onTap: (){ Navigator.pop(context); },
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        decoration:  BoxDecoration(
+          shape: BoxShape.circle,
+          color: isSecondary == true ? theme.colorScheme.surfaceContainerHighest :theme.scaffoldBackgroundColor,
+          border: isHome == true ? Border.all(color: theme.dividerColor) : null,
+        ),
+        child: Center(child: Padding(
+          padding:  EdgeInsets.all(padding.toDouble()),
+          child: Icon(iconData,color: theme.primaryColor,size: 20,),
+        ),),
+      ),
+    );
+  }
+}

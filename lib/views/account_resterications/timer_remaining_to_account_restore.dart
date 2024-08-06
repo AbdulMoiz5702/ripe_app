@@ -24,7 +24,7 @@ class TimerRemainingToAccountRestore extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.55,
+            height: MediaQuery.sizeOf(context).height * 0.6,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -63,11 +63,16 @@ class TimerRemainingToAccountRestore extends StatelessWidget {
                       height: 0.002,
                     ),
                     smallText(
-                        title: 'You’ll be able to resume driving in:',color: theme.colorScheme.onSecondaryContainer),
+                        title: 'the safety of others. You’ll be able to resume',color: theme.colorScheme.onSecondaryContainer),
+                    CustomSized(
+                      height: 0.002,
+                    ),
+                    smallText(
+                        title: 'driving in:',color: theme.colorScheme.onSecondaryContainer),
                     Center(
                       child: Container(
-                        height: MediaQuery.sizeOf(context).height * 0.4,
-                          width:MediaQuery.sizeOf(context).width * 0.4,
+                        height: MediaQuery.sizeOf(context).height * 0.45,
+                          width:MediaQuery.sizeOf(context).width * 0.45,
                           child: Custom3DCircularTimer()),
                     ),
                   ],

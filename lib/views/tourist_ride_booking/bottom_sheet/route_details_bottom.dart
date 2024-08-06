@@ -10,6 +10,7 @@ import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
 
 import '../../../consts/colors.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
+import '../../../resubale_widgets/location_sop_points.dart';
 import '../../../resubale_widgets/text_widgets.dart';
 
 class RouteDetailsBottom extends StatelessWidget {
@@ -161,59 +162,7 @@ class RouteDetailsBottom extends StatelessWidget {
                         ],
                       ),
                       if (provider.isExpanded == true)
-                        Container(
-                          height: 200, // Adjust the height as needed
-                          child: ListView.builder(
-                              physics: BouncingScrollPhysics(),
-                              shrinkWrap: true,
-                              itemCount: 4,
-                              reverse: true,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Container(
-                                      width: 2,
-                                      height: MediaQuery.sizeOf(context).height * 0.05,
-                                      color: dividerColor,
-                                      margin: EdgeInsets.only(left: 10,bottom: 5),
-                                    ),
-                                    Container(
-                                      child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Icon(
-                                            index == 0
-                                                ? Icons.brightness_1
-                                                : index == 1
-                                                    ? Icons
-                                                        .brightness_1_outlined
-                                                    : Icons
-                                                        .brightness_1_outlined,
-                                            color: index == 0
-                                                ? theme.colorScheme.secondaryFixed
-                                                : index == 1
-                                                    ? theme.colorScheme.secondaryFixed
-                                                    : theme.colorScheme.secondary,
-                                          ),
-                                          Container(
-                                            margin: EdgeInsets.only(left: 10),
-                                            child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
-                                                  largeText(title: 'The Centaurus Mall', textSize: 14.0,color: theme.primaryColor),
-                                                  CustomSized(height: 0.005,),
-                                                  smallText(title: 'F-8 - Islamabad, The Centaurus Mall', textSize: 11.0,color: theme.colorScheme.onSecondaryContainer),
-                                                ]),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                );
-                              }),
-                        ),
+                        LocationStopPonits(theme: theme),
                     ],
                   );
                 }),

@@ -29,7 +29,6 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var controller = Provider.of<ScheduleRideProvider>(context, listen: false);
-
     return DraggableScrollableSheet(
       maxChildSize: 0.45,
       initialChildSize: 0.45,
