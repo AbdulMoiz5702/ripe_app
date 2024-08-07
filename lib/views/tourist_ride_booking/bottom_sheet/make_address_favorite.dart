@@ -50,7 +50,7 @@ class MakeAddressFavorite extends StatelessWidget {
                 HomeScreenTextField(
                   textColor: theme.primaryColor,
                   removeLeadingIcon: true,
-                  controller: controller,
+                  controller: textController,
                   hint: 'Saved address name',
                   onValidator: (value) {},
                   onFieldSubmittedValue: (newValue) {},

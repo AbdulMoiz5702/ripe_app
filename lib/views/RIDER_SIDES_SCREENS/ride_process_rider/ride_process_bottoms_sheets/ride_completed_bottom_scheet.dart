@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 import 'package:ride_app/resubale_widgets/doted_divider.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-import '../../../../controllers/Rider_ride_process_provider.dart';
 import '../../../../resubale_widgets/location_sop_points.dart';
 import '../../paymnet_invoice/payment_invoice.dart';
 

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:ride_app/views/rider_side_screens/ride_process_rider/ride_process_bottoms_sheets/rider_coming_bottom_sheet.dart';
 
-import '../views/rider_side_screens/rate_pessenger/repost_issue.dart';
-import '../views/rider_side_screens/ride_process_rider/ride_process_bottoms_sheets/ride_completed_bottom_scheet.dart';
-import '../views/rider_side_screens/ride_process_rider/ride_process_bottoms_sheets/rider_arrived_bottom_screen.dart';
-import '../views/rider_side_screens/ride_process_rider/ride_process_bottoms_sheets/rider_in_progress_bottom_sheet.dart';
+import '../views/RIDER_SIDES_SCREENS/rate_pessenger/repost_issue.dart';
+import '../views/RIDER_SIDES_SCREENS/ride_process_rider/ride_process_bottoms_sheets/ride_completed_bottom_scheet.dart';
+import '../views/RIDER_SIDES_SCREENS/ride_process_rider/ride_process_bottoms_sheets/rider_arrived_bottom_screen.dart';
+import '../views/RIDER_SIDES_SCREENS/ride_process_rider/ride_process_bottoms_sheets/rider_coming_bottom_sheet.dart';
+import '../views/RIDER_SIDES_SCREENS/ride_process_rider/ride_process_bottoms_sheets/rider_in_progress_bottom_sheet.dart';
+
 
 
 class RiderRideProcessProvider extends ChangeNotifier {
 
   int rating = 0;
   List<String> selectedTags = [];
+
 
   int indexx = -1;
 
@@ -24,6 +26,7 @@ class RiderRideProcessProvider extends ChangeNotifier {
     'Cleanliness', 'Arrived quickly', 'Navigation'
   ];
 
+
   void toggleTag(String tag) {
       if (selectedTags.contains(tag)) {
         selectedTags.remove(tag);
@@ -32,6 +35,8 @@ class RiderRideProcessProvider extends ChangeNotifier {
       }
       notifyListeners();
   }
+
+
 
   Widget buildStar(int index,context) {
     var theme = Theme.of(context);

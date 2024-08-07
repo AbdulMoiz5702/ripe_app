@@ -157,6 +157,6 @@ const darkSelectedChipColor = Color(0xff0f2e46);
 
 
 // controller
-var controller = TextEditingController();
+var textController = TextEditingController();
 
 

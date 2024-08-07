@@ -114,7 +114,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                       height: 0.020,
                     ),
                     CustomTextField(
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Driver\'s license number',
@@ -124,7 +124,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                     ),
                     CustomSized(height: 0.02),
                     CustomTextField(
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Date of expire',

@@ -113,7 +113,7 @@ class VehicleDetails extends StatelessWidget {
                       height: 0.020,
                     ),
                     CustomLeadingTextField(
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Car Number',
@@ -123,7 +123,7 @@ class VehicleDetails extends StatelessWidget {
                     ),
                     CustomSized(height: 0.023),
                     CustomLeadingTextField(
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Car ownership form Number',
@@ -137,7 +137,7 @@ class VehicleDetails extends StatelessWidget {
                     CustomLeadingTextField(
                       isHintChange: true,
                       leadingText: 'Date of expire',
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'dd/mm/yyyy',

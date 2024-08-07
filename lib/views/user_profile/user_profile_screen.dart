@@ -9,8 +9,8 @@ import 'package:ride_app/views/user_profile/setting_screens/paymentandwalletScre
 import 'package:ride_app/views/user_profile/setting_screens/profile_Screen.dart';
 import 'package:ride_app/views/user_profile/your_account/change_password.dart';
 import '../../resubale_widgets/text_widgets.dart';
+import '../RIDER_SIDES_SCREENS/rider_bottom_navigation/Rider_bottom_screen.dart';
 import '../bottom_screen/Main_bottom_Screen.dart';
-import '../rider_side_screens/rider_bottom_navigation/Rider_bottom_screen.dart';
 
 class UserProfileScreen extends StatelessWidget {
   final bool isUserScreen;

@@ -25,6 +25,7 @@ class CustomLeadingTextField extends StatelessWidget {
     this.leadingText = '',
     this.onTap = null,
     this.showPassword = false,
+    this.maxLines = false ,
   });
 
   final bool isPassword;
@@ -43,13 +44,15 @@ class CustomLeadingTextField extends StatelessWidget {
   final String? iconPath;
   final VoidCallback? onTap;
   final bool showPassword;
+  final bool maxLines;
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
-      height: 45,
+      height:maxLines == true ? MediaQuery.sizeOf(context).height * 0.15: 45,
       child: TextFormField(
+        maxLines: maxLines == true ? 4:1,
           enabled: enable,
           autofocus: autoFocus,
           obscureText: obscureText,
@@ -107,19 +110,19 @@ class CustomLeadingTextField extends StatelessWidget {
             hintStyle: TextStyle(color: theme.colorScheme.surfaceBright),
             border: OutlineInputBorder(
               borderSide: BorderSide(color: theme.colorScheme.surfaceBright),
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(maxLines == true ? 10: 30),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(color: theme.colorScheme.surfaceBright),
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(maxLines == true ? 10: 30),
             ),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: theme.colorScheme.surfaceBright),
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(maxLines == true ? 10: 30),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: theme.colorScheme.surfaceBright),
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(maxLines == true ? 10: 30),
             ),
           ),
       )

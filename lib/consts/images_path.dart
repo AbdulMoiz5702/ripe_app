@@ -103,6 +103,7 @@ const String closedEyeSVG = 'assets/svg_pictures/Eye_closed_svg.svg';
 const String dashBoardSVG = 'assets/svg_pictures/dash_board_svg.svg';
 const String requestSVG = 'assets/svg_pictures/request_svg.svg';
 const String messageSVG = 'assets/svg_pictures/message.svg';
+const String callIconSVG = 'assets/svg_pictures/call.svg';
 
 
 

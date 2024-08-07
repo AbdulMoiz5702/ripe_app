@@ -18,7 +18,7 @@ class _CallScreenState extends State<CallScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<ZegoCloudProvider>(context,listen:false).startCall(userId: widget.userId, userName: widget.callerName);
+    Provider.of<ZegoCloudProvider>(context,listen:false).startCall(userId: widget.userId, userName: widget.callerName,context: context);
   }
 
   @override
@@ -44,7 +44,7 @@ class _CallScreenState extends State<CallScreen> {
             Text('Invite id ${widget.inviteId}',),
             const SizedBox(height: 20,),
             ZegoSendCallInvitationButton(
-              isVideoCall: true,
+              isVideoCall: false,
               resourceID: "ride_app",
               invitees: [
                 ZegoUIKitUser(
@@ -53,8 +53,6 @@ class _CallScreenState extends State<CallScreen> {
                 ),
               ],
             ),
-
-
           ],
         ),
       ),

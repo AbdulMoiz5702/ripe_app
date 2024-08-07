@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_app/consts/strings.dart';
-import 'package:ride_app/controllers/Rider_ride_process_provider.dart';
-import 'package:ride_app/resubale_widgets/CustomButton.dart';
-import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
-import 'package:ride_app/resubale_widgets/custom_leading.dart';
-import 'package:ride_app/resubale_widgets/cutom_leading%20text_feild.dart';
-import 'package:ride_app/resubale_widgets/text_widgets.dart';
+import 'package:ride_app/controllers/pessenger_ride_process_provider.dart';
 
 import '../../../consts/colors.dart';
+import '../../../resubale_widgets/CustomButton.dart';
+import '../../../resubale_widgets/Custom_Sized.dart';
+import '../../../resubale_widgets/cutom_leading text_feild.dart';
+import '../../../resubale_widgets/text_widgets.dart';
 
-class RepostIssueBottomSheet extends StatelessWidget {
-  const RepostIssueBottomSheet({super.key});
+
+class CancelReasonBottomSheet extends StatelessWidget {
+  const CancelReasonBottomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
+      height: MediaQuery.sizeOf(context).height * 0.75,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -23,25 +25,12 @@ class RepostIssueBottomSheet extends StatelessWidget {
         color: theme.scaffoldBackgroundColor,
       ),
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                largeText(
-                    title: 'Report issue',
-                    textSize: 18.0,
-                    color: theme.primaryColor),
-                CustomLeadingSecond(
-                  iconData: Icons.close,
-                  isSecondary: true,
-                  padding: 8,
-                ),
-              ],
-            ),
-            Consumer<RiderRideProcessProvider>(builder: (context, provider, _) {
+            Consumer<PessengerRideProcessProvider>(builder: (context, provider, _) {
               return Column(
-                children: List.generate(repostIssue.length, (index) {
+                children: List.generate(riderCancel.length, (index) {
                   return GestureDetector(
                     onTap: () {
                       provider.changeIndex(index);
@@ -62,14 +51,14 @@ class RepostIssueBottomSheet extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           smallText(
-                              title: repostIssue[index],
+                              title: riderCancel[index],
                               color: theme.primaryColor),
                           provider.indexx == index
                               ? Icon(Icons.check,color: alertDialogIconColor,)
                               : Container(
-                                  height: 0,
-                                  width: 0,
-                                ),
+                            height: 0,
+                            width: 0,
+                          ),
                         ],
                       ),
                     ),
@@ -83,14 +72,28 @@ class RepostIssueBottomSheet extends StatelessWidget {
                 enable: true,
                 isHintChange: true,
                 leadingText: 'Other issue',
-                controller: controller,
+                controller: textController,
                 keyBoardType: TextInputType.text,
                 obscureText:false ,
                 hint: 'Write your issue',
                 onValidator: (value) {},
                 onFieldSubmittedValue: (value) {}),
-            CustomSized(height: 0.03,),
-            CustomButton(title: 'Submit issue', onTap: () {},width: 1,borderRadius: 30,)
+            CustomSized(height: 0.02,),
+            SecondaryCustomButton(
+              titleColor: theme.colorScheme.secondaryFixed,
+              title: 'Cancel my ride',
+              onTap: () {
+                Navigator.pop(context);
+              },
+              borderRadius: 30,
+              width: 1,
+              color: theme.colorScheme.secondaryFixedDim,
+                onBoard: false
+            ),
+            CustomSized(height: 0.02,),
+            CustomButton(title: 'Go back to ride', onTap: () {
+              Navigator.pop(context);
+            },width: 1,borderRadius: 30,onBoard: false,)
           ],
         ),
       ),

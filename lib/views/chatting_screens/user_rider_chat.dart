@@ -7,16 +7,20 @@ import 'package:ride_app/controllers/chat_provider.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-import 'package:ride_app/views/chatting_screens/calls/outgoing_call_screen.dart';
 import 'package:ride_app/views/chatting_screens/components/sender_bubble.dart';
 import '../../alert_dialogs/selection_alert_dialg.dart';
+import '../../resubale_widgets/call_button.dart';
 
 // Main Chat Screen
-class UserRiderChatScreen extends StatelessWidget {
+class UserRiderChatScreen extends StatefulWidget {
+
   const UserRiderChatScreen({super.key});
 
+  @override
+  State<UserRiderChatScreen> createState() => _UserRiderChatScreenState();
+}
 
-
+class _UserRiderChatScreenState extends State<UserRiderChatScreen> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -27,7 +31,6 @@ class UserRiderChatScreen extends StatelessWidget {
         elevation: 1.8,
         title: Row(
           children: [
-            CustomSized(width: 0.03),
             CircleAvatar(
               backgroundColor: lightbackgroundpaperColor,
               child: Image.asset(
@@ -35,20 +38,18 @@ class UserRiderChatScreen extends StatelessWidget {
               ),
             ),
             CustomSized(width: 0.02),
-            normalText(
+            smallText(
               title: 'Peter Dian',
               weight: FontWeight.w700,
-              textSize: 14.0,
               color: theme.primaryColor,
             ),
+
           ],
         ),
         actions: [
           Row(
             children: [
-              InkWell(onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => UserCallScreen()));},
-                  child
-                  : SvgPicture.asset('assets/svg_pictures/call.svg',color: theme.primaryColor,)),
+              CallButton(theme: theme,id: '2',name: 'Ishaq',color: theme.primaryColor,),
               CustomSized(width: 0.05),
               PopupMenuButton<int>(
                 color: theme.scaffoldBackgroundColor,
@@ -220,6 +221,5 @@ class UserRiderChatScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }
+

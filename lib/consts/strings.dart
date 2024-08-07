@@ -277,6 +277,26 @@ var repostIssue = [
   'Any other issue',
 ];
 
+var riderCancel = [
+  'Driver didn\'t show up',
+  'Waited for the driver for too long',
+  'Wrong address ',
+  'Driver was rude',
+  'Driver asked to cancel',
+  'Other issue',
+];
+
+
+var repostIssueUser = [
+  'Lost item in the ride',
+  'Driver didn\'t drop me at my location',
+  'Any other issue',
+];
+
+final List<String> tagsTip = [
+  '0', '5', '10', '15', '20', 'Custom',
+];
+
 
 
 

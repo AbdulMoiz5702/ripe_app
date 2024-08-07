@@ -4,6 +4,7 @@ import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
 import '../consts/colors.dart';
 import '../views/chatting_screens/user_rider_chat.dart';
+import 'call_button.dart';
 
 class ChatRiderListTIle extends StatelessWidget {
   const ChatRiderListTIle({
@@ -57,11 +58,10 @@ class ChatRiderListTIle extends StatelessWidget {
 
           Spacer(),
           CircleAvatar(
-            child: SvgPicture.asset('assets/svg_pictures/call.svg', color: theme.colorScheme.inversePrimary,),
+            child: CallButton(theme: theme,id: '2',name: 'moiz',color: theme.colorScheme.inversePrimary,),
             backgroundColor: theme.colorScheme.primary,
             maxRadius: 24.0,
           ),
-
           InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context) => UserRiderChatScreen()));
@@ -72,7 +72,6 @@ class ChatRiderListTIle extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 12.0, right: 20.0),
                   child: CircleAvatar(
                     child: SvgPicture.asset('assets/svg_pictures/message.svg', color: theme.colorScheme.inversePrimary,),
-
                     backgroundColor: theme.colorScheme.primary,
                     maxRadius: 24.0,
                   ),
