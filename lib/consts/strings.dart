@@ -2,7 +2,6 @@
 
 import 'package:ride_app/consts/images_path.dart';
 import 'package:flutter/material.dart';
-import 'package:ride_app/views/user_profile/setting_screens/paymentandwalletScreen.dart';
 
 var servicesName = [
   'Ride',
@@ -123,7 +122,6 @@ var yourAccountText = [
   'Password',
 ];
 
-
 var yourActivity= [
   rideHistorySVG,
   favoriteSVG,
@@ -196,6 +194,12 @@ var selectTheme = [
   'Dark theme',
 ];
 
+
+var paymentCards = [
+  visaCardSVG,
+  masterCardSVG,
+  amexCardSVG,
+];
 var paymentoptionsImages = [
   payPalSvg,
   creditCardSvg,
@@ -210,8 +214,15 @@ var paymentoptionsText = [
   'Google Pay'
 ];
 
-var paymentCards = [
-  visaCardSVG,
-  masterCardSVG,
-  amexCardSVG,
+var monthlyEarning = [
+  {'Month': 'Feb 2024', 'earning': '2,000'},
+  {'Month': 'Feb 2024', 'earning': '2,000'},
+  {'Month': 'Mar 2024', 'earning': '2,500'},
+  {'Month': 'Apr 2024', 'earning': '3,000'},
+  {'Month': 'Feb 2024', 'earning': '2,000'},
+  {'Month': 'Mar 2024', 'earning': '2,500'},
+  {'Month': 'Apr 2024', 'earning': '3,000'},
 ];
+
+
+

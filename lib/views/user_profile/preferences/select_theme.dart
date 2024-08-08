@@ -4,13 +4,11 @@ import 'package:ride_app/controllers/theme_provider.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-
 import '../../../consts/strings.dart';
 
 
 class ThemeChangeScreen extends StatelessWidget {
   const ThemeChangeScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -59,7 +57,7 @@ class ThemeChangeScreen extends StatelessWidget {
                 });
               }),
             );
-          })
+          }),
         ],
       ),
     );
