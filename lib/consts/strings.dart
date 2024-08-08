@@ -3,6 +3,8 @@
 import 'package:ride_app/consts/images_path.dart';
 import 'package:flutter/material.dart';
 
+import '../models/quiz_model.dart';
+
 var servicesName = [
   'Ride',
   'Explore City',
@@ -223,6 +225,91 @@ var monthlyEarning = [
   {'Month': 'Mar 2024', 'earning': '2,500'},
   {'Month': 'Apr 2024', 'earning': '3,000'},
 ];
+
+
+List<QuizQuestion> quizQuestions = [
+  QuizQuestion(
+    question: 'How physically tired do you feel right now?',
+    options: ['Not tired at all','Slightly tired', 'Moderately tired','Very tired'],
+    correctAnswerIndex: 1,
+  ),
+  QuizQuestion(
+    question: 'How would you describe your emotional state at this moment?',
+    options: ['Calm and relaxed', 'Anxious or stressed', 'Irritated or angry','Depressed or sad'],
+    correctAnswerIndex: 2,
+  ),
+  QuizQuestion(
+    question: 'How well can you concentrate on your surroundings while driving?',
+    options: ['Very well', 'Somewhat well', 'Not very well','Poorly'],
+    correctAnswerIndex: 2,
+  ),
+  QuizQuestion(
+    question: 'Imagine a sudden obstacle appears on the road. How confident are you in your ability to react quickly?',
+    options: ['Very confident', 'Somewhat confident', 'Somewhat confident','Somewhat confident'],
+    correctAnswerIndex: 0,
+  ),
+  QuizQuestion(
+    question: 'Are you experiencing any physical discomfort (e.g., headache, back pain, etc.) right now?',
+    options: ['No discomfort', 'Mild discomfort', 'Moderate discomfort','Severe discomfort'],
+    correctAnswerIndex: 0,
+  ),
+  QuizQuestion(
+    question: 'How well did you sleep last night?',
+    options: ['Very well', 'Very well', 'Not well','Didn’t sleep at all'],
+    correctAnswerIndex: 0,
+  ),
+  QuizQuestion(
+    question: 'On a scale of 1 to 10, how stressed do you feel currently?',
+    options: ['1 (Not stressed)', '3', '6','10 (Extremely stressed)'],
+    correctAnswerIndex: 0,
+  ),
+  QuizQuestion(
+    question: 'Have you taken any medication or substances (including alcohol) in the last 24 hours?',
+    options: ['None', 'Over-the-counter medication', 'Prescription medication','Alcohol or recreational drugs'],
+    correctAnswerIndex: 0,
+  ),
+  QuizQuestion(
+    question: 'How would you rate your overall well-being right now?',
+    options: ['Excellent', 'Good', 'Fair','Poor'],
+    correctAnswerIndex: 0,
+  ),
+  QuizQuestion(
+    question: 'How aware are you of your surroundings while driving?',
+    options: ['Extremely aware', 'Reasonably aware', 'FairSomewhat aware','Not aware at all'],
+    correctAnswerIndex: 0,
+  ),
+
+];
+
+
+var repostIssue = [
+  'Lost item in the ride',
+  'Driver didn\'t drop me at my location',
+  'Payment not received ',
+  'Passenger was rude',
+  'Any other issue',
+];
+
+var riderCancel = [
+  'Driver didn\'t show up',
+  'Waited for the driver for too long',
+  'Wrong address ',
+  'Driver was rude',
+  'Driver asked to cancel',
+  'Other issue',
+];
+
+
+var repostIssueUser = [
+  'Lost item in the ride',
+  'Driver didn\'t drop me at my location',
+  'Any other issue',
+];
+
+final List<String> tagsTip = [
+  '0', '5', '10', '15', '20', 'Custom',
+];
+
 
 
 

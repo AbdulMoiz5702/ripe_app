@@ -113,7 +113,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                       height: 0.020,
                     ),
                     CustomLeadingTextField(
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'Car insurance number',
@@ -125,7 +125,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                     CustomLeadingTextField(
                       isHintChange: true,
                       leadingText: 'Date of issue',
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'dd/mm/yyyy',
@@ -139,7 +139,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                     CustomLeadingTextField(
                       isHintChange: true,
                       leadingText: 'Date of expire',
-                      controller: controller,
+                      controller: textController,
                       keyBoardType: TextInputType.emailAddress,
                       obscureText: false,
                       hint: 'dd/mm/yyyy',

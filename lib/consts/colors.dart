@@ -69,6 +69,15 @@ const Color lightbackgroundpaperColor = Color(0xffCCECFB);
 // light divider color
 const lightDividerColor = Color(0xff414652);
 
+// login error alert dialog backgroud color
+const lightAlertDialogErrorBackGroundColor = Color(0xffFFE5D1);
+const lightAlertDialogErrorIconColor = Color(0xffFF3A1C);
+const lightAlertDialogErrorTextColor = Color(0xff7A051A);
+
+// dark selected chip color
+const lightSelectedChipTextColor = Color(0xff015CA9);
+const lightSelectedChipColor = Color(0xffd7f0fc);
+
 // bottom_sheets_leading_colors
 const Color lightBottomSheetLeadingColor = Color(0xffe5e7eb);
 
@@ -143,6 +152,9 @@ const darkAlertDialogErrorBackGroundColor = Color(0xff7a051a);
 const darkAlertDialogErrorIconColor = Color(0xffff9e76);
 const darkAlertDialogErrorTextColor = Color(0xffffe5d1);
 
+// dark selected chip color
+const darkSelectedChipTextColor = Color(0xff64DBF9);
+const darkSelectedChipColor = Color(0xff0f2e46);
 
 
 //color for payment and wallet screen -> paypal background color of circle avatar
@@ -157,6 +169,6 @@ const paymentandwalletremovebuttoncolorblacktheme = Color(0xffFF9E76);
 
 
 // controller
-var controller = TextEditingController();
+var textController = TextEditingController();
 
 

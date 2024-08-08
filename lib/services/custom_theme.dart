@@ -55,44 +55,28 @@ ThemeData lightTheme() {
       // shedule screen in progress  button color
       outline: lightDarkGreenColor,
       // shedule screen in progress  button Text color
-
-
       outlineVariant: lightGreenColor,
-
       //profile Screen image background Color. main image in profile screen
       onPrimaryFixed:  profileScreenopacityColor,
-
       //outline color in text of profile screen
       primaryFixed: iconColor,
-
       //outline color in textformfield of profile screen
-      onSurfaceVariant: darkSecondaryTextColors,
-
+      onSurfaceVariant: greyColor,
       //button color in profile screen
       primaryFixedDim: buttonColor,
       // login error alert dialog backgroud color
-      onError:darkAlertDialogErrorBackGroundColor,
+      onError:lightAlertDialogErrorBackGroundColor,
       // login error alert dialog iconError color
-      onErrorContainer: darkAlertDialogErrorIconColor,
+      onErrorContainer: lightAlertDialogErrorIconColor,
       // login error alert dialog text color
-      onTertiary: darkAlertDialogErrorTextColor,
-
-      //circle avatar border color
-      inverseSurface: textFieldHintColor,
-
-      //color for payment and wallet screen -> paypal background color of circle avatar
-      error: paymentgatewayavatcpolorwhitetheme,
+      onTertiary: lightAlertDialogErrorTextColor,
+      // chip  color
+      onTertiaryContainer: lightSelectedChipColor,
+      // chip text color
+      onTertiaryFixed: lightSelectedChipTextColor
 
 
-      //light grey color for border of custom leading
-      errorContainer: iconColor,
 
-
-//payment and wallet screen remove button color
-      surfaceVariant: paymentandwalletremovebuttoncolorwhitetheme,
-
-
-        background:  iconColor,
 
 
 
@@ -146,7 +130,7 @@ ThemeData darkTheme() {
         // custom text filed border
         onSurface: darkTextFieldBorderColor,
         // custom text filed hint color,
-        surfaceBright: whiteColor,
+        surfaceBright: darkTextFieldHintColor,
         // home_screen_text_field fill color,
         surfaceContainer: darkTextFieldColor,
         // become a driver_Container_border_color
@@ -185,25 +169,10 @@ ThemeData darkTheme() {
         onErrorContainer: darkAlertDialogErrorIconColor,
         // login error alert dialog text color
         onTertiary: darkAlertDialogErrorTextColor,
-
-
-        //circle avatar border color
-        inverseSurface: primaryTextColor,
-
-
-        //color for payment and wallet screen -> paypal background color of circle avatar
-        error: paymentgatewayavatcpolorblacktheme,
-        //light grey color for border of custom leading
-        errorContainer: whiteColor,
-
-//payment and wallet screen remove button color
-        surfaceVariant: paymentandwalletremovebuttoncolorblacktheme,
-
-        background: textFieldHintColor,
-
-
-
-
+          // chip  color
+          onTertiaryContainer: darkSelectedChipColor,
+          // chip text color
+          onTertiaryFixed: darkSelectedChipTextColor
       ),
       // divider color
       dividerColor: darkDividerColor,

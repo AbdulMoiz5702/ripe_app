@@ -103,7 +103,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             OutlineCustomTextField(
 
-                controller: controller,
+                controller: textController,
                 keyBoardType: TextInputType.text,
                 svgs: profileSVG,
                 label: 'Full Name',
@@ -170,7 +170,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
             OutlineCustomTextField(
 
-                controller: controller,
+                controller: textController,
                 keyBoardType: TextInputType.text,
                 svgs: callSVG,
                 label: 'Mobile Number',
@@ -181,7 +181,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             OutlineCustomTextField(
 
-                controller: controller,
+                controller: textController,
                 keyBoardType: TextInputType.text,
                 svgs: mailSVG,
                 label: 'Email',
@@ -194,7 +194,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             OutlineCustomTextField(
 
-                controller: controller,
+                controller: textController,
                 keyBoardType: TextInputType.text,
 
                 svgs: calenderSVG,

@@ -29,7 +29,7 @@ class AddCreditCardScreen extends StatelessWidget {
             CustomLeadingTextField(
               isHintChange: true,
               leadingText: 'Card number',
-              controller: controller,
+              controller: textController,
               keyBoardType: TextInputType.emailAddress,
               obscureText: false,
               hint: 'xxxx xxxx xxxx xxxx',
@@ -42,7 +42,7 @@ class AddCreditCardScreen extends StatelessWidget {
                 Expanded(child: CustomLeadingTextField(
                   isHintChange: true,
                   leadingText: 'Expiry date',
-                  controller: controller,
+                  controller: textController,
                   keyBoardType: TextInputType.emailAddress,
                   obscureText: false,
                   hint: 'MM/YY',
@@ -53,7 +53,7 @@ class AddCreditCardScreen extends StatelessWidget {
                 Expanded(child: CustomLeadingTextField(
                   isHintChange: true,
                   leadingText: 'CVV',
-                  controller: controller,
+                  controller: textController,
                   keyBoardType: TextInputType.emailAddress,
                   obscureText: false,
                   hint: '•••',
@@ -66,7 +66,7 @@ class AddCreditCardScreen extends StatelessWidget {
             CustomLeadingTextField(
               isHintChange: true,
               leadingText: 'Nickname(optional)',
-              controller: controller,
+              controller: textController,
               keyBoardType: TextInputType.emailAddress,
               obscureText: false,
               hint: 'United Bank Ltd.',

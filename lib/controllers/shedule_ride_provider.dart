@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import '../views/tourist_ride_booking/bottom_sheet/ai_suggested_route_bottom_sheet.dart';
 import '../views/tourist_ride_booking/bottom_sheet/air_port_pick_up.dart';
@@ -66,18 +65,23 @@ class ScheduleRideProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  openSearchForRiderBottom(context){
-    return showModalBottomSheet(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-        ),
-        context: context, builder: (context){
-      return SearchForRiderBottom();
-    });
-  }
+
+
+
+  // openSearchForRiderBottom(context){
+  //   return showModalBottomSheet(
+  //       shape: const RoundedRectangleBorder(
+  //         borderRadius: BorderRadius.only(
+  //           topLeft: Radius.circular(20),
+  //           topRight: Radius.circular(20),
+  //         ),
+  //       ),
+  //       context: context, builder: (context){
+  //     return SearchForRiderBottom();
+  //   },
+  //     isScrollControlled: true
+  //   );
+  // }
 
 
 

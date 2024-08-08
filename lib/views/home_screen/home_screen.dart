@@ -123,7 +123,7 @@ class HomeScreen extends StatelessWidget {
                         hintColor: theme.colorScheme.secondaryContainer,
                         color: theme.colorScheme.surfaceContainer,
                         enable:false,
-                        controller: controller,
+                        controller: textController,
                         hint: 'Enter your destination',
                         onValidator: (value){},
                         onFieldSubmittedValue: (value){},

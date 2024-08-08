@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ride_app/views/rider_side_screens/request_screen/bookings/ride_details_screen.dart';
+import '../../../../resubale_widgets/ride_picture_list.dart';
 import 'booking_card.dart';
 
 

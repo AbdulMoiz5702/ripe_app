@@ -199,6 +199,7 @@ class SecondaryCustomButton extends StatelessWidget {
   final Color borderColor;
   final FontWeight weight;
   final double textsize;
+  final IconData iconData ;
 
   final   double widthbetweentextandicon ;
   const SecondaryCustomButton(
@@ -215,6 +216,7 @@ class SecondaryCustomButton extends StatelessWidget {
         this.weight =  FontWeight.w700,
         this.textsize = 15.0,
         this.widthbetweentextandicon = 0.03,
+        this.iconData = Icons.arrow_forward
       });
 
 
@@ -245,7 +247,7 @@ class SecondaryCustomButton extends StatelessWidget {
             ),
             onBoard == true
                 ? Icon(
-                    Icons.arrow_forward,
+                    iconData,
                     color: titleColor,
                   )
                 : Container(

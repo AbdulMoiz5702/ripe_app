@@ -124,7 +124,7 @@ class BottomSheetContent extends StatelessWidget {
                   height: 0.02,
                 ),
                 HomeScreenTextField(
-                  controller: controller,
+                  controller: textController,
                   hint: 'search',
                   onValidator: (value) {},
                   onFieldSubmittedValue: (newValue) {},

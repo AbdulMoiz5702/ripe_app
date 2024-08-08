@@ -6,7 +6,11 @@ const String message = 'assets/imagesOnBording/chat.png';
 const String bookMark = 'assets/imagesOnBording/bookmark.png';
 const String card = 'assets/imagesOnBording/card.png';
 const String notificationBell = 'assets/imagesOnBording/notification_bell.png';
-
+const String verificationSuccessful = 'assets/imagesOnBording/verified_successfully.png';
+const String verificationUnSuccessful = 'assets/imagesOnBording/verification_unsuccessful.png';
+const String stopWatch= 'assets/imagesOnBording/stop_watch.png';
+const String rocket = 'assets/imagesOnBording/rocket.png';
+const String coffee = 'assets/imagesOnBording/coffee_cup.png';
 
 // login Option
 const String google = 'assets/loginOption/gogole.png';
@@ -99,6 +103,7 @@ const String closedEyeSVG = 'assets/svg_pictures/Eye_closed_svg.svg';
 const String dashBoardSVG = 'assets/svg_pictures/dash_board_svg.svg';
 const String requestSVG = 'assets/svg_pictures/request_svg.svg';
 const String messageSVG = 'assets/svg_pictures/message.svg';
+const String callIconSVG = 'assets/svg_pictures/call.svg';
 
 
 

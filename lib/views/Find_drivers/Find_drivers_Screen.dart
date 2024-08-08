@@ -30,7 +30,7 @@ class FindDriversScreen extends StatelessWidget {
             padding: const EdgeInsets.all(14.0),
             child: HomeScreenTextField(
                 color: theme.colorScheme.surfaceContainerHighest,
-                controller: controller,
+                controller: textController,
                 hintColor: theme.primaryColor,
                 hint: 'Search a driver',
                 onValidator: (value) {
