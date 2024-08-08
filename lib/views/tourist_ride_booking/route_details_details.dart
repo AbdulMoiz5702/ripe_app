@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../../consts/colors.dart';
 import '../../controllers/shedule_ride_provider.dart';
 import '../../resubale_widgets/custom_leading.dart';
+import '../../resubale_widgets/rider_offer_card.dart';
 
 
 class RouteDetailsDetailsScreen extends StatefulWidget {
@@ -35,7 +34,8 @@ class _RouteDetailsDetailsScreenState extends State<RouteDetailsDetailsScreen> {
         ],
       ),
       backgroundColor: theme.primaryColor,
-      body: Column(
+      body: Stack(
+        fit:StackFit.expand,
         children: [
 
         ],

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
-import '../../../alert_dialogs/selection_alert_dialg.dart';
 import '../../../controllers/shedule_ride_provider.dart';
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
+import '../../../resubale_widgets/bottom_sheets_leading.dart';
 import '../../../resubale_widgets/notification_list_tile.dart';
 import '../../../resubale_widgets/text_widgets.dart';
 
-
 class SearchForRiderBottom extends StatefulWidget {
   const SearchForRiderBottom({super.key});
-
   @override
   _SearchForRiderBottomState createState() => _SearchForRiderBottomState();
 }
@@ -28,10 +25,9 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var controller = Provider.of<ScheduleRideProvider>(context, listen: false);
     return DraggableScrollableSheet(
-      maxChildSize: 0.45,
-      initialChildSize: 0.45,
+      maxChildSize: 0.5,
+      initialChildSize: 0.5,
       minChildSize: 0.11,
       expand: false,
       snap: true,
@@ -42,6 +38,7 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
             return true;
           },
           child: Container(
+            height: MediaQuery.sizeOf(context).height * 0.5,
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: theme.scaffoldBackgroundColor,
@@ -62,7 +59,8 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
                     ),
                     SliverToBoxAdapter(
                       child: height < 0.12
-                          ? Container(height: 0, width: 0)  : Padding(
+                          ? Container(height: 0, width: 0)
+                          : Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,7 +95,7 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
                             CustomSized(height: 0.02),
                             GestureDetector(
                               onTap: () {
-                                AlertDialogClass().showFareComparisonAlertDialog(context);
+                                // Show fare comparison dialog
                               },
                               child: largeText(
                                 title: 'Compare fare with our competitors',
@@ -135,7 +133,7 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
                           titleColor: theme.colorScheme.secondaryFixed,
                           title: 'Cancel search for ride',
                           onTap: () {
-                            controller.openSearchDriverCancelConformationSheet(context);
+
                           },
                           onBoard: false,
                           borderRadius: 30,

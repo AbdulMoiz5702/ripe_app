@@ -7,6 +7,7 @@ import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
+import 'package:ride_app/views/tourist_ride_booking/rider_request_screen.dart';
 
 import '../../../consts/colors.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
@@ -275,8 +276,7 @@ class RouteDetailsBottom extends StatelessWidget {
                 CustomButton(
                   title: 'Search for riders',
                   onTap: () {
-                    Navigator.pop(context);
-                    controller.openSearchForRiderBottom(context);
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=> RiderRequestScreen()));
                   },
                   onBoard: false,
                   borderRadius: 30,
