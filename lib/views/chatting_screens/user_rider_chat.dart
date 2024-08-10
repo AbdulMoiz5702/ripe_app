@@ -49,7 +49,7 @@ class _UserRiderChatScreenState extends State<UserRiderChatScreen> {
         actions: [
           Row(
             children: [
-              CallButton(theme: theme,id: '2',name: 'Ishaq',color: theme.primaryColor,),
+              CallButton(theme: theme,id: '3',name: 'Moiz',color: theme.primaryColor,),
               CustomSized(width: 0.05),
               PopupMenuButton<int>(
                 color: theme.scaffoldBackgroundColor,

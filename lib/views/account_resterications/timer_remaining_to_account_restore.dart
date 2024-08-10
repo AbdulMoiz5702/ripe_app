@@ -24,7 +24,7 @@ class TimerRemainingToAccountRestore extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.6,
+            height: MediaQuery.sizeOf(context).height * 0.633,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -33,50 +33,48 @@ class TimerRemainingToAccountRestore extends StatelessWidget {
                   topLeft: Radius.circular(30),
                 )),
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BrandName(theme: theme),
-                    CustomSized(
-                      height: 0.02,
-                    ),
-                    largeText(title: 'Time left for unrestriction',color:theme.primaryColor),
-                    CustomSized(
-                      height: 0.01,
-                    ),
-                    smallText(
-                        title: 'Your account is currently restricted due to a recent',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.002,
-                    ),
-                    smallText(
-                        title: 'assessment. We understand that situations can',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.002,
-                    ),
-                    smallText(
-                        title: 'change, and we want to ensure your safety and',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.002,
-                    ),
-                    smallText(
-                        title: 'the safety of others. You’ll be able to resume',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.002,
-                    ),
-                    smallText(
-                        title: 'driving in:',color: theme.colorScheme.onSecondaryContainer),
-                    Center(
-                      child: Container(
-                        height: MediaQuery.sizeOf(context).height * 0.45,
-                          width:MediaQuery.sizeOf(context).width * 0.45,
-                          child: Custom3DCircularTimer()),
-                    ),
-                  ],
-                ),
+              padding: const EdgeInsets.only(top:20.0,right: 20.0,left:20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BrandName(theme: theme),
+                  CustomSized(
+                    height: 0.02,
+                  ),
+                  largeText(title: 'Time left for unrestriction',color:theme.primaryColor),
+                  CustomSized(
+                    height: 0.01,
+                  ),
+                  smallText(
+                      title: 'Your account is currently restricted due to a recent',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.002,
+                  ),
+                  smallText(
+                      title: 'assessment. We understand that situations can',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.002,
+                  ),
+                  smallText(
+                      title: 'change, and we want to ensure your safety and',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.002,
+                  ),
+                  smallText(
+                      title: 'the safety of others. You’ll be able to resume',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.002,
+                  ),
+                  smallText(
+                      title: 'driving in:',color: theme.colorScheme.onSecondaryContainer),
+                  Center(
+                    child: Container(
+                      height: MediaQuery.sizeOf(context).height * 0.4,
+                        width:MediaQuery.sizeOf(context).width * 0.4,
+                        child: Custom3DCircularTimer()),
+                  ),
+                ],
               ),
             ),
           ),

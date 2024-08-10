@@ -68,23 +68,6 @@ class ScheduleRideProvider extends ChangeNotifier {
 
 
 
-  // openSearchForRiderBottom(context){
-  //   return showModalBottomSheet(
-  //       shape: const RoundedRectangleBorder(
-  //         borderRadius: BorderRadius.only(
-  //           topLeft: Radius.circular(20),
-  //           topRight: Radius.circular(20),
-  //         ),
-  //       ),
-  //       context: context, builder: (context){
-  //     return SearchForRiderBottom();
-  //   },
-  //     isScrollControlled: true
-  //   );
-  // }
-
-
-
   openSearchDriverCancelConformationSheet(context){
     return showModalBottomSheet(
         shape: const RoundedRectangleBorder(

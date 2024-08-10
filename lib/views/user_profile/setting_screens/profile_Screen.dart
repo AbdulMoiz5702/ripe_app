@@ -45,7 +45,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Padding(
                     padding: const EdgeInsets.only(top: 2.0),
                     child: DottedBorder(
-
                       padding: EdgeInsets.zero,
                       borderType: BorderType.RRect,
                       radius: Radius.circular(500),

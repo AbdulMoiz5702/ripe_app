@@ -17,102 +17,102 @@ class ZegoCloudProvider extends ChangeNotifier {
       appSign: 'ee39eec314b544e01f5e004a040a747e95f1e2a96288bd52fb1f622b5bb4205a' /*input your AppSign*/,
       userID:userId,
       userName:userName,
-      uiConfig: ZegoCallInvitationUIConfig(
-        invitee: ZegoCallInvitationInviteeUIConfig(
-          backgroundBuilder: (context,size,calling){
-            return Scaffold(
-              backgroundColor: theme.scaffoldBackgroundColor,
-            );
-          },
-            spacingBetweenAvatarAndName: MediaQuery.sizeOf(context).height * 0.05,
-          showCallingText: false,
-          acceptButton: ZegoCallButtonUIConfig(
-            textStyle: TextStyle(
-              fontSize: 0.02,
-            ),
-            icon: Container(
-              alignment: Alignment.center,
-              color: theme.colorScheme.secondaryFixed,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(callIconSVG,color: theme.colorScheme.inversePrimary,),
-                  CustomSized(width: 0.02,height: 0,),
-                  Material(color:theme.colorScheme.secondaryFixed, child: largeText(title:'Accept',textSize: 15.0,color: theme.colorScheme.inversePrimary,)),
-                ],
-              ),
-            ),
-            iconSize: Size(MediaQuery.sizeOf(context).width * 0.4, MediaQuery.sizeOf(context).height * 0.06),
-            size: Size(MediaQuery.sizeOf(context).width * 0.3, MediaQuery.sizeOf(context).height * 0.1),
-          ),
-          declineButton: ZegoCallButtonUIConfig(
-            textStyle: TextStyle(
-              fontSize: 0.02,
-            ),
-            icon: Container(
-              alignment: Alignment.center,
-              color: theme.colorScheme.secondaryFixed,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(callIconSVG,color: theme.colorScheme.inversePrimary,),
-                  CustomSized(width: 0.02,height: 0,),
-                  Material(
-                      color:theme.colorScheme.secondaryFixed,
-                      child: largeText(title:'Decline',textSize: 15.0,color: theme.colorScheme.inversePrimary,)),
-                ],
-              ),
-            ),
-            iconSize: Size(MediaQuery.sizeOf(context).width * 0.4, MediaQuery.sizeOf(context).height * 0.06),
-            size: Size(MediaQuery.sizeOf(context).width * 0.3, MediaQuery.sizeOf(context).height * 0.1),
-          ),
-          popUp: ZegoCallInvitationNotifyPopUpUIConfig(
-            builder: (data) {
-              return Material(
-                color: Colors.transparent,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    smallText(title: 'Incoming Call from',color: theme.primaryColor),
-                    CustomSized(width: 0.2,height: 0,),
-                    largeText(title: data.inviter!.name,color: theme.colorScheme.secondary),
-                    // Custom UI elements can be added here
-                  ],
-                ),
-              );
-            },
-            visible: true,
-          )
-        ),
-        inviter: ZegoCallInvitationInviterUIConfig(
-          backgroundBuilder: (context,size,calling){
-            return Scaffold(
-              backgroundColor: theme.scaffoldBackgroundColor,
-            );
-          },
-          spacingBetweenAvatarAndName: MediaQuery.sizeOf(context).height * 0.05,
-          cancelButton: ZegoCallButtonUIConfig(
-            icon: Container(
-                width: MediaQuery.sizeOf(context).width * 0.8,
-                height: MediaQuery.sizeOf(context).height * 0.06,
-                color: theme.colorScheme.secondaryFixed,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset(callIconSVG,color: theme.colorScheme.inversePrimary,),
-                    CustomSized(width: 0.02,height: 0,),
-                    Material(
-                      color:theme.colorScheme.secondaryFixed,
-                        child: largeText(title:'End call',textSize: 15.0,color: theme.colorScheme.inversePrimary,)),
-                  ],
-                ),
-              ),
-            iconSize: Size(MediaQuery.sizeOf(context).width * 0.8, MediaQuery.sizeOf(context).height * 0.05),
-            size: Size(MediaQuery.sizeOf(context).width * 0.8, MediaQuery.sizeOf(context).height * 0.05),
-          ),
-          showCallingText: false,
-        )
-      ),
+     uiConfig: ZegoCallInvitationUIConfig(
+         invitee: ZegoCallInvitationInviteeUIConfig(
+             backgroundBuilder: (context,size,calling){
+               return Scaffold(
+                 backgroundColor: theme.scaffoldBackgroundColor,
+               );
+             },
+             spacingBetweenAvatarAndName: MediaQuery.sizeOf(context).height * 0.05,
+             showCallingText: false,
+             acceptButton: ZegoCallButtonUIConfig(
+               textStyle: TextStyle(
+                 fontSize: 0.02,
+               ),
+               icon: Container(
+                 alignment: Alignment.center,
+                 color: theme.colorScheme.secondaryFixed,
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     SvgPicture.asset(callIconSVG,color: theme.colorScheme.inversePrimary,),
+                     CustomSized(width: 0.02,height: 0,),
+                     Material(color:theme.colorScheme.secondaryFixed, child: largeText(title:'Accept',textSize: 15.0,color: theme.colorScheme.inversePrimary,)),
+                   ],
+                 ),
+               ),
+               iconSize: Size(MediaQuery.sizeOf(context).width * 0.4, MediaQuery.sizeOf(context).height * 0.06),
+               size: Size(MediaQuery.sizeOf(context).width * 0.3, MediaQuery.sizeOf(context).height * 0.1),
+             ),
+             declineButton: ZegoCallButtonUIConfig(
+               textStyle: TextStyle(
+                 fontSize: 0.02,
+               ),
+               icon: Container(
+                 alignment: Alignment.center,
+                 color: theme.colorScheme.secondaryFixed,
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                     SvgPicture.asset(callIconSVG,color: theme.colorScheme.inversePrimary,),
+                     CustomSized(width: 0.02,height: 0,),
+                     Material(
+                         color:theme.colorScheme.secondaryFixed,
+                         child: largeText(title:'Decline',textSize: 15.0,color: theme.colorScheme.inversePrimary,)),
+                   ],
+                 ),
+               ),
+               iconSize: Size(MediaQuery.sizeOf(context).width * 0.4, MediaQuery.sizeOf(context).height * 0.06),
+               size: Size(MediaQuery.sizeOf(context).width * 0.3, MediaQuery.sizeOf(context).height * 0.1),
+             ),
+             popUp: ZegoCallInvitationNotifyPopUpUIConfig(
+               builder: (data) {
+                 return Material(
+                   color: Colors.transparent,
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     children: [
+                       smallText(title: 'Incoming Call from',color: theme.primaryColor),
+                       CustomSized(width: 0.2,height: 0,),
+                       largeText(title: data.inviter!.name,color: theme.colorScheme.secondary),
+                       // Custom UI elements can be added here
+                     ],
+                   ),
+                 );
+               },
+               visible: true,
+             )
+         ),
+         inviter: ZegoCallInvitationInviterUIConfig(
+           backgroundBuilder: (context,size,calling){
+             return Scaffold(
+               backgroundColor: theme.scaffoldBackgroundColor,
+             );
+           },
+           spacingBetweenAvatarAndName: MediaQuery.sizeOf(context).height * 0.05,
+           cancelButton: ZegoCallButtonUIConfig(
+             icon: Container(
+               width: MediaQuery.sizeOf(context).width * 0.8,
+               height: MediaQuery.sizeOf(context).height * 0.06,
+               color: theme.colorScheme.secondaryFixed,
+               child: Row(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   SvgPicture.asset(callIconSVG,color: theme.colorScheme.inversePrimary,),
+                   CustomSized(width: 0.02,height: 0,),
+                   Material(
+                       color:theme.colorScheme.secondaryFixed,
+                       child: largeText(title:'End call',textSize: 15.0,color: theme.colorScheme.inversePrimary,)),
+                 ],
+               ),
+             ),
+             iconSize: Size(MediaQuery.sizeOf(context).width * 0.8, MediaQuery.sizeOf(context).height * 0.05),
+             size: Size(MediaQuery.sizeOf(context).width * 0.8, MediaQuery.sizeOf(context).height * 0.05),
+           ),
+           showCallingText: false,
+         )
+     ),
       plugins: [ZegoUIKitSignalingPlugin()],
       notificationConfig: ZegoCallInvitationNotificationConfig(
         androidNotificationConfig: ZegoCallAndroidNotificationConfig(

@@ -7,8 +7,8 @@ import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
-import '../../../consts/colors.dart';
-import '../../../resubale_widgets/cutom_leading text_feild.dart';
+import '../../../../consts/colors.dart';
+import '../../../../resubale_widgets/cutom_leading text_feild.dart';
 
 class AddCreditCardScreen extends StatelessWidget {
   const AddCreditCardScreen({super.key});

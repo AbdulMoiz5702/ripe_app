@@ -5,7 +5,7 @@ import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
-import '../../user_profile/your_account/add_credit_card.dart';
+import '../../user_profile/setting_screens/payements_and_cards/add_credit_card.dart';
 
 class CreditCardBottomSheet extends StatelessWidget {
   const CreditCardBottomSheet({super.key});

@@ -73,14 +73,7 @@ ThemeData lightTheme() {
       // chip  color
       onTertiaryContainer: lightSelectedChipColor,
       // chip text color
-      onTertiaryFixed: lightSelectedChipTextColor
-
-
-
-
-
-
-
+      onTertiaryFixed: lightSelectedChipTextColor,
     ),
     // divider color
     dividerColor: lightDividerColor,

@@ -4,14 +4,14 @@ import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
-class LocationCard extends StatelessWidget {
+class BookingCard extends StatelessWidget {
   final String date;
   final String time;
   final double price;
   final List<String> locations;
   final double distance;
   final VoidCallback onTap;
-  const LocationCard({
+  const BookingCard({
     Key? key,
     required this.date,
     required this.time,

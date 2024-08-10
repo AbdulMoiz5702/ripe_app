@@ -3,7 +3,6 @@ import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-
 import '../views/pessenger_rider_process/pessenger_rider_comming.dart';
 
 
@@ -97,7 +96,6 @@ class RideOfferCard extends StatelessWidget {
                       width: 0.4,
                       title: 'Accept offer', onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=> PessengerRiderComing()));
-
                   })
                 ],
               ),
