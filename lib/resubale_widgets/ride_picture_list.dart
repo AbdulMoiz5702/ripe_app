@@ -20,16 +20,17 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    return Card(
-      color: theme.colorScheme.inversePrimary,
+    return Container(
+      color: theme.colorScheme.onBackground,
+
+
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CustomSized(
-              height: 0.010,
-            ),
+
+
             smallText(
               title: '  Vehicle details',
               color: theme.colorScheme.onSecondaryContainer),
@@ -47,8 +48,8 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                     image: DecorationImage(image: AssetImage(car)),
                   ),
                   child: Container(
-                    height: 30,
-                    width: 30,
+                    height: 22,
+                    width: 22,
                     alignment: Alignment.center,
                     decoration:  BoxDecoration(
                       shape: BoxShape.circle,
@@ -60,14 +61,14 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                 largeText(title: 'Honda - Grey Corolla', textSize: 14.0,color: theme.primaryColor),
                 Container(
                   margin: const EdgeInsets.only(right: 5),
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(12),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                      color: theme.colorScheme.surfaceContainerHighest,
+                      color: textFieldHintColor.withOpacity(0.08),
                       borderRadius: BorderRadius.circular(
                         10,
                       )),
-                  child: largeText(title: 'RIR-19-467', textSize: 14.0,color:theme.primaryColor),
+                  child: largeText(title: 'RIR-19-467', textSize: 14.0,color:theme.primaryColor, weight: FontWeight.w500),
                 ),
               ],
             ),
@@ -75,7 +76,7 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
               height: 0.010,
             ),
             SizedBox(
-              height: 100,
+              height: 64,
               width: double.infinity,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -85,7 +86,7 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
                 itemBuilder: (context, index) {
                   return Container(
                     margin: const EdgeInsets.all(2),
-                    width: MediaQuery.of(context).size.width * 0.3, // Adjust the width as needed
+                    width: MediaQuery.of(context).size.width * 0.18, // Adjust the width as needed
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       image: DecorationImage(
@@ -107,14 +108,17 @@ class _RideDetailsScreenState extends State<RideDetailsScreen> {
               indicatorWidth: MediaQuery.of(context).size.width * 0.3,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: lightgreyColor),
+                  color: lightgreyColor.withOpacity(0.85)),
               indicatorDecoration: BoxDecoration(
-                  color: theme.dividerColor,
+                  color: darkSecondaryTextColors,
                   borderRadius: BorderRadius.circular(10)),
             ),
+
+
             const CustomSized(
               height: 0.010,
             ),
+
           ],
         ),
       ),

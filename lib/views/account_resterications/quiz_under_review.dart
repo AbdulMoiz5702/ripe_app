@@ -24,7 +24,7 @@ class QuizUnderReview extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.55,
+            height: MediaQuery.sizeOf(context).height * 0.58,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -34,48 +34,46 @@ class QuizUnderReview extends StatelessWidget {
                 )),
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BrandName(theme: theme),
-                    CustomSized(
-                      height: 0.02,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BrandName(theme: theme),
+                  CustomSized(
+                    height: 0.02,
+                  ),
+                  largeText(title: 'Thanks for your cooperation!',color:theme.primaryColor),
+                  CustomSized(height: 0.01,),
+                  largeText(title: 'We shall respond you soon.',color:theme.primaryColor),
+                  CustomSized(
+                    height: 0.01,
+                  ),
+                  smallText(
+                      title: 'We’ve received your answers submitted in the',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.002,
+                  ),
+                  smallText(
+                      title: 'quiz. It’ll take a while to anlyze the answers and give you feedback.',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.002,
+                  ),
+                  smallText(
+                      title: 'give you feedback.',color: theme.colorScheme.onSecondaryContainer),
+                  CustomSized(
+                    height: 0.02,
+                  ),
+                  Center(
+                    child: Image(
+                      alignment: Alignment.center,
+                      image: AssetImage(stopWatch),
+                      isAntiAlias: true,
+                      height: MediaQuery.sizeOf(context).height * 0.3,
+                      width: MediaQuery.sizeOf(context).width * 0.6,
+                      fit:BoxFit.cover,
                     ),
-                    largeText(title: 'Thanks for your cooperation!',color:theme.primaryColor),
-                    CustomSized(height: 0.01,),
-                    largeText(title: 'We shall respond you soon.',color:theme.primaryColor),
-                    CustomSized(
-                      height: 0.01,
-                    ),
-                    smallText(
-                        title: 'We’ve received your answers submitted in the',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.002,
-                    ),
-                    smallText(
-                        title: 'quiz. It’ll take a while to anlyze the answers and give you feedback.',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.002,
-                    ),
-                    smallText(
-                        title: 'give you feedback.',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(
-                      height: 0.02,
-                    ),
-                    Center(
-                      child: Image(
-                        alignment: Alignment.center,
-                        image: AssetImage(stopWatch),
-                        isAntiAlias: true,
-                        height: MediaQuery.sizeOf(context).height * 0.3,
-                        width: MediaQuery.sizeOf(context).width * 0.6,
-                        fit:BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),

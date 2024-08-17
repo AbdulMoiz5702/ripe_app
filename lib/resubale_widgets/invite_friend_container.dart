@@ -25,37 +25,49 @@ class HomeScreenInviteButton extends StatelessWidget {
     var theme = Theme.of(context);
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        alignment: Alignment.centerLeft,
-        height: MediaQuery.sizeOf(context).height * 0.21,
-        width: MediaQuery.sizeOf(context).width * 0.43,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15.0),
-          color: theme.colorScheme.primaryContainer,
-        ),
-        child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 50,
-                  decoration:  BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: theme.scaffoldBackgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5),
+        child: Container(
+
+          alignment: Alignment.centerLeft,
+          height: MediaQuery.sizeOf(context).height * 0.21,
+          width: MediaQuery.sizeOf(context).width * 0.43,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15.0),
+            color: theme.colorScheme.primaryContainer,
+            boxShadow: [
+              BoxShadow(
+                color: theme.colorScheme.primaryContainer.withOpacity(0.5),
+                offset: Offset(1, 3), // Shadow position: x, y
+                blurRadius: 5, // Blur intensity
+                spreadRadius: 1 , // Spread of the shadow
+              )
+            ]
+          ),
+          child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    height: 50,
+                    width: 50,
+                    decoration:  BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: theme.scaffoldBackgroundColor,
+                    ),
+                    child:SvgPicture.asset(imagePath,color: theme.colorScheme.error,)
                   ),
-                  child:SvgPicture.asset(imagePath,color: theme.colorScheme.secondary)
-                ),
-                const CustomSized(height: 0.01,),
-                largeText(textSize: 18.0,title: text,color: theme.colorScheme.secondaryContainer),
-                const CustomSized(height: 0.009,),
-                smallText(title: smallOne,textSize: 11.0,color: theme.colorScheme.secondaryContainer),
-                const CustomSized(height: 0.009,),
-                smallText(title: smallSecond,textSize: 11.0,color: theme.colorScheme.secondaryContainer)
-              ],
-            )
+                  const CustomSized(height: 0.01,),
+                  largeText(textSize: 18.0,title: text,color: theme.colorScheme.secondaryContainer),
+                  const CustomSized(height: 0.012,),
+                  smallText(title: smallOne,textSize: 14.0,color: theme.colorScheme.secondaryContainer),
+                  const CustomSized(height: 0.012,),
+                  smallText(title: smallSecond,textSize: 14.0,color: theme.colorScheme.secondaryContainer)
+                ],
+              )
+          ),
         ),
       ),
     );

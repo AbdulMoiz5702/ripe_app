@@ -44,7 +44,7 @@ class FindRiderDetailScreen extends StatelessWidget {
         leading: const CustomLeading(
           isHome: true,
         ),
-        title: largeText(title: 'Find a driver', textSize: 20.0,color: theme.primaryColor),
+        title: largeText(title: riderName, textSize: 20.0,color: theme.primaryColor),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,11 +93,27 @@ class FindRiderDetailScreen extends StatelessWidget {
               ],
             ),
           ),
-          const RideDetailsScreen(),
+
+          const CustomSized(
+            height: 0.025,
+          ),
+          Divider(
+            thickness: 1.5,
+            indent: 0,
+            height: 0,
+            color: theme.colorScheme.onInverseSurface,
+          ),
+           RideDetailsScreen(),
+          Divider(
+            thickness: 1.5,
+            indent: 0,
+            height: 0,
+            color: theme.colorScheme.onInverseSurface,
+          ),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 20,top: 8),
+              padding: const EdgeInsets.only(left: 20,top: 8, bottom: 8.0),
               child: smallText(
                 title: 'Reviews',
                 textSize: 14.0,

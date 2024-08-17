@@ -46,7 +46,7 @@ class OutlineBorderButton extends StatelessWidget {
               decoration: BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: theme.colorScheme.surfaceContainerHigh,width: 2),
+                border: Border.all(color: theme.colorScheme.surfaceContainerHigh.withOpacity(0.48),width: 2),
               ),
               child: smallText(title: title,textSize: 14.0,weight:FontWeight.w700,color: theme.colorScheme.surfaceTint),
             ),
@@ -97,7 +97,7 @@ class InviteFriendColorButton extends StatelessWidget {
               decoration: BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.circular(30),
-                border: Border.all(color: theme.colorScheme.surfaceContainerHigh,width: 2),
+                border: Border.all(color: theme.colorScheme.surfaceContainerHigh.withOpacity(0.48),width: 2),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

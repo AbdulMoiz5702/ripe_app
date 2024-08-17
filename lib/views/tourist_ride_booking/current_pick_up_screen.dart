@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/controllers/shedule_ride_provider.dart';
 
 

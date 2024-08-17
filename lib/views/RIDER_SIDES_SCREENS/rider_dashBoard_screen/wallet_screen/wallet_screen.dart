@@ -16,7 +16,7 @@ class WalletScreen extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        leading: CustomLeading(isHome: true,),
+        automaticallyImplyLeading: false,
         title: largeText(title: 'Wallet',textSize: 20.0,color: theme.primaryColor),
       ),
       body: SingleChildScrollView(

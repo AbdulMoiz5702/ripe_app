@@ -17,15 +17,15 @@ import 'controllers/Rider_ride_process_provider.dart';
 import 'controllers/become_driver_controller.dart';
 import 'controllers/bottom_screen_provider.dart';
 import 'controllers/custom_leading_feild_provider.dart';
+import 'controllers/help_and_support_provider.dart';
+import 'controllers/language_provider.dart';
 import 'controllers/notiication_provider.dart';
 import 'controllers/pessenger_ride_process_provider.dart';
+import 'controllers/profile_provider.dart';
 import 'controllers/quiz_controller.dart';
 import 'controllers/rider_ride_request_provider.dart';
 import 'controllers/theme_provider.dart';
 import 'services/custom_theme.dart';
-
-
-
 
 final navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
@@ -52,6 +52,9 @@ void main() async {
         ChangeNotifierProvider(create: (_) => QuizController()),
         ChangeNotifierProvider(create: (_) => RiderRideProcessProvider()),
         ChangeNotifierProvider(create: (_) => PessengerRideProcessProvider()),
+        ChangeNotifierProvider(create: (_) => ProfileProvider()),
+        ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        ChangeNotifierProvider(create: (_) => HelpAndSupportProvider()),
       ],
       child: MyApp(navigatorKey: navigatorKey,),
     ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
-
 import '../consts/colors.dart';
 import '../views/chatting_screens/user_rider_chat.dart';
 import 'call_button.dart';
@@ -58,7 +57,7 @@ class ChatRiderListTIle extends StatelessWidget {
 
           Spacer(),
           CircleAvatar(
-            child: CallButton(theme: theme,id: '2',name: 'moiz',color: theme.colorScheme.inversePrimary,),
+            child: CallButton(theme: theme,id: '3',name: 'Moiz',color: theme.colorScheme.inversePrimary,),
             backgroundColor: theme.colorScheme.primary,
             maxRadius: 24.0,
           ),

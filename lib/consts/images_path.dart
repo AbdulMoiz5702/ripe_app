@@ -11,6 +11,8 @@ const String verificationUnSuccessful = 'assets/imagesOnBording/verification_uns
 const String stopWatch= 'assets/imagesOnBording/stop_watch.png';
 const String rocket = 'assets/imagesOnBording/rocket.png';
 const String coffee = 'assets/imagesOnBording/coffee_cup.png';
+const String savedAddress = 'assets/imagesOnBording/saved_address.png';
+const String rideHistory = 'assets/imagesOnBording/navigation_crossed.png';
 
 // login Option
 const String google = 'assets/loginOption/gogole.png';
@@ -134,4 +136,19 @@ const String carLeftSide = 'assets/car_guide/car_left_side.png';
 const String carRightSide = 'assets/car_guide/car_right_side.png';
 const String carFrontSeats = 'assets/car_guide/car_front_seats.png';
 const String carBackSeats = 'assets/car_guide/car_back_seats.png';
+
+// flags
+const arabia = 'assets/flags/arabia.png';
+const bangladesh = 'assets/flags/bangladesh.png';
+const china = 'assets/flags/china.png';
+const france = 'assets/flags/france.png';
+const iran = 'assets/flags/iran.png';
+const italy = 'assets/flags/italy.png';
+const japan = 'assets/flags/japan.png';
+const pakistan = 'assets/flags/pakistan.png';
+const spain = 'assets/flags/spain.png';
+const uk = 'assets/flags/uk.png';
+const usa = 'assets/flags/usa.png';
+const sim = 'assets/flags/sim.png';
+
 

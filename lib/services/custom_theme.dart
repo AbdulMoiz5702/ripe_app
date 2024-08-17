@@ -29,7 +29,7 @@ ThemeData lightTheme() {
       // custom text filed border
       onSurface: textfieldColorBorderColor,
       // custom text filed hint color,
-      surfaceBright: textFieldHintColor,
+      surfaceBright: textFieldHintColor, /////////////////////
       // home_screen_text_field fill color,
       surfaceContainer: textfieldColor,
       // become a driver_Container_border_color
@@ -61,7 +61,6 @@ ThemeData lightTheme() {
       //outline color in text of profile screen
       primaryFixed: iconColor,
       //outline color in textformfield of profile screen
-      // onSurfaceVariant: darkSecondaryTextColors,
       onSurfaceVariant: greyColor,
       //button color in profile screen
       primaryFixedDim: buttonColor,
@@ -75,29 +74,21 @@ ThemeData lightTheme() {
       onTertiaryContainer: lightSelectedChipColor,
       // chip text color
       onTertiaryFixed: lightSelectedChipTextColor,
+      //home screen start two widgets color
+      error: darkCheckContainerColor,
+      //outline of leading icon for popping
+      errorContainer: textFieldHintColor,
 
 
-      //circle avatar border color
-      inverseSurface: textFieldHintColor,
-
-      //color for payment and wallet screen -> paypal background color of circle avatar
-      error: paymentgatewayavatcpolorwhitetheme,
+//dot color in find driver screen
+        onTertiaryFixedVariant: dotcolorinfinddriverscreen,
 
 
-      //light grey color for border of custom leading
-      errorContainer: iconColor,
+      //background paper color
+      onBackground: backgroundpaperColor,
 
 
-//payment and wallet screen remove button color
-      surfaceVariant: paymentandwalletremovebuttoncolorwhitetheme,
-
-
-      background:  iconColor,
-
-
-
-
-
+      onInverseSurface: lightgreyColor,
 
 
     ),
@@ -117,8 +108,6 @@ ThemeData lightTheme() {
       ),
       color: whiteColor,
     ),
-
-
   );
 }
 
@@ -163,7 +152,7 @@ ThemeData darkTheme() {
         // upload documnets container color ,
         surfaceContainerHighest: darkUploadDocumentsContainerColor,
         // vechile details check color
-        surfaceContainerLow: darkCheckContainerColor,
+        surfaceContainerLow: darkCheckContainerColor,/////////////////////////////////
         //  bottom_screen select where to / like attraction air port buttons etc
         tertiaryContainer:darkThemeBrandNameColor,
         // cancel red button  color
@@ -184,6 +173,9 @@ ThemeData darkTheme() {
         primaryFixedDim: buttonColor,
         // login error alert dialog backgroud color
         onError:darkAlertDialogErrorBackGroundColor,
+
+          //outline color in textformfield of profile screen
+          onSurfaceVariant: whiteColor,
         // login error alert dialog iconError color
         onErrorContainer: darkAlertDialogErrorIconColor,
         // login error alert dialog text color
@@ -193,21 +185,20 @@ ThemeData darkTheme() {
           // chip text color
           onTertiaryFixed: darkSelectedChipTextColor,
 
-        //circle avatar border color
-        inverseSurface: primaryTextColor,
+        error: darkSelectedChipTextColor,
+
+          //outline of leading icon for popping
+          errorContainer: whiteColor,
+
+//dot color in find driver screen
+          onTertiaryFixedVariant: dotcolorinfinddriverscreen,
 
 
-        //color for payment and wallet screen -> paypal background color of circle avatar
-        error: paymentgatewayavatcpolorblacktheme,
-        //light grey color for border of custom leading
-        errorContainer: whiteColor,
-
-//payment and wallet screen remove button color
-        surfaceVariant: paymentandwalletremovebuttoncolorblacktheme,
-
-        background: textFieldHintColor,
+          //background paper color
+          onBackground:  buttonColor,
 
 
+          onInverseSurface: lightDividerColor,
 
 
 

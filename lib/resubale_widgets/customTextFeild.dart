@@ -190,21 +190,21 @@ class OutlineCustomTextField extends StatelessWidget {
             // hintStyle:  TextStyle(color: theme.colorScheme.surfaceBright),
             border: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: theme.colorScheme.onSurfaceVariant,
+                  color: theme.colorScheme.errorContainer.withOpacity(0.2),
 
               ),
               borderRadius: BorderRadius.circular(30),
             ),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color:theme.colorScheme.onSurfaceVariant,
+                  color:theme.colorScheme.errorContainer.withOpacity(0.2),
 
               ),
               borderRadius: BorderRadius.circular(30),
             ),
             errorBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                  color: theme.colorScheme.onSurfaceVariant,
+                  color: theme.colorScheme.errorContainer.withOpacity(0.2),
               ),
               borderRadius: BorderRadius.circular(30),
             ),

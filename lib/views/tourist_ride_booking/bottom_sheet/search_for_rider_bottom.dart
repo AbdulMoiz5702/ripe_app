@@ -133,7 +133,7 @@ class _SearchForRiderBottomState extends State<SearchForRiderBottom> {
                           titleColor: theme.colorScheme.secondaryFixed,
                           title: 'Cancel search for ride',
                           onTap: () {
-
+                            Navigator.pop(context);
                           },
                           onBoard: false,
                           borderRadius: 30,

@@ -166,9 +166,14 @@ const paymentandwalletremovebuttoncolorwhitetheme = Color(0xffB70E12);
 const paymentandwalletremovebuttoncolorblacktheme = Color(0xffFF9E76);
 
 
+//dot color in find driver screen
+const dotcolorinfinddriverscreen = Color(0xffE5E7EB);
+
+
 
 
 // controller
 var textController = TextEditingController();
 
 
+//414652 for black and DBDEE2 for white theme

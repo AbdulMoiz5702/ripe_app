@@ -24,7 +24,7 @@ class ReviewItem extends StatelessWidget {
     var theme = Theme.of(context);
     return Container(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 60),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

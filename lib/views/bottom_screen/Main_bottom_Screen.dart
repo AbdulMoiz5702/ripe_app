@@ -22,15 +22,16 @@ class MainBottomScreen extends StatelessWidget {
           return PageStorage(bucket: bucket, child: provider.currentScreen);
         },
       ),
-      floatingActionButton: const CustomFloatingButton(),
+      floatingActionButton:  CustomFloatingButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         elevation: 5,
         shadowColor: theme.colorScheme.secondaryContainer,
         color: theme.colorScheme.secondaryContainer,
         height: 75,
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 17,
+        shape:  CircularNotchedRectangle(),
+
+        notchMargin: 12,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Consumer<BottomScreenProvider>(builder: (context,provider,_){
@@ -59,7 +60,7 @@ class MainBottomScreen extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 30, left: 8, right: 8),
                   child: CustomButtonNav(
                     index: 2,
-                    imagePath: null, // No icon for Book Ride
+                    imagePath: null,
                     title: 'Book Ride',
                     currentTab: provider.currentTab,
                     onPressed: () {

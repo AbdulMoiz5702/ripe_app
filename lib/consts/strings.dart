@@ -110,6 +110,9 @@ var vechile = [
   'https://wallpapers.com/images/featured/mclaren-js7crb2zb9wbk7zk.jpg',
   'https://wallpapers.com/images/featured/mclaren-js7crb2zb9wbk7zk.jpg',
   'https://wallpapers.com/images/featured/mclaren-js7crb2zb9wbk7zk.jpg',
+  'https://wallpapers.com/images/featured/mclaren-js7crb2zb9wbk7zk.jpg',
+  'https://wallpapers.com/images/featured/mclaren-js7crb2zb9wbk7zk.jpg',
+  'https://wallpapers.com/images/featured/mclaren-js7crb2zb9wbk7zk.jpg',
 ];
 
 var yourAccount = [
@@ -311,5 +314,88 @@ final List<String> tagsTip = [
 ];
 
 
+var building = [
+  Icons.business_outlined,
+  Icons.home_outlined,
+  Icons.food_bank_outlined,
+  Icons.water_damage_outlined,
+];
+
+var flagList = [
+  arabia,
+  bangladesh,
+  china,
+  france,
+  italy,
+  iran,
+  japan,
+  pakistan,
+  spain,
+  uk,
+  usa,
+];
+
+
+var flagListTile = [
+  'Arabic',
+  'Bengali',
+  'Chinese',
+  'French',
+  'Italian',
+  'Persian',
+  'Japanese',
+  'Urdu',
+  'Spanish',
+  'English',
+  'English',
+];
+
+var flagListSubTile = [
+  'العربية',
+  'বাংলা',
+  '',
+  'Français',
+  'Italiano',
+  'فارسی',
+  '',
+  'اردو',
+  'Español',
+  'United Kingdom',
+  'USA',
+];
+
+
+var defaultCityList = [
+  'New York City, New York',
+  'Los Angeles, California',
+  'Chicago, Illinois',
+  'Houston, Texas',
+  'Phoenix, Arizona',
+  'Philadelphia, Pennsylvania',
+  'San Antonio, Texas',
+  'San Diego, California',
+  'Dallas, Texas',
+  'San Jose, California',
+];
+
+var helpAndSupportList = [
+  'All',
+  'Rides',
+  'Pay',
+  'Drivers',
+  'Emergency',
+  'Payments',
+  'Cards',
+];
+
+
+var allQuestionsList = [
+  'What payment methods are accepted?',
+  'Can I schedule a ride in advance?',
+  'What safety features are in place?',
+  'What safety features are in place?',
+  'What if I left something in the car?',
+  'How do I become a driver?',
+];
 
 

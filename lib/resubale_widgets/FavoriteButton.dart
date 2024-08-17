@@ -22,7 +22,7 @@ class FavoriteButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: theme.colorScheme.inversePrimary,
+          color: textFieldHintColor.withOpacity(0.08),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

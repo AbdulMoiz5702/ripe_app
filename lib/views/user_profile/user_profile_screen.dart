@@ -4,13 +4,20 @@ import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/user_profile_button.dart';
+import 'package:ride_app/views/user_profile/preferences/bio_metric_screen.dart';
 import 'package:ride_app/views/user_profile/preferences/select_theme.dart';
-import 'package:ride_app/views/user_profile/setting_screens/paymentandwalletScreen.dart';
+import 'package:ride_app/views/user_profile/setting_screens/payements_and_cards/paymentandwalletScreen.dart';
 import 'package:ride_app/views/user_profile/setting_screens/profile_Screen.dart';
 import 'package:ride_app/views/user_profile/your_account/change_password.dart';
 import '../../resubale_widgets/text_widgets.dart';
 import '../RIDER_SIDES_SCREENS/rider_bottom_navigation/Rider_bottom_screen.dart';
 import '../bottom_screen/Main_bottom_Screen.dart';
+import 'activity/favorite_driver_screen.dart';
+import 'activity/rider_history.dart';
+import 'preferences/Defeault_city.dart';
+import 'preferences/languages_screen.dart';
+import 'setting_screens/saved_address/saved_address_screen.dart';
+import 'support/help_and_support_screen.dart';
 
 class UserProfileScreen extends StatelessWidget {
   final bool isUserScreen;
@@ -80,6 +87,7 @@ class UserProfileScreen extends StatelessWidget {
                           Navigator.push(context, MaterialPageRoute(builder: (ctx) => Paymentandwalletscreen()));
                           break;
                         case 1:
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => SavedAddressScreen()));
                           break;
                         case 2:
                           Navigator.push(context, MaterialPageRoute(builder: (ctx) => ChangePassword()));
@@ -104,14 +112,25 @@ class UserProfileScreen extends StatelessWidget {
               children: List.generate(1, (index) {
                 return UserProfileSettingTileSVg(
                     imagePath: yourActivity[index],
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx) => UserRiderHistoryScreen()));
+                    },
                     title: yourActivityText[index]);
               }),
             ): Column(
               children: List.generate(yourActivity.length, (index) {
                 return UserProfileSettingTileSVg(
                     imagePath: yourActivity[index],
-                    onTap: () {},
+                    onTap: () {
+                      switch(index) {
+                        case 0:
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => UserRiderHistoryScreen()));
+                          break;
+                        case 1:
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => FavoriteDriverScreen()));
+                          break;
+                      }
+                    },
                     title: yourActivityText[index]);
               }),
             ),
@@ -129,7 +148,15 @@ class UserProfileScreen extends StatelessWidget {
               children: List.generate(yourSupport.length, (index) {
                 return UserProfileSettingTileSVg(
                     imagePath: yourSupport[index],
-                    onTap: () {},
+                    onTap: () {
+                      switch(index) {
+                        case 0:
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx) => HelpAndSupportScreen()));
+                          break;
+                        case 1:
+                          break;
+                      }
+                    },
                     title: yourSupportText[index]);
               }),
             ),
@@ -150,10 +177,22 @@ class UserProfileScreen extends StatelessWidget {
                     onTap: () {
                       switch (index) {
                         case 0:
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BioMetricScreen()));
                           break;
                         case 1:
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LanguagesScreen()));
                           break;
                         case 2:
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DefaultCityScreen()));
                           break;
                         case 3:
                           Navigator.push(

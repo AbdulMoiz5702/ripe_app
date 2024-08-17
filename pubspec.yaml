@@ -50,6 +50,7 @@ dependencies:
   fl_chart: ^0.68.0
   dotted_border: ^2.1.0
   credit_card_type_detector: ^3.0.0
+  animated_bottom_navigation_bar: ^1.3.3
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +84,7 @@ flutter:
     - assets/svg_pictures/
     - assets/car_guide/
     - assets/images/
+    - assets/flags/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
