@@ -73,7 +73,7 @@ class CarUploadedDataUnderReview extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.error,
-                          size: 25,
+                          size: 27,
                           color: theme.canvasColor,
                         ),
                         CustomSized(

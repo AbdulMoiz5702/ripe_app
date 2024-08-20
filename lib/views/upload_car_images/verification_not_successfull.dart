@@ -25,7 +25,7 @@ class VerificationNotSuccessful extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Container(
-                height: MediaQuery.sizeOf(context).height * 0.74,
+                height: MediaQuery.sizeOf(context).height * 0.75,
                 width: MediaQuery.sizeOf(context).width * 1,
                 decoration:  BoxDecoration(
                   color: theme.scaffoldBackgroundColor,
@@ -60,8 +60,8 @@ class VerificationNotSuccessful extends StatelessWidget {
                       const CustomSized(height: 0.03),
                       Container(
                         alignment: Alignment.center,
-                        padding: const EdgeInsets.all(25),
-                        height: MediaQuery.sizeOf(context).height * 0.122,
+                        padding: const EdgeInsets.all(15),
+                        height: MediaQuery.sizeOf(context).height * 0.13,
                         width: MediaQuery.sizeOf(context).width * 1,
                         decoration: BoxDecoration(
                           color: theme.colorScheme.onError,
@@ -71,19 +71,33 @@ class VerificationNotSuccessful extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.error,
-                              size: 25,
-                              color: theme.colorScheme.onErrorContainer,
+                            Row(
+                              children: [
+                                Column(
+
+                                  children: [
+                                    CustomSized(
+                                      height: 0.003,
+                                      width: 0,
+                                    ),
+                                    Icon(
+                                      Icons.report_gmailerrorred_outlined,
+                                      size: 27,
+                                      color: theme.colorScheme.onErrorContainer,
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                             CustomSized(
-                              width: 0.02,
+                              width: 0.03,
                             ),
                             Expanded(
                               child: Text(
-                                'We\'re sorry to inform you but your profile isn\'t verified. Please review your profile and try again',
+                                'We\'re sorry to inform you but your   profile isn\'t verified. Please review        your profile and try again',
                                 style: TextStyle(
                                   fontSize: 14,
+                                  height: 1.7,
                                   fontWeight: FontWeight.w400,
                                   color: theme.colorScheme.onTertiary,
                                   fontFamily: 'Nunito Sans',

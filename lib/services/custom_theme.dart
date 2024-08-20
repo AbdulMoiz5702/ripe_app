@@ -78,19 +78,18 @@ ThemeData lightTheme() {
       error: darkCheckContainerColor,
       //outline of leading icon for popping
       errorContainer: textFieldHintColor,
-
-
 //dot color in find driver screen
         onTertiaryFixedVariant: dotcolorinfinddriverscreen,
-
-
       //background paper color
       onBackground: backgroundpaperColor,
 
-
       onInverseSurface: lightgreyColor,
-
-
+      // light green alert back ground diloag
+      scrim:alertDialogBackGroundColor,
+      // light green alert icon color  diloag
+      surfaceVariant: alertDialogIconColor,
+      // light green alert text color  diloag
+      onPrimary:alertDialogTextColor,
     ),
     // divider color
     dividerColor: lightDividerColor,
@@ -186,19 +185,20 @@ ThemeData darkTheme() {
           onTertiaryFixed: darkSelectedChipTextColor,
 
         error: darkSelectedChipTextColor,
-
           //outline of leading icon for popping
           errorContainer: whiteColor,
-
 //dot color in find driver screen
           onTertiaryFixedVariant: dotcolorinfinddriverscreen,
-
-
           //background paper color
           onBackground:  buttonColor,
 
-
           onInverseSurface: lightDividerColor,
+        // light green alert back ground diloag
+        scrim:alertDialogTextColor,
+        // light green alert icon color  diloag
+        surfaceVariant: Color(0xffB2E76E),
+        // light green alert text color  diloag
+        onPrimary:alertDialogBackGroundColor,
 
 
 
@@ -206,9 +206,9 @@ ThemeData darkTheme() {
       // divider color
       dividerColor: darkDividerColor,
       // picture guide icon color // car pictures screen
-      cardColor: darkPictureGuideIconColor,
+      cardColor: darkPictureGuideContainerColor ,
       // picture guide card color // car pictures screen
-      canvasColor: darkPictureGuideContainerColor,
+      canvasColor: darkPictureGuideIconColor,
       // BackGround_color
       scaffoldBackgroundColor: darkBackGroundColor,
       // App Bar

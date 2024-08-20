@@ -150,7 +150,7 @@ class LicenseDetailsScreen extends StatelessWidget {
                       height: 0.020,
                     ),
                     CustomButton(title: 'Next', onTap:(){
-                      Navigator.push(context,CupertinoPageRoute(builder: (context)=> VehicleDetails()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=> VehicleDetails()));
                     },width: 1,borderRadius: 30,),
                     CustomSized(height: 0.02),
                     Align(alignment:Alignment.center,child: largeText(title: 'Become a passenger instead',textSize: 15.0,color: dividerColor)),

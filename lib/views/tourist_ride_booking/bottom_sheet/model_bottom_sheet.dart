@@ -87,8 +87,7 @@ class BottomSheetContent extends StatelessWidget {
                                       exploreScreenIcons[index],
                                       color: provider.index == index
                                           ? theme.primaryColor
-                                          : theme
-                                              .colorScheme.onSecondaryContainer,
+                                          : theme.colorScheme.onSecondaryContainer,
                                     ),
                                     CustomSized(
                                       width: 0.02,

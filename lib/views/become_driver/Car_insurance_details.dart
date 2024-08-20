@@ -168,7 +168,7 @@ class CarInsuranceDetailsScreen extends StatelessWidget {
                         CustomButton(
                           onBoard: false,
                           title: 'Submit', onTap:(){
-                          Navigator.push(context,CupertinoPageRoute(builder: (context)=> ProfilePictureScreen()));
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=> ProfilePictureScreen()));
                         },width: 0.55,borderRadius: 30,),
                       ],
                     ),

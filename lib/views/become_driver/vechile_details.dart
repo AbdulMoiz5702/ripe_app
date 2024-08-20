@@ -164,7 +164,7 @@ class VehicleDetails extends StatelessWidget {
                           Navigator.pop(context);
                         },width: 0.27,borderRadius: 30,),
                         CustomButton(title: 'Next', onTap:(){
-                          Navigator.push(context,CupertinoPageRoute(builder: (context)=> CarInsuranceDetailsScreen()));
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=> CarInsuranceDetailsScreen()));
                         },width: 0.55,borderRadius: 30,),
                       ],
                     ),

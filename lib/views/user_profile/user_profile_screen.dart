@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
+import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/user_profile_button.dart';
 import 'package:ride_app/views/user_profile/preferences/bio_metric_screen.dart';
 import 'package:ride_app/views/user_profile/preferences/select_theme.dart';
@@ -28,22 +29,30 @@ class UserProfileScreen extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 50,
         automaticallyImplyLeading: false,
-        title: largeText(
-            title: 'Account and activity',
-            textSize: 20.0,
-            color: theme.primaryColor),
+        title: Column(
+          children: [
+            const CustomSized(
+              height: 0.06,
+            ),
+            largeText(
+                title: 'Account and activity',
+                textSize: 20.0,
+                color: theme.primaryColor),
+            const CustomSized(
+              height: 0.04,
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         scrollDirection: Axis.vertical,
         physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const CustomSized(
-              height: 0.002,
-            ),
             UserProfileButton(
                 isUserScreen: isUserScreen,
                 title: 'Abdul Moiz',

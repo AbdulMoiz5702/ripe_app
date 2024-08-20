@@ -20,36 +20,39 @@ class CustomAlertDialog extends StatelessWidget {
         ),
         child: Container(
           alignment: Alignment.center,
-          padding: const EdgeInsets.all(9),
+          padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 20),
           height: MediaQuery.sizeOf(context).height * 0.12,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Container(
-                    padding: const EdgeInsets.all(3),
-                    alignment: Alignment.center,
-                    decoration:  BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: theme.colorScheme.surfaceVariant,
-                    ),
-                      child:  Icon(Icons.check, color: theme.colorScheme.inversePrimary, size: 20)),
-                  const CustomSized(width: 0.06,),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      smallText(title: 'Your profile has been verified ',color: theme.colorScheme.surfaceVariant),
-                      const CustomSized(height: 0.002,),
-                      smallText(title: 'successfully. You may now enjoy',color: theme.colorScheme.surfaceVariant),
-                      const CustomSized(height: 0.002,),
-                      smallText(title: 'your ride.',color: theme.colorScheme.surfaceVariant),
-                    ],
+              Column(
+                children: [
+                  CustomSized(
+                    height: 0.008,
+                    width: 0,
+                  ),
+                  Icon(
+                    Icons.check_circle,
+                    size: 25,
+                    color:  theme.colorScheme.surfaceVariant,
                   ),
                 ],
+              ),
+              CustomSized(
+                width: 0.03,
+              ),
+              Expanded(
+                child: Text(
+                  'Your profile has bee verified       successfully. You may now enjoy            your ride.',
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.7,
+                    fontWeight: FontWeight.w400,
+                    color:  theme.colorScheme.onPrimary,
+                    fontFamily: 'Nunito Sans',
+                  ),
+                ),
               ),
             ],
           ),

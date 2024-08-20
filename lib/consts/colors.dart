@@ -43,6 +43,7 @@ const Color dividerColor = Color(0xff9CA3AF);
 
 const Color checkBoxColor = Color(0xff029FEB);
 const Color alertDialogIconColor = Color(0xff5DB217);
+const Color alertDialogTextColor = Color(0xff175504);
 const Color alertDialogBackGroundColor = Color(0xffecfbcf);
 const Color otpColor = Colors.black12;
 const Color whiteColor = Colors.white;
@@ -56,7 +57,6 @@ const Color secondaryWhiteColor = Color(0xfff9fafb);
 const Color checkColor = Color(0xffCBFAFE);
 const Color secondayBlueColor = Color(0xffd1eaff);
 const Color darkBlueColor = Color(0xff04207A);
-
 const Color  authDividerColor = Color(0xffdbdee2);
 
 // seconday colors

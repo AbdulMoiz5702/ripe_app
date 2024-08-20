@@ -116,7 +116,7 @@ var vechile = [
 ];
 
 var yourAccount = [
-  creditCardSvg,
+  cardSVG,
   favoriteSVG,
   passwordSVG,
 ];
@@ -167,13 +167,15 @@ var exploreScreen = [
   'Shopping',
   'Airport',
   'Cate & Restaurant',
+  'Airport',
 ];
 
 var exploreScreenIcons = [
   parkSvg,
   airplaneTakeoff,
   handBagSvg,
-  handBagSvg
+  hamBurger,
+  airplaneTakeoff,
 ];
 
 
@@ -396,6 +398,23 @@ var allQuestionsList = [
   'What safety features are in place?',
   'What if I left something in the car?',
   'How do I become a driver?',
+];
+
+var bottomIconList = [
+  houseSvg,
+  calenderSvg,
+  calenderSvg,
+  bellSimpleSvg,
+  userSvg,
+];
+
+
+var bottomTextList = [
+  'Home',
+  'Schedule',
+  'Book Ride',
+  'Notifications',
+  'Profile',
 ];
 
 

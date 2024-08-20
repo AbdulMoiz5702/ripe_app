@@ -11,12 +11,11 @@ class CustomFloatingButton extends StatelessWidget {
     return Container(
       height: 50,
       width: 50,
-
       decoration:  BoxDecoration(
         shape: BoxShape.circle,
         color: theme.colorScheme.secondary,
       ),
-      child: const Center(child: Image(image: AssetImage(bottomArrow, ),),),
+      child:  Center(child: Image(image: AssetImage(bottomArrow,),color: theme.colorScheme.inversePrimary,),),
     );
   }
 }

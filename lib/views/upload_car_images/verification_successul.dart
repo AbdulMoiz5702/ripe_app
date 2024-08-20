@@ -62,10 +62,10 @@ class VerificationSuccessful extends StatelessWidget {
                       const CustomSized(height: 0.03),
                       Container(
                         padding: const EdgeInsets.all(15),
-                        height: MediaQuery.sizeOf(context).height * 0.1,
+                        height: MediaQuery.sizeOf(context).height * 0.08,
                         width: MediaQuery.sizeOf(context).width * 1,
                         decoration: BoxDecoration(
-                          color: theme.cardColor,
+                          color: theme.colorScheme.scrim,
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child:  Row(
@@ -74,10 +74,10 @@ class VerificationSuccessful extends StatelessWidget {
                             Icon(
                               Icons.check_circle,
                               size: 25,
-                              color: theme.canvasColor,
+                              color: theme.colorScheme.surfaceVariant,
                             ),
                             CustomSized(
-                              width: 0.02,
+                              width: 0.03,
                             ),
                             Expanded(
                               child: Text(
@@ -85,7 +85,7 @@ class VerificationSuccessful extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: theme.canvasColor,
+                                  color: theme.colorScheme.onPrimary,
                                   fontFamily: 'Nunito Sans',
                                 ),
                               ),

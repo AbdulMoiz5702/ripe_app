@@ -47,8 +47,8 @@ class UploadCarRightSideImage extends StatelessWidget {
             CustomSized(height: 0.002,),
             Container(
               margin: EdgeInsets.all(15),
-              padding: EdgeInsets.all(20),
-              height: MediaQuery.sizeOf(context).height * 0.1,
+              padding: EdgeInsets.all(15),
+              height: MediaQuery.sizeOf(context).height * 0.115,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
                 color: theme.cardColor,
@@ -56,21 +56,30 @@ class UploadCarRightSideImage extends StatelessWidget {
               ),
               child:  Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.error,
-                    size: 25,
-                    color:  theme.canvasColor,
+                  Column(
+                    children: [
+                      CustomSized(
+                        height: 0.01,
+                        width: 0,
+                      ),
+                      Icon(
+                        Icons.error,
+                        size: 27,
+                        color:  theme.canvasColor,
+                      ),
+                    ],
                   ),
                   CustomSized(
-                    width: 0.02,
+                    width: 0.03,
                   ),
                   Expanded(
                     child: Text(
-                      'Capture image like this from the right side.',
+                      'Capture image like this from the   right side.',
                       style: TextStyle(
                         fontSize: 14,
+                        height: 1.7,
                         fontWeight: FontWeight.w400,
                         color:  theme.canvasColor,
                         fontFamily: 'Nunito Sans',

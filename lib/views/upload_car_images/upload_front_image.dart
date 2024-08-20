@@ -47,9 +47,10 @@ class UploadFrontImageScreen extends StatelessWidget {
             }),
             CustomSized(height: 0.002,),
             Container(
+              alignment: Alignment.center,
               margin: EdgeInsets.all(15),
-              padding: EdgeInsets.all(20),
-              height: MediaQuery.sizeOf(context).height * 0.12,
+              padding: EdgeInsets.all(15),
+              height: MediaQuery.sizeOf(context).height * 0.1355,
               width: MediaQuery.sizeOf(context).width * 1,
               decoration: BoxDecoration(
                 color: theme.cardColor,
@@ -59,19 +60,28 @@ class UploadFrontImageScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(
-                    Icons.error,
-                    size: 25,
-                    color: theme.canvasColor,
+                  Column(
+                    children: [
+                      CustomSized(
+                        height: 0.004,
+                        width: 0,
+                      ),
+                      Icon(
+                        Icons.error,
+                        size: 27,
+                        color: theme.canvasColor,
+                      ),
+                    ],
                   ),
                   CustomSized(
-                    width: 0.02,
+                    width: 0.03,
                   ),
                   Expanded(
                     child: Text(
-                      'Capture image like this from the front angle such that number plate is visible.',
+                      'Capture image like this from the   front angle such that number plate   is visible.',
                       style: TextStyle(
                         fontSize: 14,
+                        height: 1.7,
                         fontWeight: FontWeight.w400,
                         color: theme.canvasColor,
                         fontFamily: 'Nunito Sans',

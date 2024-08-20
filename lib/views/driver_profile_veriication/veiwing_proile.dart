@@ -61,13 +61,20 @@ class VeiwingProile extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child:  Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Icon(Icons.error,size: 25,color: theme.canvasColor,),
-                        CustomSized(width: 0.02,),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            CustomSized(height: 0.003,width: 0,),
+                            Icon(Icons.error,size: 27,color: theme.colorScheme.secondary,),
+                          ],
+                        ),
+                        CustomSized(width: 0.04,),
                         Expanded(
                           child: Text('Almost there! Your profile is being reviewed.',style: TextStyle(
                             fontSize: 14,
+                            height: 1.7,
                             fontWeight: FontWeight.w400,
                             color: theme.canvasColor,
                             fontFamily:'Nunito Sans',

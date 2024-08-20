@@ -40,7 +40,7 @@ class UserProfileButton extends StatelessWidget {
             subtitle: smallText(
                 title: email, color: theme.colorScheme.onSecondaryContainer),
             trailing: Icon(Icons.arrow_forward_ios,
-                color: theme.colorScheme.onSecondaryContainer),
+                color: theme.colorScheme.errorContainer.withOpacity(0.2)),
             onTap: tileOnTap,
           ),
           CustomSized(
@@ -50,13 +50,13 @@ class UserProfileButton extends StatelessWidget {
             title: isUserScreen == true ? 'Passenger mode' : 'Driver mode',
             onTap: buttonOnTap,
             iconData: Icons.next_plan_outlined,
-            width: 1,
+            width: 0.88,
             borderRadius: 30,
             isImagePath: true,
             imagePath: isUserScreen == true ? localSvg : steeringWheelsSVG,
             color: theme.primaryColor,
             titleColor: theme.colorScheme.inversePrimary,
-            widthbetweentextandicon: isUserScreen == true ? 0.01: 0.03,
+            widthbetweentextandicon: isUserScreen == true ? 0.00: 0.03,
           )
         ],
       ),
@@ -78,14 +78,22 @@ class UserProfileSettingTileSVg extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return ListTile(
-      leading: SvgPicture.asset(
-        imagePath,
-        color: theme.primaryColor,
+      leading: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SvgPicture.asset(
+            imagePath,
+            color: theme.primaryColor,
+            height: 23,
+            width: 23,
+          ),
+          CustomSized(width: 0.035,height: 0,),
+          smallText(title: title, color: theme.primaryColor),
+        ],
       ),
-      title: smallText(title: title, color: theme.primaryColor),
       trailing: Icon(
         Icons.arrow_forward_ios,
-        color: theme.colorScheme.onSecondaryContainer,
+        color: theme.colorScheme.errorContainer.withOpacity(0.2),
       ),
       onTap: onTap,
     );
