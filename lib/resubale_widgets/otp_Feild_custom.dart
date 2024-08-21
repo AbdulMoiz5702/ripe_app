@@ -24,12 +24,15 @@ class _CustomOtpFieldState extends State<CustomOtpField> {
             height: 40,  // Added height to ensure the container is circular
             child: TextFormField(
               enabled: true,
-              cursorColor: Colors.black45,
+              cursorColor: theme.primaryColor,
               controller: _controllers[index],
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
               maxLength: 1,
-              style: TextStyle(color: theme.colorScheme.onSecondaryContainer),
+              style:  TextStyle(
+                color: theme.primaryColor,
+                fontFamily: 'Nunito Sans',
+              ),
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
                 counterText: '',

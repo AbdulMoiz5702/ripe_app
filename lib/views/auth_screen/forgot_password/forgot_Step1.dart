@@ -30,7 +30,7 @@ class ForgotStep1 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.75,
+            height: MediaQuery.sizeOf(context).height * 0.77,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color:  theme.scaffoldBackgroundColor,
@@ -51,10 +51,15 @@ class ForgotStep1 extends StatelessWidget {
                     ),
                     largeText(title: 'Forgot password',color: theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(
                       title: 'A 6-digit code will be sent to your account in order to reset your account',color: theme.colorScheme.onSecondaryContainer),
+                    CustomSized(
+                      height: 0.01,
+                    ),
+                    smallText(
+                        title: 'to reset your account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.02,
                     ),
@@ -82,7 +87,7 @@ class ForgotStep1 extends StatelessWidget {
                       iconData: Icons.mail_outline_sharp,
                     ),
                     CustomSized(
-                      height: 0.025,
+                      height: 0.03,
                     ),
                     CustomButton(
                       onBoard: false,

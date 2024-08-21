@@ -24,7 +24,7 @@ class ReviewItem extends StatelessWidget {
     var theme = Theme.of(context);
     return Container(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 60),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -88,6 +88,7 @@ class ReviewItem extends StatelessWidget {
             ),
             Text( reviewText,style: TextStyle(
               fontSize: 14,
+              height: 1.5,
               fontWeight: FontWeight.w400,
               color: theme.primaryColor,
               fontFamily:'Nunito Sans',

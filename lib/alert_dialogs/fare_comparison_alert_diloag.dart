@@ -26,16 +26,16 @@ class FareComparisonAlertDialog extends StatelessWidget {
             textSize: 18.0,
             color: theme.primaryColor
           ),
-          CustomSized(height: 0.002),
+          CustomSized(height: 0.015,),
           largeText(
             title: 'competitors',
             textSize: 18.0, color: theme.primaryColor
           ),
-          CustomSized(height: 0.02),
+          CustomSized(height: 0.015,),
           smallText(title: 'Check how discounted fares we provide to',color: theme.primaryColor),
-          CustomSized(height: 0.004),
+          CustomSized(height: 0.01,),
           smallText(title: 'our users in comparison to other apps in',color: theme.primaryColor),
-          CustomSized(height: 0.004),
+          CustomSized(height: 0.01,),
           smallText(title: 'the market for same distance and vehicles',color: theme.primaryColor),
           CustomSized(height: 0.02),
           Row(

@@ -47,10 +47,6 @@ class EstimatedTimeBottomSheet extends StatelessWidget {
                 CustomSized(
                   height: 0.015,
                 ),
-                largeText(title: 'Your ride is in progress.',textSize: 14.0,color: theme.colorScheme.onSecondaryContainer),
-                CustomSized(
-                  height: 0.015,
-                ),
                 Consumer<PessengerRideProcessProvider>(builder: (context, provider, _) {
                   return Column(
                     children: [

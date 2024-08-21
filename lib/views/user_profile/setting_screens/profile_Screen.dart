@@ -73,9 +73,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 width: double.infinity,
                                 height: double.infinity,
                               ),
-                              // Container(
-                              //     color: theme.colorScheme.onPrimaryFixed
-                              //         .withOpacity(0.75)),
                             ],
                           ),
                         ),

@@ -36,7 +36,7 @@ class Step3 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.66,
+            height: MediaQuery.sizeOf(context).height * 0.68,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -57,13 +57,13 @@ class Step3 extends StatelessWidget {
                       height: 0.02,
                     ),
                     largeText(
-                        title: 'Enter your Phone Number', color:theme.primaryColor),
+                        title: 'Enter your phone number', color:theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(title: 'Add to recovery phone to help keep your account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.001,
+                      height: 0.01,
                     ),
                     smallText(title: 'secure',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
@@ -88,7 +88,7 @@ class Step3 extends StatelessWidget {
                       borderRadius: 30,
                       width: 1,
                     ),
-                    CustomSized(height: 0.03),
+                    CustomSized(height: 0.04),
                     dividerRow(context: context),
                     CustomSized(height: 0.04),
                     LoginOptionsRow(),

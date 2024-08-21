@@ -17,7 +17,7 @@ class LoginOptionButton extends StatelessWidget {
       width: MediaQuery.sizeOf(context).width * 0.4,
       height: 50,
       decoration: BoxDecoration(
-        border: Border.all(color: theme.colorScheme.surface),
+        border: Border.all(color: theme.colorScheme.surface.withOpacity(0.32)),
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(

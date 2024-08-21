@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.78,
+            height: MediaQuery.sizeOf(context).height * 0.8,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -83,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                       iconPath: lock,
                       isPassword: true,
                     ),
-                    CustomSized(height: 0.003),
+                    CustomSized(height: 0.01),
                     Align(alignment: Alignment.centerRight, child: GestureDetector(
                       onTap: (){
                         Navigator.push(
@@ -132,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                     dividerRow(context: context,title: 'login',),
                     CustomSized(height: 0.035),
                     LoginOptionsRow(),
-                    CustomSized(height: 0.03),
+                    CustomSized(height: 0.05),
                     GestureDetector(
                       onTap: () {
                         Navigator.push(

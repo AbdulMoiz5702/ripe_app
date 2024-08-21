@@ -79,7 +79,7 @@ class ConfirmAdditonalDropStop extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(8),
                   height: MediaQuery.sizeOf(context).height * 0.1,
                   width: MediaQuery.sizeOf(context).width * 1,
                   decoration: BoxDecoration(
@@ -87,13 +87,21 @@ class ConfirmAdditonalDropStop extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child:  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.error,
-                        size: 25,
-                        color:  theme.canvasColor,
+                      Column(
+                        children: [
+                          CustomSized(
+                            height: 0.009,
+                            width: 0,
+                          ),
+                          Icon(
+                            Icons.error,
+                            size: 25,
+                            color:  theme.canvasColor,
+                          ),
+                        ],
                       ),
                       CustomSized(
                         width: 0.02,
@@ -109,7 +117,7 @@ class ConfirmAdditonalDropStop extends StatelessWidget {
                               smallText(title: ' will be added to your',color:  theme.canvasColor,),
                             ],
                           ),
-                          CustomSized(height: 0.002,),
+                          CustomSized(height: 0.01,),
                           smallText(title: 'fare amount for this additional stop.',color:  theme.canvasColor,),
                         ],
                       ),
@@ -124,7 +132,7 @@ class ConfirmAdditonalDropStop extends StatelessWidget {
                 }, borderRadius: 30,
                   width: 1,onBoard: false,),
                 CustomSized(
-                  height: 0.01,
+                  height: 0.015,
                 ),
                 SecondaryCustomButton(
                   color:  theme.colorScheme.surfaceContainerHighest,

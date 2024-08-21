@@ -19,7 +19,7 @@ class FaceVerificationScreen extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: 90,
         automaticallyImplyLeading: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,14 +27,16 @@ class FaceVerificationScreen extends StatelessWidget {
           children: [
             CustomSized(height: 0.02),
             largeText(title: 'Face verification',color:theme.colorScheme.primary),
+            CustomSized(height: 0.01),
             smallText(title: 'Please take a well-lit selfie to verify your',color: theme.colorScheme.onSecondaryContainer),
+            CustomSized(height: 0.01),
             smallText(title: 'identity.',color: theme.colorScheme.onSecondaryContainer)
           ],
         ),
       ),
       backgroundColor: theme.scaffoldBackgroundColor,
       body:Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             Consumer<BecomeDriverProvider>(builder: (context,provider,_){
@@ -44,8 +46,8 @@ class FaceVerificationScreen extends StatelessWidget {
                 },
                 child: Container(
                   alignment: Alignment.center,
-                  height: MediaQuery.sizeOf(context).height * 0.57,
-                  width:MediaQuery.sizeOf(context).width * 0.57,
+                  height: MediaQuery.sizeOf(context).height * 0.56,
+                  width:MediaQuery.sizeOf(context).width * 0.56,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: theme.colorScheme.surfaceContainerHighest,

@@ -184,8 +184,8 @@ class AlertSelectionConatiner extends StatelessWidget {
             Container(
               width: MediaQuery.sizeOf(context).width * 0.33,
               decoration: BoxDecoration(
-                color: isSelected == true ? theme.primaryColor: theme.colorScheme.inversePrimary,
-                borderRadius: BorderRadius.circular(10),
+                color: isSelected == true ? theme.primaryColor: theme.scaffoldBackgroundColor,
+                borderRadius: BorderRadius.circular(15),
                 border: Border.all(color: theme.colorScheme.surface),
               ),
               child: Column(

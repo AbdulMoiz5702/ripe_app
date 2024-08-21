@@ -24,7 +24,7 @@ class QuizUnderReview extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.58,
+            height: MediaQuery.sizeOf(context).height * 0.6,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -43,25 +43,25 @@ class QuizUnderReview extends StatelessWidget {
                     height: 0.02,
                   ),
                   largeText(title: 'Thanks for your cooperation!',color:theme.primaryColor),
-                  CustomSized(height: 0.01,),
+                  CustomSized(height: 0.015,),
                   largeText(title: 'We shall respond you soon.',color:theme.primaryColor),
                   CustomSized(
-                    height: 0.01,
+                    height: 0.015,
                   ),
                   smallText(
                       title: 'We’ve received your answers submitted in the',color: theme.colorScheme.onSecondaryContainer),
                   CustomSized(
-                    height: 0.002,
+                    height: 0.01,
                   ),
                   smallText(
                       title: 'quiz. It’ll take a while to anlyze the answers and give you feedback.',color: theme.colorScheme.onSecondaryContainer),
                   CustomSized(
-                    height: 0.002,
+                    height: 0.01,
                   ),
                   smallText(
                       title: 'give you feedback.',color: theme.colorScheme.onSecondaryContainer),
                   CustomSized(
-                    height: 0.02,
+                    height: 0.01,
                   ),
                   Center(
                     child: Image(

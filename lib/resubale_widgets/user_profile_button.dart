@@ -37,8 +37,13 @@ class UserProfileButton extends StatelessWidget {
             ),
             title: largeText(
                 textSize: 18.0, title: title, color: theme.primaryColor),
-            subtitle: smallText(
-                title: email, color: theme.colorScheme.onSecondaryContainer),
+            subtitle: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                CustomSized(height: 0.015,),
+                smallText(title: email, color: theme.colorScheme.onSecondaryContainer),
+              ],
+            ),
             trailing: Icon(Icons.arrow_forward_ios,
                 color: theme.colorScheme.errorContainer.withOpacity(0.2)),
             onTap: tileOnTap,

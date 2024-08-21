@@ -31,7 +31,7 @@ class ForgotStep3 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.8,
+            height: MediaQuery.sizeOf(context).height * 0.82,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -52,7 +52,7 @@ class ForgotStep3 extends StatelessWidget {
                     ),
                     largeText(title: 'Reset password',color: theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(
                       title: 'You can change your password now.',color: theme.colorScheme.onSecondaryContainer),
@@ -83,7 +83,7 @@ class ForgotStep3 extends StatelessWidget {
                       iconPath: lock,
                     ),
                     CustomSized(
-                      height: 0.02,
+                      height: 0.03,
                     ),
                     CustomLeadingTextField(
                       isPassword: true,
@@ -96,7 +96,7 @@ class ForgotStep3 extends StatelessWidget {
                       iconPath: lock,
                     ),
                     CustomSized(
-                      height: 0.027,
+                      height: 0.03,
                     ),
                     CustomButton(
                       onBoard: false,

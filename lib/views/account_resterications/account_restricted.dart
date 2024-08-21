@@ -24,7 +24,7 @@ class AccountRestricted extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.65,
+            height: MediaQuery.sizeOf(context).height * 0.67,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -45,42 +45,42 @@ class AccountRestricted extends StatelessWidget {
                     ),
                     largeText(title: 'Taking a Break',color:theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(
                         title: 'We understand that everyone has their off days.',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'Based on the recent assessment, we recommend',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'taking a break for the next 16 hours. Your account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'will be temporarily restricted during this time.',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'Remember, safety comes first, and we appreciate',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'your commitment to responsible driving. Rest up,',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'recharge, and come back stronger!',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.02,
+                      height: 0.01,
                     ),
                     Center(
                       child: Image(

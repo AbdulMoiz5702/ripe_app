@@ -26,7 +26,7 @@ class VeiwingProile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            height: MediaQuery.sizeOf(context).height * 0.802,
+            height: MediaQuery.sizeOf(context).height * 0.82,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration:  BoxDecoration(
               color: theme.scaffoldBackgroundColor,
@@ -41,15 +41,15 @@ class VeiwingProile extends StatelessWidget {
                   BrandName(theme: theme),
                   CustomSized(height: 0.02),
                   largeText(title: 'Hang tight! We’re verifying',color:theme.colorScheme.primary),
-                  CustomSized(height: 0.003),
+                  CustomSized(height: 0.015),
                   largeText(title: 'your profile.',color:theme.colorScheme.primary),
-                  CustomSized(height: 0.01),
+                  CustomSized(height: 0.015),
                   smallText(title: 'Your account verification as a driver has been',color: theme.colorScheme.onSecondaryContainer),
-                  CustomSized(height: 0.003),
+                  CustomSized(height: 0.01),
                   smallText(title: 'completed successfully. It will take a few minutes',color: theme.colorScheme.onSecondaryContainer),
-                  CustomSized(height: 0.003),
+                  CustomSized(height: 0.01),
                   smallText(title: 'to verify your account and you’ll be notified soon. ',color: theme.colorScheme.onSecondaryContainer),
-                  CustomSized(height: 0.003),
+                  CustomSized(height: 0.01),
                   smallText(title: 'Meanwhile, you may set-up  your profile.',color: theme.colorScheme.onSecondaryContainer),
                   Align(alignment:Alignment.center,child: Image(image: AssetImage(check),height: MediaQuery.sizeOf(context).height * 0.25,)),
                   Container(
@@ -93,8 +93,9 @@ class VeiwingProile extends StatelessWidget {
                       }),
                   CustomSized(height: 0.002),
                     Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      CustomSized(width: 0.04,),
                       Icon(Icons.error,size: 20,color: theme.colorScheme.onSecondaryContainer,),
                       CustomSized(width: 0.02,),
                       Expanded(

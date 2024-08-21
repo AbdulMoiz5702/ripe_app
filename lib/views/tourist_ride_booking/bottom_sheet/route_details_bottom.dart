@@ -8,8 +8,6 @@ import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/bottom_sheets_leading.dart';
 import 'package:ride_app/resubale_widgets/notification_list_tile.dart';
 import 'package:ride_app/views/tourist_ride_booking/rider_request_screen.dart';
-
-import '../../../consts/colors.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
 import '../../../resubale_widgets/location_sop_points.dart';
 import '../../../resubale_widgets/text_widgets.dart';

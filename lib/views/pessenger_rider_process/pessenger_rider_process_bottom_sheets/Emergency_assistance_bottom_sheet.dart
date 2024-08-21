@@ -17,7 +17,7 @@ class EmergencyAssistanceBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return Container(
-      height: MediaQuery.sizeOf(context).height * 0.6,
+      height: MediaQuery.sizeOf(context).height * 0.62,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -73,9 +73,9 @@ class EmergencyAssistanceBottomSheet extends StatelessWidget {
               ),
             ),
           ),
-          CustomSized(height: 0.02,),
+          CustomSized(height: 0.015,),
           DottedDivider(),
-          CustomSized(height: 0.02,),
+          CustomSized(height: 0.015,),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -97,8 +97,9 @@ class EmergencyAssistanceBottomSheet extends StatelessWidget {
               child: Text(
                 'Main Grand Trunk Rd, Defense Housing Authority Sector F DHA Phase II, Islamabad, Islamabad Capital Territory 44000, Pakistan',
                 style: TextStyle(
-                  wordSpacing: 2,
-                  letterSpacing: 0.5,
+                  wordSpacing: 1,
+                  letterSpacing: 0.05,
+                  height: 1.5,
                   fontSize: 14.0,
                   fontWeight: FontWeight.w700,
                   color: theme.primaryColor,

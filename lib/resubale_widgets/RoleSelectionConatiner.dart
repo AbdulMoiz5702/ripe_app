@@ -32,11 +32,11 @@ class RoleSelectionConatiner extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: MediaQuery.sizeOf(context).width * 0.43,
+              width: MediaQuery.sizeOf(context).width * 0.41,
               decoration: BoxDecoration(
-                color: isSelected == true ? Colors.black : Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.black12),
+                color: isSelected == true ? theme.colorScheme.primary : theme.scaffoldBackgroundColor,
+                borderRadius: BorderRadius.circular(15),
+                border:isSelected == true ?null :  Border.all(color:theme.dividerColor),
               ),
               child: Column(
                 children: [
@@ -47,8 +47,8 @@ class RoleSelectionConatiner extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Container(
                       height: MediaQuery.sizeOf(context).height * 0.12,
-                      width: MediaQuery.sizeOf(context).width * 0.28,
-                      child: SvgPicture.asset(imagePath,color: isSelected == true ? checkBoxColor : primaryTextColor,),
+                      width: MediaQuery.sizeOf(context).width * 0.22,
+                      child: SvgPicture.asset(imagePath,color: isSelected == true ? theme.colorScheme.secondary : theme.colorScheme.primary,),
                     ),
                   ),
                   CustomSized(
@@ -56,7 +56,7 @@ class RoleSelectionConatiner extends StatelessWidget {
                   ),
                   smallText(
                       title: title,
-                      color: isSelected == true ?  checkBoxColor :  primaryTextColor),
+                      color: isSelected == true ?  theme.colorScheme.secondary : theme.colorScheme.primary,),
                   CustomSized(
                     height: 0.01,
                   ),

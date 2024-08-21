@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
@@ -45,8 +44,8 @@ class CustomTextField extends StatelessWidget {
         onFieldSubmitted: onFieldSubmittedValue,
         validator: onValidator,
         keyboardType: keyBoardType,
-        style: const TextStyle(
-          color: Colors.black,
+        style:  TextStyle(
+          color: theme.primaryColor,
           fontFamily: 'Nunito Sans',
         ),
         decoration: InputDecoration(

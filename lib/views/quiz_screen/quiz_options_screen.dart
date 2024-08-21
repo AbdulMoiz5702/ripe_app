@@ -62,7 +62,7 @@ class _QuizScreenState extends State<QuizScreen> {
                      ],
                    ),
                    CustomSized(height: 0.02),
-                   largeText(title :widget.quizQuestion.question, color: theme.primaryColor),
+                   largeText(title :widget.quizQuestion.question, color: theme.primaryColor,height: 1.5),
                    CustomSized(height: 0.02),
                    ...List.generate(widget.quizQuestion.options.length, (idx) {
                      return Row(

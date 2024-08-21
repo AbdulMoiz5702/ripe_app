@@ -40,7 +40,7 @@ class Step2 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.68,
+            height: MediaQuery.sizeOf(context).height * 0.7,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color:theme.scaffoldBackgroundColor,
@@ -60,9 +60,13 @@ class Step2 extends StatelessWidget {
                       height: 0.02,
                     ),
                     largeText(title: 'Enter your email', color:theme.primaryColor),
-                    CustomSized(height: 0.01,),
+                    CustomSized(
+                      height: 0.015,
+                    ),
                     smallText(title: 'By sharing your email, you agree to our Terms of',color: theme.colorScheme.onSecondaryContainer),
-                    CustomSized(height: 0.002,),
+                    CustomSized(
+                      height: 0.01,
+                    ),
                     smallText(title: 'Services and Privacy Policy.',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
                       height: 0.03,
@@ -122,7 +126,7 @@ class Step2 extends StatelessWidget {
                       borderRadius: 30,
                       width: 1,
                     ),
-                    CustomSized(height: 0.02),
+                    CustomSized(height: 0.04),
                     dividerRow(context: context),
                     CustomSized(height: 0.03),
                     LoginOptionsRow(),

@@ -27,9 +27,9 @@ class ThemeChangeScreen extends StatelessWidget {
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                smallText(title: 'Yorem ipsum dolor sit amet, consectetur adipiscing',color: theme.colorScheme.onSecondaryContainer),
-               CustomSized(height: 0.002,),
+               CustomSized(height: 0.01),
                smallText(title: 'elit. Nunc vulputate libero et velit interdum, ac ',color: theme.colorScheme.onSecondaryContainer),
-               CustomSized(height: 0.002,),
+               CustomSized(height: 0.01),
                smallText(title: 'aliquet odio mattis.',color: theme.colorScheme.onSecondaryContainer),
              ],
            ),

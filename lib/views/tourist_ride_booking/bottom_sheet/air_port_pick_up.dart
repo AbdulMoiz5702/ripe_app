@@ -14,7 +14,7 @@ class AirPortPickUpBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return  Container(
-      height: MediaQuery.sizeOf(context).height * 0.38,
+      height: MediaQuery.sizeOf(context).height * 0.4,
       padding: EdgeInsets.all(10),
       decoration:  BoxDecoration(
         color: theme.scaffoldBackgroundColor,
@@ -36,11 +36,11 @@ class AirPortPickUpBottomSheet extends StatelessWidget {
               children: [
                 CustomSized(height: 0.02,),
                 largeText(title: 'Additional charges',color: theme.primaryColor),
-                CustomSized(height: 0.01,),
+                CustomSized(height: 0.015,),
                 largeText(title: 'Are you ready to pay extra \$10?',textSize: 17.0 ,color: theme.primaryColor),
-                CustomSized(height: 0.01,),
+                CustomSized(height: 0.015,),
                 smallText(title: 'Picking up from the airport will cost you extra',color: theme.colorScheme.onSecondaryContainer),
-                CustomSized(height: 0.005,),
+                CustomSized(height: 0.01,),
                 Row(
                   children: [
                     smallText(title: 'charges of ',color: theme.colorScheme.onSecondaryContainer),
@@ -48,11 +48,11 @@ class AirPortPickUpBottomSheet extends StatelessWidget {
                     smallText(title: 'like driver entry and exit fees',color:theme.colorScheme.onSecondaryContainer ),
                   ],
                 ),
-                CustomSized(height: 0.005,),
+                CustomSized(height: 0.01,),
                 smallText(title: 'within airport taxi stand. If you select no, driver',color: theme.colorScheme.onSecondaryContainer),
-                CustomSized(height: 0.005,),
+                CustomSized(height: 0.01,),
                 smallText(title: 'won’t be able to pick you within airport',color: theme.colorScheme.onSecondaryContainer),
-                CustomSized(height: 0.005,),
+                CustomSized(height: 0.01,),
                 smallText(title: 'boundaries.',color: theme.colorScheme.onSecondaryContainer),
                 CustomSized(height: 0.02,),
                 Row(
@@ -69,7 +69,6 @@ class AirPortPickUpBottomSheet extends StatelessWidget {
                     }),
                   ],
                 ),
-                CustomSized(height: 0.02,),
               ],
             ),
           ),

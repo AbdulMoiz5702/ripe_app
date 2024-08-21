@@ -30,11 +30,11 @@ class AiSuggestedRouteBottomSheet extends StatelessWidget {
         children: [
           CustomSized(height: 0.02),
           largeText(title: 'AI route change confirmation', textSize: 18.0,color: theme.primaryColor),
-          CustomSized(height: 0.02),
+          CustomSized(height: 0.015,),
           smallText(title: 'We’ve changed route for you with the help of AI.',color: theme.primaryColor),
-          CustomSized(height: 0.004),
+          CustomSized(height: 0.01,),
           smallText(title: 'Do you want to go with that route in order to save',color: theme.primaryColor),
-          CustomSized(height: 0.004),
+          CustomSized(height: 0.01,),
           smallText(title: 'fare?',color: theme.primaryColor),
           CustomSized(height: 0.02),
           Consumer<ScheduleRideProvider>(builder: (context,provider,_){

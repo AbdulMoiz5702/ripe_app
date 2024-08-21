@@ -22,7 +22,7 @@ class OutlineBorderButton extends StatelessWidget {
         width: MediaQuery.sizeOf(context).width * 1,
         decoration: BoxDecoration(
           color: theme.colorScheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           border: Border.all(color: theme.colorScheme.surfaceDim,width: 2),
         ),
         child: Column(
@@ -73,7 +73,7 @@ class InviteFriendColorButton extends StatelessWidget {
         width: MediaQuery.sizeOf(context).width * 1,
         decoration: BoxDecoration(
            color:  theme.colorScheme.secondaryContainer,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(15),
           border: Border.all(color: theme.colorScheme.surfaceContainerLowest,width: 2),
         ),
         child: Column(

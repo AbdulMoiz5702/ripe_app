@@ -25,7 +25,7 @@ class AccountGoodToGo extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.72,
+            height: MediaQuery.sizeOf(context).height * 0.74,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -46,47 +46,47 @@ class AccountGoodToGo extends StatelessWidget {
                     ),
                     largeText(title: 'Ready to Roll',color:theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(
                         title: 'Congratulations! You’ve passed the assessment',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'with flying colors. Your account is now',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'unrestricted, and you’re good to go. Buckle up,',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'focus on the road, and provide those top-notch',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'Remember, safety comes first, and we appreciate',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'your commitment to responsible driving. Rest up,',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'rides. Remember, every journey matters, and your',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.002,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'well-being matters too. Safe travels!',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.02,
+                      height: 0.01,
                     ),
                     Center(
                       child: Image(

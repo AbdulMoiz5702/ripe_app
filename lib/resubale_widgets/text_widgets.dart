@@ -6,7 +6,9 @@ Widget largeText(
     {title,
     Color color = primaryTextColor,
     textSize = 24.0,
-    FontWeight weight = FontWeight.w700}) {
+    FontWeight weight = FontWeight.w700,
+      double height = 0,
+    }) {
   return Text(
     title,
     style: TextStyle(
@@ -14,6 +16,7 @@ Widget largeText(
       fontSize: textSize,
       fontWeight: weight,
       fontFamily: 'Nunito Sans',
+      height: height.toDouble(),
     ),
   );
 }

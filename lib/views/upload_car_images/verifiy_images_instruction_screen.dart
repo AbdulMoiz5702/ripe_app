@@ -28,80 +28,80 @@ class VerifyImagesInstructionScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 smallText(title: '🔆  Capture images in a well-lit area with indirect',color: theme.primaryColor),
-                CustomSized(height: 0.002,),
+                CustomSized(height: 0.01),
                 smallText(title: '       light. Avoid harsh shadows or glares.',color: theme.primaryColor)
               ],
             ),
           ),
-          CustomSized(height: 0.004,),
+          CustomSized(height: 0.01),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children:List.generate(30, (index){
               return Text('_ ',style: TextStyle(color: dividerColor),);
             }),
           ),
-          CustomSized(height: 0.006,),
+          CustomSized(height: 0.01),
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CustomSized(height: 0.005,),
                 smallText(title: '🚘  Include only the vehicle in the frame—no other ',color: theme.primaryColor),
-                CustomSized(height: 0.002,),
+                CustomSized(height: 0.01),
                 smallText(title: '       objects or people.',color: theme.primaryColor)
               ],
             ),
           ),
-          CustomSized(height: 0.004,),
+          CustomSized(height: 0.01),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children:List.generate(30, (index){
               return Text('_ ',style: TextStyle(color: dividerColor),);
             }),
           ),
-          CustomSized(height: 0.006,),
+          CustomSized(height: 0.01),
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 smallText(title: '🧐  Ensure the entire vehicle is visible, including',color: theme.primaryColor),
-                CustomSized(height: 0.002,),
+                CustomSized(height: 0.01),
                 smallText(title: '       license plates.',color: theme.primaryColor)
               ],
             ),
           ),
-          CustomSized(height: 0.004,),
+          CustomSized(height: 0.01),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children:List.generate(30, (index){
               return Text('_ ',style: TextStyle(color: dividerColor),);
             }),
           ),
-          CustomSized(height: 0.006,),
+          CustomSized(height: 0.01),
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                smallText(title: '📐  Take photos from different angles (front, back,.',color: theme.primaryColor),
-                CustomSized(height: 0.002,),
-                smallText(title: '        sides)',color: theme.primaryColor)
+                smallText(title: '📐  Take photos from different angles (front, back,',color: theme.primaryColor),
+                CustomSized(height: 0.01),
+                smallText(title: '        sides).',color: theme.primaryColor)
               ],
             ),
           ),
-          CustomSized(height: 0.004,),
+          CustomSized(height: 0.01),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children:List.generate(30, (index){
               return Text('_ ',style: TextStyle(color: dividerColor),);
             }),
           ),
-          CustomSized(height: 0.006,),
+          CustomSized(height: 0.01),
           Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 smallText(title: '😵  Allow your camera to focus before capturing',color: theme.primaryColor),
-                CustomSized(height: 0.002,),
+                CustomSized(height: 0.01),
                 smallText(title: '        the image to avoid bluriness.',color: theme.primaryColor)
               ],
             ),

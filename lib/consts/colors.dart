@@ -9,6 +9,9 @@ const Color lightRedButtonColor = Color(0xffffefed);
 // cancel red button text color
 const Color lightRedCancelButtonTextColor = Color(0xffFF3A1C);
 
+// light other colors
+const Color authLightDividerColor = Color(0xff9CA3AF);
+
 
 // schedule screen progress ride color
 const Color lightProgressRideColor = Color(0xffEBF7FD);
@@ -111,7 +114,7 @@ const darkDividerColor = Color(0xff414652);
 
 
 // dark other colors
-const Color authDarkDividerColor = Color(0xff676b75);
+const Color authDarkDividerColor = Color(0xff6B7280);
 const Color darkUploadDocumentsContainerColor = Color(0xff1c2332);
 
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 
 class CustomFloatingButton extends StatelessWidget {
@@ -14,6 +13,14 @@ class CustomFloatingButton extends StatelessWidget {
       decoration:  BoxDecoration(
         shape: BoxShape.circle,
         color: theme.colorScheme.secondary,
+        boxShadow: [
+          BoxShadow(
+            color: theme.colorScheme.secondary.withOpacity(0.15),
+            offset: Offset(0.2, 1), // Shadow position: x, y
+            blurRadius: 3, // Blur intensity
+            spreadRadius: 3 , // Spread of the shadow
+          ),
+        ]
       ),
       child:  Center(child: Image(image: AssetImage(bottomArrow,),color: theme.colorScheme.inversePrimary,),),
     );

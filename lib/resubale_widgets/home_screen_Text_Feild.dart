@@ -44,6 +44,7 @@ class HomeScreenTextField extends StatelessWidget {
         color: color,
       ),
       child: TextFormField(
+
         enabled: enable,
         autofocus: autoFocus,
         obscureText: obscureText,

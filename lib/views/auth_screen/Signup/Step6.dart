@@ -42,7 +42,7 @@ class _Step6State extends State<Step6> {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.75,
+            height: MediaQuery.sizeOf(context).height * 0.76,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -63,10 +63,13 @@ class _Step6State extends State<Step6> {
                     ),
                     largeText(title: 'Account created successfully.',color:theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(
                       title: 'Your account has been created successfully. You’re',color: theme.colorScheme.onSecondaryContainer),
+                    CustomSized(
+                      height: 0.01,
+                    ),
                     smallText(
                       title: 'ready to use the app now.',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(

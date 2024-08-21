@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,7 @@ class ProfilePictureScreen extends StatelessWidget {
     var theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         automaticallyImplyLeading: true,
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,28 +29,28 @@ class ProfilePictureScreen extends StatelessWidget {
           children: [
             CustomSized(height: 0.02),
             largeText(title: 'Add profile picture',color:theme.colorScheme.primary),
+            CustomSized(height: 0.01),
             smallText(title: 'This image will be displayed on your profile',color: theme.colorScheme.onSecondaryContainer)
           ],
         ),
       ),
       backgroundColor: theme.scaffoldBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: [
             Consumer<BecomeDriverProvider>(builder: (context, provider, _) {
-              return Container(
-                alignment: Alignment.center,
-                height: MediaQuery.sizeOf(context).height * 0.6,
-                width: MediaQuery.sizeOf(context).width * 0.6,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: theme.colorScheme.surfaceContainerHighest),
-                ),
-                child: GestureDetector(
-                  onTap: () {
-                    provider.pickImage(imageType: 'profilePictureImage');
-                  },
+              return GestureDetector(
+                onTap: () {
+                  provider.pickImage(imageType: 'profilePictureImage');
+                },
+                child: DottedBorder(
+                  padding: EdgeInsets.all(15),
+                  borderType: BorderType.Circle,
+                  color: theme.colorScheme.surfaceBright.withOpacity(0.8),
+                  radius: Radius.circular(15),
+                  strokeWidth: 0.5,
+                  dashPattern: [3],
                   child: Container(
                     alignment: Alignment.center,
                     height: MediaQuery.sizeOf(context).height * 0.55,

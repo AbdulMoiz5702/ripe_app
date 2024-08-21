@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'package:ride_app/consts/colors.dart';
-import 'package:ride_app/controllers/custom_leading_feild_provider.dart';
 import 'package:ride_app/resubale_widgets/text_widgets.dart';
 
 import '../consts/images_path.dart';
@@ -60,10 +58,10 @@ class CustomLeadingTextField extends StatelessWidget {
           onFieldSubmitted: onFieldSubmittedValue,
           validator: onValidator,
           keyboardType: keyBoardType,
-          style: TextStyle(
-            color: theme.colorScheme.onSecondaryContainer,
-            fontFamily: 'Nunito Sans',
-          ),
+        style:  TextStyle(
+          color: theme.primaryColor,
+          fontFamily: 'Nunito Sans',
+        ),
           decoration: InputDecoration(
             suffixIcon: isPassword == true
                 ? GestureDetector(

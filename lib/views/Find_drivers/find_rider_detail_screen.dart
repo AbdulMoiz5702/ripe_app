@@ -4,7 +4,6 @@ import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/CustomButton.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
 import 'package:ride_app/resubale_widgets/rating_tile.dart';
-import '../../consts/colors.dart';
 import '../../resubale_widgets/FavoriteButton.dart';
 import '../../resubale_widgets/custom_leading.dart';
 import '../../resubale_widgets/driver_list_tile.dart';

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/consts/strings.dart';
 import 'package:ride_app/resubale_widgets/Custom_Sized.dart';
-import 'package:ride_app/resubale_widgets/custom_leading.dart';
 import 'package:ride_app/resubale_widgets/user_profile_button.dart';
 import 'package:ride_app/views/user_profile/preferences/bio_metric_screen.dart';
 import 'package:ride_app/views/user_profile/preferences/select_theme.dart';

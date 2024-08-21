@@ -47,21 +47,27 @@ class AllowAccessLocationText extends StatelessWidget {
                     ),),
                   ],
                 ),
-                CustomSized(height: 0.002,),
+                CustomSized(
+                  height: 0.01,
+                ),
                 Text(pointThree,style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: theme.primaryColor,
                   fontFamily:'Nunito Sans',
                 ),),
-                CustomSized(height: 0.002,),
+                CustomSized(
+                  height: 0.01,
+                ),
                 Text(pointFour,style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: theme.primaryColor,
                   fontFamily:'Nunito Sans',
                 ),),
-                CustomSized(height: 0.002,),
+                CustomSized(
+                  height: 0.01,
+                ),
                 pointFive == null ? Container(height: 0,width: 0,) :Text(pointFive.toString(),style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,

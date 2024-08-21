@@ -25,7 +25,7 @@ ThemeData lightTheme() {
       // secodary text colors,
       onSecondaryContainer: secondaryTextColor,
       // auth screens divider colors
-      surface: authDarkDividerColor,
+      surface: authLightDividerColor,
       // custom text filed border
       onSurface: textfieldColorBorderColor,
       // custom text filed hint color,

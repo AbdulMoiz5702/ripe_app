@@ -31,7 +31,7 @@ class ForgotStep2 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.8,
+            height: MediaQuery.sizeOf(context).height * 0.82,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -52,17 +52,17 @@ class ForgotStep2 extends StatelessWidget {
                     ),
                     largeText(title: 'Enter 6-digit code',color: theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(
                       title: 'Verification code has sent to your account at',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.005,
+                      height: 0.01,
                     ),
                     smallText(
                       title: 'mr**********@gmail.com.Kindly enter 6-digit code',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.005,
+                      height: 0.01,
                     ),
                     smallText(
                       title: 'to verify your account',color: theme.colorScheme.onSecondaryContainer),
@@ -97,7 +97,7 @@ class ForgotStep2 extends StatelessWidget {
                       ],
                     ),
                     CustomSized(
-                      height: 0.02,
+                      height: 0.03,
                     ),
                     CustomButton(
                       onBoard: false,

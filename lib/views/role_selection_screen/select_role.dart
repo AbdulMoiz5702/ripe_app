@@ -59,7 +59,7 @@ class SelectRole extends StatelessWidget {
                     ),
                     Consumer<RoleSelectionProvider>(builder: (context,provider,_){
                       return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           RoleSelectionConatiner(title: 'Driver',onTap: (){
                             provider.selectDriver();

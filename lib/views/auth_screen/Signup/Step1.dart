@@ -1,17 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ride_app/consts/colors.dart';
 import 'package:ride_app/consts/images_path.dart';
 import 'package:ride_app/resubale_widgets/Bg_widget.dart';
-import 'package:ride_app/resubale_widgets/LoginOptionButton.dart';
 import 'package:ride_app/resubale_widgets/band_name.dart';
 import 'package:ride_app/resubale_widgets/customTextFeild.dart';
 import 'package:ride_app/resubale_widgets/divider_row.dart';
 import 'package:ride_app/resubale_widgets/login_options_row.dart';
 import 'package:ride_app/resubale_widgets/signup_steps_count.dart';
 import 'package:ride_app/views/auth_screen/Signup/Step2.dart';
-import 'package:ride_app/views/role_selection_screen/select_role.dart';
-
 import '../../../resubale_widgets/CustomButton.dart';
 import '../../../resubale_widgets/Custom_Sized.dart';
 import '../../../resubale_widgets/custom_leading.dart';
@@ -38,7 +34,7 @@ class Step1 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.66,
+            height: MediaQuery.sizeOf(context).height * 0.68,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration:  BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -63,11 +59,11 @@ class Step1 extends StatelessWidget {
                     largeText(
                         title: 'Hi 👋 What\'s your name?',color: theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(title: 'This name will be used to credit you for the things you',textSize:13.0 ,color: theme.colorScheme.onSecondaryContainer ),
                     CustomSized(
-                      height: 0.001,
+                      height: 0.01,
                     ),
                     smallText(title: 'share. What should we call you?',textSize:13.0 ,color: theme.colorScheme.onSecondaryContainer ),
                     CustomSized(
@@ -92,7 +88,7 @@ class Step1 extends StatelessWidget {
                       borderRadius: 30,
                       width: 1,
                     ),
-                    CustomSized(height: 0.028),
+                    CustomSized(height: 0.04),
                     dividerRow(context: context),
                     CustomSized(height: 0.04),
                     LoginOptionsRow(),

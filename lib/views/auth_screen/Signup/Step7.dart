@@ -31,8 +31,8 @@ class Step7 extends StatelessWidget {
                 alignment: Alignment.center,
                 image: AssetImage(locationAccess),
                 isAntiAlias: true,
-                height: MediaQuery.sizeOf(context).height * 0.3,
-                width: MediaQuery.sizeOf(context).width * 0.6,
+                height: MediaQuery.sizeOf(context).height * 0.28,
+                width: MediaQuery.sizeOf(context).width * 0.58,
                 fit: BoxFit.cover,
               ),
             ),
@@ -49,7 +49,10 @@ class Step7 extends StatelessWidget {
             Align(
                 alignment: Alignment.centerLeft,
                 child: smallText(title: 'Our app uses your location to:',color: theme.primaryColor)),
-            CustomSized(height: 0.005,),
+
+            CustomSized(
+              height: 0.01,
+            ),
             AllowAccessLocationText(
               pointOne: 'Match You with Nearby Drivers: ',
               pointTwo: 'Knowing your',

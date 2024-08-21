@@ -38,7 +38,7 @@ class Step4 extends StatelessWidget {
         body: Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.sizeOf(context).height * 0.66,
+            height: MediaQuery.sizeOf(context).height * 0.68,
             width: MediaQuery.sizeOf(context).width * 1,
             decoration: BoxDecoration(
                 color: theme.scaffoldBackgroundColor,
@@ -62,11 +62,11 @@ class Step4 extends StatelessWidget {
                     ),
                     largeText(title: 'Set your password',color:theme.primaryColor),
                     CustomSized(
-                      height: 0.01,
+                      height: 0.015,
                     ),
                     smallText(title: 'We are almost finished with you account',color: theme.colorScheme.onSecondaryContainer),
                     CustomSized(
-                      height: 0.001,
+                      height: 0.01,
                     ),
                     smallText(
                         title: 'registration process,',color: theme.colorScheme.onSecondaryContainer,),
@@ -88,18 +88,17 @@ class Step4 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomSized(
-                          height: 0.005,
+                          height: 0.008,
                         ),
                         smallText(
-                            title:
-                                ' Password must contain at least 6 characters. Try to make it a',
+                            title: ' Password must contain at least 6 characters. Try to make it a',
                             color:theme.colorScheme.onSecondaryContainer,
                             textSize: 11.0),
                         CustomSized(
                           height: 0.001,
                         ),
                         smallText(
-                            title: ' little difficult',
+                            title: ' little difficult.',
                             color: theme.colorScheme.onSecondaryContainer,
                             textSize: 11.0),
                       ],
@@ -115,7 +114,7 @@ class Step4 extends StatelessWidget {
                       borderRadius: 30,
                       width: 1,
                     ),
-                    CustomSized(height: 0.02),
+                    CustomSized(height: 0.04),
                     dividerRow(context: context),
                     CustomSized(height: 0.03),
                     LoginOptionsRow(),
